@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\Admin\CategoryController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -15,4 +16,19 @@ use Illuminate\Support\Facades\Route;
 
 Route::get('/dashboard', function () {
     return view('admin.dashboard.index');
+});
+
+Route::prefix('admin')->group(function() {
+    Route::prefix('category')->group(function() {
+        Route::get('', [CategoryController::class, 'showCategory'])->name('show-category');
+
+        Route::get('create', [CategoryController::class, 'showCreateCategory'])->name('create-category');
+        Route::post('create', [CategoryController::class, 'storeCategory']);
+
+        Route::get('edit/{id}', [CategoryController::class, 'showEditCategory'])->name('edit-category');
+        Route::put('edit/{id}', [CategoryController::class, 'updateCategory']); 
+
+        Route::get('delete/{id}', [CategoryController::class, 'deleteCategory'])->name('delete-category');
+
+    });
 });
