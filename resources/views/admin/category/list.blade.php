@@ -9,6 +9,10 @@
 @section('content')
     <div id="page-wrapper">
         <div class="container-fluid">
+           <div>
+                <a href="{{route('create-category')}}" class="btn btn-primary">Thêm mới</a>
+           </div>
+            
             <div class="row">
                 <!-- /.col-lg-12 -->
                 <table class="table table-striped table-bordered table-hover" id="dataTables-example">
