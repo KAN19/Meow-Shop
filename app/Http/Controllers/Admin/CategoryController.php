@@ -11,7 +11,9 @@ class CategoryController extends Controller
     //
     public function showCategory()
     {
-        return view('admin.category.list');
+        $listCates = category::all(); 
+
+        return view('admin.category.list', compact('listCates'));
     }
 
     public function showCreateCategory()
@@ -38,13 +40,21 @@ class CategoryController extends Controller
 
     public function showEditCategory($id)
     {
-        return view('admin.category.edit');
+        $category = category::find($id); 
+
+        return view('admin.category.edit', compact('category'));
         
     }
 
     public function updateCategory(Request $request, $id)
     {
-        
+        $category = category::find($id); 
+        $category->name = $request->cateName; 
+        $category->slug = $request->cateSlug;
+        $category->save();
+
+        return redirect()->route('show-category'); 
+
     }
 
     public function deleteCategory($id)

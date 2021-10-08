@@ -28,7 +28,7 @@
                             <input class="form-control" name="cateSlug" />
                         </div>
                         <button type="submit" class="btn btn-primary">Category Add</button>
-                        <button type="reset" class="btn btn-danger">Back</button>
+                       <a  class="btn btn-danger" href="{{route('show-category')}}">Back</a>
                     <form>
                     @if (session('success'))
                         {{session('success')}}

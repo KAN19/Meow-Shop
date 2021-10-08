@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Controllers\Admin\CategoryController;
+use App\Http\Controllers\Media\MediaController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -29,6 +30,19 @@ Route::prefix('admin')->group(function() {
         Route::put('edit/{id}', [CategoryController::class, 'updateCategory']); 
 
         Route::get('delete/{id}', [CategoryController::class, 'deleteCategory'])->name('delete-category');
+
+    });
+
+    Route::prefix('media')->group(function() {
+        Route::get('', [MediaController::class, 'showMedia'])->name('show-media');
+
+        // Route::get('create', [CategoryController::class, 'showCreateCategory'])->name('create-category');
+        // Route::post('create', [CategoryController::class, 'storeCategory']);
+
+        // Route::get('edit/{id}', [CategoryController::class, 'showEditCategory'])->name('edit-category');
+        // Route::put('edit/{id}', [CategoryController::class, 'updateCategory']); 
+
+        // Route::get('delete/{id}', [CategoryController::class, 'deleteCategory'])->name('delete-category');
 
     });
 });

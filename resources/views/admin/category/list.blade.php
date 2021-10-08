@@ -24,14 +24,16 @@
                             <th>Edit</th>
                         </tr>
                     </thead>
-                    <tbody>
-                        <tr class="odd gradeX" align="center">
-                            <td>1</td>
-                            <td>Tin Tức</td>
-                            <td class="center"><i class="fa fa-trash-o  fa-fw"></i><a href="#"> Delete</a></td>
-                            <td class="center"><i class="fa fa-pencil fa-fw"></i> <a href="#">Edit</a></td>
-                        </tr>
-                    </tbody>
+                    @foreach ($listCates as $item)
+                        <tbody>
+                            <tr class="odd gradeX" align="center">
+                                <td>{{$item->id}}</td>
+                                <td>{{$item->name}}</td>
+                                <td class="center"><i class="fas fa-trash"></i><a href="#"> Delete</a></td>
+                                <td class="center"><i class="fas fa-pencil-alt"></i> <a href="{{route('edit-category', $item->id)}}">Edit</a></td>
+                            </tr>
+                        </tbody>
+                    @endforeach
                 </table>
             </div>
             <!-- /.row -->
