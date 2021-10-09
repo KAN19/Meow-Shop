@@ -23,10 +23,6 @@
                                 </div>
                             @enderror
                         </div>
-                        <div class="form-group">
-                            <label>Slug</label>
-                            <input class="form-control" name="cateSlug" />
-                        </div>
                         <button type="submit" class="btn btn-primary">Category Add</button>
                        <a  class="btn btn-danger" href="{{route('show-category')}}">Back</a>
                     <form>

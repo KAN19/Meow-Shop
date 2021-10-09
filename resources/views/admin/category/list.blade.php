@@ -27,10 +27,10 @@
                     @foreach ($listCates as $item)
                         <tbody>
                             <tr class="odd gradeX" align="center">
-                                <td>{{$item->id}}</td>
+                                <td>{{$counter++}}</td>
                                 <td>{{$item->name}}</td>
-                                <td class="center"><i class="fas fa-trash"></i><a href="#"> Delete</a></td>
-                                <td class="center"><i class="fas fa-pencil-alt"></i> <a href="{{route('edit-category', $item->id)}}">Edit</a></td>
+                                <td class="center"><i class="fas fa-trash"></i><a href="{{route('delete-category', $item->slug)}}"> Delete</a></td>
+                                <td class="center"><i class="fas fa-pencil-alt"></i> <a href="{{route('edit-category', $item->slug)}}">Edit</a></td>
                             </tr>
                         </tbody>
                     @endforeach

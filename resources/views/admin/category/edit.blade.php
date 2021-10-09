@@ -12,16 +12,12 @@
             <div class="row">
                 <!-- /.col-lg-12 -->
                 <div class="col-lg-7" style="padding-bottom:120px">
-                    <form action="{{route('edit-category', $category->id)}}" method="POST">
+                    <form action="{{route('edit-category', $category->slug)}}" method="POST">
                         @csrf
                         @method('put')
                         <div class="form-group">
                             <label>Category Name</label>
                             <input class="form-control" value="{{$category->name}}" name="cateName" placeholder="Please Enter Category Name" />
-                        </div>
-                        <div class="form-group">
-                            <label>Category Keywords</label>
-                            <input class="form-control" value="{{$category->slug}}" name="cateSlug" placeholder="Please Enter Category Keywords" />
                         </div>
                         <button type="submit" class="btn btn-primary">Apply change</button>
                         <a  class="btn btn-danger" href="{{route('show-category')}}">Back</a>

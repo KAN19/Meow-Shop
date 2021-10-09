@@ -5,6 +5,8 @@ namespace App\Http\Controllers\Admin;
 use App\Http\Controllers\Controller;
 use App\Models\category;
 use Illuminate\Http\Request;
+use Illuminate\Support\Str;
+use SebastianBergmann\LinesOfCode\Counter;
 
 class CategoryController extends Controller
 {
@@ -12,8 +14,8 @@ class CategoryController extends Controller
     public function showCategory()
     {
         $listCates = category::all(); 
-
-        return view('admin.category.list', compact('listCates'));
+        $counter = 1; 
+        return view('admin.category.list', compact('listCates', 'counter'));
     }
 
     public function showCreateCategory()
@@ -32,34 +34,37 @@ class CategoryController extends Controller
         ]); 
         $category = new category(); 
         $category->name = $request->cateName; 
-        $category->slug = $request->cateSlug;
+        $category->slug = Str::slug($request->cateName);
         $category->save();
 
         return redirect()->route('show-category'); 
     }
 
-    public function showEditCategory($id)
+    public function showEditCategory($slug)
     {
-        $category = category::find($id); 
-
+        $category = category::where('slug',$slug)->first(); 
+        
         return view('admin.category.edit', compact('category'));
         
     }
 
-    public function updateCategory(Request $request, $id)
+    public function updateCategory(Request $request, $slug)
     {
-        $category = category::find($id); 
+        $category = category::where('slug',$slug)->first(); 
         $category->name = $request->cateName; 
-        $category->slug = $request->cateSlug;
+        $category->slug = Str::slug($request->cateName);
         $category->save();
 
         return redirect()->route('show-category'); 
 
     }
 
-    public function deleteCategory($id)
+    public function deleteCategory($slug)
     {
-        
+        $category = category::where('slug',$slug)->first(); 
+        $category->delete(); 
+
+        return redirect()->route('show-category'); 
     }
    
 }
