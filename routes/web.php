@@ -1,7 +1,7 @@
 <?php
 
 use App\Http\Controllers\Admin\CategoryController;
-use App\Http\Controllers\Media\MediaController;
+use App\Http\Controllers\Admin\MediaController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -39,7 +39,9 @@ Route::prefix('admin')->group(function() {
     });
 
     Route::prefix('media')->group(function() {
-        Route::get('', [MediaController::class, 'index'])->name('media-index');
+        Route::get('', [MediaController::class, 'index'])->name('show-media');
+        
+        Route::post('/upload', [MediaController::class, 'storeMedia'])->name('upload-media');
 
         // Route::get('create', [CategoryController::class, 'showCreateCategory'])->name('create-category');
         // Route::post('create', [CategoryController::class, 'storeCategory']);

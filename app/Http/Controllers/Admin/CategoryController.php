@@ -6,7 +6,6 @@ use App\Http\Controllers\Controller;
 use App\Models\category;
 use Illuminate\Http\Request;
 use Illuminate\Support\Str;
-use SebastianBergmann\LinesOfCode\Counter;
 
 class CategoryController extends Controller
 {

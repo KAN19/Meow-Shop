@@ -8,7 +8,8 @@
 
 @section('content')
     <div>
-        <form action="" method="post">
+        <form action="{{route('upload-media')}}" method="post" enctype="multipart/form-data">
+            @csrf
             <input type="file" name="image">
             <button type="submit">Upload</button>
         </form>
