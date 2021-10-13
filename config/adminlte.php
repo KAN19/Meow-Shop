@@ -265,14 +265,20 @@ return [
             'submenu' => [
                 [
                     'text' => 'All products',
-                    'url'  => '#',
+                    'route' => 'show-product',
                 ],
                 [
                     'text' => 'Add new product',
-                    'url'  => '#',
+                    'route' => 'create-product',
                     'icon' => 'fas fa-plus-circle',
                 ],
             ],
+        ],
+        ['header' => 'MEDIA'],
+        [
+            'text'  => 'MEDIA',
+            'route' => 'show-media',
+            'icon'  => 'far fa-paper-plane',
         ],
         ['header' => 'ORDERS'],
         [
