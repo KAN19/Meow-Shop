@@ -38,6 +38,19 @@ Route::prefix('admin')->group(function() {
 
     });
 
+    Route::prefix('product')->group(function() {
+        // Route::get('', [MediaController::class, 'index'])->name('show-product');
+        
+        // Route::get('create', [CategoryController::class, 'showCreateCategory'])->name('create-category');
+        // Route::post('create', [CategoryController::class, 'storeCategory']);
+
+        // Route::get('edit/{id}', [CategoryController::class, 'showEditCategory'])->name('edit-category');
+        // Route::put('edit/{id}', [CategoryController::class, 'updateCategory']); 
+
+        // Route::get('delete/{id}', [CategoryController::class, 'deleteCategory'])->name('delete-category');
+
+    });
+
     Route::prefix('media')->group(function() {
         Route::get('', [MediaController::class, 'index'])->name('show-media');
         

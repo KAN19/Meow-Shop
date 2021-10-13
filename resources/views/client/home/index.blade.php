@@ -6,8 +6,8 @@
 
 @section('title', 'title ne')
     
-@section('javascript')
-    
+@section('jquery')
+    <script src="/js/home.js"></script>
 @endsection
 
 @section('content')
