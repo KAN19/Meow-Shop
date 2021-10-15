@@ -5,6 +5,7 @@ namespace App\Http\Controllers\Admin;
 use App\Http\Controllers\Controller;
 use App\Models\category;
 use App\Models\Product;
+use Illuminate\Support\Str;
 use Illuminate\Http\Request;
 
 class ProductController extends Controller
@@ -23,7 +24,7 @@ class ProductController extends Controller
         
     }
     
-    public function storeProduc(Request $request)
+    public function storeProduct(Request $request)
     {
         // $request->validate([
         //     'cateName' => 'required|min:4'
@@ -35,8 +36,20 @@ class ProductController extends Controller
         // $category->name = $request->cateName; 
         // $category->slug = Str::slug($request->cateName);
         // $category->save();
+        // dd($request->prd_category);
+        $product = new Product(); 
+        $product->name = $request->prd_name; 
+        $product->slug = Str::slug($request->prd_name); 
+        $product->status = $request->prd_status; 
+        $product->category_id = $request->prd_category; 
+        $product->price = $request->prd_price; 
+        $product->sale_price = $request->prd_sale_price; 
+        $product->description = $request->prd_description; 
+        $product->list_image = $request->prd_images; 
 
-        // return redirect()->route('show-category'); 
+        $product->save(); 
+
+        return redirect()->route('show-product'); 
     }
 
     public function showEditProduct($slug)

@@ -3,16 +3,16 @@
 @section('title', 'Product')
 
 @section('content_header')
-<h1>Product</h1>
+<h1>Create new product</h1>
 @stop
 
 @section('content')
 <div id="page-wrapper">
     <div class="container-fluid bg-white">
 
-        <form action="{{route('create-category')}}" method="POST">
+        <form action="{{route('create-product')}}" method="POST">
             @csrf
-            <div class="row">
+            <div class="row p-3">
                 <div class="col-md-9">
                     <div class="form-group">
                         <label>Product Name</label>
