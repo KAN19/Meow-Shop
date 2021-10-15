@@ -3,6 +3,7 @@
 namespace App\Http\Controllers\Admin;
 
 use App\Http\Controllers\Controller;
+use App\Models\category;
 use App\Models\Product;
 use Illuminate\Http\Request;
 
@@ -17,7 +18,8 @@ class ProductController extends Controller
 
     public function showCreateProduct()
     {
-        return view('admin.product.create');
+        $cates = category::orderby('name', 'ASC')->get();
+        return view('admin.product.create', compact('cates'));
         
     }
     
