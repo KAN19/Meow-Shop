@@ -6,6 +6,20 @@
 <h1>Create new product</h1>
 @stop
 
+@php
+$config = [
+    "height" => "140",
+    "toolbar" => [
+        ['style', ['bold', 'italic', 'underline', 'clear']],
+        ['font', ['strikethrough']],
+        ['color', ['color']],
+        ['para', ['ul', 'ol', 'paragraph']],
+        ['height', ['height']],
+        ['insert', ['link']],
+    ],
+]
+@endphp
+
 @section('plugins.Summernote', true)
 
 @section('content')
@@ -27,7 +41,7 @@
                     </div>
                     <div class="form-group">
                         <label>Description</label>
-                            <x-adminlte-text-editor name="prd_description" class="form-control" placeholder="Please Enter Product description"/>
+                            <x-adminlte-text-editor name="prd_description" class="form-control" placeholder="Please Enter Product description" :config="$config"/>
 
                         {{-- @error('prd_description')
                             <div class="text-danger">
