@@ -6,6 +6,8 @@
 <h1>Create new product</h1>
 @stop
 
+@section('plugins.Summernote', true)
+
 @section('content')
 <div id="page-wrapper">
     <div class="container-fluid bg-white">
@@ -25,15 +27,15 @@
                     </div>
                     <div class="form-group">
                         <label>Description</label>
-                        <textarea name="prd_description" class="form-control"
-                            placeholder="Please Enter Product description"></textarea>
+                            <x-adminlte-text-editor name="prd_description" class="form-control" placeholder="Please Enter Product description"/>
 
-                        @error('prd_description')
-                        <div class="text-danger">
-                            {{ $message }}
-                        </div>
-                        @enderror
+                        {{-- @error('prd_description')
+                            <div class="text-danger">
+                                {{ $message }}
+                            </div>
+                        @enderror --}}
                     </div>
+                    
                     <div class="form-group">
                         <label>Image</label>
                         <textarea name="prd_images" class="form-control"
@@ -45,7 +47,6 @@
                         </div>
                         @enderror
                     </div>
-
                 </div>
 
                 <div class="col-md-3">
@@ -67,17 +68,17 @@
                     </div>
                     <div class="form-group">
                         <label>Price</label>
-                        <input class="form-control" name="prd_price" placeholder="Please Enter Product Price" />
+                        <input type="number" class="form-control" name="prd_price" placeholder="Please Enter Product Price" />
                         @error('prd_price')
                         <div class="text-danger">
                             {{ $message }}
                         </div>
                         @enderror
                     </div>
-                    <div class="form-group">
-                        <label>Sale price</label>
-                        <input class="form-control" name="prd_sale_price" placeholder="Please Enter Product Price" />
-                        @error('prd_sale_price')
+                    <div class="form-group ">
+                        <label>Discount %</label>
+                        <input type="number" min="0" max="100" value="0" class="form-control" name="prd_discount" placeholder="Please Enter Product Price" />
+                        @error('prd_discount')
                         <div class="text-danger">
                             {{ $message }}
                         </div>

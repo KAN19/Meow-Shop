@@ -7,6 +7,9 @@ use Illuminate\Database\Eloquent\Model;
 
 class Product extends Model
 {
+    use HasFactory;
+
+
     public $timestamps = true;
     protected $table = 'products';
 
@@ -16,15 +19,15 @@ class Product extends Model
         'category_id',
         'status',
         'price',
-        'sale_price',
+        'discount',
         'description',
         'list_image',
     ];
 
-    public function FunctionName()
+    public function category()
     {
-        # code...
+        return $this->belongsTo(category::class, 'category_id', 'id');
+        
     }
 
-    use HasFactory;
 }

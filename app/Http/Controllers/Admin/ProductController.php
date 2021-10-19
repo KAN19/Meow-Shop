@@ -12,9 +12,11 @@ class ProductController extends Controller
 {
     public function showProduct()
     {
-        // $listCates = Product::all(); 
-        // $counter = 1; 
-        return view('admin.product.index');
+        $listProducts = Product::all(); 
+        // dd($listProducts); 
+        $counter = 1; 
+
+        return view('admin.product.index', compact('listProducts', 'counter'));
     }
 
     public function showCreateProduct()
@@ -26,16 +28,18 @@ class ProductController extends Controller
     
     public function storeProduct(Request $request)
     {
-        // $request->validate([
-        //     'cateName' => 'required|min:4'
-        // ], [
-        //     'cateName.required' => 'Vui long khong bo trong',
-        //     'cateName.min' => 'Vui lòng nhập nhiều hơn xíu'
-        // ]); 
-        // $category = new category(); 
-        // $category->name = $request->cateName; 
-        // $category->slug = Str::slug($request->cateName);
-        // $category->save();
+        $request->validate([
+            'prd_name' => 'required',
+            'prd_category' => 'required',
+            'prd_price' => 'required|numeric',
+            'prd_discount' => 'nullable|numeric',
+            'prd_description' => 'required',
+        ], [
+            'prd_name.required' => 'Nhap ten san pham dzo bro',
+            'prd_category' => 'required',
+            
+        ]); 
+
         // dd($request->prd_category);
         $product = new Product(); 
         $product->name = $request->prd_name; 
@@ -43,7 +47,7 @@ class ProductController extends Controller
         $product->status = $request->prd_status; 
         $product->category_id = $request->prd_category; 
         $product->price = $request->prd_price; 
-        $product->sale_price = $request->prd_sale_price; 
+        $product->discount = $request->prd_discount / 100; 
         $product->description = $request->prd_description; 
         $product->list_image = $request->prd_images; 
 

@@ -20,7 +20,7 @@ class CreateProductsTable extends Migration
             $table->foreignId('category_id')->constrained(); 
             $table->boolean('status')->default(1); 
             $table->float('price', 9, 0, true); 
-            $table->float('sale_price')->default(0); 
+            $table->decimal('discount', 2, 2)->default(0); 
             $table->text('description'); 
             $table->text('list_image')->nullable(); 
             $table->timestamps();
