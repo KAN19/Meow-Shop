@@ -265,20 +265,14 @@ return [
             'submenu' => [
                 [
                     'text' => 'All products',
-                    'route' => 'show-product',
+                    'url'  => '#',
                 ],
                 [
                     'text' => 'Add new product',
-                    'route' => 'create-product',
+                    'url'  => '#',
                     'icon' => 'fas fa-plus-circle',
                 ],
             ],
-        ],
-        ['header' => 'MEDIA'],
-        [
-            'text'  => 'MEDIA',
-            'route' => 'show-media',
-            'icon'  => 'far fa-paper-plane',
         ],
         ['header' => 'ORDERS'],
         [
@@ -343,21 +337,6 @@ return [
                     'type' => 'css',
                     'asset' => false,
                     'location' => '//cdn.datatables.net/1.10.19/css/dataTables.bootstrap4.min.css',
-                ],
-            ],
-        ],
-        'Summernote' => [
-            'active' => false,
-            'files' => [
-                [
-                    'type' => 'js',
-                    'asset' => true,
-                    'location' => 'vendor/summernote/summernote-bs4.min.js',
-                ],
-                [
-                    'type' => 'css',
-                    'asset' => true,
-                    'location' => 'vendor/summernote/summernote-bs4.min.css',
                 ],
             ],
         ],

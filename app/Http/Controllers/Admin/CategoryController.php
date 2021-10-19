@@ -14,7 +14,7 @@ class CategoryController extends Controller
     {
         $listCates = category::all(); 
         $counter = 1; 
-        return view('admin.category.index', compact('listCates', 'counter'));
+        return view('admin.category.list', compact('listCates', 'counter'));
     }
 
     public function showCreateCategory()

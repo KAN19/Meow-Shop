@@ -2,7 +2,6 @@
 
 use App\Http\Controllers\Admin\CategoryController;
 use App\Http\Controllers\Admin\MediaController;
-use App\Http\Controllers\Admin\ProductController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -40,10 +39,10 @@ Route::prefix('admin')->group(function() {
     });
 
     Route::prefix('product')->group(function() {
-        Route::get('', [ProductController::class, 'showProduct'])->name('show-product');
+        // Route::get('', [MediaController::class, 'index'])->name('show-product');
         
-        Route::get('create', [ProductController::class, 'showCreateProduct'])->name('create-product');
-        Route::post('create', [ProductController::class, 'storeProduct']);
+        // Route::get('create', [CategoryController::class, 'showCreateCategory'])->name('create-category');
+        // Route::post('create', [CategoryController::class, 'storeCategory']);
 
         // Route::get('edit/{id}', [CategoryController::class, 'showEditCategory'])->name('edit-category');
         // Route::put('edit/{id}', [CategoryController::class, 'updateCategory']); 
