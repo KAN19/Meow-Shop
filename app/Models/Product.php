@@ -20,7 +20,9 @@ class Product extends Model
         'status',
         'price',
         'discount',
+        'is_stock',
         'description',
+        'image',
         'list_image',
     ];
 
