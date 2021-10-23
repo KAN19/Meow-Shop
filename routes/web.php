@@ -66,4 +66,9 @@ Route::prefix('admin')->group(function() {
         // Route::get('delete/{id}', [CategoryController::class, 'deleteCategory'])->name('delete-category');
 
     });
+
+
+    // Route::get('/media2', function () {
+    //     return view('admin.media.index2');
+    // });
 });
