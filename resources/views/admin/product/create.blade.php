@@ -104,14 +104,14 @@ $config = [
                 <div class="form-group ">
                     <label>Image</label>
                     <div class="d-flex">
-                        <input type="text" class="form-control" name="prd_discount" placeholder="Add image"
-                            id="image" />
+                        <input type="text" class="form-control" name="prd_ava" placeholder="Add image" id="image"
+                            style="display:none;" />
                         <div class="btn btn-sm btn-primary " data-toggle="modal" data-target=".bd-example-modal-lg">
                             Add
                         </div>
 
                     </div>
-                    @error('prd_discount')
+                    @error('prd_ava')
                     <div class="text-danger">
                         {{ $message }}
                     </div>

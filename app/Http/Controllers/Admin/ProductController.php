@@ -49,6 +49,7 @@ class ProductController extends Controller
         $product->price = $request->prd_price; 
         $product->discount = $request->prd_discount / 100; 
         $product->description = $request->prd_description; 
+        $product->image = $request->prd_ava; 
         $product->list_image = $request->prd_images; 
 
         $product->save(); 
