@@ -15,15 +15,26 @@ class MediaController extends Controller
      */
     public function index()
     {
-        return view('admin.media.index');
+        $listImages = Media::all(); 
+        return view('admin.media.index2', compact('listImages')); 
     }
 
     public function storeMedia(Request $request)
     {
-        
-        $filename = $request->image->getClientOriginalName(); 
-        dd($filename); 
-        // $request->image->storeAs('upload', $filename); 
-       
+        $request->validate([
+            'image' => 'required'
+        ]);
+
+        $filename = time() . "-" . $request->image->getClientOriginalName(); 
+        $destinationPath = 'uploads';
+
+        $url = $request->image->move($destinationPath, $filename); 
+
+        $media = new Media(); 
+        $media->filename =  $url->getFilename(); 
+        $media->url = $url->getPathname();
+        $media->save(); 
+
+        return redirect()->back();
     }
 }
