@@ -20,17 +20,20 @@
             onclick="document.getElementById('fileInput').click();" />
     </form>
 
-    <div class="container mt-4">
+    <div class="container mt-4 image__container">
         <div class="row">
             @foreach($listImages as $image)
-
             <div class="col-lg-3 col-md-4 col-xs-6 thumb">
-                <img src="{{asset('/')}}{{$image->url}}" class="image-card image-card-hover " alt="">
+                <a href="{{route('edit-media', $image->id)}}">
+                    <img src="{{asset('/')}}{{$image->url}}" class="image__card image__card-hover" alt="">
+                </a>
+
             </div>
             @endforeach
         </div>
     </div>
 </div>
+
 @stop
 
 

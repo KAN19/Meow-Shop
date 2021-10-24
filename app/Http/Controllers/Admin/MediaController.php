@@ -28,13 +28,22 @@ class MediaController extends Controller
         $filename = time() . "-" . $request->image->getClientOriginalName(); 
         $destinationPath = 'uploads';
 
-        $url = $request->image->move($destinationPath, $filename); 
+        $x = pathinfo($filename, PATHINFO_FILENAME);
+        dd($x); 
 
+        $url = $request->image->move($destinationPath, $filename); 
         $media = new Media(); 
         $media->filename =  $url->getFilename(); 
         $media->url = $url->getPathname();
         $media->save(); 
 
         return redirect()->back();
+    }
+
+    public function showEditMedia($id)
+    {   
+        $media = Media::where('id', $id)->first(); 
+        
+        return view('admin.media.edit', compact('media'));
     }
 }
