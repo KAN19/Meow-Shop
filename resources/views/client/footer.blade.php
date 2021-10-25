@@ -1,5 +1,3 @@
-<!-- Remove the container if you want to extend the Footer to full width. -->
-
   <!-- Footer -->
   
   <footer
@@ -18,11 +16,8 @@
               MeowShop logo
             </h6>
             <p>
-              Here you can use rows and columns to organize your footer
-              content. Lorem ipsum dolor sit amet, consectetur adipisicing
-              elit.
-            </p>
-            <!--div class="col-md-5 col-lg-4 ml-lg-0 text-center text-md-end"-->
+              A few lines of detailed introduction about MeowShop.
+            </p>            
             <!-- Facebook -->
             <a
                class="btn btn-outline-dark btn-floating m-1"
@@ -119,27 +114,25 @@
 
       <!-- Section: Copyright -->
       <section class="p-3 pt-0">
-      <div class="row d-flex align-items-center">
-          <!-- Grid column -->
-            <div class="col-md-7 col-lg-8 text-center text-md-start">
-            <!-- Copyright -->
-                <div class="col-6">
-                     © 2020 
-                    <a class="text-danger"
-                    >Meow</a>
-                    <a class="font-weight-normal"
-                        >All Right Reseres</a>
-                </div>
-           
-
-            </div>      
-          <!-- Grid column -->
-            <div class="col-md-5 col-lg-4 ml-lg-0 text-right text-md-end">            
-                <a class="font-weight-normal">PRIVACY POLICY</a>   
-                <a class="font-weight-normal">TERM OF SERVICE</a>
-                <a class="font-weight-normal">SPONSORS</a>                  
-            </div>               
-          <!-- Grid column -->
+        <div class="row d-flex align-items-center">
+            <!-- Grid column -->
+              <div class="col-md-7 col-lg-8 text-center text-md-start">
+              <!-- Copyright -->
+                  <div class="col-6">
+                      © 2020 
+                      <a class="text-danger font-weight-bold"
+                      >Meow</a>
+                      <a class="font-weight-normal"
+                          >All Right Reseres</a>
+                  </div>
+              </div>      
+            <!-- Grid column -->
+              <div class="col-md-5 col-lg-4 ml-lg-0 text- text-md-end">            
+                  <a class="font-weight-bold">PRIVACY POLICY</a>   
+                  <a class="font-weight-bold">TERM OF SERVICE</a>
+                  <a class="font-weight-bold">SPONSORS</a>                  
+              </div>               
+            <!-- Grid column -->
         </div>
       </section>    
   </footer>
