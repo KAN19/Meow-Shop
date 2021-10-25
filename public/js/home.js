@@ -1,6 +1,8 @@
 $(document).ready(function () { });
 
 require('./bootstrap');
+
+/*slideshow*/
 var slideIndex = 1;
 showSlides(slideIndex);
 
@@ -14,6 +16,21 @@ function currentSlide(n) {
     showSlides(slideIndex = n);
 }
 
+
+function showSlides() {
+    var i;
+    var slides = document.getElementsByClassName("mySlides");
+
+    for (i = 0; i < slides.length; i++) {
+        slides[i].style.display = "none";
+    }
+    slideIndex++;
+    if (slideIndex > slides.length) { slideIndex = 1 }
+    slides[slideIndex - 1].style.display = "block";
+    setTimeout(showSlides, 2000); // chuyen hinh sau 2s
+}
+
+/*
 function showSlides(n) {
     var i;
     var slides = document.getElementsByClassName("mySlides");
@@ -28,4 +45,4 @@ function showSlides(n) {
     }
     slides[slideIndex - 1].style.display = "block";
     dots[slideIndex - 1].className += " active";
-}
+}*/

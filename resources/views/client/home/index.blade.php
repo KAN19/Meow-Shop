@@ -4,33 +4,32 @@
 <link rel="stylesheet" href="/css/app.css">
 @endsection
 
+@section('bootstrap')
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+@endsection
+
 @section('title', 'HomePage')
 
 @section('jquery')
 <script src="/js/home.js"></script>
 @endsection
 
-<!--
-@section('javascript')
-<script type="text/javascript" href="/js/home.js"> </script>
-@endsection -->
-
 @section('content')
 <div class="slide-container">
 
     <div class="mySlides fade">
         <div class="numbertext">1 / 3</div>
-        <img src="{{url('/filemanager/img/slide1.png')}}" style="width:100%" />
+        <img src="{{url('/filemanager/img/slide1.png')}}" class="img-fluid" style="width:100%">
     </div>
 
     <div class="mySlides fade">
         <div class="numbertext">2 / 3</div>
-        <img src="{{url('/filemanager/img/slide2.png')}}" style="width:100%" />
+        <img src="{{url('/filemanager/img/slide2.png')}}" class="img-fluid" style="width:100%">
     </div>
 
     <div class="mySlides fade">
         <div class="numbertext">3 / 3</div>
-        <img src="{{url('/filemanager/img/slide3.png')}}" style="width:100%" />
+        <img src="{{url('/filemanager/img/slide3.png')}}" class="img-fluid" style="width:100%">
     </div>
 
     <!-- Next and previous buttons -->
@@ -46,14 +45,14 @@
     <span class="dot" onclick="currentSlide(3)"></span>
 </div>
 
-<div class="row">
-    <div class="column">
+<div class="row align-items-start float-start">
+    <div class="col-4">
         <img src="{{url('/filemanager/img/slide1.png')}}" alt="Slide1" style="width:100%">
     </div>
-    <div class="column">
+    <div class="col-4">
         <img src="{{url('/filemanager/img/slide3.png')}}" alt="Slide2" style="width:100%">
     </div>
-    <div class="column">
+    <div class="col-4">
         <img src="{{url('/filemanager/img/slide2.png')}}" alt="Slide3" style="width:100%">
     </div>
 </div>
