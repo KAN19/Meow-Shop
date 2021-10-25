@@ -35,9 +35,10 @@ $config = [
             @csrf
             <div class="row p-3">
                 <div class="col-md-9">
-                    <div class="form-group">
+                    <div class="form-group has-validation">
                         <label>Product Name</label>
                         <input class="form-control" name="prd_name" placeholder="Please Enter Product Name" />
+
                         @error('prd_name')
                         <div class="text-danger">
                             {{ $message }}
@@ -54,26 +55,28 @@ $config = [
                                 {{ $message }}
                     </div>
                     @enderror --}}
-                </div>
 
-                <div class="form-group">
-                    <label>Image
-                        <div class="btn btn-sm btn-primary " data-toggle="modal" data-target="#modal-list-images">
-                            Add
+                    <div class="form-group">
+                        <label>Image
+                            <div class="btn btn-sm btn-outline-primary " data-toggle="modal"
+                                data-target="#modal-list-images">
+                                Add
+                            </div>
+                        </label>
+                        <input type="text" class="form-control" name="prd_list_images" placeholder="Add image"
+                            id="listImages" style="display: none;" />
+                        <div class="row" id="images-container">
+
                         </div>
-                    </label>
-                    <input type="text" class="form-control" name="prd_list_images" placeholder="Add image"
-                        id="listImages" style="display: none;" />
-                    <div class="row" id="images-container">
 
+                        @error('prd_list_images')
+                        <div class="text-danger">
+                            {{ $message }}
+                        </div>
+                        @enderror
                     </div>
-
-                    @error('prd_list_images')
-                    <div class="text-danger">
-                        {{ $message }}
-                    </div>
-                    @enderror
                 </div>
+
             </div>
 
             <div class="col-md-3">
@@ -106,7 +109,7 @@ $config = [
 
                 <div class="form-group ">
                     <label>Discount %</label>
-                    <input type="number" min="0" max="100" value="0" class="form-control" name="prd_discount"
+                    <input type="number" min="0" max="100" value="0" class="form-control w-50" name="prd_discount"
                         placeholder="Please Enter Product Price" />
                     @error('prd_discount')
                     <div class="text-danger">
@@ -149,9 +152,12 @@ $config = [
                     </div>
                     @enderror
                 </div>
-            </div>
-            <button type="submit" class="btn btn-primary"> Save data</button>
 
+                <div class="form-group d-flex justify-content-end">
+                    <a class="btn btn-outline-danger mr-2" href="{{route('show-product')}}"> Back</a>
+                    <button type="submit" class="btn btn-outline-primary"> Save data</button>
+                </div>
+            </div>
     </div>
     <form>
 </div>
@@ -169,7 +175,7 @@ $config = [
             </div>
             <div class="modal-body">
                 <iframe
-                    src="{{url('/filemanager/dialog.php?akey=ApHqJ79hkX8BdPgDhysilgfBsZ5QuZMBw4M0UsY2DGw&field_id=image')}}"
+                    src="{{url('/filemanager/dialog.php?akey=ApHqJ79hkX8BdPgDhysilgfBsZ5QuZMBw4M0UsY2DGw&field_id=image&type=1')}}"
                     style="width: 100%; height:400px; border: 1px solid LightGray"> </iframe>
 
             </div>
@@ -193,7 +199,7 @@ $config = [
             </div>
             <div class="modal-body">
                 <iframe
-                    src="{{url('/filemanager/dialog.php?akey=ApHqJ79hkX8BdPgDhysilgfBsZ5QuZMBw4M0UsY2DGw&field_id=listImages')}}"
+                    src="{{url('/filemanager/dialog.php?akey=ApHqJ79hkX8BdPgDhysilgfBsZ5QuZMBw4M0UsY2DGw&field_id=listImages&type=1')}}"
                     style="width: 100%; height:400px; border: 1px solid LightGray"> </iframe>
 
             </div>
@@ -226,16 +232,16 @@ $(document).ready(function() {
                 let realUrl = "{{url('/')}}" + arrImages[i];
                 realUrl = realUrl.replace(/\s/g, '%20');
                 console.log('real url', realUrl);
-                html += `   <div class="col-md-4">
-                            <img src=${realUrl}  style="width: 100%;">
+                html += `   <div class="col-md-3 mb-4" style=" cursor: pointer;" data-toggle="modal" data-target="#modal-list-images" >
+                            <img src=${realUrl}  style="width: 150px; height: 150px; object-fit: cover;">
                         </div>`
             }
         } catch (error) {
             let realUrl = "{{url('/')}}" + imageLinks;
             realUrl = realUrl.replace(/\s/g, '%20');
             console.log('real url', realUrl);
-            html += `   <div class="col-md-4">
-                            <img src=${realUrl}  style="width: 100%;">
+            html += `   <div class="col-md-3 mb-4" style=" cursor: pointer;" data-toggle="modal" data-target="#modal-list-images">
+                            <img src=${realUrl}  style="width: 150px; height: 150px; object-fit: cover;">
                         </div>`
         }
         console.log(html);
