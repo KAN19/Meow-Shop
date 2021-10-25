@@ -40,7 +40,7 @@ class ProductController extends Controller
             
         ]); 
 
-        // dd($request->prd_category);
+        // dd($request->all());
         $product = new Product(); 
         $product->name = $request->prd_name; 
         $product->slug = Str::slug($request->prd_name); 
@@ -50,7 +50,7 @@ class ProductController extends Controller
         $product->discount = $request->prd_discount / 100; 
         $product->description = $request->prd_description; 
         $product->image = $request->prd_ava; 
-        $product->list_image = $request->prd_images; 
+        $product->list_image = $request->prd_list_images; 
 
         $product->save(); 
 
