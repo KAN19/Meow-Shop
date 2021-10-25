@@ -18,23 +18,19 @@
 @section('content')
 <div class="slide-container">
 
-    <!-- Full-width images with number and caption text -->
     <div class="mySlides fade">
         <div class="numbertext">1 / 3</div>
-        <img src="{{url('/img/slide1.jpg')}}" style="width:100%" />
-        <div class="text">Caption Text</div>
+        <img src="{{url('/img/slide1.png')}}" style="width:100%" />
     </div>
 
     <div class="mySlides fade">
         <div class="numbertext">2 / 3</div>
-        <img src="{{url('/img/slide1.jpg')}}" style="width:100%" />
-        <div class="text">Caption Two</div>
+        <img src="{{url('/img/slide2.png')}}" style="width:100%" />
     </div>
 
     <div class="mySlides fade">
         <div class="numbertext">3 / 3</div>
-        <img src="{{url('/img/slide1.jpg')}}" style="width:100%" />
-        <div class="text">Caption Three</div>
+        <img src="{{url('/img/slide3.png')}}" style="width:100%" />
     </div>
 
     <!-- Next and previous buttons -->
@@ -52,13 +48,13 @@
 
 <div class="row">
     <div class="column">
-        <img src="slide1.png" alt="Slide1" style="width:100%">
+        <img src="{{url('/img/slide1.png')}}" alt="Slide1" style="width:100%">
     </div>
     <div class="column">
-        <img src="slide2.png" alt="Slide2" style="width:100%">
+        <img src="{{url('/img/slide2.png')}}" alt="Slide2" style="width:100%">
     </div>
     <div class="column">
-        <img src="slide3.png" alt="Slide3" style="width:100%">
+        <img src="{{url('/img/slide3.png')}}" alt="Slide3" style="width:100%">
     </div>
 </div>
 
