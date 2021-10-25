@@ -10,30 +10,30 @@
 <script src="/js/home.js"></script>
 @endsection
 
+<!--
 @section('javascript')
 <script type="text/javascript" href="/js/home.js"> </script>
-@endsection
+@endsection -->
 
 @section('content')
-
-<div class="slideshow-container">
+<div class="slide-container">
 
     <!-- Full-width images with number and caption text -->
     <div class="mySlides fade">
         <div class="numbertext">1 / 3</div>
-        <img src="public\filemanager\img\slide1.png" style="width:100%">
+        <img src="{{url('/img/slide1.jpg')}}" style="width:100%" />
         <div class="text">Caption Text</div>
     </div>
 
     <div class="mySlides fade">
         <div class="numbertext">2 / 3</div>
-        <img src="public\filemanager\img\slide2.png" style="width:100%">
+        <img src="{{url('/img/slide1.jpg')}}" style="width:100%" />
         <div class="text">Caption Two</div>
     </div>
 
     <div class="mySlides fade">
         <div class="numbertext">3 / 3</div>
-        <img src="public\filemanager\img\slide3.png" style="width:100%">
+        <img src="{{url('/img/slide1.jpg')}}" style="width:100%" />
         <div class="text">Caption Three</div>
     </div>
 
@@ -49,5 +49,18 @@
     <span class="dot" onclick="currentSlide(2)"></span>
     <span class="dot" onclick="currentSlide(3)"></span>
 </div>
+
+<div class="row">
+    <div class="column">
+        <img src="slide1.png" alt="Slide1" style="width:100%">
+    </div>
+    <div class="column">
+        <img src="slide2.png" alt="Slide2" style="width:100%">
+    </div>
+    <div class="column">
+        <img src="slide3.png" alt="Slide3" style="width:100%">
+    </div>
+</div>
+
 
 @endsection
