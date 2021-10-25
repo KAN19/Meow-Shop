@@ -2,6 +2,7 @@
 
 @section('style')
     <link rel="stylesheet" href="/css/app.css">
+    <script src="https://kit.fontawesome.com/a076d05399.js"></script>
 @endsection
 
 @section('title', 'title ne')
