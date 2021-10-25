@@ -20,17 +20,17 @@
 
     <div class="mySlides fade">
         <div class="numbertext">1 / 3</div>
-        <img src="{{url('/img/slide1.png')}}" style="width:100%" />
+        <img src="{{url('/filemanager/img/slide1.png')}}" style="width:100%" />
     </div>
 
     <div class="mySlides fade">
         <div class="numbertext">2 / 3</div>
-        <img src="{{url('/img/slide2.png')}}" style="width:100%" />
+        <img src="{{url('/filemanager/img/slide2.png')}}" style="width:100%" />
     </div>
 
     <div class="mySlides fade">
         <div class="numbertext">3 / 3</div>
-        <img src="{{url('/img/slide3.png')}}" style="width:100%" />
+        <img src="{{url('/filemanager/img/slide3.png')}}" style="width:100%" />
     </div>
 
     <!-- Next and previous buttons -->
@@ -48,13 +48,13 @@
 
 <div class="row">
     <div class="column">
-        <img src="{{url('/img/slide1.png')}}" alt="Slide1" style="width:100%">
+        <img src="{{url('/filemanager/img/slide1.png')}}" alt="Slide1" style="width:100%">
     </div>
     <div class="column">
-        <img src="{{url('/img/slide2.png')}}" alt="Slide2" style="width:100%">
+        <img src="{{url('/filemanager/img/slide3.png')}}" alt="Slide2" style="width:100%">
     </div>
     <div class="column">
-        <img src="{{url('/img/slide3.png')}}" alt="Slide3" style="width:100%">
+        <img src="{{url('/filemanager/img/slide2.png')}}" alt="Slide3" style="width:100%">
     </div>
 </div>
 
