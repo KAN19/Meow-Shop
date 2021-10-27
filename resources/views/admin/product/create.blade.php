@@ -12,7 +12,10 @@
 
 @php
 $config = [
-"height" => "140",
+"margin-bottom" => "0",
+"marginBottom" => "0",
+"padding-bottom" => "0",
+"height" => "150",
 "toolbar" => [
 ['style', ['bold', 'italic', 'underline', 'clear']],
 ['font', ['strikethrough']],
@@ -36,7 +39,8 @@ $config = [
                 <div class="col-md-9">
                     <div class="form-group has-validation">
                         <label>Product Name</label>
-                        <input class="form-control" name="prd_name" placeholder="Please Enter Product Name" />
+                        <input class="form-control @error('prd_name') border border-danger @enderror " name="prd_name"
+                            placeholder="Please Enter Product Name" />
 
                         @error('prd_name')
                         <div class="text-danger">
@@ -47,7 +51,8 @@ $config = [
 
                     <div class="form-group has-validation">
                         <label>Short description</label>
-                        <textarea class="form-control" style="resize: none;" name="prd_short_descrip"
+                        <textarea class="form-control  @error('prd_short_descrip') border border-danger @enderror"
+                            maxlength="150" style="resize: none;" name="prd_short_descrip"
                             placeholder="Please Enter Product Name"> </textarea>
 
                         @error('prd_short_descrip')
@@ -61,8 +66,13 @@ $config = [
                         <label>Description</label>
                         <x-adminlte-text-editor name="prd_description" class="form-control"
                             placeholder="Please Enter Product description" :config="$config" />
-                    </div>
+                        @error('prd_description')
+                        <div class="text-danger">
+                            {{ $message }}
+                        </div>
+                        @enderror
 
+                    </div>
 
                     <div class="form-group">
                         <label>Image
@@ -74,21 +84,15 @@ $config = [
                         <input type="text" class="form-control" name="prd_list_images" placeholder="Add image"
                             id="listImages" style="display: none;" />
                         <div class="row" id="images-container">
-
                         </div>
-
-                        @error('prd_list_images')
-                        <div class="text-danger">
-                            {{ $message }}
-                        </div>
-                        @enderror
                     </div>
                 </div>
 
                 <div class="col-md-3">
                     <div class="form-group">
                         <label>Category</label>
-                        <select name="prd_category" class="form-control">
+                        <select name="prd_category"
+                            class="form-control  @error('prd_category') border border-danger @enderror">
                             <option value="">SELECT ONE</option>
                             @foreach ($cates as $item)
                             <option value="{{$item->id}}">{{$item->name}}</option>
@@ -104,8 +108,8 @@ $config = [
 
                     <div class="form-group">
                         <label>Price</label>
-                        <input type="number" class="form-control" name="prd_price"
-                            placeholder="Please Enter Product Price" />
+                        <input type="number" class="form-control @error('prd_price') border border-danger @enderror"
+                            name="prd_price" placeholder="Please Enter Product Price" />
                         @error('prd_price')
                         <div class="text-danger">
                             {{ $message }}
@@ -151,16 +155,17 @@ $config = [
                         </label>
                         <input type="text" class="form-control" name="prd_ava" placeholder="Add image" id="image"
                             style="display: none;" />
-                        <div id="ava_blank" class="image__ava-blank" data-toggle="modal" data-target="#modal-ava-image">
+                        <div id="ava_blank" class="image__ava-blank @error('prd_ava') border border-danger @enderror"
+                            data-toggle="modal" data-target="#modal-ava-image">
                             <div>Click to add image</div>
                         </div>
-                        <img id="image-ava" src="" class="image__ava">
-
                         @error('prd_ava')
                         <div class="text-danger">
                             {{ $message }}
                         </div>
                         @enderror
+                        <img id="image-ava" src="" class="image__ava">
+
                     </div>
 
 
@@ -182,6 +187,10 @@ $config = [
 @section('js')
 <script>
 $(document).ready(function() {
+    //Lam bien mat cai validation cua summernote text area
+    // $('.invalid-feedback ').addClass('disappear-overide');
+    $('span.invalid-feedback').remove();
+
     $('#modal-ava-image').on('hide.bs.modal', event => {
         const imageLink = $('input#image').val();
         if (imageLink) {

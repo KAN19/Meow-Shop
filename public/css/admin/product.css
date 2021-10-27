@@ -4,6 +4,10 @@
     object-fit: cover;
 }
 
+.disappear-overide {
+    display: none !important;
+}
+
 .image__ava-blank {
     display: flex;
     justify-content: center;
