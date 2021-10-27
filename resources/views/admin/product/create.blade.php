@@ -10,7 +10,6 @@
 <link rel="stylesheet" href="/css/admin/product.css">
 @stop
 
-
 @php
 $config = [
 "height" => "140",
@@ -45,16 +44,25 @@ $config = [
                         </div>
                         @enderror
                     </div>
+
+                    <div class="form-group has-validation">
+                        <label>Short description</label>
+                        <textarea class="form-control" style="resize: none;" name="prd_short_descrip"
+                            placeholder="Please Enter Product Name"> </textarea>
+
+                        @error('prd_short_descrip')
+                        <div class="text-danger">
+                            {{ $message }}
+                        </div>
+                        @enderror
+                    </div>
+
                     <div class="form-group">
                         <label>Description</label>
                         <x-adminlte-text-editor name="prd_description" class="form-control"
                             placeholder="Please Enter Product description" :config="$config" />
-
-                        {{-- @error('prd_description')
-                            <div class="text-danger">
-                                {{ $message }}
                     </div>
-                    @enderror --}}
+
 
                     <div class="form-group">
                         <label>Image
@@ -77,85 +85,89 @@ $config = [
                     </div>
                 </div>
 
-            </div>
+                <div class="col-md-3">
+                    <div class="form-group">
+                        <label>Category</label>
+                        <select name="prd_category" class="form-control">
+                            <option value="">SELECT ONE</option>
+                            @foreach ($cates as $item)
+                            <option value="{{$item->id}}">{{$item->name}}</option>
+                            @endforeach
+                        </select>
 
-            <div class="col-md-3">
-                <div class="form-group">
-                    <label>Category</label>
-                    <select name="prd_category" class="form-control">
-                        <option value="">SELECT ONE</option>
-                        @foreach ($cates as $item)
-                        <option value="{{$item->id}}">{{$item->name}}</option>
-                        @endforeach
-                    </select>
-
-                    @error('prd_category')
-                    <div class="text-danger">
-                        {{ $message }}
-                    </div>
-                    @enderror
-                </div>
-
-                <div class="form-group">
-                    <label>Price</label>
-                    <input type="number" class="form-control" name="prd_price"
-                        placeholder="Please Enter Product Price" />
-                    @error('prd_price')
-                    <div class="text-danger">
-                        {{ $message }}
-                    </div>
-                    @enderror
-                </div>
-
-                <div class="form-group ">
-                    <label>Discount %</label>
-                    <input type="number" min="0" max="100" value="0" class="form-control w-50" name="prd_discount"
-                        placeholder="Please Enter Product Price" />
-                    @error('prd_discount')
-                    <div class="text-danger">
-                        {{ $message }}
-                    </div>
-                    @enderror
-                </div>
-
-                <div class="form-group ">
-                    <label>Image
-                        <div class="btn btn-sm btn-primary " data-toggle="modal" data-target="#modal-ava-image">
-                            Add
+                        @error('prd_category')
+                        <div class="text-danger">
+                            {{ $message }}
                         </div>
-                    </label>
-                    <input type="text" class="form-control" name="prd_ava" placeholder="Add image" id="image"
-                        style="display: none;" />
-                    <img id="image-ava" src="" class="image__ava">
+                        @enderror
+                    </div>
 
-                    @error('prd_ava')
-                    <div class="text-danger">
-                        {{ $message }}
+                    <div class="form-group">
+                        <label>Price</label>
+                        <input type="number" class="form-control" name="prd_price"
+                            placeholder="Please Enter Product Price" />
+                        @error('prd_price')
+                        <div class="text-danger">
+                            {{ $message }}
+                        </div>
+                        @enderror
                     </div>
-                    @enderror
-                </div>
-                <div class="form-group">
-                    <label>Visible</label>
-                    <div class="radio ">
-                        <label class="mr-3">
-                            <input type="radio" name="prd_status" value="1" checked>
-                            Enable
-                        </label>
-                        <label>
-                            <input type="radio" name="prd_status" value="0">
-                            Disable
-                        </label>
-                    </div>
-                    @error('prd_status')
-                    <div class="text-danger">
-                        {{ $message }}
-                    </div>
-                    @enderror
-                </div>
 
-                <div class="form-group d-flex justify-content-end">
-                    <a class="btn btn-outline-danger mr-2" href="{{route('show-product')}}"> Back</a>
-                    <button type="submit" class="btn btn-outline-primary"> Save data</button>
+                    <div class="form-group ">
+                        <label>Discount %</label>
+                        <input type="number" min="0" max="100" value="0" class="form-control w-50" name="prd_discount"
+                            placeholder="Please Enter Product Price" />
+                        @error('prd_discount')
+                        <div class="text-danger">
+                            {{ $message }}
+                        </div>
+                        @enderror
+                    </div>
+
+                    <div class="form-group">
+                        <label>Available</label>
+                        <div class="radio ">
+                            <label class="mr-3">
+                                <input type="radio" name="prd_is_stock" value="1" checked>
+                                In stock
+                            </label>
+                            <label>
+                                <input type="radio" name="prd_is_stock" value="0">
+                                Out of stock
+                            </label>
+                        </div>
+                        @error('prd_status')
+                        <div class="text-danger">
+                            {{ $message }}
+                        </div>
+                        @enderror
+                    </div>
+
+                    <div class="form-group ">
+                        <label>Image
+                            <div class="btn btn-sm btn-outline-warning d-none btn__edit" data-toggle="modal"
+                                data-target="#modal-ava-image">Edit
+                            </div>
+                        </label>
+                        <input type="text" class="form-control" name="prd_ava" placeholder="Add image" id="image"
+                            style="display: none;" />
+                        <div id="ava_blank" class="image__ava-blank" data-toggle="modal" data-target="#modal-ava-image">
+                            <div>Click to add image</div>
+                        </div>
+                        <img id="image-ava" src="" class="image__ava">
+
+                        @error('prd_ava')
+                        <div class="text-danger">
+                            {{ $message }}
+                        </div>
+                        @enderror
+                    </div>
+
+
+                    <div class="form-group d-flex justify-content-end">
+                        <a class="btn btn-outline-danger mr-2" href="{{route('show-product')}}"> Back</a>
+                        <button type="submit" class="btn btn-outline-primary"> Save data</button>
+                    </div>
                 </div>
             </div>
     </div>
@@ -163,53 +175,7 @@ $config = [
 </div>
 </div>
 
-<div class="modal fade bd-example-modal-lg" id="modal-ava-image" tabindex="-1" role="dialog"
-    aria-labelledby="myLargeModalLabel" aria-hidden="true">
-    <div class="modal-dialog modal-lg modal-xl">
-        <div class="modal-content">
-            <div class="modal-header">
-                <h5 class="modal-title" id="exampleModalLabel">Modal title</h5>
-                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                    <span aria-hidden="true">&times;</span>
-                </button>
-            </div>
-            <div class="modal-body">
-                <iframe
-                    src="{{url('/filemanager/dialog.php?akey=ApHqJ79hkX8BdPgDhysilgfBsZ5QuZMBw4M0UsY2DGw&field_id=image&type=1')}}"
-                    style="width: 100%; height:400px; border: 1px solid LightGray"> </iframe>
-
-            </div>
-            <div class="modal-footer">
-                <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-                <!-- <button type="button" class="btn btn-primary">Save changes</button> -->
-            </div>
-        </div>
-    </div>
-</div>
-
-<div class="modal fade bd-example-modal-lg" id="modal-list-images" tabindex="-1" role="dialog"
-    aria-labelledby="myLargeModalLabel" aria-hidden="true">
-    <div class="modal-dialog modal-lg modal-xl">
-        <div class="modal-content">
-            <div class="modal-header">
-                <h5 class="modal-title" id="exampleModalLabel">Modal title</h5>
-                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                    <span aria-hidden="true">&times;</span>
-                </button>
-            </div>
-            <div class="modal-body">
-                <iframe
-                    src="{{url('/filemanager/dialog.php?akey=ApHqJ79hkX8BdPgDhysilgfBsZ5QuZMBw4M0UsY2DGw&field_id=listImages&type=1')}}"
-                    style="width: 100%; height:400px; border: 1px solid LightGray"> </iframe>
-
-            </div>
-            <div class="modal-footer">
-                <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-                <!-- <button type="button" class="btn btn-primary">Save changes</button> -->
-            </div>
-        </div>
-    </div>
-</div>
+@include('admin.product.image-modal')
 
 @stop
 
@@ -218,9 +184,13 @@ $config = [
 $(document).ready(function() {
     $('#modal-ava-image').on('hide.bs.modal', event => {
         const imageLink = $('input#image').val();
-        const imageFullLink = "{{url('/')}}" + imageLink;
-        $('#image-ava').attr('src', imageLink);
-        console.log(imageFullLink)
+        if (imageLink) {
+            $('#ava_blank').addClass('d-none');
+            $('.btn__edit').addClass('d-inline');
+            const imageFullLink = "{{url('/')}}" + imageLink;
+            $('#image-ava').attr('src', imageLink);
+            console.log(imageFullLink)
+        }
     })
 
     $('#modal-list-images').on('hide.bs.modal', event => {
