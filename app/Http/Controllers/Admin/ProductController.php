@@ -53,6 +53,7 @@ class ProductController extends Controller
         $product->category_id = $request->prd_category; 
         $product->price = $request->prd_price; 
         $product->discount = $request->prd_discount / 100; 
+        $product->short_description = $request->prd_short_descrip; 
         $product->description = $request->prd_description; 
         $product->image = $request->prd_ava; 
         $product->list_image = $request->prd_list_images; 
