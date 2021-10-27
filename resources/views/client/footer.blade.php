@@ -1,139 +1,121 @@
-  <!-- Footer -->
-  
+  <!-- Footer -->  
   <footer
-          class="text-center text-lg-start bg-light font-weight-normal"
-          style="background-color: #ffffff"    
-          >               
-    <!-- Grid container -->
-    <!--div class="container p-4 pb-0"-->
-      <!-- Section: Links -->
+          class="text-lg-start bg-light font-weight-normal"
+          style="background-color: #ffffff">    
+          
+      <div class="container-fluid">
+    
+      <!-- Section: MeowShop name -->
       <section class="">
         <!--Grid row-->
         <div class="row">
           <!-- Grid column -->
-          <div class="col-md-3 col-lg-3 col-xl-3 mx-auto mt-3">
-            <h6 class="text-uppercase mb-4 font-weight-bold">
+          <div class="col-sm">
+            <div class="text-uppercase mb-4 font-weight-bold text-left">
               MeowShop logo
-            </h6>
-            <p>
+            </div>
+            <div>
               A few lines of detailed introduction about MeowShop.
-            </p>            
-            <!-- Facebook -->
-            <a
-               class="btn btn-outline-dark btn-floating m-1"
-               class="text-white"
-               role="button"
-               ><i class="fab fa-facebook-f"></i
-              ></a>
+            </div>            
+            <!-- Facebook -->    
+              <br><div>        
+                <a
+                  class="btn btn-outline-dark btn-floating m-1 rounded-circle"               
+                  role="button"
+                  ><i class="fab fa-facebook-f"></i
+                  ></a>             
 
-            <!-- Twitter -->
-            <a
-               class="btn btn-outline-dark btn-floating m-1"
-               class="text-white"
-               role="button"
-               ><i class="fab fa-twitter"></i
-              ></a>
+                <!-- Twitter -->
+                <a
+                  class="btn btn-outline-dark btn-floating m-1 rounded-circle"               
+                  role="button"
+                  ><i class="fab fa-twitter"></i
+                  ></a>
 
-            <!-- Google -->
-            <a
-               class="btn btn-outline-dark btn-floating m-1"
-               class="text-white"
-               role="button"
-               ><i class="fab fa-google"></i
-              ></a>
+                <!-- Google -->
+                <a
+                  class="btn btn-outline-dark btn-floating m-1 rounded-circle "               
+                  role="button"
+                  ><i class="fab fa-google"></i
+                  ></a>
 
-            <!-- Instagram -->
-            <a
-               class="btn btn-outline-dark btn-floating m-1"
-               class="text-white"
-               role="button"
-               ><i class="fab fa-instagram"></i
-              ></a>
-          <!--/div-->
+                <!-- Instagram -->
+                <a
+                  class="btn btn-outline-dark btn-floating m-1 rounded-circle"               
+                  role="button"
+                  ><i class="fab fa-instagram"></i
+                  ></a>
+              </div>
           </div>
-          <!-- Grid column -->
+            <!-- Grid column -->
 
-          <hr class="w-100 clearfix d-md-none" />
+            <hr class="w-100 clearfix d-md-none" />
 
-          <!-- Grid column -->
-          <div class="col-md-2 col-lg-2 col-xl-2 mx-auto mt-3">
-            <h6 class="text-uppercase mb-4 font-weight-bold">Shop</h6>
-            <p>
-              <a class="font-weight-normal">Our Store</a>
-            </p>
-            <p>
-              <a class="font-weight-normal">Cart</a>
-            </p>
-            <p>
-              <a class="font-weight-normal">My Account</a>
-            </p>           
-          </div>
-          <!-- Grid column -->
+            <!-- Grid column -->
+            <!-- Section: Shop-->
+            <div class = "col-sm">
+              <div class="row">
+                <div class="col-sm">
+                  <div class="text-uppercase mb-4 font-weight-bold">Shop</div>            
+                    <div class="font-weight-normal">Our Store</div>            
+                    <div class="font-weight-normal"><br>Cart</div>           
+                    <div class="font-weight-normal"><br>My Account</div>                    
+                </div>
+                <!-- Grid column -->
 
-          <hr class="w-100 clearfix d-md-none" />
+                <hr class="w-100 clearfix d-md-none" />
 
-          <!-- Grid column -->
-          <div class="col-md-3 col-lg-2 col-xl-2 mx-auto mt-3">
-            <h6 class="text-uppercase mb-4 font-weight-bold">
-              Help
-            </h6>
-            <p>
-              <a class="font-weight-normal">Contact</a>
-            </p>
-            <p>
-              <a class="font-weight-normal">FAQ</a>
-            </p>
-            <p>
-              <a class="font-weight-normal">Guides</a>
-            </p>           
-          </div>
+                <!-- Grid column -->
+                <!-- Section: Help-->
+                <div class="col-sm">
+                  <div class="text-uppercase mb-4 font-weight-bold">Help</div>
+                  <div class="font-weight-normal">Contact</div>            
+                  <div class="font-weight-normal"><br>FAQ</div>           
+                  <div class="font-weight-normal"><br>Guides</div>  
+                </div>
 
-          <!-- Grid column -->
-          <hr class="w-100 clearfix d-md-none" />
-          
-          <div class="col-md-3 col-lg-2 col-xl-2 mx-auto mt-3">
-            <h6 class="text-uppercase mb-4 font-weight-bold">
-              Sponsors
-            </h6>
-            <p>
-              <a class="font-weight-normal">Frisco</a>
-            </p>
-            <p>
-              <a class="font-weight-normal">Seresto</a>
-            </p>
-            <p>
-              <a class="font-weight-normal">Royal Cannin</a>
-            </p>           
-          </div>
-          <!-- Grid column -->
-        </div>
-        <!--Grid row-->
+                <!-- Grid column -->
+                <hr class="w-100 clearfix d-md-none" />
+                <!-- Grid column -->
+                
+                <!-- Section: Sponsors -->
+                <div class="col-sm">
+                  <div class="text-uppercase mb-4 font-weight-bold">Sponsors</div>
+                  <div class="font-weight-normal">Frisco</div>            
+                  <div class="font-weight-normal"><br>Seresto</div>           
+                  <div class="font-weight-normal"><br>Royal Cannin</div>  
+                </div>
+              </div>
+            </div>
+        </div>      
       </section>   
+
+      <!-- Grid column -->
 
       <hr class="my-3">
 
+      <!-- Grid column -->
       <!-- Section: Copyright -->
       <section class="p-3 pt-0">
-        <div class="row d-flex align-items-center">
-            <!-- Grid column -->
-              <div class="col-md-7 col-lg-8 text-center text-md-start">
-              <!-- Copyright -->
-                  <div class="col-6">
-                      © 2020 
-                      <a class="text-danger font-weight-bold"
-                      >Meow</a>
-                      <a class="font-weight-normal"
-                          >All Right Reseres</a>
-                  </div>
-              </div>      
-            <!-- Grid column -->
-              <div class="col-md-5 col-lg-4 ml-lg-0 text- text-md-end">            
-                  <a class="font-weight-bold">PRIVACY POLICY</a>   
-                  <a class="font-weight-bold">TERM OF SERVICE</a>
-                  <a class="font-weight-bold">SPONSORS</a>                  
-              </div>               
-            <!-- Grid column -->
+        <div class="row">
+            <div class="col-sm">              
+            <!-- Copyright -->
+                <div class="col-6">
+                    © 2021
+                    <a class="text-danger font-weight-bold"
+                    >Meow</a>
+                    <a class="font-weight-normal"
+                        >All Right Reseres</a>
+                </div>
+            </div>     
+            <div class="col-sm text-right">            
+                <a class="font-weight-bold">PRIVACY POLICY</a>&emsp;
+                <a class="font-weight-bold">TERM OF SERVICE</a>&emsp;
+                <a class="font-weight-bold">SPONSORS</a>                  
+            </div>   
+          
         </div>
       </section>    
+</div>
   </footer>
   <!-- Footer -->
