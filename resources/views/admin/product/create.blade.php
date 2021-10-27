@@ -40,7 +40,7 @@ $config = [
                     <div class="form-group has-validation">
                         <label>Product Name</label>
                         <input class="form-control @error('prd_name') border border-danger @enderror " name="prd_name"
-                            placeholder="Please Enter Product Name" />
+                            placeholder="Please Enter Product Name" value="{{old('prd_name')}}" />
 
                         @error('prd_name')
                         <div class="text-danger">
@@ -53,7 +53,7 @@ $config = [
                         <label>Short description</label>
                         <textarea class="form-control  @error('prd_short_descrip') border border-danger @enderror"
                             maxlength="150" style="resize: none;" name="prd_short_descrip"
-                            placeholder="Please Enter Product Name"> </textarea>
+                            placeholder="Short description">{{old('prd_short_descrip')}}</textarea>
 
                         @error('prd_short_descrip')
                         <div class="text-danger">
@@ -185,47 +185,8 @@ $config = [
 @stop
 
 @section('js')
-<script>
-$(document).ready(function() {
-    //Lam bien mat cai validation cua summernote text area
-    // $('.invalid-feedback ').addClass('disappear-overide');
-    $('span.invalid-feedback').remove();
-
-    $('#modal-ava-image').on('hide.bs.modal', event => {
-        const imageLink = $('input#image').val();
-        if (imageLink) {
-            $('#ava_blank').addClass('d-none');
-            $('.btn__edit').addClass('d-inline');
-            const imageFullLink = "{{url('/')}}" + imageLink;
-            $('#image-ava').attr('src', imageLink);
-            console.log(imageFullLink)
-        }
-    })
-
-    $('#modal-list-images').on('hide.bs.modal', event => {
-        const imageLinks = $('input#listImages').val();
-        let html = '';
-        try {
-            const arrImages = $.parseJSON(imageLinks);
-            for (let i = 0; i < arrImages.length; i++) {
-                let realUrl = "{{url('/')}}" + arrImages[i];
-                realUrl = realUrl.replace(/\s/g, '%20');
-                console.log('real url', realUrl);
-                html += `   <div class="col-md-3 mb-4" style=" cursor: pointer;" data-toggle="modal" data-target="#modal-list-images" >
-                            <img src=${realUrl}  style="width: 150px; height: 150px; object-fit: cover;">
-                        </div>`
-            }
-        } catch (error) {
-            let realUrl = "{{url('/')}}" + imageLinks;
-            realUrl = realUrl.replace(/\s/g, '%20');
-            console.log('real url', realUrl);
-            html += `   <div class="col-md-3 mb-4" style=" cursor: pointer;" data-toggle="modal" data-target="#modal-list-images">
-                            <img src=${realUrl}  style="width: 150px; height: 150px; object-fit: cover;">
-                        </div>`
-        }
-        console.log(html);
-        $('#images-container').html(html);
-    })
-});
+<script src="/js/admin/productModal.js"></script>
+<script type="text/javascript">
+var url = "{{url('/')}}";
 </script>
 @stop

@@ -45,8 +45,8 @@ Route::prefix('admin')->group(function() {
         Route::get('create', [ProductController::class, 'showCreateProduct'])->name('create-product');
         Route::post('create', [ProductController::class, 'storeProduct']);
 
-        Route::get('edit/{slug}', [CategoryController::class, 'showEditProduct'])->name('edit-product');
-        Route::put('edit/{slug}', [CategoryController::class, 'updateProduct']); 
+        Route::get('edit/{slug}', [ProductController::class, 'showEditProduct'])->name('edit-product');
+        Route::put('edit/{slug}', [ProductController::class, 'updateProduct']); 
 
         // Route::get('delete/{id}', [CategoryController::class, 'deleteCategory'])->name('delete-category');
 

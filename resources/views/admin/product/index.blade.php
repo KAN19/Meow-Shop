@@ -36,7 +36,7 @@
                         <td>{{$product->status ? 'Hiện' : 'Ẩn'}}</td>
                         <td class="center"><i class="fas fa-trash"></i><a href="#"> Delete</a></td>
                         <td class="center"><i class="fas fa-pencil-alt"></i> <a
-                                href="{{route('edit-product')}}">Edit</a></td>
+                                href="{{route('edit-product', $product->slug)}}">Edit</a></td>
                     </tr>
                     @endforeach
                 </tbody>

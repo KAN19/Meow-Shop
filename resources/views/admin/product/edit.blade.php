@@ -3,11 +3,11 @@
 @section('title', 'Product')
 
 @section('content_header')
-    <h1>Product</h1>
+<h1>Product</h1>
 @stop
 
 @section('content')
-    <div>
-       Edit product
-    </div>
+<div>
+    Edit product
+</div>
 @stop

@@ -65,9 +65,9 @@ class ProductController extends Controller
 
     public function showEditProduct($slug)
     {
-        // $category = category::where('slug',$slug)->first(); 
+        $product = Product::where('slug',$slug)->first(); 
         
-        // return view('admin.category.edit', compact('category'));
+        return view('admin.product.edit', compact('product'));
         
     }
 
