@@ -55,9 +55,9 @@ Route::prefix('admin')->group(function() {
     Route::prefix('media')->group(function() {
         Route::get('', [MediaController::class, 'index'])->name('show-media');
         
-        Route::post('/upload', [MediaController::class, 'storeMedia'])->name('upload-media');
+        // Route::post('/upload', [MediaController::class, 'storeMedia'])->name('upload-media');
 
-        Route::get('/{id}', [MediaController::class, 'showEditMedia'])->name('edit-media');
+        // Route::get('/{id}', [MediaController::class, 'showEditMedia'])->name('edit-media');
 
         // Route::get('create', [CategoryController::class, 'showCreateCategory'])->name('create-category');
         // Route::post('create', [CategoryController::class, 'storeCategory']);
