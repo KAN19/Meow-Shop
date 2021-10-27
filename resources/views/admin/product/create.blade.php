@@ -65,7 +65,8 @@ $config = [
                     <div class="form-group">
                         <label>Description</label>
                         <x-adminlte-text-editor name="prd_description" class="form-control"
-                            placeholder="Please Enter Product description" :config="$config" />
+                            placeholder="Please Enter Product description" placeholder="Write some text..."
+                            :config="$config">{{old('prd_description')}}</x-adminlte-text-editor>
                         @error('prd_description')
                         <div class="text-danger">
                             {{ $message }}
@@ -109,7 +110,7 @@ $config = [
                     <div class="form-group">
                         <label>Price</label>
                         <input type="number" class="form-control @error('prd_price') border border-danger @enderror"
-                            name="prd_price" placeholder="Please Enter Product Price" />
+                            name="prd_price" placeholder="Please Enter Product Price" value="{{old('prd_price')}}" />
                         @error('prd_price')
                         <div class="text-danger">
                             {{ $message }}
