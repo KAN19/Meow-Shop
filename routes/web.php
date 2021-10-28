@@ -20,6 +20,12 @@ Route::get('/', function () {
     return view('client.home.index');
 });
 
+
+Route::get('/products', function () {
+    return view('client.products.index');
+});
+
+
 Route::prefix('admin')->group(function() {
 
     Route::get('/', function () {
