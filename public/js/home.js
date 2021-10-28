@@ -1,7 +1,5 @@
 $(document).ready(function () { });
 
-require('./bootstrap');
-
 var slideIndex = 1;
 showSlides(slideIndex);
 
@@ -31,7 +29,9 @@ function showSlides(n) {
     dots[slideIndex - 1].className += " active";
 }
 
-// Automatic slideshow
+//Automatic slideshow
+// var slideIndex = 0;
+// showSlides();
 // function showSlides(n) {
 //     var i;
 //     var slides = document.getElementsByClassName("mySlides");
