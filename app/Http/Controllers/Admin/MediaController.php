@@ -15,8 +15,9 @@ class MediaController extends Controller
      */
     public function index()
     {
-        $listImages = Media::all(); 
-        return view('admin.media.index2', compact('listImages')); 
+        // $listImages = Media::all(); 
+        // return view('admin.media.index2', compact('listImages')); 
+        return view('admin.media.index'); 
     }
 
     public function storeMedia(Request $request)
