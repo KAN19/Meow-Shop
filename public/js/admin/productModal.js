@@ -3,6 +3,20 @@ $(document).ready(function () {
     // $('.invalid-feedback ').addClass('disappear-overide');
     $("span.invalid-feedback").remove();
 
+    //Thay doi hinh anh khi load lan dau tien (neu co)
+    const imageLink = $("input#image").val();
+    if (imageLink) {
+        $("#ava_blank").addClass("d-none");
+        $(".btn__edit").addClass("d-inline");
+        const imageFullLink = url + imageLink;
+        $("#image-ava").attr("src", imageLink);
+        console.log(imageFullLink);
+    }
+    //thay doi list anh khi load lan dau
+    const imageLinks = $("input#listImages").val();
+    let html = "";
+
+    //Thay doi anh sau khi an modal
     $("#modal-ava-image").on("hide.bs.modal", (event) => {
         const imageLink = $("input#image").val();
         if (imageLink) {
