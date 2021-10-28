@@ -1,5 +1,5 @@
   <!-- Footer -->  
-  <footer
+<footer
           class="text-lg-start bg-light font-weight-normal"
           style="background-color: #ffffff">    
           
@@ -17,34 +17,35 @@
             <div>
               A few lines of detailed introduction about MeowShop.
             </div>            
-            <!-- Facebook -->    
+                  <!-- Facebook -->    
               <br><div>        
+
                 <a
-                  class="btn btn-outline-dark btn-floating m-1 rounded-circle"               
+                  class="btn btn-outline-dark  m-1 rounded-circle " style="width: 39px; heigt: 30px"               
                   role="button"
                   ><i class="fab fa-facebook-f"></i
                   ></a>             
 
                 <!-- Twitter -->
                 <a
-                  class="btn btn-outline-dark btn-floating m-1 rounded-circle"               
-                  role="button"
-                  ><i class="fab fa-twitter"></i
-                  ></a>
+                  class="btn btn-outline-dark m-1 rounded-circle" style="width: 40px; heigt: 30px"               
+                  role="button">
+                  <i class="fab fa-twitter"></i>
+                  </a>
 
                 <!-- Google -->
                 <a
-                  class="btn btn-outline-dark btn-floating m-1 rounded-circle "               
-                  role="button"
-                  ><i class="fab fa-google"></i
-                  ></a>
+                  class="btn btn-outline-dark m-1 rounded-circle" style="width: 40px; heigt: 30px"            
+                  role="button">
+                  <i class="fab fa-google"></i>
+                  </a>
 
                 <!-- Instagram -->
                 <a
-                  class="btn btn-outline-dark btn-floating m-1 rounded-circle"               
-                  role="button"
-                  ><i class="fab fa-instagram"></i
-                  ></a>
+                  class="btn btn-outline-dark m-1 rounded-circle" style="width: 40px; heigt: 30px"              
+                  role="button">
+                  <i class="fab fa-instagram"></i>
+                  </a>
               </div>
           </div>
             <!-- Grid column -->
@@ -101,14 +102,18 @@
             <div class="col-sm">              
             <!-- Copyright -->
                 <div class="col-6">
-                    © 2021
-                    <a class="text-danger font-weight-bold"
-                    >Meow</a>
-                    <a class="font-weight-normal"
-                        >All Right Reseres</a>
+                    <a class = "text-secondary"> 
+                      © 2021
+                    </a>
+                    <a class="text-danger font-weight-bold">
+                      Meow
+                    </a>
+                    <a class="font-weight-normal text-secondary">
+                      All Right Reseres
+                    </a>
                 </div>
             </div>     
-            <div class="col-sm text-right">            
+            <div class="col-sm text-right text-secondary">            
                 <a class="font-weight-bold">PRIVACY POLICY</a>&emsp;
                 <a class="font-weight-bold">TERM OF SERVICE</a>&emsp;
                 <a class="font-weight-bold">SPONSORS</a>                  
@@ -116,6 +121,6 @@
           
         </div>
       </section>    
-</div>
-  </footer>
+  </div>
+</footer>
   <!-- Footer -->
