@@ -1,13 +1,1 @@
-.modal-xl {
-    /* width: 100% !important;
-    max-width: 100% !important; */
-}
 
-@media only screen and (min-width: 576px) {
-    .modal-xl {
-        /* background-color: lightblue; */
-        width: 100% !important;
-        max-width: 100% !important;
-        margin: 0 auto !important;
-    }
-}

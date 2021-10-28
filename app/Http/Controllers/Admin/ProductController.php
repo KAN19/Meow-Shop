@@ -28,29 +28,34 @@ class ProductController extends Controller
     
     public function storeProduct(Request $request)
     {
+        // dd($request->all());
+
         $request->validate([
             'prd_name' => 'required',
             'prd_category' => 'required',
             'prd_price' => 'required|numeric',
             'prd_discount' => 'nullable|numeric',
+            "prd_short_descrip" => 'required|max:150',
             'prd_description' => 'required',
+            "prd_ava" => 'required',
         ], [
-            'prd_name.required' => 'Nhap ten san pham dzo bro',
-            'prd_category' => 'required',
-            
+            'prd_name.required' => 'This field is required',
+            'prd_category.required' =>  'This field is required',
+            'prd_price.required' =>  'This field is required',
+            "prd_short_descrip.required" => 'This field is required',
+            "prd_description.required" => 'This field is required',
+            "prd_ava.required" => 'This field is required',
         ]); 
 
-        // dd($request->prd_category);
         $product = new Product(); 
         $product->name = $request->prd_name; 
         $product->slug = Str::slug($request->prd_name); 
-        $product->status = $request->prd_status; 
         $product->category_id = $request->prd_category; 
         $product->price = $request->prd_price; 
         $product->discount = $request->prd_discount / 100; 
         $product->description = $request->prd_description; 
         $product->image = $request->prd_ava; 
-        $product->list_image = $request->prd_images; 
+        $product->list_image = $request->prd_list_images; 
 
         $product->save(); 
 
