@@ -103,3 +103,18 @@ a {
         padding: 1rem 2rem;
     }
 }
+
+/*Follow*/
+
+.follow-us {
+    background-color: #d1d5db;
+}
+
+.follow-us p {
+    padding: 1rem 0 1rem;
+}
+
+.follow-slide {
+    background-color: #d1d5db;
+    margin-top: -10px;
+}

@@ -59,4 +59,32 @@
     <button class="show-button" role="button">Show all</button>
 </div>
 
+<!--follow us-->
+<br>
+<div class="follow-us">
+    <p class="h4 text-center">FOLLOW US ON FACEBOOK</p>
+</div>
+<div class="follow-slide">
+    <img src="https://picsum.photos/265" alt="Slide1" style="width: 265px; height: 265px">
+    <img src="https://picsum.photos/265" alt="Slide2" style="width: 265px; height: 265px">
+    <img src="https://picsum.photos/265" alt="Slide3" style="width: 265px; height: 265px">
+    <img src="https://picsum.photos/265" alt="Slide4" style="width: 265px; height: 265px">
+    <img src="https://picsum.photos/265" alt="Slide5" style="width: 265px; height: 265px">
+    <!-- <div class="col-sm follow-content">
+        <img src="https://picsum.photos/250" alt="Slide1" style="width:100%">
+    </div>
+    <div class="col-sm follow-content">
+        <img src="https://picsum.photos/250" alt="Slide2" style="width:100%">
+    </div>
+    <div class="col-sm follow-content">
+        <img src="https://picsum.photos/250" alt="Slide3" style="width:100%">
+    </div>
+    <div class="col-sm follow-content">
+        <img src="https://picsum.photos/250" alt="Slide3" style="width:100%">
+    </div>
+    <div class="col-sm follow-content">
+        <img src="https://picsum.photos/250" alt="Slide3" style="width:100%">
+    </div> -->
+</div>
+
 @endsection
