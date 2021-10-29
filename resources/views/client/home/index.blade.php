@@ -17,14 +17,14 @@
     <p class="h3 text-center">Trending Products</p>
 </div>
 <div class="row justify-content-md-center" id="categories">
-    <div class="col col-lg-2">
-        <p class="h6 text-center text-danger">Cat Foods</p>
+    <div class="box-e col col-lg-2">
+        <a href="#" class="custom-underline">Cat Foods</a>
     </div>
-    <div class="col col-md-auto">
-        <p class="h6 text-center">Dog Foods</p>
+    <div class="box-e col col-lg-2">
+        <a href="#" class="custom-underline">Dog Foods</a>
     </div>
-    <div class="col col-lg-2">
-        <p class="h6 text-center">Pet Toys</p>
+    <div class="box-e col col-lg-2">
+        <a href="#" class="custom-underline">Pet Toys</a>
     </div>
 </div>
 
@@ -34,22 +34,22 @@
         <div class="col-sm">
             <img src="https://picsum.photos/230" alt="product1" style="width:100%">
             <p class="h6 text-center">Product's Name</p>
-            <p class="h6 text-center"><strong>9.99$</strong></p>
+            <p class="h6 text-center price"><strong>9.99$</strong></p>
         </div>
         <div class="col-sm">
             <img src="https://picsum.photos/230" alt="product2" style="width:100%">
             <p class="h6 text-center">Product's Name</p>
-            <p class="h6 text-center"><strong>9.99$</strong></p>
+            <p class="h6 text-center price"><strong>9.99$</strong></p>
         </div>
         <div class="col-sm">
             <img src="https://picsum.photos/230" alt="product3" style="width:100%">
             <p class="h6 text-center">Product's Name</p>
-            <p class="h6 text-center"><strong>9.99$</strong></p>
+            <p class="h6 text-center price"><strong>9.99$</strong></p>
         </div>
         <div class="col-sm">
             <img src="https://picsum.photos/230" alt="product4" style="width:100%">
             <p class="h6 text-center">Product's Name</p>
-            <p class="h6 text-center"><strong>9.99$</strong></p>
+            <p class="h6 text-center price"><strong>9.99$</strong></p>
         </div>
     </div>
 </div>

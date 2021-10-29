@@ -2,15 +2,72 @@
     margin-bottom: 1rem;
 }
 
+/*style underline categories*/
+
 #categories {
     margin-bottom: 1rem;
+}
+
+a {
+    color: black;
+    display: block;
+    position: relative;
+    padding: 0.2em 0;
+}
+
+.box-e {
+    position: relative;
+    display: block;
+    width: 100%;
+    text-align: center;
+    cursor: pointer;
+}
+
+.custom-underline {
+    position: relative;
+    display: inline-block;
+    font-size: 20px;
+    font-weight: 400;
+    text-align: center;
+}
+
+.custom-underline, .custom-underline:hover, .custom-underline:focus, .custom-underline:active {
+    color: rgb(17, 1, 1);
+    text-decoration: none;
+}
+
+.custom-underline::after {
+    content: "";
+    position: absolute;
+}
+
+/*style underline*/
+
+.box-e .custom-underline::after {
+    top: 85%;
+    height: 2px;
+    width: 0%;
+    left: 5%;
+    background-color: rgba(247, 25, 25, 0.6);
+    transition: 0.5s ease all .2s;
+}
+
+.box-e:hover .custom-underline::after {
+    width: 90%;
+    transition: 0.3s ease all;
 }
 
 #products p {
     padding-top: 0.75rem;
 }
 
-/*Show All Button*/
+/*price*/
+
+.price {
+    margin-top: -10px;
+}
+
+/*'Show All' Button*/
 
 .show-button {
     background-color: rgb(241, 239, 239);
