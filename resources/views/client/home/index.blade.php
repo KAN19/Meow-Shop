@@ -66,6 +66,7 @@
     <p class="h3 text-center">Our Partners</p>
     <p class="h7 text-center">Vision, commitment, partnership</p>
 </div>
+
 <div class="row partner-photo">
     <div class="col-sm">
         <img src="/image/logo1.png" alt="logo1" style="width:55%">
