@@ -1,3 +1,7 @@
+* {
+    box-sizing: border-box;
+}
+
 #trendingProducts {
     margin-bottom: 1rem;
 }
@@ -14,6 +18,8 @@ a {
     position: relative;
     padding: 0.2em 0;
 }
+
+/*style underline*/
 
 .box-e {
     position: relative;
@@ -41,8 +47,6 @@ a {
     position: absolute;
 }
 
-/*style underline*/
-
 .box-e .custom-underline::after {
     top: 85%;
     height: 2px;
@@ -57,13 +61,32 @@ a {
     transition: 0.3s ease all;
 }
 
+/*style product img*/
+
 #products p {
     padding-top: 0.75rem;
 }
 
+#products img {
+    transition: transform .5s, filter 1.5s ease-in-out;
+    margin-bottom: -6px;
+    cursor: pointer;
+}
+
+#products img:hover {
+    filter: grayscale(0);
+    transform: scale(1.01);
+    cursor: pointer;
+}
+
+.product-name:hover {
+    cursor: pointer;
+    text-decoration: underline;
+}
+
 /*price*/
 
-.price {
+.product-price {
     margin-top: -10px;
 }
 
@@ -104,6 +127,28 @@ a {
     }
 }
 
+/*Style Partnership*/
+
+.partner-photo img {
+    margin: 10px 0 0 65px;
+    padding-left: 45px;
+    border-radius: 5px;
+    -webkit-filter: grayscale(100%);
+    filter: grayscale(100%);
+}
+
+.partner-photo p {
+    margin-top: 8px;
+    align-items: center;
+    margin-left: 70px;
+    padding-left: 50px;
+}
+
+.partner-photo img:hover {
+    cursor: pointer;
+    transform: scale(1.01);
+}
+
 /*Follow*/
 
 .follow-us {
@@ -114,7 +159,24 @@ a {
     padding: 1rem 0 1rem;
 }
 
-.follow-slide {
+.follow-photos {
     background-color: #d1d5db;
     margin-top: -10px;
 }
+
+.follow-photos img {
+    transition: transform .5s, filter 1.5s ease-in-out;
+    flex-direction: column;
+}
+
+.follow-photos img:hover {
+    filter: grayscale(0);
+    transform: scale(1.01);
+}
+
+/* img {
+    width: 10%;
+    height: auto;
+} */
+
+/*our partnership*/
