@@ -32,8 +32,9 @@ $config = [
 @section('content')
 <div id="page-wrapper">
     <div class="container-fluid bg-white">
-        <form action="{{route('create-product')}}" method="POST">
+        <form action="{{route('edit-product', $product->slug)}}" method="POST">
             @csrf
+            @method('PUT')
             <div class="row p-3">
                 <div class="col-md-9">
                     <div class="form-group has-validation">
@@ -82,7 +83,7 @@ $config = [
                             </div>
                         </label>
                         <input type="text" class="form-control" name="prd_list_images" placeholder="Add image"
-                            id="listImages" style="display: none;" />
+                            value="{{$product->list_image}}" id="listImages" style="display: none;" />
                         <div class="row" id="images-container">
                         </div>
                     </div>
@@ -123,7 +124,7 @@ $config = [
 
                     <div class="form-group ">
                         <label>Discount %</label>
-                        <input type="number" min="0" max="100" value="{{$product->discount}}" class="form-control w-50"
+                        <input type="number" value="{{$product->discount}}" min="0" max="100" class="form-control w-50"
                             name="prd_discount" placeholder="Please Enter Product Price" />
                         @error('prd_discount')
                         <div class="text-danger">

@@ -25,12 +25,9 @@ class ProductController extends Controller
         return view('admin.product.create', compact('cates'));
         
     }
-    
-    public function storeProduct(Request $request)
-    {
-        // dd($request->all());
 
-        $request->validate([
+    protected function validateProduct (Request $request) {
+        $result = $request->validate([
             'prd_name' => 'required',
             'prd_category' => 'required',
             'prd_price' => 'required|numeric',
@@ -46,13 +43,20 @@ class ProductController extends Controller
             "prd_description.required" => 'This field is required',
             "prd_ava.required" => 'This field is required',
         ]); 
-
+    }
+    
+    public function storeProduct(Request $request)
+    {
+        // dd($request->all());
+        $this->validateProduct($request);
+     
         $product = new Product(); 
         $product->name = $request->prd_name; 
         $product->slug = Str::slug($request->prd_name); 
         $product->category_id = $request->prd_category; 
         $product->price = $request->prd_price; 
         $product->discount = $request->prd_discount / 100; 
+        $product->is_stock = $request->prd_is_stock; 
         $product->short_description = $request->prd_short_descrip; 
         $product->description = $request->prd_description; 
         $product->image = $request->prd_ava; 
@@ -66,18 +70,31 @@ class ProductController extends Controller
     public function showEditProduct($slug)
     {
         $product = Product::where('slug',$slug)->first(); 
+        $product->discount *= 100; 
         $cates = category::orderby('name', 'ASC')->get();
         return view('admin.product.edit', compact('product', 'cates'));
     }
 
     public function updateProduct(Request $request, $slug)
     {
-        // $category = category::where('slug',$slug)->first(); 
-        // $category->name = $request->cateName; 
-        // $category->slug = Str::slug($request->cateName);
-        // $category->save();
+        $product = Product::where('slug',$slug)->first(); 
+        // dd($request); 
+        $this->validateProduct($request);
+        
+        $product->name = $request->prd_name; 
+        $product->slug = Str::slug($request->prd_name); 
+        $product->category_id = $request->prd_category; 
+        $product->price = $request->prd_price; 
+        $product->discount = $request->prd_discount / 100; 
+        $product->is_stock = $request->prd_is_stock; 
+        $product->short_description = $request->prd_short_descrip; 
+        $product->description = $request->prd_description; 
+        $product->image = $request->prd_ava; 
+        $product->list_image = $request->prd_list_images; 
 
-        // return redirect()->route('show-category'); 
+        $product->save(); 
+
+        return redirect()->route('show-product'); 
 
     }
 
