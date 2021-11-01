@@ -1,0 +1,44 @@
+.form-control:focus {
+  box-shadow: none;
+} 
+
+.form-control::placeholder {
+  font-size: 0.95rem;
+  color: #aaa;
+  font-style: italic;
+}
+.box .inner {
+  background-color: #fff;
+}
+.box {
+    padding: 0 50px 0 50px;
+}
+.shop {
+  background-color: #d1d5db;
+  height: 200px;
+}
+.shop p {
+  padding: 3rem;
+}
+.trendingproduct{
+  cursor: pointer;
+}
+.trendingname:hover {
+  transform: scale(1.01);
+}
+.imageproduct:hover{
+  cursor: pointer;
+  transform: scale(1.01);
+}
+.productname:hover {
+  text-decoration: underline;
+}
+.image1:hover{  
+  color: orangered; 
+}
+.image2:hover{  
+  color: orangered; 
+}
+.image3:hover{  
+  color: orangered; 
+}
