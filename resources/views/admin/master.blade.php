@@ -7,7 +7,6 @@
     <title>
         @yield('title')
     </title>
-
     <!-- Google Font: Source Sans Pro -->
     <link rel="stylesheet"
         href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,400i,700&display=fallback">
@@ -15,6 +14,9 @@
     <link rel="stylesheet" href="{{url('adminlte/plugins/fontawesome-free/css/all.min.css')}}">
     <!-- Theme style -->
     <link rel="stylesheet" href="{{url('adminlte/dist/css/adminlte.min.css')}}">
+    <!-- Summernote -->
+    <link rel="stylesheet" href="{{url('adminlte/plugins/summernote/summernote-bs4.min.css')}}">
+
     @yield('css')
 </head>
 
@@ -227,13 +229,6 @@
     </div>
     <!-- ./wrapper -->
 
-    <!-- jQuery UI 1.11.4 -->
-    <script src="{{url('adminlte/plugins/jquery-ui/jquery-ui.min.js')}}"></script>
-    <!-- Resolve conflict in jQuery UI tooltip with Bootstrap tooltip -->
-    <script>
-    $.widget.bridge('uibutton', $.ui.button)
-    </script>
-
     <script src="{{url('adminlte/plugins/jquery/jquery.min.js')}}"></script>
     <!-- Bootstrap 4 -->
     <script src="{{url('adminlte/plugins/bootstrap/js/bootstrap.bundle.min.js')}}"></script>
@@ -241,6 +236,8 @@
     <script src="{{url('adminlte/dist/js/adminlte.min.js')}}"></script>
     <!-- AdminLTE for demo purposes -->
     <script src="{{url('adminlte/dist/js/demo.js')}}"></script>
+    <!-- Summernote -->
+    <script src="{{url('adminlte/plugins/summernote/summernote-bs4.min.js')}}"></script>
 
     <!-- jQuery -->
     @yield('js')

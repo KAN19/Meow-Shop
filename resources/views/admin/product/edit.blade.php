@@ -1,4 +1,4 @@
-@extends('adminlte::page')
+@extends('admin.master')
 
 @section('title', 'Product')
 
@@ -39,39 +39,40 @@ $config = [
                 <div class="col-md-9">
                     <div class="form-group has-validation">
                         <label>Product Name</label>
-                        <input class="form-control @error('prd_name') border border-danger @enderror " name="prd_name"
-                            placeholder="Please Enter Product Name" value="{{$product->name}}" />
 
                         @error('prd_name')
                         <div class="text-danger">
                             {{ $message }}
                         </div>
                         @enderror
+                        <input class="form-control @error('prd_name') border border-danger @enderror " name="prd_name"
+                            placeholder="Please Enter Product Name" value="{{$product->name}}" />
+
                     </div>
 
                     <div class="form-group has-validation">
                         <label>Short description</label>
-                        <textarea class="form-control  @error('prd_short_descrip') border border-danger @enderror"
-                            maxlength="150" style="resize: none;" name="prd_short_descrip"
-                            placeholder="Short description">{{$product->short_description}}</textarea>
-
                         @error('prd_short_descrip')
                         <div class="text-danger">
                             {{ $message }}
                         </div>
                         @enderror
+                        <textarea class="form-control  @error('prd_short_descrip') border border-danger @enderror"
+                            maxlength="150" style="resize: none;" name="prd_short_descrip"
+                            placeholder="Short description">{{$product->short_description}}</textarea>
+
+
                     </div>
 
                     <div class="form-group">
                         <label>Description</label>
-                        <x-adminlte-text-editor name="prd_description" class="form-control"
-                            placeholder="Please Enter Product description" placeholder="Write some text..."
-                            :config="$config">{{$product->description}}</x-adminlte-text-editor>
                         @error('prd_description')
                         <div class="text-danger">
                             {{ $message }}
                         </div>
                         @enderror
+                        <textarea name="prd_description" id="summernote" p>{{$product->description}}</textarea>
+
 
                     </div>
 
@@ -195,6 +196,20 @@ $config = [
 @stop
 
 @section('js')
+<script>
+$('#summernote').summernote({
+    placeholder: 'Product description',
+    padding: 0,
+    height: 120,
+    toolbar: [
+        ['font', ['bold', 'underline', 'italic', 'strikethrough', 'clear']],
+        ['color', ['color']],
+        ['para', ['ul', 'ol']],
+        ['insert', ['link']],
+    ]
+});
+</script>
+
 <script src="/js/admin/productModal.js"></script>
 <script type="text/javascript">
 var url = "{{url('/')}}";
