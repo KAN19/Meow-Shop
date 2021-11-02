@@ -3,31 +3,18 @@
 @section('title', 'Product')
 
 @section('content_header')
-<h1>Edit product {{$product->name}}</h1>
+<h1>{{$product->name}}</h1>
 @stop
 
 @section('css')
 <link rel="stylesheet" href="/css/admin/product.css">
 @stop
 
-@php
-$config = [
-"margin-bottom" => "0",
-"marginBottom" => "0",
-"padding-bottom" => "0",
-"height" => "150",
-"toolbar" => [
-['style', ['bold', 'italic', 'underline', 'clear']],
-['font', ['strikethrough']],
-['color', ['color']],
-['para', ['ul', 'ol', 'paragraph']],
-['height', ['height']],
-['insert', ['link']],
-],
-]
-@endphp
+@section('breadcrumb')
+<li class="breadcrumb-item"><a href="{{route('show-product')}}">Products</a></li>
+<li class="breadcrumb-item active">{{$product->name}}</li>
+@stop
 
-@section('plugins.Summernote', true)
 
 @section('content')
 <div id="page-wrapper">

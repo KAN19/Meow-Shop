@@ -6,6 +6,10 @@
 <h1>All products</h1>
 @stop
 
+@section('breadcrumb')
+<li class="breadcrumb-item active">Products</li>
+@stop
+
 @section('content')
 <div id="page-wrapper">
     <div class="container-fluid">

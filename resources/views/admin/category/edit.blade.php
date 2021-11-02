@@ -3,8 +3,14 @@
 @section('title', 'Category Manager')
 
 @section('content_header')
-<h1>Edit category</h1>
+<h1>{{$category->name}}</h1>
 @stop
+
+@section('breadcrumb')
+<li class="breadcrumb-item"><a href="{{route('show-category')}}">Category</a></li>
+<li class="breadcrumb-item active">{{$category->name}}</li>
+@stop
+
 
 @section('content')
 <div id="page-wrapper">

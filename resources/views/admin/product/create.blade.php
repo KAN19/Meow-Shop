@@ -8,25 +8,11 @@
 
 @section('css')
 <link rel="stylesheet" href="/css/admin/product.css">
-
 @stop
 
-@php
-$config = [
-"margin-bottom" => "0",
-"marginBottom" => "0",
-"padding-bottom" => "0",
-"height" => "150",
-"toolbar" => [
-['style', ['bold', 'italic', 'underline', 'clear']],
-['font', ['strikethrough']],
-['color', ['color']],
-['para', ['ul', 'ol', 'paragraph']],
-['height', ['height']],
-['insert', ['link']],
-],
-]
-@endphp
+@section('breadcrumb')
+<li class="breadcrumb-item active">Products</li>
+@stop
 
 
 @section('content')
@@ -170,8 +156,6 @@ $config = [
                         <img id="image-ava" src="" class="image__ava">
 
                     </div>
-
-
                     <div class="form-group d-flex justify-content-end">
                         <a class="btn btn-outline-danger mr-2" href="{{route('show-product')}}"> Back</a>
                         <button type="submit" class="btn btn-outline-primary"> Save data</button>

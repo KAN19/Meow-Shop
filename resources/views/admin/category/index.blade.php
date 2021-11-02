@@ -6,6 +6,11 @@
 <h1>List categories</h1>
 @stop
 
+@section('breadcrumb')
+<li class="breadcrumb-item active">Category</li>
+@stop
+
+
 @section('content')
 <div id="page-wrapper">
     <div class="container-fluid">

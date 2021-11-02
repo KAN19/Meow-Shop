@@ -46,8 +46,8 @@ Route::prefix('admin')->group(function() {
         Route::get('create', [CategoryController::class, 'showCreateCategory'])->name('create-category');
         Route::post('create', [CategoryController::class, 'storeCategory']);
 
-        Route::get('edit/{slug}', [CategoryController::class, 'showEditCategory'])->name('edit-category');
-        Route::put('edit/{slug}', [CategoryController::class, 'updateCategory']); 
+        Route::get('/{slug}', [CategoryController::class, 'showEditCategory'])->name('edit-category');
+        Route::put('/{slug}', [CategoryController::class, 'updateCategory']); 
 
         Route::get('delete/{slug}', [CategoryController::class, 'deleteCategory'])->name('delete-category');
 

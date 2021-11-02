@@ -6,6 +6,10 @@
 <h1>Dashboard</h1>
 @stop
 
+@section('breadcrumb')
+<li class="breadcrumb-item active"></li>
+@stop
+
 @section('content')
 <p class="text-primary">Welcome to this beautiful admin panel.</p>
 @stop

@@ -6,6 +6,10 @@
 <h1>Media</h1>
 @stop
 
+@section('breadcrumb')
+<li class="breadcrumb-item active">Media</li>
+@stop
+
 @section('content')
 <div>
 
