@@ -25,6 +25,14 @@ Route::get('/products', function () {
     return view('client.products.index');
 });
 
+Route::get('/test', function () {
+    return view('admin.test');
+});
+
+Route::get('/test-admin', function () {
+    return view('admin.master');
+});
+
 
 Route::prefix('admin')->group(function() {
 
