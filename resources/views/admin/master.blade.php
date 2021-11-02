@@ -34,16 +34,14 @@
 
             <!-- Right navbar links -->
             <ul class="navbar-nav ml-auto">
-                <li class="nav-item dropdown user-menu">
+                <li class="nav-item dropdown ">
                     <a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown">
-                        <!-- <img src="{{url('adminlte/dist/img/user2-160x160.jpg')}}"
-                            class="user-image img-circle elevation-2" alt="User Image"> -->
                         <span class="d-none d-md-inline">Alexander Pierce</span>
                     </a>
-                    <ul class="dropdown-menu dropdown-menu-lg dropdown-menu-right">
+                    <ul class="dropdown-menu dropdown-menu-right">
                         <!-- Menu Footer-->
-                        <li class="user-footer">
-                            <a href="#" class="btn btn-default btn-flat float-right">Sign out</a>
+                        <li>
+                            <a href="#" class="btn btn-link">Sign out</a>
                         </li>
                     </ul>
                 </li>
