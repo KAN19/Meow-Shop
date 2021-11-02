@@ -127,8 +127,8 @@
                             </ul>
                         </li>
 
-                        <li class="nav-item">
-                            <a href="#" class="nav-link">
+                        <li class="nav-item" id="product-menu">
+                            <a href="#" class="nav-link" id="master-product">
                                 <i class="nav-icon fas fa-copy"></i>
                                 <p>
                                     Products
@@ -138,13 +138,13 @@
                             </a>
                             <ul class="nav nav-treeview">
                                 <li class="nav-item">
-                                    <a href="{{route('show-product')}}" class="nav-link">
+                                    <a href="{{route('show-product')}}" class="nav-link" id="all-products">
                                         <i class="far fa-circle nav-icon"></i>
                                         <p>All products</p>
                                     </a>
                                 </li>
                                 <li class="nav-item">
-                                    <a href="{{route('create-product')}}" class="nav-link">
+                                    <a href="{{route('create-product')}}" class="nav-link" id="create-product">
                                         <i class="far fa-circle nav-icon"></i>
                                         <p>Create product</p>
                                     </a>
@@ -154,7 +154,7 @@
 
                         <li class="nav-header">MEDIA</li>
                         <li class="nav-item">
-                            <a href="{{route('show-media')}}" class="nav-link">
+                            <a href="{{route('show-media')}}" class="nav-link" id="master-media">
                                 <i class="nav-icon far fa-image"></i>
                                 <p>
                                     Gallery
@@ -164,7 +164,7 @@
 
                         <li class="nav-header">ORDER</li>
                         <li class="nav-item">
-                            <a href="#" class="nav-link">
+                            <a href="#" class="nav-link" id="master-order">
                                 <i class="nav-icon far fa-image"></i>
                                 <p>
                                     All orders

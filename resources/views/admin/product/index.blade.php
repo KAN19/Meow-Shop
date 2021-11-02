@@ -1,4 +1,4 @@
-@extends('adminlte::page')
+@extends('admin.master')
 
 @section('title', 'Product')
 
@@ -46,4 +46,14 @@
     </div>
     <!-- /.container-fluid -->
 </div>
+@stop
+
+@section('js')
+<script>
+$(document).ready(function() {
+    $("#product-menu").addClass("menu-open");
+    $("#master-product").addClass("active");
+    $("#all-products").addClass("active");
+});
+</script>
 @stop

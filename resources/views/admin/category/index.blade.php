@@ -50,7 +50,6 @@ $(document).ready(function() {
     $("#category-menu").addClass("menu-open");
     $("#master-category").addClass("active");
     $("#all-categories").addClass("active");
-
 });
 </script>
 @stop
