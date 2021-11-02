@@ -14,3 +14,11 @@
 
 </div>
 @stop
+
+@section('js')
+<script>
+$(document).ready(function() {
+    $("#master-media").addClass("active");
+});
+</script>
+@stop

@@ -91,7 +91,7 @@
                                 <li class="nav-item">
                                     <a href="#" class="nav-link" id="all-posts">
                                         <i class="far fa-circle nav-icon"></i>
-                                        <p> All posts</p>
+                                        <p>Posts</p>
                                     </a>
                                 </li>
                                 <li class="nav-item">
@@ -106,7 +106,8 @@
                         <li class="nav-header">PRODUCT</li>
                         <li class="nav-item" id="category-menu">
                             <a href="#" class="nav-link" id="master-category">
-                                <i class="nav-icon fas fa-copy"></i>
+                                <i class="nav-icon fas fa-stream"></i>
+
                                 <p>
                                     Category
                                     <i class="fas fa-angle-left right"></i>
@@ -131,7 +132,7 @@
 
                         <li class="nav-item" id="product-menu">
                             <a href="#" class="nav-link" id="master-product">
-                                <i class="nav-icon fas fa-copy"></i>
+                                <i class="nav-icon fas fa-shopping-cart"></i>
                                 <p>
                                     Products
                                     <i class="fas fa-angle-left right"></i>
@@ -167,9 +168,9 @@
                         <li class="nav-header">ORDER</li>
                         <li class="nav-item">
                             <a href="#" class="nav-link" id="master-order">
-                                <i class="nav-icon far fa-image"></i>
+                                <i class="nav-icon fas fa-file-alt"></i>
                                 <p>
-                                    All orders
+                                    Orders
                                     <span class="badge badge-info right">6</span>
                                 </p>
                             </a>
