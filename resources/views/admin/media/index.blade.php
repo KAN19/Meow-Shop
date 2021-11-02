@@ -1,4 +1,4 @@
-@extends('adminlte::page')
+@extends('admin.master')
 
 @section('title', 'Media')
 

@@ -1,4 +1,4 @@
-@extends('adminlte::page')
+@extends('admin.master')
 
 @section('title', 'Category Manager')
 
@@ -36,4 +36,14 @@
     </div>
     <!-- /.container-fluid -->
 </div>
+@stop
+
+@section('js')
+<script>
+$(document).ready(function() {
+    $("#category-menu").addClass("menu-open");
+    $("#master-category").addClass("active");
+    $("#create-category").addClass("active");
+});
+</script>
 @stop

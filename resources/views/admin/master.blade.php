@@ -55,7 +55,7 @@
             <a href="#" class="brand-link">
                 <img src="{{url('adminlte/dist/img/AdminLTELogo.png')}}" alt="AdminLTE Logo"
                     class="brand-image img-circle elevation-3" style="opacity: .8">
-                <span class="brand-text font-weight-light">AdminLTE 3</span>
+                <span class="brand-text font-weight-light">Meow Admin</span>
             </a>
 
             <!-- Sidebar -->
@@ -68,7 +68,7 @@
                with font-awesome or any other icon font library -->
                         <li class="nav-header">DASHBOARD</li>
                         <li class="nav-item">
-                            <a href="#" class="nav-link">
+                            <a href="{{route('admin-home')}}" class="nav-link" id="master-dashboard">
                                 <i class="nav-icon fas fa-tachometer-alt"></i>
                                 <p>
                                     Dashboard
@@ -77,7 +77,7 @@
                         </li>
                         <li class="nav-header">POST</li>
                         <li class="nav-item">
-                            <a href="#" class="nav-link">
+                            <a href="#" class="nav-link" id="master-post">
                                 <i class="nav-icon fas fa-copy"></i>
                                 <p>
                                     All posts
@@ -87,14 +87,14 @@
                             </a>
                             <ul class="nav nav-treeview">
                                 <li class="nav-item">
-                                    <a href="#" class="nav-link">
+                                    <a href="#" class="nav-link" id="all-posts">
                                         <i class="far fa-circle nav-icon"></i>
                                         <p> All posts</p>
                                     </a>
                                 </li>
                                 <li class="nav-item">
-                                    <a href="#" class="nav-link">
-                                        <i class="far fa-plus-square nav-icon"></i>
+                                    <a href="#" class="nav-link" id="create-post">
+                                        <i class="far fa-circle nav-icon"></i>
                                         <p>Create post</p>
                                     </a>
                                 </li>
@@ -102,8 +102,8 @@
                         </li>
 
                         <li class="nav-header">PRODUCT</li>
-                        <li class="nav-item">
-                            <a href="#" class="nav-link">
+                        <li class="nav-item" id="category-menu">
+                            <a href="#" class="nav-link" id="master-category">
                                 <i class="nav-icon fas fa-copy"></i>
                                 <p>
                                     Category
@@ -113,14 +113,14 @@
                             </a>
                             <ul class="nav nav-treeview">
                                 <li class="nav-item">
-                                    <a href="#" class="nav-link">
+                                    <a href="{{route('show-category')}}" class="nav-link" id="all-categories">
                                         <i class="far fa-circle nav-icon"></i>
                                         <p>All categories</p>
                                     </a>
                                 </li>
                                 <li class="nav-item">
-                                    <a href="#" class="nav-link">
-                                        <i class="far fa-plus-square nav-icon"></i>
+                                    <a href="{{route('create-category')}}" class="nav-link" id="create-category">
+                                        <i class="far fa-circle nav-icon"></i>
                                         <p>Create category</p>
                                     </a>
                                 </li>
@@ -138,14 +138,14 @@
                             </a>
                             <ul class="nav nav-treeview">
                                 <li class="nav-item">
-                                    <a href="#" class="nav-link">
+                                    <a href="{{route('show-product')}}" class="nav-link">
                                         <i class="far fa-circle nav-icon"></i>
                                         <p>All products</p>
                                     </a>
                                 </li>
                                 <li class="nav-item">
-                                    <a href="#" class="nav-link">
-                                        <i class="far fa-plus-square nav-icon"></i>
+                                    <a href="{{route('create-product')}}" class="nav-link">
+                                        <i class="far fa-circle nav-icon"></i>
                                         <p>Create product</p>
                                     </a>
                                 </li>
@@ -154,7 +154,7 @@
 
                         <li class="nav-header">MEDIA</li>
                         <li class="nav-item">
-                            <a href="#" class="nav-link">
+                            <a href="{{route('show-media')}}" class="nav-link">
                                 <i class="nav-icon far fa-image"></i>
                                 <p>
                                     Gallery
@@ -227,6 +227,12 @@
     </div>
     <!-- ./wrapper -->
 
+    <!-- jQuery UI 1.11.4 -->
+    <script src="{{url('adminlte/plugins/jquery-ui/jquery-ui.min.js')}}"></script>
+    <!-- Resolve conflict in jQuery UI tooltip with Bootstrap tooltip -->
+    <script>
+    $.widget.bridge('uibutton', $.ui.button)
+    </script>
 
     <script src="{{url('adminlte/plugins/jquery/jquery.min.js')}}"></script>
     <!-- Bootstrap 4 -->

@@ -38,7 +38,7 @@ Route::prefix('admin')->group(function() {
 
     Route::get('/', function () {
         return view('admin.dashboard.index');
-    });
+    })->name('admin-home');
 
     Route::prefix('category')->group(function() {
         Route::get('', [CategoryController::class, 'showCategory'])->name('show-category');
