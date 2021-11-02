@@ -1,3 +1,4 @@
+<!-- Modal image ava khong -->
 <div class="modal fade bd-example-modal-lg" id="modal-ava-image" tabindex="-1" role="dialog"
     aria-labelledby="myLargeModalLabel" aria-hidden="true">
     <div class="modal-dialog modal-lg modal-xl">
@@ -22,6 +23,7 @@
     </div>
 </div>
 
+<!-- modal list iamge -->
 <div class="modal fade bd-example-modal-lg" id="modal-list-images" tabindex="-1" role="dialog"
     aria-labelledby="myLargeModalLabel" aria-hidden="true">
     <div class="modal-dialog modal-lg modal-xl">
