@@ -1,10 +1,16 @@
-@extends('adminlte::page')
+@extends('admin.master')
 
 @section('title', 'Category Manager')
 
 @section('content_header')
 <h1>Create category</h1>
 @stop
+
+@section('breadcrumb')
+<li class="breadcrumb-item active">Category</li>
+@stop
+
+
 
 @section('content')
 <div id="page-wrapper">
@@ -36,4 +42,14 @@
     </div>
     <!-- /.container-fluid -->
 </div>
+@stop
+
+@section('js')
+<script>
+$(document).ready(function() {
+    $("#category-menu").addClass("menu-open");
+    $("#master-category").addClass("active");
+    $("#create-category").addClass("active");
+});
+</script>
 @stop

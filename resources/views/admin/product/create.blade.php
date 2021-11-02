@@ -1,4 +1,4 @@
-@extends('adminlte::page')
+@extends('admin.master')
 
 @section('title', 'Product')
 
@@ -10,24 +10,10 @@
 <link rel="stylesheet" href="/css/admin/product.css">
 @stop
 
-@php
-$config = [
-"margin-bottom" => "0",
-"marginBottom" => "0",
-"padding-bottom" => "0",
-"height" => "150",
-"toolbar" => [
-['style', ['bold', 'italic', 'underline', 'clear']],
-['font', ['strikethrough']],
-['color', ['color']],
-['para', ['ul', 'ol', 'paragraph']],
-['height', ['height']],
-['insert', ['link']],
-],
-]
-@endphp
+@section('breadcrumb')
+<li class="breadcrumb-item active">Products</li>
+@stop
 
-@section('plugins.Summernote', true)
 
 @section('content')
 <div id="page-wrapper">
@@ -39,39 +25,41 @@ $config = [
                 <div class="col-md-9">
                     <div class="form-group has-validation">
                         <label>Product Name</label>
-                        <input class="form-control @error('prd_name') border border-danger @enderror " name="prd_name"
-                            placeholder="Please Enter Product Name" value="{{old('prd_name')}}" />
 
                         @error('prd_name')
                         <div class="text-danger">
                             {{ $message }}
                         </div>
                         @enderror
+                        <input class="form-control @error('prd_name') border border-danger @enderror " name="prd_name"
+                            placeholder="Please Enter Product Name" value="{{old('prd_name')}}" />
+
                     </div>
 
                     <div class="form-group has-validation">
                         <label>Short description</label>
-                        <textarea class="form-control  @error('prd_short_descrip') border border-danger @enderror"
-                            maxlength="150" style="resize: none;" name="prd_short_descrip"
-                            placeholder="Short description">{{old('prd_short_descrip')}}</textarea>
-
                         @error('prd_short_descrip')
                         <div class="text-danger">
                             {{ $message }}
                         </div>
                         @enderror
+                        <textarea class="form-control  @error('prd_short_descrip') border border-danger @enderror"
+                            maxlength="150" style="resize: none;" name="prd_short_descrip"
+                            placeholder="Short description">{{old('prd_short_descrip')}}</textarea>
+
+
                     </div>
 
                     <div class="form-group">
                         <label>Description</label>
-                        <x-adminlte-text-editor name="prd_description" class="form-control"
-                            placeholder="Please Enter Product description" placeholder="Write some text..."
-                            :config="$config">{{old('prd_description')}}</x-adminlte-text-editor>
+
                         @error('prd_description')
                         <div class="text-danger">
                             {{ $message }}
                         </div>
                         @enderror
+                        <textarea name="prd_description" id="summernote"
+                            placeholder="Product description">{{old('prd_description')}}</textarea>
 
                     </div>
 
@@ -168,8 +156,6 @@ $config = [
                         <img id="image-ava" src="" class="image__ava">
 
                     </div>
-
-
                     <div class="form-group d-flex justify-content-end">
                         <a class="btn btn-outline-danger mr-2" href="{{route('show-product')}}"> Back</a>
                         <button type="submit" class="btn btn-outline-primary"> Save data</button>
@@ -186,6 +172,27 @@ $config = [
 @stop
 
 @section('js')
+<script>
+$(document).ready(function() {
+    $("#product-menu").addClass("menu-open");
+    $("#master-product").addClass("active");
+    $("#create-product").addClass("active");
+
+    $('#summernote').summernote({
+        placeholder: 'Product description',
+        padding: 0,
+        height: 120,
+        toolbar: [
+            ['font', ['bold', 'underline', 'italic', 'strikethrough', 'clear']],
+            ['color', ['color']],
+            ['para', ['ul', 'ol']],
+            ['insert', ['link']],
+        ]
+    });
+
+});
+</script>
+
 <script src="/js/admin/productModal.js"></script>
 <script type="text/javascript">
 var url = "{{url('/')}}";

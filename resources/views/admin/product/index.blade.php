@@ -1,9 +1,13 @@
-@extends('adminlte::page')
+@extends('admin.master')
 
 @section('title', 'Product')
 
 @section('content_header')
 <h1>All products</h1>
+@stop
+
+@section('breadcrumb')
+<li class="breadcrumb-item active">Products</li>
 @stop
 
 @section('content')
@@ -46,4 +50,14 @@
     </div>
     <!-- /.container-fluid -->
 </div>
+@stop
+
+@section('js')
+<script>
+$(document).ready(function() {
+    $("#product-menu").addClass("menu-open");
+    $("#master-product").addClass("active");
+    $("#all-products").addClass("active");
+});
+</script>
 @stop

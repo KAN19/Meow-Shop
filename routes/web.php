@@ -25,12 +25,20 @@ Route::get('/products', function () {
     return view('client.products.index');
 });
 
+Route::get('/test', function () {
+    return view('admin.test');
+});
+
+Route::get('/test-admin', function () {
+    return view('admin.master');
+});
+
 
 Route::prefix('admin')->group(function() {
 
     Route::get('/', function () {
         return view('admin.dashboard.index');
-    });
+    })->name('admin-home');
 
     Route::prefix('category')->group(function() {
         Route::get('', [CategoryController::class, 'showCategory'])->name('show-category');
@@ -38,8 +46,8 @@ Route::prefix('admin')->group(function() {
         Route::get('create', [CategoryController::class, 'showCreateCategory'])->name('create-category');
         Route::post('create', [CategoryController::class, 'storeCategory']);
 
-        Route::get('edit/{slug}', [CategoryController::class, 'showEditCategory'])->name('edit-category');
-        Route::put('edit/{slug}', [CategoryController::class, 'updateCategory']); 
+        Route::get('/{slug}', [CategoryController::class, 'showEditCategory'])->name('edit-category');
+        Route::put('/{slug}', [CategoryController::class, 'updateCategory']); 
 
         Route::get('delete/{slug}', [CategoryController::class, 'deleteCategory'])->name('delete-category');
 
@@ -51,8 +59,8 @@ Route::prefix('admin')->group(function() {
         Route::get('create', [ProductController::class, 'showCreateProduct'])->name('create-product');
         Route::post('create', [ProductController::class, 'storeProduct']);
 
-        Route::get('edit/{slug}', [ProductController::class, 'showEditProduct'])->name('edit-product');
-        Route::put('edit/{slug}', [ProductController::class, 'updateProduct']); 
+        Route::get('/{slug}', [ProductController::class, 'showEditProduct'])->name('edit-product');
+        Route::put('/{slug}', [ProductController::class, 'updateProduct']); 
 
         // Route::get('delete/{id}', [CategoryController::class, 'deleteCategory'])->name('delete-category');
 
