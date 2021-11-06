@@ -46,25 +46,25 @@
     </div>
 
     <!-- 3 mini photos -->
-    <div class="row align-items-start float-md-start">
-        <div class="row">
-            <div class="col-sm">
-                <img src="/image/slide1.png" alt="Slide1" style="width:100%">
-            </div>
-            <div class="col-sm">
-                <img src="/image/slide3.png" alt="Slide2" style="width:100%">
-            </div>
-            <div class="col-sm">
-                <img src="/image/slide2.png" alt="Slide3" style="width:100%">
-            </div>
+    <!-- <div class="align-items-start float-md-start"> -->
+    <div class="row ml-0 mr-0">
+        <div class=" col-sm-4">
+            <img src="/image/slide1.png" alt="Slide1" style="width:100%">
         </div>
+        <div class=" col-sm-4">
+            <img src="/image/slide3.png" alt="Slide2" style="width:100%">
+        </div>
+        <div class=" col-sm-4 ">
+            <img src="/image/slide2.png" alt="Slide3" style="width:100%">
+        </div>
+        <!-- </div> -->
     </div>
 </div>
 @endsection
 
 @section('javascript')
 <script>
-    console.log('Hello');
+console.log('Hello');
 </script>
 <script src="/js/home.js"></script>
 @endsection
