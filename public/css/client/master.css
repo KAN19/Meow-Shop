@@ -1,3 +1,4 @@
+/* Top nav bar */
 .navbar__container {
     width: 100%;
     margin: 0;
@@ -17,11 +18,44 @@
     align-items: center;
 }
 
+.topnav__item-fullscreen {
+    display: none;
+}
+
+.topnav__item__button {
+    padding: 0 7px;
+}
+
 .topnav__item-burger {
     cursor: pointer;
     font-size: 22px;
 }
 
+@media (min-width: 576px) {
+    .topnav__item-fullscreen {
+        display: flex;
+    }
+
+    .topnav__item {
+        flex: 0.333;
+    }
+
+    .topnav__item:nth-child(1) {
+        justify-content: start;
+    }
+
+    .topnav__item:nth-child(2) {
+        justify-content: center;
+    }
+
+    .topnav__item:nth-child(3) {
+        justify-content: end;
+    }
+}
+
+/* End top navbar */
+
+/* Side navbar */
 .sidenav {
     position: absolute;
     top: 0;
@@ -29,17 +63,15 @@
     z-index: 101;
     width: 0;
     overflow-x: hidden;
-    transition: 0.5s;
+    transition: 0.3s;
 }
 
 .sidenav-active {
     width: 50%;
-    transition: 0.6s linear;
+    transition: 0.3s ease-in;
 }
 
 .sidenav__topnav {
-    font-size: 22px;
-    cursor: pointer;
     display: flex;
     align-items: center;
     flex-flow: row-reverse;
@@ -48,6 +80,32 @@
     padding: 0 12px;
 }
 
+/* Side nav content */
+.sidenav__container {
+    background-color: white;
+    border-bottom: 1px solid gray;
+    border-bottom-left-radius: 5px;
+}
+
+.sidenav__container__item {
+    display: block;
+    padding-left: 15px;
+    padding-top: 5px;
+    padding-bottom: 5px;
+    transition: 0.2s linear;
+    background-color: white;
+    color: black;
+}
+
+.sidenav__container__item:hover {
+    background-color: burlywood;
+    transition: 0.2s linear;
+    color: white;
+}
+/* End sidenav content */
+/* End sidenav */
+
+/* Backdrop */
 .nav-backdrop {
     position: absolute;
     top: 0;
@@ -56,13 +114,6 @@
     bottom: 0;
     background: rgba(0, 0, 0, 0.5);
     content: "";
-}
-
-.sidenav__container {
-    background-color: white;
-    border-left: 1px solid gray;
-    border-bottom: 1px solid gray;
-    border-bottom-left-radius: 5px;
 }
 
 .modal-overlay {
@@ -82,3 +133,5 @@
 .modal-overlay-inactive {
     display: none;
 }
+
+/* End backdrop */
