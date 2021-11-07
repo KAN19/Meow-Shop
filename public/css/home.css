@@ -1,0 +1,205 @@
+* {
+    box-sizing: border-box;
+}
+
+#trendingProducts {
+    margin-bottom: 1rem;
+}
+
+/*style underline categories*/
+
+#categories {
+    margin-bottom: 1rem;
+}
+
+a {
+    color: black;
+    display: block;
+    position: relative;
+    padding: 0.2em 0;
+}
+
+/*style underline*/
+
+.box-e {
+    position: relative;
+    display: block;
+    width: 100%;
+    text-align: center;
+    cursor: pointer;
+}
+
+.custom-underline {
+    position: relative;
+    display: inline-block;
+    font-size: 20px;
+    font-weight: 400;
+    text-align: center;
+}
+
+.custom-underline, .custom-underline:hover, .custom-underline:focus, .custom-underline:active {
+    color: rgb(17, 1, 1);
+    text-decoration: none;
+}
+
+.custom-underline::after {
+    content: "";
+    position: absolute;
+}
+
+.box-e .custom-underline::after {
+    top: 85%;
+    height: 2px;
+    width: 0%;
+    left: 5%;
+    background-color: rgba(247, 25, 25, 0.6);
+    transition: 0.5s ease all .2s;
+}
+
+.box-e:hover .custom-underline::after {
+    width: 90%;
+    transition: 0.3s ease all;
+}
+
+/*style product img*/
+
+#products p {
+    padding-top: 0.75rem;
+}
+
+#products img {
+    transition: transform .5s, filter 1.5s ease-in-out;
+    margin-bottom: -6px;
+    cursor: pointer;
+    max-width: 250px;
+    max-height: 250px;
+    object-fit: cover;
+}
+
+#products img:hover {
+    filter: grayscale(0);
+    transform: scale(1.01);
+    cursor: pointer;
+}
+
+.product-name:hover {
+    cursor: pointer;
+    text-decoration: underline;
+}
+
+.product-content:hover {
+    text-decoration: underline;
+}
+
+/*price*/
+
+.product-price {
+    margin-top: -10px;
+}
+
+/*'Show All' Button*/
+
+.show-button {
+    background-color: rgb(241, 239, 239);
+    border: 0 solid #e2e8f0;
+    border-radius: 3rem;
+    box-sizing: border-box;
+    color: #0d172a;
+    cursor: pointer;
+    display: inline-block;
+    font-family: "Basier circle", -apple-system, system-ui, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
+    font-size: 1rem;
+    font-weight: 600;
+    line-height: 1;
+    padding: 20px 60px;
+    text-align: center;
+    text-decoration: none #0d172a solid;
+    text-decoration-thickness: auto;
+    transition: all .1s cubic-bezier(.4, 0, .2, 1);
+    box-shadow: 0px 1px 2px rgba(166, 175, 195, 0.25);
+    user-select: none;
+    -webkit-user-select: none;
+    touch-action: manipulation;
+}
+
+.show-button:hover {
+    background-color: #1e293b;
+    color: #fff;
+}
+
+/* @media (min-width: 768px) {
+    .show-button {
+        font-size: 1rem;
+        padding: 1rem 2rem;
+    }
+} */
+
+/*Style Partnership*/
+
+.partner-photos img {
+    margin: 10px 0 0 50px;
+    padding-left: 45px;
+    border-radius: 5px;
+    -webkit-filter: grayscale(100%);
+    filter: grayscale(100%);
+}
+
+.partner-photos p {
+    margin-top: 5px;
+    align-items: center;
+    margin-left: 85px;
+    padding-left: 50px;
+}
+
+.partner-photos img:hover {
+    cursor: pointer;
+    transform: scale(1.01);
+}
+
+/*Follow*/
+
+.follow-us {
+    background-color: #d1d5db;
+}
+
+.follow-us p {
+    padding: 1rem 0 1rem;
+}
+
+.follow-photos {
+    background-color: #d1d5db;
+    margin-top: -10px;
+    width: 100%;
+    display: flex;
+}
+
+.follow-photos img {
+    transition: transform .5s, filter 1.5s ease-in-out;
+    flex-direction: column;
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+}
+
+.text {
+    text-align: center;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.follow-photos img:hover {
+    filter: grayscale(0);
+    transform: scale(1.01);
+}
+
+.follow-content {
+    width: 25%;
+    height: fit-content;
+    padding: 0 !important;
+    margin: 0 !important;
+}
+
+/* img {
+    width: 10%;
+    height: auto;
+} */
