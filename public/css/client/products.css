@@ -1,44 +1,230 @@
-.form-control:focus {
-  box-shadow: none;
-} 
-
-.form-control::placeholder {
-  font-size: 0.95rem;
-  color: #aaa;
-  font-style: italic;
+.row {
+  margin-left: 0;
+  margin-right: 0;
 }
-.box .inner {
-  background-color: #fff;
+/*banner*/
+#banner {
+  width: 100%;
 }
-.box {
-    padding: 0 50px 0 50px;
-}
-.shop {
-  background-color: #d1d5db;
-  height: 200px;
-}
-.shop p {
-  padding: 3rem;
-}
-.trendingproduct{
+/*Thanh dieu huong*/
+.breadcrumb {
+  font-size: larger;
+  background-color: white;
   cursor: pointer;
+}
+.breadcrumb a { /*color chu + icon truoc khi tro chuot*/
+  color: #4CAF50;
+}
+.breadcrumb a:hover { /*khi tro chuot*/
+  font-weight: bold; 
+}
+.breadcrumb i:hover { /*khi tro chuot vao bieu tuong home*/
+  font-size: x-large; 
+}
+.breadcrumb i { /*icon home*/
+  font-size: larger;
+}
+.breadcrumb-item + .breadcrumb-item::before { /*dau > */
+  content: ">";
+}
+
+/* search button*/
+input [type=text]{
+  width: 100%;
+  border: 90px solid #C0C0C0;
+  margin: 8px 0;
+  outline: none;
+  padding: 8px;
+  box-sizing: border-box;
+}
+input[type=text]:focus{
+  border-color: #aaa;
+  box-shadow: 0 0 8px 0 #aaa;
+}
+.inputWithIcon input[type=text]{
+  padding-left:40px;
+}
+.inputWithIcon {
+  position: relative;
+}
+.inputWithIcon i {
+  position:absolute;
+  left:0;
+  top:2px;
+  padding: 9px 8px;
+  color: #aaa;
+}
+.inputWithIcon input[type=text] + i {
+  color: #aaa;
+}
+#searchbtn:focus {
+  outline-color:#aaa;
+}
+#searchbtn {
+  border-radius: 50px;
+}
+
+/* Categorties */
+.categorties{
+  cursor: pointer;
+}
+.titleCategorties {
+  font-size: large;
+}
+.content:hover{  
+  color: orangered;
+  font-weight: bold; 
+  cursor: pointer;
+}
+/* categorties selectbox */
+#selectboxcategories{
+  border-radius: 30px;
+  border: 1px solid;
+  margin-left: 1.5rem;
+}
+.small {
+  font-size: .9em;
+}
+.custom-dropdown select {
+  background-color: #fff;
+  color: #aaa;
+  font-size: inherit;
+  padding: .4em;
+  padding-right: 9em; 
+  border: 0;
+  margin: 0;
+  border-radius: 3px;
+  text-indent: 0.01px;
+  text-overflow: '';
+ }
+.custom-dropdown::after { /*  Custom dropdown arrow */
+  height: 1em;
+  font-size: .625em;
+  line-height: 1;
+  right: 1.2em;
+  top: 50%;
+  margin-top: -.5em;
+}
+#selectboxcategories:focus{
+  outline-color: #aaa;
+}
+/* categorties mobile */
+.small {
+  display: none;
+}
+@media only screen and (max-width: 600px){
+  .contentCategorties {
+    display: none;
+  }
+  .small{
+    display: block;
+  }
+  #selectboxcategories{
+    margin-left: 20%;
+  }
+  .titleCategorties{
+    margin-left: 15%;
+  }
+  .imageradius{
+    width: 80%;
+    margin-left: 10%;
+  }
+  .inputWithIcon {
+    margin-left: 15%;
+  }
+}
+/*Trending product */
+.trending{
+  cursor: pointer;
+}
+.titleTrending {
+  font-size: large;
 }
 .trendingname:hover {
   transform: scale(1.01);
-}
-.imageproduct:hover{
-  cursor: pointer;
-  transform: scale(1.01);
-}
-.productname:hover {
   text-decoration: underline;
 }
-.image1:hover{  
-  color: orangered; 
+/* trending product mobile */
+.mobiletrending{
+  display: none;
 }
-.image2:hover{  
-  color: orangered; 
+
+@media only screen and (max-width: 600px){
+  .trending {
+    display: none;
+  }
+  .titleTrending {
+    font-size:x-large;
+    margin-left: 7%;
+  }
+  .mobiletrending{
+    display: block;
+    text-align: center;
+  }
+  .productname {
+    margin-left: 15%;
+  }
+  .margimobile{
+    margin-left: 13%;
+  }
+  .trendingmobile {
+    margin-left: 7%;
+  }
 }
-.image3:hover{  
-  color: orangered; 
+/* product*/
+.imageproduct:hover{
+  cursor: pointer;
+  text-decoration: underline;
+  transform: scale(1.01);
 }
+.detailproduct{
+  /*can chinh ten product dai*/
+  max-width: 20em;  
+  margin-left: 3rem;
+}
+.productname {
+  text-align: center;
+}
+.imageradius{ /* bo tron anh */
+  border-radius:3%;
+  -moz-border-radius:3%;
+  -webkit-border-radius:3%;
+}
+/* next page */
+.nextpage {
+  text-align: center;
+  margin: 2rem 0 4rem 0;
+}
+.pagination {
+  display: inline-block;
+}
+.pagination a {
+  color: black;
+  float: left;
+  padding: 8px 16px;
+  text-decoration: none;
+  border-radius: 50%;  
+  border: 1px solid #ddd;
+  margin: 0 4px;
+}
+.pagination a.active {
+  background-color: #4CAF50;
+  color: white;
+  border-radius: 50%;
+  border: 1px solid #4CAF50;
+}
+.arrow {
+  border: solid black;
+  border-width: 0 3px 3px 0;
+  display: inline-block;
+  padding: 3px;
+  transform: rotate(-45deg);
+  -webkit-transform: rotate(-45deg);
+  margin: 1rem 0 0 1rem;
+  cursor: pointer;
+}
+.pagination a:hover:not(.active) {background-color: #ddd;}
+
+
+
+
