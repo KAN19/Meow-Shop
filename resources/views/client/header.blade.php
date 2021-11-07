@@ -1,5 +1,5 @@
 <nav class="navbar__container">
-    <div class="navbar__topnav">
+    <div class="navbar__topnav navbar__topnav-main">
         <div class="topnav__item ">
             This is lgo
         </div>
@@ -18,15 +18,15 @@
         </div>
 
         <div class="topnav__item topnav__item-fullscreen">
-            <div class="topnav__item__button">
-                Search
-            </div>
-            <div class="topnav__item__button">
-                Cart
-            </div>
-            <div class="topnav__item__button">
-                Profile
-            </div>
+            <a href="#" class="topnav__item__button topnav__item-icon">
+                <i class="fas fa-search"></i>
+            </a>
+            <a href="#" class="topnav__item__button topnav__item-icon">
+                <i class="fas fa-shopping-cart"></i>
+            </a>
+            <a href="#" class="topnav__item__button topnav__item-icon">
+                <i class="fas fa-user"></i>
+            </a>
         </div>
 
         <!-- Burger -->
@@ -35,7 +35,7 @@
         </div>
     </div>
     <div class="sidenav ">
-        <div class="sidenav__topnav">
+        <div class="sidenav__topnav navbar__topnav">
             <div class="topnav__item-burger">
                 <i class="fas fa-bars" id="sidenav__burger"></i>
             </div>
