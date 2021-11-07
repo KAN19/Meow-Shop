@@ -61,7 +61,7 @@
     <div id="trendingProducts">
         <p class="h3 text-center">Trending Products</p>
     </div>
-    <div class="row justify-content-center" id="categories">
+    <div class="row ml-0 mr-0 justify-content-center" id="categories">
         <div class="box-e col col-lg-2">
             <a href="#" class="custom-underline">Cat Foods</a>
         </div>
