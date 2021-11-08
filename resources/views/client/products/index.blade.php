@@ -45,11 +45,12 @@
                 </div>                    
             </div>
             <span class="custom-dropdown small" >
-                <select id="selectboxcategories">                    
-                    <option>Cat Food</option>
-                    <option>Dod Food</option>  
-                    <option>Pet Toys</option>                   
-                </select>
+                <div class="titleCategorties-mobile mb-3 font-weight-bold">Categories</div>
+                    <select id="selectboxcategories">                    
+                        <option>Cat Food</option>
+                        <option>Dod Food</option>  
+                        <option>Pet Toys</option>                   
+                    </select>
             </span>
             <!--Trending product-->
             <div class="trending mt-4 ml-4">
@@ -62,9 +63,9 @@
                         <div class="col-sm">                        
                             <div><img class="imageradius" src="https://picsum.photos/100"/></div>
                         </div>
-                        <div class="col-sm mt-4">
-                            <div class="mb-1">Name</div>
-                            <div>$99.00</div>
+                        <div class="contentTrending col-sm">
+                            <a>Name</a><br>
+                            <a>$99.00</a>
                         </div>                                       
                     </div>        
                     <hr class="my-3 ">  
@@ -73,9 +74,9 @@
                         <div class="col-sm">                        
                             <div><img class="imageradius" src="https://picsum.photos/100"/></div>
                         </div>
-                        <div class="col-sm mt-4">
-                            <div class="mb-1">Name</div>
-                            <div>$99.00</div>
+                        <div class="contentTrending col-sm">
+                            <a>Name</a><br>
+                            <a>$99.00</a>
                         </div>                                       
                     </div>      
                     <hr class="my-3 ">   
@@ -84,9 +85,9 @@
                         <div class="col-sm">                        
                             <div><img class="imageradius" src="https://picsum.photos/100"/></div>
                         </div>
-                        <div class="col-sm mt-4">
-                            <div class="mb-1">Name</div>
-                            <div>$99.00</div>
+                        <div class="contentTrending col-sm">
+                            <a>Name</a><br>
+                            <a>$99.00</a>
                         </div>                                       
                     </div>    
                     <hr class="my-3 "> 
@@ -95,9 +96,9 @@
                         <div class="col-sm">                        
                             <div><img class="imageradius" src="https://picsum.photos/100"/></div>
                         </div>
-                        <div class="col-sm mt-4">
-                            <div class="mb-1">Name</div>
-                            <div>$99.00</div>
+                        <div class="contentTrending col-sm">
+                            <a>Name</a><br>
+                            <a>$99.00</a>
                         </div>                                       
                     </div>      
                 </div>                                           
@@ -110,7 +111,7 @@
             <div class="grid-container">                
                 <!--div col 1></!--div-->                
                 <div class="product-content">
-                    <div class="imageproduct text-center"><img class="imageradius" src="https://picsum.photos/350/250"/>
+                    <div class="imageproduct text-center"><img class="radius-product" src="https://picsum.photos/1000/1000"/>
                         <div class="productname text-center mt-2">Product Name</div>
                     </div>             
                     <div>
@@ -118,7 +119,7 @@
                     </div>                                                       
                 </div>
                 <div class="product-content">
-                    <div class="imageproduct text-center"><img class="imageradius"  src="https://picsum.photos/350/250"/>
+                    <div class="imageproduct text-center"><img class="radius-product"  src="https://picsum.photos/1000/1000"/>
                         <div class="productname text-center mt-2"> Product Name</div>
                     </div>      
                     <div>
@@ -126,7 +127,7 @@
                     </div>                                                                 
                 </div>  
                 <div class="product-content">
-                    <div class="imageproduct text-center"><img class="imageradius"  src="https://picsum.photos/350/250"/>
+                    <div class="imageproduct text-center"><img class="radius-product"  src="https://picsum.photos/1000/1000"/>
                         <div class="productname text-center mt-2"> Product Name</div>
                     </div>   
                     <div>
@@ -136,7 +137,7 @@
               
                 <!--div col 2></!--div-->                
                 <div class="product-content">
-                    <div class="imageproduct text-center"><img class="imageradius" src="https://picsum.photos/350/250"/>
+                    <div class="imageproduct text-center"><img class="radius-product" src="https://picsum.photos/1000/1000"/>
                         <div class="productname text-center mt-2"> Product Name</div>
                     </div>
                     <div>
@@ -144,7 +145,7 @@
                     </div>                                                                    
                 </div>
                 <div class="product-content">
-                    <div class="imageproduct text-center"><img class="imageradius" src="https://picsum.photos/350/250"/>
+                    <div class="imageproduct text-center"><img class="radius-product" src="https://picsum.photos/1000/1000"/>
                         <div class="productname text-center mt-2"> Product Name</div>
                     </div>    
                     <div>
@@ -152,7 +153,7 @@
                     </div>                                                                     
                 </div>  
                 <div class="product-content">
-                    <div class="imageproduct text-center"><img class="imageradius" src="https://picsum.photos/350/250"/>
+                    <div class="imageproduct text-center"><img class="radius-product" src="https://picsum.photos/1000/1000"/>
                         <div class="productname text-center mt-2"> Product Name</div>
                     </div>  
                     <div>
@@ -161,7 +162,7 @@
                 </div>             
                  <!--div col 3></!--div-->                
                 <div class="product-content">
-                    <div class="imageproduct text-center"><img class="imageradius" src="https://picsum.photos/350/250"/>
+                    <div class="imageproduct text-center"><img class="radius-product" src="https://picsum.photos/1000/1000"/>
                         <div class="productname text-center mt-2"> Product Name</div>
                     </div>  
                     <div>
@@ -169,7 +170,7 @@
                     </div>                                                                    
                 </div>
                 <div class="product-content">
-                    <div class="imageproduct text-center"><img class="imageradius" src="https://picsum.photos/350/250"/>
+                    <div class="imageproduct text-center"><img class="radius-product" src="https://picsum.photos/1000/1000"/>
                         <div class="productname text-center mt-2"> Product Name</div>
                     </div>        
                     <div>
@@ -177,7 +178,7 @@
                     </div>                                                                 
                 </div> 
                 <div class="product-content">
-                    <div class="imageproduct text-center"><img class="imageradius" src="https://picsum.photos/350/250"/>
+                    <div class="imageproduct text-center"><img class="radius-product" src="https://picsum.photos/1000/1000"/>
                         <div class="productname text-center mt-2"> Product Name</div>
                     </div> 
                     <div>
@@ -197,14 +198,14 @@
     </div>
     <!-- trending product mobile -->
         <div class="mobiletrending mt-2">
-            <div class="titleTrending mb-3 font-weight-bold">
+            <div class="titleTrending-mobile mb-3 font-weight-bold">
                 Trending product
             </div>
             <!--trending product 1-->
             <div class="trendingproduct name">
                 <div class="row trendingname">
                     <div class="col-sm">                        
-                        <div><img class="imageradius" src="https://picsum.photos/350/250"/></div>
+                        <div><img class="imageTrending-mobile" src="https://picsum.photos/350/250"/></div>
                     </div>
                     <div class="trendingmobile col-sm mt-4">
                         <div class="mb-1">Name</div>
@@ -215,7 +216,7 @@
                 <!--trending product 2-->  
                 <div class="row trendingname">
                     <div class="col-sm">                        
-                        <div><img class="imageradius" src="https://picsum.photos/350/250"/></div>
+                        <div><img class="imageTrending-mobile" src="https://picsum.photos/350/250"/></div>
                     </div>
                     <div class="trendingmobile col-sm mt-4">
                         <div class="mb-1">Name</div>
@@ -226,7 +227,7 @@
                 <!--trending product 3-->   
                 <div class="row trendingname">
                     <div class=" col-sm">                        
-                        <div><img class="imageradius" src="https://picsum.photos/350/250"/></div>
+                        <div><img class="imageTrending-mobile" src="https://picsum.photos/350/250"/></div>
                     </div>
                     <div class="trendingmobile col-sm mt-4">
                         <div class="mb-1">Name</div>
@@ -237,7 +238,7 @@
                 <hr class="my-3 ">    
                 <div class="row trendingname mb-5">
                     <div class="col-sm">                        
-                        <div><img class="imageradius" src="https://picsum.photos/350/250"/></div>
+                        <div><img class="imageTrending-mobile" src="https://picsum.photos/350/250"/></div>
                     </div>
                     <div class="trendingmobile col-sm mt-4">
                         <div class="mb-1">Name</div>

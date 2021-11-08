@@ -12,19 +12,24 @@
   background-color: white;
   cursor: pointer;
 }
-.breadcrumb a { /*color chu + icon truoc khi tro chuot*/
+/*color chu + icon truoc khi tro chuot*/
+.breadcrumb a { 
   color: #4CAF50;
 }
-.breadcrumb a:hover { /*khi tro chuot*/
+/*khi tro chuot*/
+.breadcrumb a:hover { 
   font-weight: bold; 
 }
-.breadcrumb i:hover { /*khi tro chuot vao bieu tuong home*/
+/*khi tro chuot vao bieu tuong home*/
+.breadcrumb i:hover { 
   font-size: x-large; 
 }
-.breadcrumb i { /*icon home*/
+/*icon home*/
+.breadcrumb i { 
   font-size: larger;
 }
-.breadcrumb-item + .breadcrumb-item::before { /*dau > */
+ /*dau > */
+.breadcrumb-item + .breadcrumb-item::before {
   content: ">";
 }
 
@@ -69,6 +74,9 @@ input[type=text]:focus{
   cursor: pointer;
 }
 .titleCategorties {
+  font-size: x-large;
+}
+.contentCategorties {
   font-size: large;
 }
 .content:hover{  
@@ -76,6 +84,7 @@ input[type=text]:focus{
   font-weight: bold; 
   cursor: pointer;
 }
+
 /* categorties selectbox */
 #selectboxcategories{
   border-radius: 30px;
@@ -97,7 +106,8 @@ input[type=text]:focus{
   text-indent: 0.01px;
   text-overflow: '';
  }
-.custom-dropdown::after { /*  Custom dropdown arrow */
+  /*  Custom dropdown arrow */
+.custom-dropdown::after {
   height: 1em;
   font-size: .625em;
   line-height: 1;
@@ -108,16 +118,20 @@ input[type=text]:focus{
 #selectboxcategories:focus{
   outline-color: #aaa;
 }
-/* categorties mobile */
+/* categorties mobile duoi 600px*/
 .small {
   display: none;
 }
 @media only screen and (max-width: 600px){
-  .contentCategorties {
+  .categorties {
     display: none;
   }
   .small{
     display: block;
+  }
+  .titleCategorties-mobile {
+    font-size: large;
+    margin-left: 35%;
   }
   #selectboxcategories{
     margin-left: 20%;
@@ -132,45 +146,89 @@ input[type=text]:focus{
   .inputWithIcon {
     margin-left: 15%;
   }
+  .imageTrending-mobile {
+  width: 350px;
+  height: 250px;
+  margin-left: 2rem;
+  border-radius:3%;
+  -moz-border-radius:3%;
+  -webkit-border-radius:3%;
+  }  
 }
 /*Trending product */
 .trending{
   cursor: pointer;
 }
 .titleTrending {
-  font-size: large;
+  font-size: x-large;
 }
 .trendingname:hover {
   transform: scale(1.01);
   text-decoration: underline;
 }
+.contentTrending {
+  margin-top: 2rem;
+}
+
 /* trending product mobile */
 .mobiletrending{
   display: none;
 }
-
+/* trending product mobile duoi 600px*/
 @media only screen and (max-width: 600px){
   .trending {
     display: none;
   }
-  .titleTrending {
+  .titleTrending-mobile {
     font-size:x-large;
-    margin-left: 7%;
+    margin-left: 7%; 
   }
   .mobiletrending{
     display: block;
     text-align: center;
   }
   .productname {
-    margin-left: 15%;
+    margin-left: 6%;
   }
+  /* gia product */
   .margimobile{
-    margin-left: 13%;
+    margin-left: 4%;
   }
   .trendingmobile {
     margin-left: 7%;
   }
 }
+/* page product duoi 1090px */
+@media only screen and (max-width: 1090px){
+  /* trending product */
+  .titleTrending {
+    font-size: smaller;
+    margin-left: 0rem;
+  }  
+  .imageradius {
+    width: 90px;
+    height: 90px;
+  }
+  .contentTrending {
+    margin-left: 17%;
+    margin-top: 0.5rem;
+  }
+
+  /* Categorties */
+  .contentCategorties{
+    font-size: small;
+  }
+  .titleCategorties {
+    margin-top: 1rem;
+    font-size: smaller;
+  }
+  /* selectbox */
+  .small{
+    margin-top: 2rem;
+  }
+}
+
+/*  grid-product */
 .grid-container {
   display: grid;
   grid-template-columns: auto auto auto;
@@ -180,6 +238,14 @@ input[type=text]:focus{
   background-color: rgba(255, 255, 255, 0.8);
   padding: 20px;
   text-align: center;
+}
+.radius-product {
+  width: 100%;
+  height: 250px;
+  object-fit: cover;
+  border-radius:3%;
+  -moz-border-radius:3%;
+  -webkit-border-radius:3%;
 }
 @media only screen and (max-width: 600px){
   .product-content{
@@ -202,11 +268,14 @@ input[type=text]:focus{
 .productname {
   text-align: center;
 }
-.imageradius{ /* bo tron anh */
+
+/* bo tron anh */
+.imageradius{ 
   border-radius:3%;
   -moz-border-radius:3%;
   -webkit-border-radius:3%;
 }
+
 /* next page */
 .nextpage {
   text-align: center;
