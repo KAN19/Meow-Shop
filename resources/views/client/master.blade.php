@@ -25,7 +25,9 @@
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"
         integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous">
     </script>
+
     <link rel="stylesheet" href="{{url('adminlte/plugins/fontawesome-free/css/all.min.css')}}">
+    <script src="{{url('adminlte/plugins/jquery/jquery.min.js')}}"></script>
 
     <title>
         @yield('title')
@@ -51,24 +53,18 @@
 <script>
 $(document).ready(function() {
     $('#burger-top').click(() => {
-        $(".modal-overlay").show();
-        $(".sidenav").show();
-        $(".sidenav").addClass('sidenav-active');
-        $(".sidenav").attr("tabindex", -1).focus();
+        // $(".modal-overlay").show();
+        $('#burger-top').css('display', 'none');
+        $('#close-top').css('display', 'inline-block');
+        $(".panel").slideToggle();
     })
 
-    $('#sidenav__burger').click(() => {
-        $(".modal-overlay").hide();
-        $(".sidenav").removeClass('sidenav-active');
-
-        // $(".sidenav").hide();
+    $('#close-top').click(() => {
+        $('#burger-top').css('display', 'inline-block');
+        $('#close-top').css('display', 'none');
+        $(".panel").slideToggle();
     })
 
-    $('.sidenav').blur(() => {
-        $(".modal-overlay").hide();
-        // $(".sidenav").hide();
-        $(".sidenav").removeClass('sidenav-active');
-    })
 
     //Sticky navbar
     const navbarOffset = $('.navbar__topnav').offset();
@@ -83,9 +79,12 @@ $(document).ready(function() {
 function StickNavBar(navbarOffset) {
     if (window.pageYOffset >= 80) {
         $('.navbar__topnav').addClass('navbar__topnav-sticky ');
+        $(".panel").addClass('panel-stickey');
 
     } else {
         $('.navbar__topnav').removeClass('navbar__topnav-sticky ');
+        $(".panel").removeClass('panel-stickey');
+
     }
 }
 </script>
