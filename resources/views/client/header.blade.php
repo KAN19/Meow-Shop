@@ -6,13 +6,13 @@
 
         <div class="topnav__item topnav__item-fullscreen">
             <a href="#" class="topnav__item__button">
-                Home
+                HOME
             </a>
             <a href="#" class="topnav__item__button">
-                Product
+                PRODUCT
             </a>
             <a href="#" class="topnav__item__button">
-                Contact
+                CONTACT
             </a>
 
         </div>
@@ -22,10 +22,10 @@
                 <i class="fas fa-search"></i>
             </a>
             <a href="#" class="topnav__item__button topnav__item-icon">
-                <i class="fas fa-shopping-cart"></i>
+                <i class="fas fa-user"></i>
             </a>
             <a href="#" class="topnav__item__button topnav__item-icon">
-                <i class="fas fa-user"></i>
+                <i class="fas fa-shopping-cart"></i>
             </a>
         </div>
 

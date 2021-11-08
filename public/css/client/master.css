@@ -10,7 +10,7 @@ body {
 }
 
 .navbar__topnav {
-    height: 60px;
+    height: 80px;
     background-color: burlywood;
     padding: 0 20px;
 }
@@ -44,6 +44,7 @@ body {
 }
 
 .topnav__item-icon {
+    font-size: 22px;
 }
 
 .topnav__item-burger {
