@@ -25,6 +25,9 @@ Route::get('/products', function () {
     return view('client.products.index');
 });
 
+Route::get('/shoppingcart', function () {
+    return view('client.shoppingcart.index');
+});
 
 Route::prefix('admin')->group(function() {
 

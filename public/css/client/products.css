@@ -171,6 +171,23 @@ input[type=text]:focus{
     margin-left: 7%;
   }
 }
+.grid-container {
+  display: grid;
+  grid-template-columns: auto auto auto;
+  padding: 10px;
+}
+.product-content{
+  background-color: rgba(255, 255, 255, 0.8);
+  padding: 20px;
+  text-align: center;
+}
+@media only screen and (max-width: 600px){
+  .product-content{
+    grid-column-start: 1;
+    grid-column-end: 4;
+  }
+}
+
 /* product*/
 .imageproduct:hover{
   cursor: pointer;
