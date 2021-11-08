@@ -41,7 +41,9 @@
 <body>
     @include('client.header')
 
-    @yield('content')
+    <div class="main-content">
+        @yield('content')
+    </div>
 
     @include('client.footer')
 </body>
@@ -66,9 +68,26 @@ $(document).ready(function() {
         $(".modal-overlay").hide();
         // $(".sidenav").hide();
         $(".sidenav").removeClass('sidenav-active');
-
     })
+
+    //Sticky navbar
+    const navbarOffset = $('.navbar__topnav').offset();
+    window.onscroll = function() {
+        StickNavBar(navbarOffset.top)
+    };
+
+    // console.log(offset.top);
 });
+
+
+function StickNavBar(navbarOffset) {
+    if (window.pageYOffset >= 80) {
+        $('.navbar__topnav').addClass('navbar__topnav-sticky ');
+
+    } else {
+        $('.navbar__topnav').removeClass('navbar__topnav-sticky ');
+    }
+}
 </script>
 
 

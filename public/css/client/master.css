@@ -10,9 +10,28 @@ body {
 }
 
 .navbar__topnav {
-    height: 80px;
+    height: 70px;
     background-color: burlywood;
     padding: 0 20px;
+}
+
+.navbar__topnav-sticky {
+    position: fixed;
+    top: 0;
+    width: 100%;
+    z-index: 999;
+    animation: fadding 0.8s linear;
+}
+
+@keyframes fadding {
+    from {
+        height: 30px;
+        opacity: 0;
+    }
+    to {
+        height: 70px;
+        opacity: 1;
+    }
 }
 
 .navbar__topnav-main {
