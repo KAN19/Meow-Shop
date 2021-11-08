@@ -2,6 +2,13 @@
     box-sizing: border-box;
 }
 
+/*bỏ phần thừa bên phải*/
+
+.row {
+    margin-left: 0;
+    margin-right: 0;
+}
+
 /* Slideshow container */
 
 .slideshow-container {
@@ -29,8 +36,7 @@
 
 /* Next & previous buttons */
 
-.prev,
-.next {
+.prev, .next {
     cursor: pointer;
     position: absolute;
     top: 50%;
@@ -54,8 +60,7 @@
 
 /* On hover, add a black background color with a little bit see-through */
 
-.prev:hover,
-.next:hover {
+.prev:hover, .next:hover {
     background-color: rgba(0, 0, 0, 0.8);
 }
 
@@ -82,39 +87,9 @@
     transition: background-color 0.6s ease;
 }
 
-.active,
-.dot:hover {
+.active, .dot:hover {
     background-color: #717171;
 }
-
-/* Fading animation */
-
-/* .fade {
-    -webkit-animation-name: fade;
-    -webkit-animation-duration: 1.5s;
-    animation-name: fade;
-    animation-duration: 1.5s;
-}
-
-@-webkit-keyframes fade {
-    from {
-        opacity: .4
-    }
-    to {
-        opacity: 1
-    }
-}
-
-@keyframes fade {
-    from {
-        opacity: .4
-    }
-    to {
-        opacity: 1
-    }
-} */
-
-/* On smaller screens, decrease text size */
 
 @media only screen and (max-width: 300px) {
     .text {
@@ -153,7 +128,7 @@
     }
 }
 
-/* ===============trnedng product=========== */
+/* ===============trending product=========== */
 
 #trendingProducts {
     margin-bottom: 1rem;
@@ -164,13 +139,6 @@
 #categories {
     margin-bottom: 1rem;
 }
-
-/* a {
-    color: black;
-    display: block;
-    position: relative;
-    padding: 0.2em 0;
-} */
 
 /*style underline*/
 
@@ -190,10 +158,7 @@
     text-align: center;
 }
 
-.custom-underline,
-.custom-underline:hover,
-.custom-underline:focus,
-.custom-underline:active {
+.custom-underline, .custom-underline:hover, .custom-underline:focus, .custom-underline:active {
     color: rgb(17, 1, 1);
     text-decoration: none;
 }
@@ -216,6 +181,8 @@
     width: 90%;
     transition: 0.3s ease all;
 }
+
+/* ===============4 trending product photos=========== */
 
 /*style product img*/
 
@@ -247,6 +214,11 @@
     text-decoration: underline;
 }
 
+<<<<<<< HEAD
+=======
+/*bo tròn ảnh*/
+
+>>>>>>> feature/product-detail
 .imageradius {
     border-radius: 3%;
     -moz-border-radius: 3%;
@@ -269,9 +241,7 @@
     color: #0d172a;
     cursor: pointer;
     display: inline-block;
-    font-family: "Basier circle", -apple-system, system-ui, "Segoe UI", Roboto,
-        "Helvetica Neue", Arial, "Noto Sans", sans-serif, "Apple Color Emoji",
-        "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
+    font-family: "Basier circle", -apple-system, system-ui, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
     font-size: 1rem;
     font-weight: 600;
     line-height: 1;
@@ -298,11 +268,13 @@
     }
 } */
 
+/* ===============our partnership=========== */
+
 /*Style Partnership*/
 
 .partner-photos img {
-    margin: 10px 0 0 50px;
-    padding-left: 45px;
+    /* margin: 10px 0 0 50px; */
+    /* padding-left: 45px; */
     border-radius: 5px;
     -webkit-filter: grayscale(100%);
     filter: grayscale(100%);
@@ -311,8 +283,6 @@
 .partner-photos p {
     margin-top: 5px;
     align-items: center;
-    margin-left: 85px;
-    padding-left: 50px;
 }
 
 .partner-photos img:hover {
@@ -320,7 +290,49 @@
     transform: scale(1.01);
 }
 
-/*Follow*/
+.partner-logo {
+    text-align: center;
+}
+
+.partner-logo img {
+    max-width: 200px;
+    max-height: 200px;
+    object-fit: cover;
+}
+
+/*chỉnh lỗi xuống hàng*/
+
+@media only screen and (max-width: 909px) {
+    .partner-logo img {
+        max-width: 100px;
+        max-height: 100px;
+        object-fit: cover;
+    }
+    .partner-logo p {
+        font-size: smaller
+    }
+}
+
+@media only screen and (max-width: 510px) {
+    .partner-logo img {
+        max-width: 75px;
+        max-height: 75px;
+        object-fit: cover;
+    }
+    .partner-logo p {
+        font-size: smaller
+    }
+}
+
+@media only screen and (max-width: 419px) {
+    .partner-logo img {
+        max-width: 200px;
+        max-height: 200px;
+        object-fit: cover;
+    }
+}
+
+/* ===============Follow Us=========== */
 
 .follow-us {
     background-color: #d1d5db;
@@ -362,8 +374,3 @@
     padding: 0 !important;
     margin: 0 !important;
 }
-
-/* img {
-    width: 10%;
-    height: auto;
-} */

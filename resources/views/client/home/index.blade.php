@@ -57,6 +57,7 @@
         <!-- </div> -->
     </div>
 
+    <br>
     <!--Trending Products-->
     <div id="trendingProducts">
         <p class="h3 text-center">Trending Products</p>
@@ -82,12 +83,12 @@
                 <p class="h6 text-center product-price"><strong>9.99$</strong></p>
             </div>
             <div class="col product-content" style="text-align: center;">
-                <img class="imageradius" src="https://picsum.photos/1000/1000" alt="product2">
-                <p class="h6 text-center product-name">Product's Name dài ơi là dài, dài lắm lun</p>
+                <img src="https://picsum.photos/1000/1000" class="imageradius" alt="product2">
+                <p class="h6 text-center product-name">Product's Name</p>
                 <p class="h6 text-center product-price"><del>9.99$</del> <strong>8.99$</strong></p>
             </div>
             <div class="col product-content" style="text-align: center;">
-                <img class="imageradius" src="https://picsum.photos/1000/1000" alt="product3">
+                <img src="https://picsum.photos/1000/1000" class="imageradius" alt="product3">
                 <p class="h6 text-center product-name">Product's Name</p>
                 <p class="h6 text-center product-price"><del>8.99$</del> <strong>8.99$</strong></p>
             </div>
@@ -113,44 +114,45 @@
 
     <div class="row partner-photos">
         <div class="col partner-logo">
-            <img src="/image/logo1.png" alt="logo1" style="max-width:220px; max-height: 220px; object-fit:cover">
-            <p class="h6">Partner's name</p>
+            <img src="/image/logo1.png" alt="logo1">
+            <p class="h6">Pet Food</p>
         </div>
         <div class="col partner-logo">
-            <img src="/image/logo2.png" alt="logo2" style="max-width:220px; max-height: 220px; object-fit:cover">
-            <p class=" h6">Partner's name</p>
+            <img src="/image/logo2.png" alt="logo2">
+            <p class=" h6">Dog & Cat</p>
         </div>
         <div class="col partner-logo">
-            <img src="/image/logo3.png" alt="logo3" style="max-width:220px; max-height: 220px; object-fit:cover">
-            <p class="h6">Partner's name</p>
+            <img src="/image/logo3.png" alt="logo3">
+            <p class="h6">Royal Cannin</p>
         </div>
         <div class="col partner-logo">
-            <img src="/image/logo4.png" alt="logo4" style="max-width:220px; max-height: 220px; object-fit:cover">
-            <p class="h6">Partner's name</p>
+            <img src="/image/logo4.png" alt="logo4">
+            <p class="h6">Bil Jac</p>
         </div>
     </div>
     <br>
     <div class="row partner-photos">
         <div class="col partner-logo">
-            <img src="/image/logo5.png" alt="logo5" style="max-width:220px; max-height: 220px; object-fit:cover">
-            <p class="h6">Partner's name</p>
+            <img src="/image/logo5.png" alt="logo5">
+            <p class="h6">Whiskas</p>
         </div>
         <div class="col partner-logo">
-            <img src="/image/logo6.png" alt="logo6" style="max-width:220px; max-height: 220px; object-fit:cover">
-            <p class="h6">Partner's name</p>
+            <img src="/image/logo6.png" alt="logo6">
+            <p class="h6">Promina</p>
         </div>
         <div class="col partner-logo">
-            <img src="/image/logo7.png" alt="logo7" style="max-width:220px; max-height: 220px; object-fit:cover">
-            <p class="h6">Partner's name</p>
+            <img src="/image/logo7.png" alt="logo7">
+            <p class="h6">Joy Dog Food</p>
         </div>
         <div class="col partner-logo">
-            <img src="/image/logo8.png" alt="logo8" style="max-width:220px; max-height: 220px; object-fit:cover">
-            <p class="h6">Partner's name</p>
+            <img src="/image/logo8.png" alt="logo8">
+            <p class="h6">Company Pet Food</p>
         </div>
     </div>
 
 
     <!--follow us-->
+    <br>
     <div class="follow-us">
         <p class="h4 text-center">FOLLOW US ON FACEBOOK</p>
         <div class="follow-photos">
