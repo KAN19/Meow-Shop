@@ -1,0 +1,157 @@
+body {
+    font-family: "Montserrat", sans-serif !important;
+}
+
+/* Top nav bar */
+.navbar__container {
+    width: 100%;
+    margin: 0;
+    position: relative;
+}
+
+.navbar__topnav {
+    height: 60px;
+    background-color: burlywood;
+    padding: 0 20px;
+}
+
+.navbar__topnav-main {
+    display: flex;
+    justify-content: space-between;
+}
+
+.topnav__item {
+    display: flex;
+    align-items: center;
+}
+
+.topnav__item-fullscreen {
+    display: none;
+}
+
+.topnav__item__button {
+    padding: 0 10px;
+    text-align: center;
+    text-decoration: none;
+    color: black;
+    transition: 0.3s linear;
+}
+
+.topnav__item__button:hover {
+    text-decoration: none;
+    color: white;
+    transition: 0.3s linear;
+}
+
+.topnav__item-icon {
+}
+
+.topnav__item-burger {
+    cursor: pointer;
+    font-size: 22px;
+}
+
+@media (min-width: 576px) {
+    .topnav__item-fullscreen {
+        display: flex;
+    }
+
+    .topnav__item {
+        flex: 0.3333333;
+    }
+
+    .topnav__item:nth-child(1) {
+        justify-content: start;
+    }
+
+    .topnav__item:nth-child(2) {
+        justify-content: center;
+    }
+
+    .topnav__item:nth-child(3) {
+        justify-content: end;
+    }
+}
+
+/* End top navbar */
+
+/* Side navbar */
+.sidenav {
+    position: absolute;
+    top: 0;
+    right: 0;
+    z-index: 101;
+    width: 0;
+    overflow-x: hidden;
+    transition: 0.3s;
+
+    border-top-left-radius: 5px;
+    border-bottom-left-radius: 10px;
+}
+
+.sidenav-active {
+    border-bottom: 1px solid gray;
+    border-left: 1px solid gray;
+    width: 50%;
+    transition: 0.3s ease-in;
+}
+
+.sidenav__topnav {
+    display: flex;
+    align-items: center;
+    justify-content: end;
+}
+
+/* Side nav content */
+.sidenav__container {
+    background-color: white;
+}
+
+.sidenav__container__item {
+    display: block;
+    padding-left: 15px;
+    padding-top: 5px;
+    padding-bottom: 5px;
+    transition: 0.2s linear;
+    background-color: white;
+    color: black;
+}
+
+.sidenav__container__item:hover {
+    background-color: burlywood;
+    transition: 0.2s linear;
+    color: white;
+}
+/* End sidenav content */
+/* End sidenav */
+
+/* Backdrop */
+.nav-backdrop {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(0, 0, 0, 0.5);
+    content: "";
+}
+
+.modal-overlay {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 100;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+}
+
+.modal-overlay-active {
+    display: block;
+}
+.modal-overlay-inactive {
+    display: none;
+}
+
+/* End backdrop */
