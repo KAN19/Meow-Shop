@@ -247,6 +247,12 @@
     text-decoration: underline;
 }
 
+.imageradius {
+    border-radius: 3%;
+    -moz-border-radius: 3%;
+    -webkit-border-radius: 3%;
+}
+
 /*price*/
 
 .product-price {
