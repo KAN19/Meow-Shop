@@ -93,6 +93,26 @@ body {
     }
 }
 
+/* Feature topnav */
+#topnav__search__input {
+    border-radius: 20px;
+    display: none;
+    width: 0px;
+    padding: 4px 10px;
+    font-size: 14px;
+    background-color: whitesmoke;
+    border: none;
+    opacity: 0.8;
+}
+
+.topnav__search__input-active {
+    /* width: 200px; */
+}
+
+#topnav__search__input:focus {
+    outline: none;
+}
+
 /* End top navbar */
 
 /* Side navbar */

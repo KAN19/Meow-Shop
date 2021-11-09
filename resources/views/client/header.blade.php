@@ -18,7 +18,9 @@
         </div>
 
         <div class="topnav__item topnav__item-fullscreen">
-            <a href="#" class="topnav__item__button topnav__item-icon">
+            <input type="text" id="topnav__search__input" />
+            <a href="#" id="topnav__search__icon" class="topnav__item__button topnav__item-icon">
+
                 <i class="fas fa-search"></i>
             </a>
             <a href="#" class="topnav__item__button topnav__item-icon">

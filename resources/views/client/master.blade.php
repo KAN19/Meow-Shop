@@ -65,6 +65,13 @@ $(document).ready(function() {
         $(".panel").slideToggle();
     })
 
+    $('#topnav__search__icon').click(() => {
+        SearchActive();
+    })
+    $('#topnav__search__input').blur(() => {
+        SearchInactive();
+    })
+
 
     //Sticky navbar
     const navbarOffset = $('.navbar__topnav').offset();
@@ -75,6 +82,29 @@ $(document).ready(function() {
     // console.log(offset.top);
 });
 
+
+function SearchActive() {
+    $('#topnav__search__input').show();
+    $('#topnav__search__input').animate({
+        width: '200px',
+        paddingTop: '4px',
+        paddingBottom: '4px',
+        paddingLeft: '10px',
+        paddingRight: '10px',
+    })
+    $('#topnav__search__input').focus();
+    $('#topnav__search__icon').css('corlor')
+}
+
+function SearchInactive() {
+    $('#topnav__search__input').animate({
+        width: '0px',
+        padding: '0px',
+        display: 'none',
+
+        // margin: '0px',
+    })
+}
 
 function StickNavBar(navbarOffset) {
     if (window.pageYOffset >= 80) {
