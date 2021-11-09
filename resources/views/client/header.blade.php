@@ -6,55 +6,91 @@
 
         <div class="topnav__item topnav__item-fullscreen">
             <a href="#" class="topnav__item__button">
-                Home
+                HOME
             </a>
+            <div id="topnav__item-product">
+                <a href="#" class="topnav__item__button">
+                    PRODUCT
+                </a>
+                <div class="product__dropdown__content">
+                    <a href="#">Link 1</a>
+                    <a href="#">Link 2</a>
+                    <a href="#">Link 3</a>
+                </div>
+            </div>
             <a href="#" class="topnav__item__button">
-                Product
-            </a>
-            <a href="#" class="topnav__item__button">
-                Contact
+                CONTACT
             </a>
 
         </div>
 
         <div class="topnav__item topnav__item-fullscreen">
-            <a href="#" class="topnav__item__button topnav__item-icon">
+            <input type="text" id="topnav__search__input" />
+            <a href="#" id="topnav__search__icon" class="topnav__item__button topnav__item-icon">
+
                 <i class="fas fa-search"></i>
-            </a>
-            <a href="#" class="topnav__item__button topnav__item-icon">
-                <i class="fas fa-shopping-cart"></i>
             </a>
             <a href="#" class="topnav__item__button topnav__item-icon">
                 <i class="fas fa-user"></i>
             </a>
+            <div id="topnav__item__cart">
+                <a href="#" class="topnav__item__button topnav__item-icon">
+                    <i class="fas fa-shopping-cart"></i>
+                </a>
+                <div class="cart__dropdown">
+                    <a href="#" class="cart__dropdown__item">
+                        <img src="https://picsum.photos/200/500" class="cart__dropdown__image" alt="" srcset="">
+                        <div class="cart__dropdown__content">
+                            <div class="cart__dropdown__content-name">
+                                Ten san phams ne
+                            </div>
+                            <div class="cart__dropdown__content-price">
+                                100.000VND
+                            </div>
+                        </div>
+                        <div href="#" class="cart__dropdown__delete">
+                            <i class="far fa-times-circle"></i>
+                        </div>
+                    </a>
+                    <hr>
+                    <div class="cart__dropdown__selection">
+                        <a class="cart__dropdown__button">View Cart</a>
+                        <a class="cart__dropdown__button">Checkout</a>
+                    </div>
+                </div>
+            </div>
+
         </div>
 
         <!-- Burger -->
-        <div class="topnav__item topnav__item-burger d-flex d-sm-none" id="burger-top">
-            <i class="fas fa-bars"></i>
+        <div class="topnav__item topnav__item-burger d-flex d-sm-none">
+            <i class="fas fa-bars" id="burger-top"></i>
+            <i class="far fa-times-circle" id="close-top" style="display: none;"></i>
         </div>
     </div>
-    <div class="sidenav ">
-        <div class="sidenav__topnav navbar__topnav">
-            <div class="topnav__item-burger">
-                <i class="fas fa-bars" id="sidenav__burger"></i>
-            </div>
-        </div>
-
-        <div class="sidenav__container">
-            <a href="#" class="sidenav__container__item">
-                Home
-            </a>
-            <a href="#" class="sidenav__container__item">
-                Product
-            </a>
-            <a href="#" class="sidenav__container__item">
-                Contact
-            </a>
-            <a href="#" class="sidenav__container__item">
-                Shopping cart
-            </a>
-        </div>
+    <div class="panel d-sm-none">
+        <a href="#" class="panel__item">
+            <span class="panel__item__icon"><i class="fas fa-home"></i></span>
+            <span>Home</span>
+        </a>
+        <a href="#" class="panel__item">
+            <span class="panel__item__icon"><i class="fas fa-paw"></i></span>
+            <span>Products</span>
+        </a>
+        <a href="#" class="panel__item">
+            <span class="panel__item__icon"><i class="fas fa-phone-square-alt"></i></span>
+            <span>Contact</span>
+        </a>
+        <a href="#" class="panel__item">
+            <span class="panel__item__icon">
+                <i class="fas fa-user"></i>
+            </span>
+            <span>Profile</span>
+        </a>
+        <a href="#" class="panel__item">
+            <span class="panel__item__icon"><i class="fas fa-shopping-cart"></i></span>
+            <span>Cart</span>
+        </a>
     </div>
 </nav>
 <div class="modal-overlay " id="modal-overlay"></div>

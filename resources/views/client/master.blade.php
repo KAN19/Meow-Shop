@@ -25,7 +25,9 @@
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"
         integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous">
     </script>
+
     <link rel="stylesheet" href="{{url('adminlte/plugins/fontawesome-free/css/all.min.css')}}">
+    <script src="{{url('adminlte/plugins/jquery/jquery.min.js')}}"></script>
 
     <title>
         @yield('title')
@@ -41,7 +43,9 @@
 <body>
     @include('client.header')
 
-    @yield('content')
+    <div class="main-content">
+        @yield('content')
+    </div>
 
     @include('client.footer')
 </body>
@@ -49,26 +53,76 @@
 <script>
 $(document).ready(function() {
     $('#burger-top').click(() => {
-        $(".modal-overlay").show();
-        $(".sidenav").show();
-        $(".sidenav").addClass('sidenav-active');
-        $(".sidenav").attr("tabindex", -1).focus();
+        // $(".modal-overlay").show();
+        $('#burger-top').css('display', 'none');
+        $('#close-top').css('display', 'inline-block');
+        $(".panel").slideToggle();
     })
 
-    $('#sidenav__burger').click(() => {
-        $(".modal-overlay").hide();
-        $(".sidenav").removeClass('sidenav-active');
-
-        // $(".sidenav").hide();
+    $('#close-top').click(() => {
+        $('#burger-top').css('display', 'inline-block');
+        $('#close-top').css('display', 'none');
+        $(".panel").slideToggle();
     })
 
-    $('.sidenav').blur(() => {
-        $(".modal-overlay").hide();
-        // $(".sidenav").hide();
-        $(".sidenav").removeClass('sidenav-active');
-
+    //Search icon navbar
+    $('#topnav__search__icon').click(() => {
+        SearchActive();
     })
+    $('#topnav__search__input').blur(() => {
+        SearchInactive();
+    })
+    // end search
+
+    // Shopping cart dropdown
+    $('#topnav__item__cart').click(() => {
+        $('.cart__dropdown').slideToggle();
+    })
+
+    //Sticky navbar
+    const navbarOffset = $('.navbar__topnav').offset();
+    window.onscroll = function() {
+        StickNavBar(navbarOffset.top)
+    };
+
+    // console.log(offset.top);
 });
+
+
+function SearchActive() {
+    $('#topnav__search__input').show();
+    $('#topnav__search__input').animate({
+        width: '200px',
+        paddingTop: '4px',
+        paddingBottom: '4px',
+        paddingLeft: '10px',
+        paddingRight: '10px',
+    })
+    $('#topnav__search__input').focus();
+    $('#topnav__search__icon').css('corlor')
+}
+
+function SearchInactive() {
+    $('#topnav__search__input').animate({
+        width: '0px',
+        padding: '0px',
+        display: 'none',
+
+        // margin: '0px',
+    })
+}
+
+function StickNavBar(navbarOffset) {
+    if (window.pageYOffset >= 80) {
+        $('.navbar__topnav').addClass('navbar__topnav-sticky ');
+        $(".panel").addClass('panel-stickey');
+
+    } else {
+        $('.navbar__topnav').removeClass('navbar__topnav-sticky ');
+        $(".panel").removeClass('panel-stickey');
+
+    }
+}
 </script>
 
 
