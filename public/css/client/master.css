@@ -116,7 +116,7 @@ body {
     position: absolute;
     background-color: #f9f9f9;
     min-width: 160px;
-    box-shadow: 6px 8px 16px 0px rgba(0, 0, 0, 0.2);
+    box-shadow: 8px 8px 16px 0px rgba(0, 0, 0, 0.2);
     z-index: 1;
 }
 
@@ -145,6 +145,103 @@ body {
         opacity: 1;
     }
 }
+
+/* ======== Shopping cart dropdown ==== */
+.cart__dropdown {
+    margin-top: 18px;
+    display: none;
+    position: absolute;
+    background-color: #f9f9f9;
+    box-shadow: 8px 8px 16px 0px rgba(0, 0, 0, 0.2);
+    z-index: 1;
+    width: 25%;
+    float: right;
+    right: 2%;
+    padding: 20px;
+    max-height: 300px;
+    overflow-y: scroll;
+}
+
+/* ====Cart item==== */
+.cart__dropdown__item {
+    display: flex;
+    text-decoration: none;
+    color: inherit;
+}
+.cart__dropdown__item:hover {
+    text-decoration: none;
+    color: inherit;
+}
+
+.cart__dropdown__image {
+    width: 90px;
+    height: 90px;
+    object-fit: cover;
+    border-radius: 10px;
+    margin-right: 10px;
+    min-width: 90px;
+}
+
+.cart__dropdown__content {
+    flex-grow: 2;
+    align-self: center;
+}
+
+.cart__dropdown__content-name {
+    margin-bottom: 6px;
+    transition: 0.3s linear;
+}
+
+.cart__dropdown__content-price {
+    font-size: 14px;
+    color: rgb(104, 97, 97);
+}
+
+.cart__dropdown__content-name:hover {
+    color: sandybrown;
+}
+
+.cart__dropdown__delete {
+    font-size: 20px;
+    font-weight: 300;
+    transition: 0.3s linear;
+    color: gray;
+}
+.cart__dropdown__delete:hover {
+    color: sandybrown;
+}
+/* end cart item */
+
+.cart__dropdown__selection {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+}
+
+.cart__dropdown__button {
+    width: 70%;
+    border: 1px solid gray;
+    border-radius: 20px;
+    padding: 5px;
+    margin-bottom: 10px;
+    transition: 0.3s linear;
+}
+
+.cart__dropdown__button:hover {
+    background-color: sandybrown;
+    color: white !important;
+    transition: 0.3s linear;
+    border: 1px solid white;
+}
+
+.cart__dropdown__button:last-child {
+    margin-bottom: 0px;
+}
+
+/* ===== End shopping cart dropdown====== */
+
 /* End top navbar */
 
 /* Side navbar */

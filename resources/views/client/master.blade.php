@@ -72,7 +72,12 @@ $(document).ready(function() {
     $('#topnav__search__input').blur(() => {
         SearchInactive();
     })
+    // end search
 
+    // Shopping cart dropdown
+    $('#topnav__item__cart').click(() => {
+        $('.cart__dropdown').slideToggle();
+    })
 
     //Sticky navbar
     const navbarOffset = $('.navbar__topnav').offset();
