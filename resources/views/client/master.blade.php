@@ -65,6 +65,7 @@ $(document).ready(function() {
         $(".panel").slideToggle();
     })
 
+    //Search icon navbar
     $('#topnav__search__icon').click(() => {
         SearchActive();
     })

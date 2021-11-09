@@ -8,9 +8,16 @@
             <a href="#" class="topnav__item__button">
                 HOME
             </a>
-            <a href="#" class="topnav__item__button">
-                PRODUCT
-            </a>
+            <div id="topnav__item-product">
+                <a href="#" class="topnav__item__button">
+                    PRODUCT
+                </a>
+                <div class="product__dropdown__content">
+                    <a href="#">Link 1</a>
+                    <a href="#">Link 2</a>
+                    <a href="#">Link 3</a>
+                </div>
+            </div>
             <a href="#" class="topnav__item__button">
                 CONTACT
             </a>
