@@ -25,8 +25,8 @@
     </div>    
     <!-- search button -->
     <div class ="row mt-5 ml-4">
-        <div class="col-sm-2">             
-            <div class="ml-4">    
+        <div class="col-sm-3">             
+            <div class="ml-2">    
                 <div class="inputWithIcon">
                     <div>                          
                         <input type="text" placeholder="Search...." class="searchbtn py-1 border" id="searchbtn"> 
@@ -36,7 +36,7 @@
             </div>                                         
             <br>
             <!-- categorties -->
-            <div class="categorties ml-4">
+            <div class="categorties ml-2">
                 <div class="titleCategorties mb-3 font-weight-bold">Categories</div>
                 <div class="contentCategorties">
                     <div class="content mb-2">Cat Food</div>
@@ -53,52 +53,52 @@
                     </select>
             </span>
             <!--Trending product-->
-            <div class="trending mt-4 ml-4">
+            <div class="trending mt-4 ml-2">
                 <div class="titleTrending mb-3 font-weight-bold">
                     Trending product
                 </div>
                 <!--trending product 1-->
                 <div class="trendingproduct name">
-                    <div class="row trendingname">
-                        <div class="col-sm">                        
-                            <div><img class="imageradius" src="https://picsum.photos/100"/></div>
+                    <div class="trendingname row">
+                        <div>                        
+                            <div><img class="imageradius" src="https://picsum.photos/150"/></div>
                         </div>
-                        <div class="contentTrending col-sm">
-                            <a>Name</a><br>
-                            <a>$99.00</a>
+                        <div class="contentTrending">
+                            <div>Name</div>
+                            <div>$99.00</div>
                         </div>                                       
                     </div>        
-                    <hr class="my-3 ">  
+                    <hr class="my-3">  
                     <!--trending product 2-->  
-                    <div class="row trendingname">
-                        <div class="col-sm">                        
-                            <div><img class="imageradius" src="https://picsum.photos/100"/></div>
+                    <div class="trendingname row">
+                        <div>                        
+                            <div><img class="imageradius" src="https://picsum.photos/150"/></div>
                         </div>
-                        <div class="contentTrending col-sm">
-                            <a>Name</a><br>
-                            <a>$99.00</a>
+                        <div class="contentTrending">
+                            <div>Name</div>
+                            <div>$99.00</div>
                         </div>                                       
                     </div>      
                     <hr class="my-3 ">   
                     <!--trending product 3-->   
-                    <div class="row trendingname">
-                        <div class="col-sm">                        
-                            <div><img class="imageradius" src="https://picsum.photos/100"/></div>
+                    <div class="trendingname row">
+                        <div>                        
+                            <div><img class="imageradius" src="https://picsum.photos/150"/></div>
                         </div>
-                        <div class="contentTrending col-sm">
-                            <a>Name</a><br>
-                            <a>$99.00</a>
+                        <div class="contentTrending">
+                            <div>Name</div>
+                            <div>$99.00</div>
                         </div>                                       
                     </div>    
                     <hr class="my-3 "> 
                     <!--trending product 4-->  
-                    <div class="row trendingname">
-                        <div class="col-sm">                        
-                            <div><img class="imageradius" src="https://picsum.photos/100"/></div>
+                    <div class="trendingname row">
+                        <div>                        
+                            <div><img class="imageradius" src="https://picsum.photos/150"/></div>
                         </div>
-                        <div class="contentTrending col-sm">
-                            <a>Name</a><br>
-                            <a>$99.00</a>
+                        <div class="contentTrending">
+                            <div>Name</div>
+                            <div>$99.00</div>
                         </div>                                       
                     </div>      
                 </div>                                           
@@ -106,7 +106,7 @@
         </div>
 
         <!---product-->
-        <div class="col-sm-10">
+        <div class="col-sm-9">
             <br><br>
             <div class="grid-container">                
                 <!--div col 1></!--div-->                
