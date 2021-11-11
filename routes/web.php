@@ -34,6 +34,10 @@ Route::get('/test-admin', function () {
 });
 
 
+Route::get('/admin-login', function () {
+    return view('admin.login.index');
+})->name('admin-login');
+
 Route::prefix('admin')->group(function() {
 
     Route::get('/', function () {
