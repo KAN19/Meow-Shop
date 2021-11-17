@@ -31,11 +31,15 @@
             <div class="riightside__header">
                 Welcome back
             </div>
-            <form action="{{route('admin-login')}}" method="POST">
+            <form action="{{route('admin-register')}}" method="POST">
                 @csrf
                 <div class="input__wrapper">
                     <label for="username">Username</label>
                     <input type="text" class="input__field" name="username" id="">
+                </div>
+                <div class="input__wrapper">
+                    <label for="username">Email</label>
+                    <input type="text" class="input__field" name="email" id="">
                 </div>
                 <div class="input__wrapper">
                     <label for="password">Password</label>

@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\Admin\AuthController;
 use App\Http\Controllers\Admin\CategoryController;
 use App\Http\Controllers\Admin\MediaController;
 use App\Http\Controllers\Admin\ProductController;
@@ -34,9 +35,16 @@ Route::get('/test-admin', function () {
 });
 
 
-Route::get('/admin-login', function () {
-    return view('admin.login.index');
-})->name('admin-login');
+
+Route::get('/admin-register', [AuthController::class, 'showRegister'])->name('admin-register');
+Route::post('/admin-register', [AuthController::class, 'storeRegister'])->name('admin-register');
+
+
+Route::get('/admin-login', [AuthController::class, 'showLogin'])->name('admin-login');
+Route::post('/admin-login', [AuthController::class, 'login'])->name('admin-login');
+
+Route::get('/admin-logout', [AuthController::class, 'logout'])->name('admin-logout');
+
 
 Route::prefix('admin')->group(function() {
 
