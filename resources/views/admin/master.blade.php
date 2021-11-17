@@ -36,12 +36,12 @@
             <ul class="navbar-nav ml-auto">
                 <li class="nav-item dropdown ">
                     <a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown">
-                        <span class="d-none d-md-inline">Alexander Pierce</span>
+                        <span class="d-none d-md-inline">{{Auth::guard('admin')->user()->name}}</span>
                     </a>
                     <ul class="dropdown-menu dropdown-menu-right">
                         <!-- Menu Footer-->
                         <li>
-                            <a href="#" class="btn btn-link">Sign out</a>
+                            <a href="{{route('admin-logout')}}" class="btn btn-link">Logout</a>
                         </li>
                     </ul>
                 </li>

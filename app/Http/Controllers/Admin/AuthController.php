@@ -14,9 +14,13 @@ class AuthController extends Controller
     } 
 
     public function storeRegister(Request $request) {
+        $request->validate([
+            'username' =>'required',
+            'password' =>'required'
+        ]);
+
         $user = new admin(); 
         $user->name = $request->username;
-        $user->email = $request->email;
         $user->password = bcrypt($request->password);
     
         $user->save(); 
@@ -33,20 +37,23 @@ class AuthController extends Controller
         $auth = Auth::guard('admin');
 
         if ($auth instanceof \Illuminate\Contracts\Auth\StatefulGuard){
-            
-            $auth->attempt(['name' => $request->username, 'password' => $request->password]);
-            return redirect()->route('admin-home');
+            if ($auth->attempt(['name' => $request->username, 'password' => $request->password])) {
+                return redirect()->route('admin-home');
+            } else {
+                return redirect()->route('admin-login')->with('Fail', 'Incorrect credentials');
 
-        } else {
-
-            return redirect()->route('admin-login')->with('Fail', 'Incorrect Credentials');
-       
+            }
         }
-     
     } 
 
     public function logout()
     {
-        Auth::logout(); 
+        $auth = Auth::guard('admin');
+        
+        if ($auth instanceof \Illuminate\Contracts\Auth\StatefulGuard){
+            $auth->logout(); 
+        }
+
+        return redirect()->route('admin-login');
     }
 }

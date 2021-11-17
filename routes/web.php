@@ -39,8 +39,8 @@ Route::get('/test-admin', function () {
 
 Route::middleware(['guest:admin'])->group(function() { 
 
-    // Route::get('/admin-register', [AuthController::class, 'showRegister'])->name('admin-register');
-    // Route::post('/admin-register', [AuthController::class, 'storeRegister'])->name('admin-register');
+    Route::get('/admin-register', [AuthController::class, 'showRegister'])->name('admin-register');
+    Route::post('/admin-register', [AuthController::class, 'storeRegister'])->name('admin-register');
     
     
     Route::get('/admin-login', [AuthController::class, 'showLogin'])->name('admin-login');

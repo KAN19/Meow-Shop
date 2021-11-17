@@ -66,6 +66,8 @@ html {
 
 label {
     margin-bottom: 5px;
+    font-size: 14px;
+    margin-left: 2px;
 }
 
 .input__wrapper {
@@ -83,6 +85,24 @@ label {
 }
 
 .input__field-button {
+    margin-top: 6px;
     background-color: rgb(51, 167, 51);
+    color: white;
+    transition: 0.3s linear;
+    cursor: pointer;
+}
+
+.input__field-button:hover {
+    background-color: rgb(34, 124, 34);
+    transition: 0.3s linear;
 }
 /* =======right side */
+
+.message__error {
+    border: 1px solid rgb(240, 63, 63);
+    background: rgb(255, 108, 108);
+    font-size: 14px;
+    padding: 6px 18px;
+    text-align: center;
+    color: white;
+}

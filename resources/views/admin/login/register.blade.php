@@ -38,10 +38,6 @@
                     <input type="text" class="input__field" name="username" id="">
                 </div>
                 <div class="input__wrapper">
-                    <label for="username">Email</label>
-                    <input type="text" class="input__field" name="email" id="">
-                </div>
-                <div class="input__wrapper">
                     <label for="password">Password</label>
                     <input type="password" class="input__field" name="password" id="">
                 </div>

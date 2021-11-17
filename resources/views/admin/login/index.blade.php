@@ -31,6 +31,14 @@
             <div class="riightside__header">
                 Welcome back
             </div>
+            @if(session('Fail'))
+            <div class="input__wrapper">
+                <div class="message__error">
+                    {{session('Fail')}}
+                </div>
+            </div>
+            @endif
+
             <form action="{{route('admin-login')}}" method="POST">
                 @csrf
                 <div class="input__wrapper">
