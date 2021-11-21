@@ -9,7 +9,7 @@
 @section('title', 'Product Detail')
 
 @section('content')
-<!--Breadcrumb-container-->
+<!-------------breadcrumb------------->
 <nav aria-label="breadcrumb breadcrumb--container">
     <ol class="breadcrumb">
         <li class="breadcrumb-item ml-5"><a href="#"><i class="fa fa-home" aria-hidden="true"></i></a></li>
@@ -17,78 +17,41 @@
         <li class="breadcrumb-item active" aria-current="page">Example Product</li>
     </ol>
 </nav>
-
-<!-- <div class="grid-container">
-    <div class="grid-item">
-        <div class="mini-photos__row row ">
-            <div class="mini-photo__col col">
-                <img src="https://picsum.photos/1100/1000" />
-            </div>
-            <div class="mini-photo__col col">
-                <img src="https://picsum.photos/1100/1000" />
-            </div>
-            <div class="mini-photo__col col">
-                <img src="https://picsum.photos/1100/1000" />
-            </div>
-        </div>
-    </div>
-    <div class="grid-item">
-        <img class="big-photo--imageradius" src="https://picsum.photos/1600/1000" style="max-width: 550px; max-height: 500px" />
-    </div>
-    <div class="grid-item">
-        <p class="product-desc--name h5"> <strong> Product's Name </strong> </p>
-        <p class="product-desc--price h7">$9.99</p>
-        <div class="product-desc--detail">
-            <p class="h7">Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolore itaque qui dolor, hic commodi, perferendis iusto ea nesciunt cum dicta voluptatibus nobis consequatur asperiores mollitia eaque et? Pariatur, adipisci molestiae.</p>
-        </div>
-        <br>
-        <a href="/" class="btn btn--addCart">Add to cart</a>
-        <a href="/" class="btn btn--buyNow">Buy Now</a>
-        <div class="product-desc--category">
-            <p class="product-desc__h7 h7">
-                <strong>Category:</strong>
-                <span class="product-desc__h7--name"> Cat food</span>
-            </p>
-            <p class="product-desc__h7 h7">
-                <strong>Tags:</strong>
-                <span class="product-desc__h7--name"> Cat food,</span>
-                <span class="product-desc__h7--name"> Diet food,</span>
-                <span class="product-desc__h7--name"> Oganic food</span>
-            </p>
-        </div>
-    </div>
-</div> -->
-
 <!--Product Content-->
-<div class="prod-content">
-    <div class="prod-content__row row mt-5 ml-4">
-        <div class="prod-content__col--mini col-2">
-            <div class="mini-photos__row row ">
-                <div class="mini-photo__col col">
-                    <img src="https://picsum.photos/1100/1000" />
+<div class="prod-content container-fluid">
+    <div class="prod-content__row row justify-content-center">
+        <!--3 Mini Photos -->
+        <div class="prod-content__col--mini col-md-2">
+
+            <div class="mini-photos__row  ">
+                <div class="mini-photo__col ">
+                    <img src="/image/cat-food-1a">
                 </div>
-                <div class="mini-photo__col col">
-                    <img src="https://picsum.photos/1100/1000" />
+                <div class="mini-photo__col ">
+                    <img src="/image/cat-food-1b" />
                 </div>
-                <div class="mini-photo__col col">
-                    <img src="https://picsum.photos/1100/1000" />
+                <div class="mini-photo__col ">
+                    <img src="/image/cat-food-1c" />
                 </div>
             </div>
         </div>
-        <div class="prod-content__col--big col-6 ">
+        <!-- Big Photo -->
+        <div class="prod-content__col--big col-md-6 ">
             <img class="big-photo--imageradius" src="https://picsum.photos/1600/1000" />
         </div>
-        <!--Product Description-->
-        <div class="product-desc__col col-4">
+
+        <!--Short Product Description-->
+        <div class="product-desc__col col-md-4">
             <p class="product-desc--name h5"> <strong> Product's Name </strong> </p>
             <p class="product-desc--price h7">$9.99</p>
             <div class="product-desc--detail">
                 <p class="h7">Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolore itaque qui dolor, hic commodi, perferendis iusto ea nesciunt cum dicta voluptatibus nobis consequatur asperiores mollitia eaque et? Pariatur, adipisci molestiae.</p>
             </div>
             <br>
-            <!-- <button class="btn"> Add to cart</button> -->
+            <!-- 2 Buttons -->
             <a href="/" class="btn btn--addCart">Add to cart</a>
             <a href="/" class="btn btn--buyNow">Buy Now</a>
+            <!-- Categories & Tags-->
             <div class="product-desc--category">
                 <p class="product-desc__h7 h7">
                     <strong>Category:</strong>
@@ -105,12 +68,14 @@
     </div>
 </div>
 
-<!--CHI TIẾT SẢN PHẨM-->
+<!--Detail description-->
 <div class="product-detail__row row mt-5 ml-4">
     <div class="product-detail__col--des col col-sm-9">
+        <!-- title -->
         <div class="product-detail--title">
             <h4>Product Details</h5>
         </div>
+        <!-- Description Table -->
         <table class="desc-table">
             <tr>
                 <td>Category</td>
@@ -146,9 +111,11 @@
                 </td>
             </tr>
         </table>
+        <!-- title -->
         <div class="product-detail--title">
             <h4>Product Description</h5>
         </div>
+        <!-- detail description p -->
         <div class="product-detail--desc">
             <h5>Description</h5>
             <p>True Acre Foods Farmhouse Blend Large Breed Food is crafted with wholesome
@@ -169,67 +136,73 @@
             </p>
         </div>
 
+
     </div>
-    <!--TRENDING PRODUCT-->
-    <div class="product-detail__col--trending col col-sm-2">
+    <!--Trending Product-->
+    <div class="product-detail__col--trending col col-md-2">
         <div class="trending-product--title">
             <h5>Trending Products</h5>
         </div>
-        <div class="trending-product__row row">
-            <img class="imageradius" src="https://picsum.photos/150" />
-            <div class="trending-product--content">
-                <div>Name</div>
-                <div><strong>$9.99</strong></div>
+        <div class="trending-product">
+            <div class="trending-product__row row">
+                <img class="imageradius" src="https://picsum.photos/150" />
+                <div class="trending-product--content">
+                    <div>Name</div>
+                    <div><strong>$9.99</strong></div>
+                </div>
+            </div>
+            <hr>
+            <div class="trending-product__row row">
+                <img class="imageradius" src="https://picsum.photos/150" />
+                <div class="trending-product--content">
+                    <div>Name</div>
+                    <div><strong>$9.99</strong></div>
+                </div>
+            </div>
+            <hr>
+            <div class="trending-product__row row">
+                <img class="imageradius" src="https://picsum.photos/150" />
+                <div class="trending-product--content">
+                    <div>Name</div>
+                    <div><strong>$9.99</strong></div>
+                </div>
+            </div>
+            <hr>
+            <div class="trending-product__row row">
+                <img class="imageradius" src="https://picsum.photos/150" />
+                <div class="trending-product--content">
+                    <div>Name</div>
+                    <div><strong>$9.99</strong></div>
+                </div>
+            </div>
+            <hr>
+            <div class="trending-product__row row">
+                <img class="imageradius" src="https://picsum.photos/150" />
+                <div class="trending-product--content">
+                    <div>Name</div>
+                    <div><strong>$9.99</strong></div>
+                </div>
+            </div>
+            <hr>
+            <div class="trending-product__row row">
+                <img class="imageradius" src="https://picsum.photos/150" />
+                <div class="trending-product--content">
+                    <div>Name</div>
+                    <div><strong>$9.99</strong></div>
+                </div>
             </div>
         </div>
-        <hr>
-        <div class="trending-product__row row">
-            <img class="imageradius" src="https://picsum.photos/150" />
-            <div class="trending-product--content">
-                <div>Name</div>
-                <div><strong>$9.99</strong></div>
-            </div>
-        </div>
-        <hr>
-        <div class="trending-product__row row">
-            <img class="imageradius" src="https://picsum.photos/150" />
-            <div class="trending-product--content">
-                <div>Name</div>
-                <div><strong>$9.99</strong></div>
-            </div>
-        </div>
-        <hr>
-        <div class="trending-product__row row">
-            <img class="imageradius" src="https://picsum.photos/150" />
-            <div class="trending-product--content">
-                <div>Name</div>
-                <div><strong>$9.99</strong></div>
-            </div>
-        </div>
-        <hr>
-        <div class="trending-product__row row">
-            <img class="imageradius" src="https://picsum.photos/150" />
-            <div class="trending-product--content">
-                <div>Name</div>
-                <div><strong>$9.99</strong></div>
-            </div>
-        </div>
-        <hr>
-        <div class="trending-product__row row">
-            <img class="imageradius" src="https://picsum.photos/150" />
-            <div class="trending-product--content">
-                <div>Name</div>
-                <div><strong>$9.99</strong></div>
-            </div>
-        </div>
+
         <hr>
     </div>
 </div>
 <!--Related Products-->
 <div class="related-prod">
+    <!-- title -->
     <div class="related-prod__h3">
         <p class="h3 text-center">Related Products</p>
     </div>
+    <!-- Related product's content -->
     <div class="related-prod__row row justify-content-center">
         <div class="row">
             <div class="related-prod__col col">
