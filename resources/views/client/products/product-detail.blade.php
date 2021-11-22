@@ -25,8 +25,8 @@
 
             <div class="mini-photos__row  ">
                 <div class="mini-photo__col ">
-                    <!-- <img src="/public/Image/cat-food-1a.jpg" alt=""> -->
-                    <img src="https://picsum.photos/1100/1000" />
+                    <img src=" {{url('/Image/cat-food-1a.jpg')}}" alt="">
+                    <!-- <img src="https://picsum.photos/1100/1000" /> -->
                 </div>
                 <div class="mini-photo__col ">
                     <img src="https://picsum.photos/1100/1000" />
