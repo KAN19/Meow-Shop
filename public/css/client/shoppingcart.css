@@ -295,11 +295,7 @@ table, th, td {
     transition: .2s;
     box-shadow: 0 0 20px 0 #aaa;
 }
-
-@media only screen and (max-width: 600px){
-
-}
-
+/* checkbox */
 input[type='checkbox']:after {
     width: 25px;
     height: 25px;
@@ -332,6 +328,7 @@ input[type='checkbox']:checked:after {
 input[type='checkbox']:hover{
     cursor: pointer;
 }
+
 @media only screen and (max-width: 600px){
     .cart__name{
         display: none;

@@ -131,6 +131,7 @@
             <i class="bin--icon fa fa-trash" aria-hidden="true"></i>
         </div>
     </div>    
+    <!-- btn continue va clear -->
     <hr class="line my-3 ">s
     <div class="row btn__cart">
         <div class="col-sm">
@@ -143,6 +144,7 @@
             <button type="button" class="btn clear--btn">Clear Shopping Cart</button>
         </div>
     </div>
+   <!--  table cart total -->
     <hr class="line my-3 ">
     <div class="container-fluid">
         <p class="carttotal">Cart Total</p>
@@ -166,6 +168,7 @@
                 </tr>
             </tbody>
         </table>
+        <!-- btn checkout -->
         <div class="checkout">
              <button type="button" class="btn checkout--btn">Procceed to Checkout</button>
         </div>       
