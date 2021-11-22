@@ -17,7 +17,7 @@
         <li class="breadcrumb-item active" aria-current="page">Example Product</li>
     </ol>
 </nav>
-<!--Product Content-->
+<!----------Product Content---------->
 <div class="prod-content container-fluid">
     <div class="prod-content__row row justify-content-center">
         <!--3 Mini Photos -->
@@ -25,16 +25,18 @@
 
             <div class="mini-photos__row  ">
                 <div class="mini-photo__col ">
-                    <img src="/image/cat-food-1a">
+                    <!-- <img src="/public/Image/cat-food-1a.jpg" alt=""> -->
+                    <img src="https://picsum.photos/1100/1000" />
                 </div>
                 <div class="mini-photo__col ">
-                    <img src="/image/cat-food-1b" />
+                    <img src="https://picsum.photos/1100/1000" />
                 </div>
                 <div class="mini-photo__col ">
-                    <img src="/image/cat-food-1c" />
+                    <img src="https://picsum.photos/1100/1000" />
                 </div>
             </div>
         </div>
+
         <!-- Big Photo -->
         <div class="prod-content__col--big col-md-6 ">
             <img class="big-photo--imageradius" src="https://picsum.photos/1600/1000" />
@@ -68,7 +70,7 @@
     </div>
 </div>
 
-<!--Detail description-->
+<!--------Detail description------------>
 <div class="product-detail__row row mt-5 ml-4">
     <div class="product-detail__col--des col col-sm-9">
         <!-- title -->
@@ -140,9 +142,11 @@
     </div>
     <!--Trending Product-->
     <div class="product-detail__col--trending col col-md-2">
+
         <div class="trending-product--title">
             <h5>Trending Products</h5>
         </div>
+
         <div class="trending-product">
             <div class="trending-product__row row">
                 <img class="imageradius" src="https://picsum.photos/150" />
@@ -152,6 +156,7 @@
                 </div>
             </div>
             <hr>
+
             <div class="trending-product__row row">
                 <img class="imageradius" src="https://picsum.photos/150" />
                 <div class="trending-product--content">
@@ -160,6 +165,7 @@
                 </div>
             </div>
             <hr>
+
             <div class="trending-product__row row">
                 <img class="imageradius" src="https://picsum.photos/150" />
                 <div class="trending-product--content">
@@ -168,6 +174,7 @@
                 </div>
             </div>
             <hr>
+
             <div class="trending-product__row row">
                 <img class="imageradius" src="https://picsum.photos/150" />
                 <div class="trending-product--content">
@@ -176,6 +183,7 @@
                 </div>
             </div>
             <hr>
+
             <div class="trending-product__row row">
                 <img class="imageradius" src="https://picsum.photos/150" />
                 <div class="trending-product--content">
@@ -184,6 +192,7 @@
                 </div>
             </div>
             <hr>
+
             <div class="trending-product__row row">
                 <img class="imageradius" src="https://picsum.photos/150" />
                 <div class="trending-product--content">
@@ -196,7 +205,7 @@
         <hr>
     </div>
 </div>
-<!--Related Products-->
+<!-----------Related Products-------------->
 <div class="related-prod">
     <!-- title -->
     <div class="related-prod__h3">

@@ -57,10 +57,15 @@
     margin-bottom: 15px;
 }
 
+.mini-photo__col {
+    margin-bottom: 10px;
+}
+
 
 @media screen and (min-width: 770px) {
     .mini-photos__row {
         flex-flow: column;
+        flex-direction: column;
         width: 100%;
         height: auto;
     }
