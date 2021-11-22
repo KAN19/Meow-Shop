@@ -347,6 +347,9 @@ input[type='checkbox']:hover{
         margin-left: 10%;
     }
     .btn__cart--clear{
+        margin-right: 16%;
+    }
+    .checkout--btn{
         margin-right: 10%;
     }
 }
