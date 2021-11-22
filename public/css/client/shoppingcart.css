@@ -1,0 +1,355 @@
+.row{
+    margin-left: 0;
+    margin-right: 0;
+}
+.banner__name {
+    width: 100%;
+    height: 200px;
+    background-color: #EEEEEE;
+}
+.banner__name--size {
+    font-size: xx-large;
+    text-align: center;
+    padding-top: 80px;
+    font-weight: bold;
+}
+/*Thanh dieu huong*/
+.breadcrumb {
+    font-size: x-large;
+    background-color: white;
+    cursor: pointer;
+    margin-bottom: 3%;
+  }
+  /*color chu + icon truoc khi tro chuot*/
+  .breadcrumb a { 
+    color: #4CAF50;
+  }
+  /*khi tro chuot*/
+  .breadcrumb a:hover { 
+    font-weight: bold; 
+  }
+  /*khi tro chuot vao bieu tuong home*/
+  .breadcrumb i:hover { 
+    font-size: xx-large; 
+  }
+  /*icon home*/
+  .breadcrumb i { 
+    font-size: x-large;
+  }
+   /*dau > */
+  .breadcrumb-item + .breadcrumb-item::before {
+    content: ">";
+  }
+  /*cart*/
+.cart {
+    font-size: larger;
+    font-weight: bold;
+    margin-left: 15%;
+    margin-right: 15%;
+    background-color: #E8E8E8;
+}
+.cart__product {
+    text-align: center;
+}
+.cart__name{
+    text-align: center;
+}
+.cart__price {
+    /* margin-left:6%; */
+    text-align: center;
+}
+.cart__quanlity {
+    text-align: center;
+    padding-left: 2%;
+}
+.cart__subtotal {
+    text-align: center;
+    padding-left: 2%;
+}
+/*  product */
+.product{
+    margin-left: 15%;
+    margin-right: 15%;
+}
+.line {
+    margin-left: 15%;
+    margin-right: 15%;
+}
+.product__set {
+    margin-top: 1rem;
+    margin-bottom: 1rem;
+    padding-left: 2%;
+}
+.product__set--image:hover{
+    cursor: pointer;
+    transform: scale(1.01);
+/*     text-decoration: underline; */
+}
+.product--icon{
+    margin-top: 4%;
+    margin-right: 8%;
+    margin-left: 2%;
+    color: #aaa;
+}
+.product--icon:hover{
+    font-size: x-large;
+    color: red;
+    transition: .2s;
+    cursor: pointer;
+}
+.product__set--image{
+    border-radius: 3%;
+    -moz-border-radius: 3%;
+    -webkit-border-radius: 3%;
+    margin-left: 7%;
+}
+.product__name{
+    text-align: center;
+    padding-top: 6%;
+    font-size: large;
+}
+.product__name:hover {
+    text-decoration: underline;
+    cursor: pointer;
+}
+.product__price{
+    text-align: center;
+    padding-top: 6%;
+    font-size: large;
+}
+.product__price:hover {
+    text-decoration: underline;
+    cursor: pointer;
+}
+.product__quanlity{
+    text-align: center;
+    padding-top: 5%;
+}
+.product__subtotal {
+    text-align: center;
+    padding-top: 6%;
+    font-size: large;
+}
+.product__subtotal:hover {
+    text-decoration: underline;
+    cursor: pointer;
+}
+/* button quanlity */
+.buttons_added {
+    opacity:1;
+    display:inline-block;
+    display:-ms-inline-flexbox;
+    display:inline-flex;
+    white-space:nowrap;
+    vertical-align:top;
+    cursor: pointer;
+    margin-right: 3%;
+}
+.is-form {
+    overflow:hidden;
+    position:relative;
+    background-color:#f9f9f9;
+    height:2.2rem;
+    width:1.9rem;
+    padding:0;
+    border:1px solid #ddd;
+}
+.is-form:hover {
+    background-color:#aaa;
+}
+.is-form:focus,.input-text:focus {
+    outline:none;
+}
+.is-form.minus {
+    border-radius:4px 0 0 4px;
+}
+.is-form.minus:hover {
+    cursor: pointer;
+    background-color: 	#FF3F55;
+    box-shadow: 0 0 5px 0 #FF3F55;
+    transition: .2s;
+}
+.is-form.plus {
+    border-radius:0 4px 4px 0;
+}
+.is-form.plus:hover {
+    cursor: pointer;
+    background-color: #93D84A;
+    box-shadow: 0 0 5px 0 #93D84A;
+    transition: .2s;
+}
+.input-qty {
+    background-color:#fff;
+    height:2.2rem;
+    text-align:center;
+    font-size:1rem;
+    display:inline-block;
+    vertical-align:top;
+    margin:0;
+    border-top:1px solid #ddd;
+    border-bottom:1px solid #ddd;
+    border-left:0;
+    border-right: 0;
+    outline: none;
+}
+.input-qty::-webkit-outer-spin-button,.input-qty::-webkit-inner-spin-button {
+    -webkit-appearance:none;
+    margin:0;
+}
+/* icon bin */
+.btn__bin {
+    color: #aaa;
+    padding-top: 6%;
+    text-align: center;
+}
+.btn__bin:hover {
+    font-size: large;
+    color: red;
+    transition: .2s;
+    cursor: pointer;
+}
+/* button update product */
+.btn__cart {
+    margin-bottom: 1%;
+    margin-left: 10%;
+    margin-right: 10%;
+}
+.clear--btn {
+    float: right;
+    margin-right: 15%;
+}
+.btn__cart--clear{
+    margin-right: 3%;
+}
+.continue--btn{
+    margin-left: 9%;
+    display: block;
+}
+.btn {
+    background-color: #aaa;
+    margin-right: 4%;    
+    padding: 0.5rem 1rem 0.5rem 1rem;
+    text-align: center;
+    color: #fff;
+    border-radius: 10px;
+    font-weight: bold;
+    font-size: large;
+    outline: none;
+}
+.clear--btn:hover{
+    background-color: #777777;
+    transition: .2s;
+    outline: none;
+    box-shadow: 0 0 20px 0 #aaa;
+}
+.overlay__btn--continue {
+    position: absolute; 
+    bottom: 0; 
+    background: rgb(0, 0, 0);
+    background: rgba(0, 0, 0, 0.75); /* Black see-through */
+    color: #f1f1f1; 
+    width:29%;
+    transition: .5s ease;
+    opacity:0;
+    color: white;
+    font-size: 20px;
+    padding: 13px;
+    border-radius: 10px;
+    text-align: center;
+    margin-left: 62px;
+}  
+.overlay__btn:hover .overlay {
+    opacity: 1;
+    cursor: pointer;
+}
+/* cart total */
+.carttotal{
+    margin-top: 2%;    
+    font-size: xx-large;
+    font-weight: bold;
+}
+.container-fluid {
+    width: 70%;
+}
+table, th, td {
+    border: 1px solid black;
+    font-size: large;
+}
+
+/* btn checkout */
+.checkout--btn {
+    background-color: #aaa;
+    padding: 0.5rem 1.5rem 0.5rem 1.5rem;
+    color: #fff;
+    border-radius: 10px;
+    font-weight: bold;
+    font-size: larger;
+}
+.checkout {
+    text-align: right;
+    margin-bottom: 5%;
+    margin-top: 2%;
+}
+.checkout--btn:hover{
+    background-color: #777777;
+    transition: .2s;
+    box-shadow: 0 0 20px 0 #aaa;
+}
+
+@media only screen and (max-width: 600px){
+
+}
+
+input[type='checkbox']:after {
+    width: 25px;
+    height: 25px;
+    border-radius: 5px;
+    top: -2px;
+    left: -1px;
+    position: relative;
+    background-color: #d1d3d1;
+    content: '';
+    display: inline-block;
+    visibility: visible;
+    border: 2px solid white;
+}
+
+input[type='checkbox']:checked:after {
+    width: 25px;
+    height: 25px;
+    border-radius: 5px;
+    top: -2px;
+    left: -1px;
+    position: relative;
+    background-color: #FF3F55;
+    content: '\2713';
+    display: inline-block;
+    visibility: visible;
+    border: 2px solid white;
+    color: white;
+    text-align: center;
+}
+input[type='checkbox']:hover{
+    cursor: pointer;
+}
+@media only screen and (max-width: 600px){
+    .cart__name{
+        display: none;
+    }
+    .cart__price{
+        display: none;
+    }
+    .cart__quanlity{
+        display: none;
+    }
+    .cart__subtotal{
+        display: none;
+    }
+    .overlay__btn{
+        margin-bottom: 5%;
+        margin-left: 10%;
+    }
+    .btn__cart--clear{
+        margin-right: 10%;
+    }
+}
