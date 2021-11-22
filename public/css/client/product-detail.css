@@ -17,7 +17,7 @@
 }
 
 .breadcrumb a {
-    color: #4CAF50;
+    color: #4caf50;
 }
 
 .breadcrumb a:hover {
@@ -34,7 +34,7 @@
 
 /*dau > */
 
-.breadcrumb-item+.breadcrumb-item::before {
+.breadcrumb-item + .breadcrumb-item::before {
     content: ">";
 }
 
@@ -49,34 +49,88 @@
 
 /*3 Mini-Photo*/
 
+.thumbnail {
+    opacity: 0.7;
+}
+
+.active {
+    opacity: 1;
+}
+
+.mini-photos__warrper {
+    display: flex;
+    min-height: 150px;
+    align-items: center;
+    margin-bottom: 15px;
+}
 
 .mini-photos__row {
     display: flex;
     align-items: center;
-    justify-content: space-around;
-    margin-bottom: 15px;
+    /* justify-content: space-around; */
+    overflow-x: hidden;
+    scroll-behavior: smooth;
 }
 
 .mini-photo__col {
-    margin-bottom: 10px;
+    margin: 0 10px;
 }
 
+.arrow {
+    width: 25px;
+    height: 25px;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+#slideTop,
+#slideBottom {
+    display: none;
+}
+
+.arrow:hover {
+    opacity: 0.8;
+    transform: scale(1.2);
+}
 
 @media screen and (min-width: 770px) {
+    .mini-photos__warrper {
+        display: flex;
+        flex-direction: column;
+
+        max-height: 480px;
+    }
+
     .mini-photos__row {
         flex-flow: column;
         flex-direction: column;
         width: 100%;
         height: auto;
+        max-height: 450px;
+        overflow-y: hidden;
+    }
+
+    .mini-photo__col {
+        margin: 10px 0;
+    }
+
+    #slideTop,
+    #slideBottom {
+        display: inline-block;
+    }
+
+    #slideLeft,
+    #slideRight {
+        display: none;
     }
 }
 
-@media screen and (max-width:983px) {
-    .mini-photos__row img {
+@media screen and (max-width: 983px) {
+    /* .mini-photos__row img {
         flex-flow: column;
         width: 100%;
         height: auto;
-    }
+    } */
 
     .product-desc--name {
         text-align: center;
@@ -220,7 +274,6 @@
 
 /*=====================Detail product's description======================*/
 
-
 .product-detail__row {
     display: flex;
     justify-content: center;
@@ -262,10 +315,9 @@
 
 .trending-product--content {
     margin-left: 10px;
-
 }
 
-@media screen and (max-width:770px) {
+@media screen and (max-width: 770px) {
     .product-detail__col--trending {
         display: none;
     }
@@ -334,7 +386,7 @@
     }
 
     .related-prod__row p {
-        font-size: smaller
+        font-size: smaller;
     }
 }
 

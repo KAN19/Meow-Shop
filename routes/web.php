@@ -25,9 +25,11 @@ Route::get('/products', function () {
     return view('client.products.index');
 });
 
-Route::get('/product-detail', function () {
+Route::get('/product/{slug}', function () {
     return view('client.products.product-detail');
 });
+
+//========= Admin routes ============
 
 Route::get('/test', function () {
     return view('admin.test');

@@ -21,25 +21,38 @@
 <div class="prod-content container-fluid">
     <div class="prod-content__row row justify-content-center">
         <!--3 Mini Photos -->
-        <div class="prod-content__col--mini col-md-2">
+        <div class="mini-photos__warrper col-md-2">
+
+            <img id="slideLeft" class="arrow" src="{{url('/utility/arrow-left.png')}}">
+            <img id="slideTop" class="arrow" src="{{url('/utility/arrow-top.png')}}">
 
             <div class="mini-photos__row  ">
                 <div class="mini-photo__col ">
-                    <img src=" {{url('/Image/cat-food-1a.jpg')}}" alt="">
+                    <img class="thumbnail active" src=" {{url('/Image/cat-food-1a.jpg')}}" alt="">
                     <!-- <img src="https://picsum.photos/1100/1000" /> -->
                 </div>
                 <div class="mini-photo__col ">
-                    <img src="https://picsum.photos/1100/1000" />
+                    <img class="thumbnail" src=" {{url('/Image/cat-food-1b.jpg')}}" alt="">
                 </div>
                 <div class="mini-photo__col ">
-                    <img src="https://picsum.photos/1100/1000" />
+                    <img class="thumbnail" src=" {{url('/Image/cat-food-1c.jpg')}}" alt="">
+                </div>
+                <div class="mini-photo__col ">
+                    <img class="thumbnail" src=" {{url('/Image/cat-food-1c.jpg')}}" alt="">
+                </div>
+                <div class="mini-photo__col ">
+                    <img class="thumbnail" src=" {{url('/Image/cat-food-1c.jpg')}}" alt="">
                 </div>
             </div>
+
+            <img id="slideRight" class="arrow" src="{{url('/utility/arrow-right.png')}}">
+            <img id="slideBottom" class="arrow" src="{{url('/utility/arrow-bottom.png')}}">
+
         </div>
 
         <!-- Big Photo -->
         <div class="prod-content__col--big col-md-6 ">
-            <img class="big-photo--imageradius" src="https://picsum.photos/1600/1000" />
+            <img class="big-photo--imageradius featured" src="https://picsum.photos/1600/1000" />
         </div>
 
         <!--Short Product Description-->
@@ -47,7 +60,9 @@
             <p class="product-desc--name h5"> <strong> Product's Name </strong> </p>
             <p class="product-desc--price h7">$9.99</p>
             <div class="product-desc--detail">
-                <p class="h7">Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolore itaque qui dolor, hic commodi, perferendis iusto ea nesciunt cum dicta voluptatibus nobis consequatur asperiores mollitia eaque et? Pariatur, adipisci molestiae.</p>
+                <p class="h7">Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolore itaque qui dolor, hic
+                    commodi, perferendis iusto ea nesciunt cum dicta voluptatibus nobis consequatur asperiores mollitia
+                    eaque et? Pariatur, adipisci molestiae.</p>
             </div>
             <br>
             <!-- 2 Buttons -->
@@ -121,18 +136,26 @@
         <div class="product-detail--desc">
             <h5>Description</h5>
             <p>True Acre Foods Farmhouse Blend Large Breed Food is crafted with wholesome
-                proteins, veggies and specialized nutrients to support the health of your large breed dog. Glucosamine and chondroitin help support joint health, while balanced levels of calcium and phosphorus support healthy bone development in large breed dogs. With natural fiber and prebiotics to support digestion and all the nutrients your dog needs to thrive, it’s the nutrition you can be proud to serve. And you can be sure they’ll keep coming back for more with delicious chicken as the first ingredient and tender, meaty morsels for a meal they’ll crave.</p>
+                proteins, veggies and specialized nutrients to support the health of your large breed dog. Glucosamine
+                and chondroitin help support joint health, while balanced levels of calcium and phosphorus support
+                healthy bone development in large breed dogs. With natural fiber and prebiotics to support digestion and
+                all the nutrients your dog needs to thrive, it’s the nutrition you can be proud to serve. And you can be
+                sure they’ll keep coming back for more with delicious chicken as the first ingredient and tender, meaty
+                morsels for a meal they’ll crave.</p>
             <h5>Key Benefit</h5>
             <p>
             <ul>
                 <li>
                     Large breed recipe is specially formulated to support the unique needs of large breed dogs.</li>
                 <li>
-                    Supports joint health with glucosamine and chondroitin, plus balanced levels of calcium and phosphorus to support healthy bone development.</li>
+                    Supports joint health with glucosamine and chondroitin, plus balanced levels of calcium and
+                    phosphorus to support healthy bone development.</li>
                 <li>
-                    Natural fiber and prebiotics to help maintain digestive health, and taurine to support a healthy heart.
+                    Natural fiber and prebiotics to help maintain digestive health, and taurine to support a healthy
+                    heart.
                 </li>
-                <li>Protein-rich, tender morsels bring the taste dogs crave, with real chicken as the first ingredient.</li>
+                <li>Protein-rich, tender morsels bring the taste dogs crave, with real chicken as the first ingredient.
+                </li>
                 <li>Crafted in the USA with the world’s best ingredients.</li>
             </ul>
             </p>
@@ -141,7 +164,7 @@
 
     </div>
     <!--Trending Product-->
-    <div class="product-detail__col--trending col col-md-2">
+    <div class="product-detail__col--trending col col-md-3">
 
         <div class="trending-product--title">
             <h5>Trending Products</h5>
@@ -237,4 +260,9 @@
         </div>
     </div>
 </div>
+@endsection
+
+
+@section('javascript')
+<script src="/js/client/product-detail.js"> </script>
 @endsection
