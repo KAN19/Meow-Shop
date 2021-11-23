@@ -19,16 +19,22 @@ use Illuminate\Support\Facades\Route;
 
 Route::get('/', function () {
     return view('client.home.index');
-});
+})->name('home-page');
 
 
 Route::get('/products', function () {
     return view('client.products.index');
-});
+})->name('product-page');
 
 Route::get('/product/{slug}', function () {
     return view('client.products.product-detail');
 });
+
+Route::get('/contact', function () {
+    return view('client.contact.index');
+})->name('contact-page');
+
+
 
 //========= Admin routes ============
 

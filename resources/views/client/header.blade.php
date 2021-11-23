@@ -5,11 +5,11 @@
         </div>
 
         <div class="topnav__item topnav__item-fullscreen">
-            <a href="#" class="topnav__item__button">
+            <a href="{{route('home-page')}}" class="topnav__item__button">
                 HOME
             </a>
             <div id="topnav__item-product">
-                <a href="#" class="topnav__item__button">
+                <a href="{{route('product-page')}}" class="topnav__item__button">
                     PRODUCT
                 </a>
                 <div class="product__dropdown__content">
@@ -18,7 +18,7 @@
                     <a href="#">Link 3</a>
                 </div>
             </div>
-            <a href="#" class="topnav__item__button">
+            <a href="{{route('contact-page')}}" class="topnav__item__button">
                 CONTACT
             </a>
 
