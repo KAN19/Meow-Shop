@@ -11,6 +11,8 @@
 
 @section('css')
 <link rel="stylesheet" href="/css/admin/order.css">
+<link rel="stylesheet" href="{{url('adminlte/plugins/daterangepicker/daterangepicker.css')}}">
+
 @stop
 
 @section('breadcrumb')
@@ -27,7 +29,11 @@
                     <label for="my-select">Status</label>
                 </div>
                 <select style="width: 150px;" id="my-select" class="form-control " name="">
-                    <option>Text</option>
+                    <option selected>------All-----</option>
+                    <option>Pending</option>
+                    <option>Shipping</option>
+                    <option>Completed</option>
+                    <option>Cancel</option>
                 </select>
             </div>
 
@@ -35,16 +41,34 @@
                 <div class="mr-2">
                     <label for="my-select">Order time</label>
                 </div>
-                <select style="width: 150px;" id="my-select" class="form-control " name="">
-                    <option>Text</option>
-                </select>
+                <!-- <select style="width: 150px;" id="my-select" class="form-control " name="">
+                    <option selected>------All-----</option>
+                    <option>1 Week ago</option>
+                    <option>1 Month ago</option>
+                    <option>3 Month ago</option>
+                    <option>6 Month ago</option>
+                </select> -->
+
+
+
+                <div class="input-group">
+                    <div class="input-group-prepend">
+                        <span class="input-group-text">
+                            <i class="far fa-calendar-alt"></i>
+                        </span>
+                    </div>
+                    <input type="text" class="form-control float-right" id="reservation">
+                </div>
+                <!-- /.input group -->
+
             </div>
 
             <div class="d-flex mr-4 align-items-center">
                 <div class="mr-2">
                     <label for="my-select">Search: </label>
                 </div>
-                <input style="width: 150px;" id="my-input" class="form-control" type="text" name="">
+                <input style="width: 150px;" id="my-input" class="form-control" placeholder="Searching" type="text"
+                    name="">
             </div>
             <div class="align-items-center">
                 <button style="width: 80px;" class="btn btn-primary" type="submit">Find</button>
@@ -81,7 +105,27 @@
 @stop
 
 @section('js')
+<script src="{{url('adminlte/plugins/daterangepicker/daterangepicker.js')}}"></script>
+
 <script>
+$('#reservation').daterangepicker();
+$('#daterange-btn').daterangepicker({
+        ranges: {
+            'Today': [moment(), moment()],
+            'Yesterday': [moment().subtract(1, 'days'), moment().subtract(1, 'days')],
+            'Last 7 Days': [moment().subtract(6, 'days'), moment()],
+            'Last 30 Days': [moment().subtract(29, 'days'), moment()],
+            'This Month': [moment().startOf('month'), moment().endOf('month')],
+            'Last Month': [moment().subtract(1, 'month').startOf('month'), moment().subtract(1, 'month').endOf(
+                'month')]
+        },
+        startDate: moment().subtract(29, 'days'),
+        endDate: moment()
+    },
+    function(start, end) {
+        $('#reportrange span').html(start.format('MMMM D, YYYY') + ' - ' + end.format('MMMM D, YYYY'))
+    }
+)
 $(document).ready(function() {
     $("#master-order").addClass("active");
 });
