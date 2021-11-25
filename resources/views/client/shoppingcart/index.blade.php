@@ -152,7 +152,7 @@
         <div class="col-md">
             <div class="container overlay__btn">
                 <button type="button" class="btn continue--btn">Continue Shopping</button>
-                <i class="overlay overlay__btn--continue fa fa-shopping-cart" aria-hidden="true"></i>
+                <!-- <i class="overlay overlay__btn--continue fa fa-shopping-cart" aria-hidden="true"></i> -->
             </div>   
         </div>     
         <div class="col-md btn__cart--clear">

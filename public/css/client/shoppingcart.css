@@ -281,10 +281,10 @@ input[type='checkbox']:hover{
     margin-right: 15%;
 }
 .clear--btn:hover{
-    background-color: #777777;
+    background-color: #F6AB49; /* mau background btn clear khi hover */
     transition: .2s;
     outline: none;
-    box-shadow: 0 0 20px 0 #aaa;
+    box-shadow: 0 0 20px 0 #F6AB49; /* mau bong btn clear khi hover */
 }
 .btn__cart--clear{
     margin-right: 3%;
@@ -296,23 +296,26 @@ input[type='checkbox']:hover{
     display: block;
 }
 /*  overlay cua btn continue shopping */
-.overlay__btn--continue {
+
+/* .overlay__btn--continue {
     position: absolute; 
     bottom: 0; 
     background: rgba(0, 0, 0, 0.75); /* Black see-through */
-    width:29%;
+    /* width:29%;
     transition: .5s ease;
     opacity:0;
     color: white; /* mau icon */
-    font-size: 20px;
+    /* font-size: 20px;
     padding: 13px;
     border-radius: 10px;
     text-align: center;
     margin-left: 62px;
-}  
-.overlay__btn:hover .overlay {
-    opacity: 1;
-    cursor: pointer;
+}   */ 
+.continue--btn:hover{
+    background-color: #F6AB49; /* mau background btn continue khi hover */
+    transition: .2s;
+    outline: none;
+    box-shadow: 0 0 20px 0 #F6AB49; /* mau bong btn continue khi hover */
 }
 
 /* table cart total */
@@ -344,9 +347,9 @@ table, th, td {
     font-size: larger;
 }
 .checkout--btn:hover{
-    background-color: #777777;
+    background-color: #F6AB49; /* mau background btn checkout khi hover */
     transition: .2s;
-    box-shadow: 0 0 20px 0 #aaa;
+    box-shadow: 0 0 20px 0 #F6AB49; /* mau background btn checkout khi hover */
 }
 
 @media only screen and (max-width: 600px){
@@ -379,7 +382,6 @@ table, th, td {
         margin-bottom: 5%;
         margin-left: 12%;
     }
-
     /* btn clear */
     .btn__cart--clear{
         margin-right: 13%;
