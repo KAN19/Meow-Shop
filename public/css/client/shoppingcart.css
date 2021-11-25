@@ -19,28 +19,29 @@
     background-color: white;
     cursor: pointer;
     margin-bottom: 3%;
-  }
-  /*color chu + icon truoc khi tro chuot*/
-  .breadcrumb a { 
+}
+/*color chu + icon truoc khi tro chuot*/
+.breadcrumb a { 
     color: #4CAF50;
-  }
-  /*khi tro chuot*/
-  .breadcrumb a:hover { 
+}
+/*khi tro chuot*/
+.breadcrumb a:hover { 
     font-weight: bold; 
-  }
-  /*khi tro chuot vao bieu tuong home*/
-  .breadcrumb i:hover { 
+}
+/*khi tro chuot vao bieu tuong home*/
+.breadcrumb i:hover { 
     font-size: xx-large; 
-  }
-  /*icon home*/
-  .breadcrumb i { 
+}
+/*icon home*/
+.breadcrumb i { 
     font-size: x-large;
-  }
-   /*dau > */
-  .breadcrumb-item + .breadcrumb-item::before {
+}
+/*dau > */
+.breadcrumb-item + .breadcrumb-item::before {
     content: ">";
-  }
-  /*cart*/
+ }
+
+/* tieu de */
 .cart {
     font-size: larger;
     font-weight: bold;
@@ -48,14 +49,21 @@
     margin-right: 15%;
     background-color: #E8E8E8;
 }
+
+/* khi check vao checkbox thi chu delete hien len */
+.cart__delete:hover{
+    color:#FF3F55;
+    font-size: larger;
+    transition: .2s;
+    cursor: pointer;
+}
 .cart__product {
-    text-align: center;
+    padding-left: 4%;
 }
 .cart__name{
     text-align: center;
 }
 .cart__price {
-    /* margin-left:6%; */
     text-align: center;
 }
 .cart__quanlity {
@@ -66,43 +74,71 @@
     text-align: center;
     padding-left: 2%;
 }
+
 /*  product */
 .product{
     margin-left: 15%;
     margin-right: 15%;
 }
+
+/* ke ngang giua cac sanpham */
 .line {
     margin-left: 15%;
     margin-right: 15%;
 }
+
+/* product (anh va checkbox) */
 .product__set {
     margin-top: 1rem;
     margin-bottom: 1rem;
-    padding-left: 2%;
+}
+.product__set--image{
+    border-radius: 3%;
+    -moz-border-radius: 3%;
+    -webkit-border-radius: 3%;    
 }
 .product__set--image:hover{
     cursor: pointer;
     transform: scale(1.01);
 /*     text-decoration: underline; */
 }
-.product--icon{
-    margin-top: 4%;
-    margin-right: 8%;
-    margin-left: 2%;
-    color: #aaa;
+/* checkbox */
+.checkbox__delete{
+    padding-top: 5%;
+    padding-left: 2%;
 }
-.product--icon:hover{
-    font-size: x-large;
-    color: red;
-    transition: .2s;
+input[type='checkbox']:after {
+    width: 25px;
+    height: 25px;
+    border-radius: 5px;
+    top: -2px;
+    left: -1px;
+    position: relative;
+    background-color: #d1d3d1;/*  mau checkbox */
+    content: '';
+    display: inline-block;
+    visibility: visible;
+}
+
+input[type='checkbox']:checked:after {
+    width: 25px;
+    height: 25px;
+    border-radius: 5px;
+    top: -2px;
+    left: -1px;
+    position: relative;
+    background-color: #FF3F55;/*  mau checkbox khi checked  */
+    content: '\2713';  /* icon tick */
+    display: inline-block;
+    visibility: visible;
+    color: white; /*  mau icon */
+    text-align: center;
+}
+input[type='checkbox']:hover{
     cursor: pointer;
 }
-.product__set--image{
-    border-radius: 3%;
-    -moz-border-radius: 3%;
-    -webkit-border-radius: 3%;
-    margin-left: 7%;
-}
+
+/* ten product */
 .product__name{
     text-align: center;
     padding-top: 6%;
@@ -112,6 +148,8 @@
     text-decoration: underline;
     cursor: pointer;
 }
+
+/* gia product */
 .product__price{
     text-align: center;
     padding-top: 6%;
@@ -121,19 +159,13 @@
     text-decoration: underline;
     cursor: pointer;
 }
+
+/* so luong product */
 .product__quanlity{
     text-align: center;
     padding-top: 5%;
 }
-.product__subtotal {
-    text-align: center;
-    padding-top: 6%;
-    font-size: large;
-}
-.product__subtotal:hover {
-    text-decoration: underline;
-    cursor: pointer;
-}
+
 /* button quanlity */
 .buttons_added {
     opacity:1;
@@ -145,49 +177,53 @@
     cursor: pointer;
     margin-right: 3%;
 }
+
 .is-form {
     overflow:hidden;
     position:relative;
-    background-color:#f9f9f9;
+    background-color:#f9f9f9; /* background cua button */
     height:2.2rem;
     width:1.9rem;
     padding:0;
-    border:1px solid #ddd;
-}
-.is-form:hover {
-    background-color:#aaa;
+    border:1px solid #ddd; /* mau vien btn */
 }
 .is-form:focus,.input-text:focus {
     outline:none;
 }
+
+/* nut - */
 .is-form.minus {
     border-radius:4px 0 0 4px;
 }
 .is-form.minus:hover {
     cursor: pointer;
-    background-color: 	#FF3F55;
-    box-shadow: 0 0 5px 0 #FF3F55;
+    background-color: 	#FF3F55; /* mau vien btn - khi hover */
+    box-shadow: 0 0 5px 0 #FF3F55;/*  bong btn - khi hover */
     transition: .2s;
 }
+
+/* nut + */
 .is-form.plus {
     border-radius:0 4px 4px 0;
 }
 .is-form.plus:hover {
     cursor: pointer;
-    background-color: #93D84A;
-    box-shadow: 0 0 5px 0 #93D84A;
+    background-color: #93D84A; /* mau vien btn + khi hover */
+    box-shadow: 0 0 5px 0 #93D84A; /*  bong btn + khi hover */
     transition: .2s;
 }
+
+/* quanlity  */
 .input-qty {
-    background-color:#fff;
+    background-color:#fff;  /* background btn so  */
     height:2.2rem;
     text-align:center;
     font-size:1rem;
     display:inline-block;
     vertical-align:top;
     margin:0;
-    border-top:1px solid #ddd;
-    border-bottom:1px solid #ddd;
+    border-top:1px solid #ddd; /* vien tren */
+    border-bottom:1px solid #ddd; /* vien duoi */
     border-left:0;
     border-right: 0;
     outline: none;
@@ -196,35 +232,32 @@
     -webkit-appearance:none;
     margin:0;
 }
+
+/* tong gia tri cua product */
+.product__subtotal {
+    text-align: center;
+    padding-top: 6%;
+    font-size: large;
+}
+.product__subtotal:hover {
+    text-decoration: underline;
+    cursor: pointer;
+}
+
 /* icon bin */
 .btn__bin {
-    color: #aaa;
+    color: #aaa; /* mau btn bin */ 
     padding-top: 6%;
     text-align: center;
 }
 .btn__bin:hover {
     font-size: large;
-    color: red;
+    color: red; /* mau btn bin khi hover */
     transition: .2s;
     cursor: pointer;
 }
-/* button update product */
-.btn__cart {
-    margin-bottom: 1%;
-    margin-left: 10%;
-    margin-right: 10%;
-}
-.clear--btn {
-    float: right;
-    margin-right: 15%;
-}
-.btn__cart--clear{
-    margin-right: 3%;
-}
-.continue--btn{
-    margin-left: 9%;
-    display: block;
-}
+
+/* btn continue shopping va clear cart*/
 .btn {
     background-color: #aaa;
     margin-right: 4%;    
@@ -236,22 +269,41 @@
     font-size: large;
     outline: none;
 }
+.btn__cart {
+    margin-bottom: 1%;
+    margin-left: 10%;
+    margin-right: 10%;
+}
+
+/* btn clear cart */
+.clear--btn {
+    float: right;
+    margin-right: 15%;
+}
 .clear--btn:hover{
     background-color: #777777;
     transition: .2s;
     outline: none;
     box-shadow: 0 0 20px 0 #aaa;
 }
+.btn__cart--clear{
+    margin-right: 3%;
+}
+
+/* btn continue shopping */
+.continue--btn{
+    margin-left: 9%;
+    display: block;
+}
+/*  overlay cua btn continue shopping */
 .overlay__btn--continue {
     position: absolute; 
     bottom: 0; 
-    background: rgb(0, 0, 0);
     background: rgba(0, 0, 0, 0.75); /* Black see-through */
-    color: #f1f1f1; 
     width:29%;
     transition: .5s ease;
     opacity:0;
-    color: white;
+    color: white; /* mau icon */
     font-size: 20px;
     padding: 13px;
     border-radius: 10px;
@@ -262,7 +314,8 @@
     opacity: 1;
     cursor: pointer;
 }
-/* cart total */
+
+/* table cart total */
 .carttotal{
     margin-top: 2%;    
     font-size: xx-large;
@@ -277,59 +330,32 @@ table, th, td {
 }
 
 /* btn checkout */
-.checkout--btn {
-    background-color: #aaa;
-    padding: 0.5rem 1.5rem 0.5rem 1.5rem;
-    color: #fff;
-    border-radius: 10px;
-    font-weight: bold;
-    font-size: larger;
-}
 .checkout {
     text-align: right;
     margin-bottom: 5%;
     margin-top: 2%;
+}
+.checkout--btn {
+    background-color: #aaa; /* mau btn checkout */
+    padding: 0.5rem 1.5rem 0.5rem 1.5rem;
+    color: #fff;/*  mau chu */
+    border-radius: 10px;
+    font-weight: bold;
+    font-size: larger;
 }
 .checkout--btn:hover{
     background-color: #777777;
     transition: .2s;
     box-shadow: 0 0 20px 0 #aaa;
 }
-/* checkbox */
-input[type='checkbox']:after {
-    width: 25px;
-    height: 25px;
-    border-radius: 5px;
-    top: -2px;
-    left: -1px;
-    position: relative;
-    background-color: #d1d3d1;
-    content: '';
-    display: inline-block;
-    visibility: visible;
-    border: 2px solid white;
-}
-
-input[type='checkbox']:checked:after {
-    width: 25px;
-    height: 25px;
-    border-radius: 5px;
-    top: -2px;
-    left: -1px;
-    position: relative;
-    background-color: #FF3F55;
-    content: '\2713';
-    display: inline-block;
-    visibility: visible;
-    border: 2px solid white;
-    color: white;
-    text-align: center;
-}
-input[type='checkbox']:hover{
-    cursor: pointer;
-}
 
 @media only screen and (max-width: 600px){
+    .cart__delete{
+        display:none;
+    }
+    .cart__product{
+        text-align: center;
+    }
     .cart__name{
         display: none;
     }
@@ -342,13 +368,23 @@ input[type='checkbox']:hover{
     .cart__subtotal{
         display: none;
     }
+    .checkbox__delete{
+        text-align: center;
+    }
+    .product__set{
+        text-align: center;
+    }
+    /* btn continue */
     .overlay__btn{
         margin-bottom: 5%;
-        margin-left: 10%;
+        margin-left: 12%;
     }
+
+    /* btn clear */
     .btn__cart--clear{
-        margin-right: 16%;
+        margin-right: 13%;
     }
+    /* btn checkout */
     .checkout--btn{
         margin-right: 10%;
     }
