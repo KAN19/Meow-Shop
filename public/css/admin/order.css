@@ -1,0 +1,14 @@
+.order__containter {
+    width: 100%;
+    background-color: white;
+}
+
+.order__toolbar {
+    display: flex;
+    margin-bottom: 10px;
+}
+
+.input__label {
+    margin-bottom: 0 !important;
+    margin-right: 5px;
+}

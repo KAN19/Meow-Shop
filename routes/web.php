@@ -3,6 +3,7 @@
 use App\Http\Controllers\Admin\AuthController;
 use App\Http\Controllers\Admin\CategoryController;
 use App\Http\Controllers\Admin\MediaController;
+use App\Http\Controllers\Admin\OrderController;
 use App\Http\Controllers\Admin\ProductController;
 use Illuminate\Support\Facades\Route;
 
@@ -45,6 +46,7 @@ Route::get('/test', function () {
 Route::get('/test-admin', function () {
     return view('admin.master');
 });
+
 
 
 
@@ -102,9 +104,7 @@ Route::middleware(['auth:admin'])->group(function() {
         });
        
     
-        // Route::get('/media2', function () {
-        //     return view('admin.media.index2');
-        // });
+        Route::get('/orders', [OrderController::class, 'index'])->name('show-orders');
     });
     
 });

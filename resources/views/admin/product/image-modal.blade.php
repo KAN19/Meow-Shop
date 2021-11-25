@@ -11,7 +11,7 @@
             </div>
             <div class="modal-body">
                 <iframe
-                    src="{{url('/filemanager/dialog.php?akey=ApHqJ79hkX8BdPgDhysilgfBsZ5QuZMBw4M0UsY2DGw&field_id=image&type=1')}}"
+                    src="{{url('/filemanager/dialog.php?akey=ApHqJ79hkX8BdPgDhysilgfBsZ5QuZMBw4M0UsY2D&field_id=image&type=1')}}"
                     style="width: 100%; height:400px; border: 1px solid LightGray"> </iframe>
 
             </div>
@@ -36,7 +36,7 @@
             </div>
             <div class="modal-body">
                 <iframe
-                    src="{{url('/filemanager/dialog.php?akey=ApHqJ79hkX8BdPgDhysilgfBsZ5QuZMBw4M0UsY2DGw&field_id=listImages&type=1')}}"
+                    src="{{url('/filemanager/dialog.php?akey=ApHqJ79hkX8BdPgDhysilgfBsZ5QuZMBw4M0UsY2D&field_id=listImages&type=1')}}"
                     style="width: 100%; height:400px; border: 1px solid LightGray"> </iframe>
 
             </div>
