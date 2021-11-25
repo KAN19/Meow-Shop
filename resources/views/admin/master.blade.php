@@ -165,7 +165,7 @@
 
                         <li class="nav-header">ORDER</li>
                         <li class="nav-item">
-                            <a href="#" class="nav-link" id="master-order">
+                            <a href="{{route('show-orders')}}" class="nav-link" id="master-order">
                                 <i class="nav-icon fas fa-file-alt"></i>
                                 <p>
                                     Orders

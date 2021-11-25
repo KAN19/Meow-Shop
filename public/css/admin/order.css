@@ -1,0 +1,9 @@
+.order__containter {
+    width: 100%;
+    background-color: white;
+}
+
+.order__toolbar {
+    display: flex;
+    margin-bottom: 10px;
+}
