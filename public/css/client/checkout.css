@@ -4,8 +4,8 @@
 }
 .banner__name {
     width: 100%;
-    height: 200px;
-    background-color: #EEEEEE;
+    height: 200px;    
+    background-color: #EEEEEE; /* mau background banner */
 }
 .banner__name--size {
     font-size: xx-large;
@@ -34,13 +34,13 @@
 input[type=text] {
     width: 100%;
     padding: 12px 20px;
-    border: 2px solid #aaa;
+    border: 2px solid #aaa;  /* mau vien border */
     border-radius: 4px;
     margin-top: 1%;
 }
 input[type=text]:focus {
     outline: none;
-    border: 3px solid #F6AB49;
+    border: 3px solid #F6AB49; /* mau vien border khi click vao */
 }
 
 /* input email */
@@ -57,7 +57,7 @@ input[type=text]:focus {
     padding-top: 1%;
 }
 #login{
-    color:#F6AB49 ;
+    color:#F6AB49 ; /* mau chu */
     padding-right: 2%;
 }
 #login:hover{
@@ -97,12 +97,12 @@ input[type=text]:focus {
     padding: 12px 20px;
     border: none;
     border-radius: 4px;
-    background-color: #f1f1f1;
+    background-color: #f1f1f1; /* mau cua select province/city */
     
 }
 .country__select:focus{
     outline: none;
-    border: 3px solid #F6AB49;
+    border: 3px solid #F6AB49; /* mau vien select khi click */
 }
 .country__select:hover{
     transition: .2s;
@@ -135,13 +135,12 @@ input[type=text]:focus {
 .title__note--write{
     margin-top: 1%;
 }
-
 textarea {
     width: 100%;
     height: 150px;
     padding: 12px 20px;
     box-sizing: border-box;
-    border: 2px solid #ccc;
+    border: 2px solid #ccc; /* mau vien boder note input */
     border-radius: 4px;
     background-color: #f8f8f8;
     font-size: 16px;
@@ -149,7 +148,7 @@ textarea {
 }
 textarea:focus{
     outline: none;
-    border: 3px solid #F6AB49;
+    border: 3px solid #F6AB49; /* mau vien khi click vao */
 }
 
 /* your order - ben phai */
@@ -160,7 +159,7 @@ textarea:focus{
 
 /* boder chung cua your order */
 .border__order{
-    border: 2px solid #ccc;
+    border: 2px solid #ccc; /* mau vien border cua your order */
     width: 90%;
     padding: 12px 20px;
     margin-top: 10%;
@@ -200,7 +199,7 @@ textarea:focus{
 /* loai shipping */
 .body_ordershipping__type{
     margin-left: 3%;
-    color: #aaa;
+    color: #aaa;  /*  mau chu cua loai shipping*/
 }
 
 /* dong total */
@@ -220,9 +219,9 @@ textarea:focus{
 
 /* button place order */
 .placeorder--btn {
-    background-color: #aaa;
+    background-color: #aaa; /* mau backgound btn cua place order */
     padding: 0.5rem 1.5rem 0.5rem 1.5rem;
-    color: #fff;
+    color: #fff;  /* mau chu cua btn place order */
     border-radius: 10px;
     font-weight: bold;
     font-size: larger;
@@ -233,9 +232,9 @@ textarea:focus{
     margin-top: 2%;
 }
 .placeorder--btn:hover{
-    background-color: #F6AB49;
+    background-color: #F6AB49; /* mau backgound btn cua placeorder khi hover */
     transition: .2s;
-    box-shadow: 0 0 20px 0 #F6AB49;
+    box-shadow: 0 0 20px 0 #F6AB49; /* mau bong btn khi hover */
     opacity: 0.8;
 }
 
