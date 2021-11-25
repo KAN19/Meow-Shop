@@ -24,9 +24,9 @@
 <div class="order__containter p-4">
     <form class="" action="" method="post">
         <div class="d-flex w-100 ">
-            <div class="  d-flex align-items-center mr-4 ">
-                <div class="mr-2">
-                    <label for="my-select">Status</label>
+            <div class="flex-grow-1 d-flex align-items-center mr-4">
+                <div class="input__label">
+                    Status
                 </div>
                 <select style="width: 150px;" id="my-select" class="form-control " name="">
                     <option selected>------All-----</option>
@@ -37,21 +37,11 @@
                 </select>
             </div>
 
-            <div class=" d-flex align-items-center mr-4 ">
-                <div class="mr-2">
-                    <label for="my-select">Order time</label>
+            <div class="flex-grow-1 d-flex align-items-center mr-4 ">
+                <div class="input__label">
+                    Order time:
                 </div>
-                <!-- <select style="width: 150px;" id="my-select" class="form-control " name="">
-                    <option selected>------All-----</option>
-                    <option>1 Week ago</option>
-                    <option>1 Month ago</option>
-                    <option>3 Month ago</option>
-                    <option>6 Month ago</option>
-                </select> -->
-
-
-
-                <div class="input-group">
+                <div class="input-group" style="width: auto !important;">
                     <div class="input-group-prepend">
                         <span class="input-group-text">
                             <i class="far fa-calendar-alt"></i>
@@ -63,15 +53,18 @@
 
             </div>
 
-            <div class="d-flex mr-4 align-items-center">
-                <div class="mr-2">
-                    <label for="my-select">Search: </label>
+            <div class="flex-grow-1 d-flex mr-4 align-items-center">
+                <div class="input__label">
+                    Search:
                 </div>
                 <input style="width: 150px;" id="my-input" class="form-control" placeholder="Searching" type="text"
                     name="">
             </div>
-            <div class="align-items-center">
-                <button style="width: 80px;" class="btn btn-primary" type="submit">Find</button>
+            <div class="align-items-center flex-grow-1">
+                <button class="btn btn-primary" type="submit">Find</button>
+            </div>
+            <div class="align-items-center flex-grow-1">
+                <button class="btn btn-danger" type="submit">Clear</button>
             </div>
         </div>
         <hr>
@@ -92,7 +85,15 @@
         <div class="col-3">Order time</div>
         <div class="col-2">
             <span class="badge badge-dark p-2">Pending</span>
-
+        </div>
+    </div>
+    <div class="row py-3 border align-items-center">
+        <div class="col-1">Order</div>
+        <div class="col-3">Customer Name</div>
+        <div class="col-3">Price</div>
+        <div class="col-3">Order time</div>
+        <div class="col-2">
+            <span class="badge badge-dark p-2">Pending</span>
         </div>
     </div>
 
@@ -105,27 +106,26 @@
 @stop
 
 @section('js')
+<script src="{{url('adminlte/plugins/moment/moment.min.js')}}"></script>
 <script src="{{url('adminlte/plugins/daterangepicker/daterangepicker.js')}}"></script>
 
 <script>
-$('#reservation').daterangepicker();
-$('#daterange-btn').daterangepicker({
-        ranges: {
-            'Today': [moment(), moment()],
-            'Yesterday': [moment().subtract(1, 'days'), moment().subtract(1, 'days')],
-            'Last 7 Days': [moment().subtract(6, 'days'), moment()],
-            'Last 30 Days': [moment().subtract(29, 'days'), moment()],
-            'This Month': [moment().startOf('month'), moment().endOf('month')],
-            'Last Month': [moment().subtract(1, 'month').startOf('month'), moment().subtract(1, 'month').endOf(
-                'month')]
+$(function() {
+    $('#reservation').daterangepicker({
+
+            startDate: moment().startOf('month'),
+            endDate: moment().endOf('month'),
+            opens: 'left',
+            locale: {
+                format: 'DD/M/YYYY '
+            }
         },
-        startDate: moment().subtract(29, 'days'),
-        endDate: moment()
-    },
-    function(start, end) {
-        $('#reportrange span').html(start.format('MMMM D, YYYY') + ' - ' + end.format('MMMM D, YYYY'))
-    }
-)
+        function(start, end, label) {
+            console.log("A new date selection was made: " + start.format('YYYY-MM-DD') + ' to ' + end
+                .format('YYYY-MM-DD'));
+        });
+});
+
 $(document).ready(function() {
     $("#master-order").addClass("active");
 });
