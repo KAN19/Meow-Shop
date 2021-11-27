@@ -63,9 +63,9 @@
             <!-- quanlity -->
             <div class="product__property col-md-2">
                 <div class="buttons_added">
-                    <input class="minus is-form" type="button" value="-">
+                    <input class="minus is-form" type="button" value="-" onclick="DecreaseQuantity()">
                     <input aria-label="quantity" class="input-qty" max="10" min="1" name="" type="number" value="1">
-                    <input class="plus is-form" type="button" value="+">
+                    <input class="plus is-form" type="button" value="+" onclick="IncreaseQuantity()">
                 </div>
             </div>
 
@@ -130,5 +130,19 @@
 @endsection
 
 @section('javascript')
+<script>
+let quantity = $('.input-qty').attr('value')
 
+const DecreaseQuantity = () => {
+    if (Number(quantity) - 1 > 0) {
+        quantity = Number(quantity) - 1;
+        $('.input-qty').attr('value', quantity);
+    }
+}
+
+const IncreaseQuantity = () => {
+    quantity = Number(quantity) + 1;
+    $('.input-qty').attr('value', quantity);
+}
+</script>
 @endsection
