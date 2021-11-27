@@ -48,37 +48,48 @@
 
         <div class="row ">
             <div class="product__set col-md-2">
-                <img class="product__set--image" id="image" src="https://picsum.photos/300/130" />
+                <a href="#"> <img class="product__set--image" id="image" src="https://picsum.photos/300/130" />
+                </a>
             </div>
-            <div class="product__name col-md-3">
-                <a class="product--name">Product Name</a>
+
+            <div class="product__property product__name col-md-3">
+                <a href="#">Product Name</a>
             </div>
-            <div class="product__price col-md-2">
+
+            <div class="product__property col-md-2">
                 <del>9.99$</del> <strong>8.99$</strong>
             </div>
+
             <!-- quanlity -->
-            <div class="product__quanlity col-md-2">
+            <div class="product__property col-md-2">
                 <div class="buttons_added">
                     <input class="minus is-form" type="button" value="-">
                     <input aria-label="quantity" class="input-qty" max="10" min="1" name="" type="number" value="1">
                     <input class="plus is-form" type="button" value="+">
                 </div>
             </div>
-            <div class="product__subtotal col-md-2">
+
+            <div class="product__property col-md-2">
                 $9.99
             </div>
+
             <!-- icon bin -->
-            <div class="btn__bin col-md-1">
+            <div class="product__property btn__bin col-md-1">
                 <i class="bin--icon fa fa-trash" aria-hidden="true"></i>
             </div>
+
         </div>
         <hr class="line my-3 ">
         <div class="row btn__cart ">
             <div class="overlay__btn">
-                <button type="button" class="btn continue--btn">Continue Shopping</button>
+                <button type="button" class="btn continue--btn">
+                    <a href="#">Continue Shopping</a>
+                </button>
             </div>
             <div class="overlay__btn">
-                <button type="button" class="btn clear--btn">Clear Shopping Cart</button>
+                <button type="button" class="btn clear--btn">
+                    <a href="#">Update Cart</a>
+                </button>
             </div>
         </div>
         <!--  table cart total -->

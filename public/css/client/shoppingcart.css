@@ -1,3 +1,12 @@
+a {
+    text-decoration: none;
+    color: inherit;
+}
+a:hover {
+    text-decoration: none;
+    color: inherit;
+}
+
 .row {
     margin-left: 0;
     margin-right: 0;
@@ -83,58 +92,22 @@
     transform: scale(1.01);
 }
 
-/*
-input[type="checkbox"]:after {
-    width: 25px;
-    height: 25px;
-    border-radius: 5px;
-    top: -2px;
-    left: -1px;
-    position: relative;
-    background-color: #d1d3d1;  mau checkbox
-    content: "";
-    display: inline-block;
-    visibility: visible;
-}
-
-input[type="checkbox"]:checked:after {
-    width: 25px;
-    height: 25px;
-    border-radius: 5px;
-    top: -2px;
-    left: -1px;
-    position: relative;
-    background-color: #ff3f55;  mau checkbox khi checked 
-    content: "\2713"; icon tick
-    display: inline-block;
-    visibility: visible;
-    color: white;  mau /icon
+.product__property {
     text-align: center;
-}
-input[type="checkbox"]:hover {
-    cursor: pointer;
-}*/
-
-/* ten product */
-.product__name {
-    text-align: center;
-    padding-top: 6%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
     font-size: large;
+    text-decoration: none;
 }
+
+.product__property a {
+    color: black;
+    text-decoration: none;
+}
+
 .product__name:hover {
     text-decoration: underline;
-    cursor: pointer;
-}
-
-/* gia product */
-.product__price {
-    text-align: center;
-    padding-top: 6%;
-    font-size: large;
-}
-.product__price:hover {
-    text-decoration: underline;
-    cursor: pointer;
 }
 
 /* so luong product */
@@ -212,21 +185,9 @@ input[type="checkbox"]:hover {
     margin: 0;
 }
 
-/* tong gia tri cua product */
-.product__subtotal {
-    text-align: center;
-    padding-top: 6%;
-    font-size: large;
-}
-.product__subtotal:hover {
-    text-decoration: underline;
-    cursor: pointer;
-}
-
 /* icon bin */
 .btn__bin {
     color: #aaa; /* mau btn bin */
-    padding-top: 6%;
     text-align: center;
 }
 .btn__bin:hover {
@@ -278,9 +239,6 @@ td {
     margin-right: 1rem;
 }
 
-.checkout--btn {
-}
-
 @media only screen and (max-width: 600px) {
     .cart__delete {
         display: none;
@@ -299,6 +257,9 @@ td {
     }
     .product__set {
         text-align: center;
+    }
+    .product__property {
+        margin-bottom: 1rem;
     }
     /* btn continue */
     .overlay__btn {
