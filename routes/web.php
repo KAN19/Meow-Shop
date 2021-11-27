@@ -38,6 +38,9 @@ Route::get('/contact', function () {
 
 
 //========= Admin routes ============
+Route::get('/shoppingcart', function () {
+    return view('client.shoppingcart.index');
+});
 
 Route::get('/test', function () {
     return view('admin.test');
