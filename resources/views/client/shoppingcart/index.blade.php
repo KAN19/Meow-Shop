@@ -82,12 +82,12 @@
         <hr class="line my-3 ">
         <div class="row btn__cart ">
             <div class="overlay__btn">
-                <button type="button" class="btn continue--btn">
+                <button type="button" class="btn__main continue--btn">
                     <a href="#">Continue Shopping</a>
                 </button>
             </div>
             <div class="overlay__btn">
-                <button type="button" class="btn clear--btn">
+                <button type="button" class="btn__main clear--btn">
                     <a href="#">Update Cart</a>
                 </button>
             </div>
@@ -119,7 +119,7 @@
             <!-- btn checkout -->
             <div class="btn__cart">
                 <div class="overlay__btn">
-                    <button type="button" class="btn checkout--btn">Procceed to Checkout</button>
+                    <button type="button" class="btn__main checkout--btn">Procceed to Checkout</button>
                 </div>
             </div>
         </div>

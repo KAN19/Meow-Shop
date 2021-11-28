@@ -198,7 +198,7 @@ a:hover {
 }
 
 /* btn continue shopping va clear cart*/
-.btn {
+.btn__main {
     background-color: #aaa;
     padding: 0.5rem 1rem 0.5rem 1rem;
     text-align: center;
@@ -206,6 +206,7 @@ a:hover {
     border-radius: 10px;
     font-weight: bold;
     outline: none;
+    border: 0;
 }
 
 /* Container cho button card */
@@ -215,7 +216,7 @@ a:hover {
     justify-content: end;
 }
 
-.btn:hover {
+.btn__main:hover {
     background-color: #f6ab49; /* mau background btn clear khi hover */
     transition: 0.2s;
     outline: none;
