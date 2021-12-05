@@ -29,12 +29,8 @@ Route::get('/products', function () {
 })->name('product-page');
 
 Route::get('/products',[ClientProductController::class, "showProducts"])->name('product-page');
+Route::get('/product/{slug}',[ClientProductController::class, "showProductDetail"])->name('product-detail-page');
 
-
-
-Route::get('/product/{slug}', function () {
-    return view('client.products.product-detail');
-});
 
 Route::get('/contact', function () {
     return view('client.contact.index');

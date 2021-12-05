@@ -7,7 +7,6 @@
 @endsection
 
 @section('title', 'Product')
-
 @section('content')
 {{-- @dd($listProducts) --}}
 <div class=".container-fluid">
@@ -102,7 +101,8 @@
         <br><br>
         <div class="grid-container">
             @foreach ($listProducts as $product)
-            <a href="#"  class="product-content">
+           
+            <a href={{route('product-detail-page', $product->slug)}}  class="product-content">
                 <div class="imageproduct text-center"><img class="radius-product"
                         src={{url('/') . $product->image}} />
                     <div class="productname text-center mt-2">{{$product->name}}</div>
@@ -120,20 +120,6 @@
 
             @endforeach
             
-
-
-            <!-- <div class="product-content">
-                <div class="imageproduct text-center"><img class="radius-product"
-                        src="https://picsum.photos/1000/1000" />
-                    <div class="productname text-center mt-2"> Product Name</div>
-                </div>
-                <div>
-                    <del class="margimobile">9.99$</del> <strong>8.99$</strong>
-                </div>
-            </div> -->
-
-
-
         </div>
         <!--Next page-->
         <div class="nextpage">

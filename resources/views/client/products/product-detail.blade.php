@@ -7,7 +7,6 @@
 @endsection
 
 @section('title', 'Product Detail')
-
 @section('content')
 <!-------------breadcrumb------------->
 <nav aria-label="breadcrumb breadcrumb--container">
@@ -26,23 +25,28 @@
             <img id="slideLeft" class="arrow" src="{{url('/utility/arrow-left.png')}}">
             <img id="slideTop" class="arrow" src="{{url('/utility/arrow-top.png')}}">
 
+            <?php 
+            // listimage ban dau la Json -> array
+            $imagesArr = json_decode($product->list_image);
+            
+            ?>
             <div class="mini-photos__row  ">
                 <div class="mini-photo__col ">
-                    <img class="thumbnail active" src=" {{url('/Image/cat-food-1a.jpg')}}" alt="">
-                    <!-- <img src="https://picsum.photos/1100/1000" /> -->
+                    {{-- Cai anh dai dien san pham --}}
+                    <img class="thumbnail active" src=" {{url('/') . $product->image}}" alt="">
                 </div>
+                @if ($imagesArr)
+                @foreach ($imagesArr as $image)
                 <div class="mini-photo__col ">
-                    <img class="thumbnail" src=" {{url('/Image/cat-food-1b.jpg')}}" alt="">
+                    <img class="thumbnail active" src=" {{url('/') . $image}}" alt="">
                 </div>
+                @endforeach
+                @else
                 <div class="mini-photo__col ">
-                    <img class="thumbnail" src=" {{url('/Image/cat-food-1c.jpg')}}" alt="">
+                    <img class="thumbnail active" src=" {{url('/') . $imagesArr}}" alt="">
                 </div>
-                <div class="mini-photo__col ">
-                    <img class="thumbnail" src=" {{url('/Image/cat-food-1c.jpg')}}" alt="">
-                </div>
-                <div class="mini-photo__col ">
-                    <img class="thumbnail" src=" {{url('/Image/cat-food-1c.jpg')}}" alt="">
-                </div>
+                @endif
+
             </div>
 
             <img id="slideRight" class="arrow" src="{{url('/utility/arrow-right.png')}}">
@@ -52,17 +56,20 @@
 
         <!-- Big Photo -->
         <div class="prod-content__col--big col-md-6 ">
-            <img class="big-photo--imageradius featured" src="https://picsum.photos/1600/1000" />
+            <img class="big-photo--imageradius featured" src={{url('/') . $product->image}} />
         </div>
 
         <!--Short Product Description-->
         <div class="product-desc__col col-md-4">
-            <p class="product-desc--name h5"> <strong> Product's Name </strong> </p>
-            <p class="product-desc--price h7">$9.99</p>
+            <p class="product-desc--name h5"> <strong> {{$product->name}} </strong> </p>
+            @if ($product->discount > 0)
+            <del lass="h7">${{$product->price - $product->price * $product->discount}}</del>
+            <strong class="product-desc--price h7">${{$product->price}}</strong>
+            @else
+            <span class="product-desc--price h7">${{$product->price}}</span>
+            @endif
             <div class="product-desc--detail">
-                <p class="h7">Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolore itaque qui dolor, hic
-                    commodi, perferendis iusto ea nesciunt cum dicta voluptatibus nobis consequatur asperiores mollitia
-                    eaque et? Pariatur, adipisci molestiae.</p>
+                <p class="h7">{{$product->short_description}}</p>
             </div>
             <br>
             <!-- 2 Buttons -->
@@ -88,79 +95,14 @@
 <!--------Detail description------------>
 <div class="product-detail__row row mt-5 ml-4">
     <div class="product-detail__col--des col col-sm-9">
-        <!-- title -->
-        <div class="product-detail--title">
-            <h4>Product Details</h5>
-        </div>
-        <!-- Description Table -->
-        <table class="desc-table">
-            <tr>
-                <td>Category</td>
-                <td>
-                    <ol class="breadcrumb">
-                        <li class="breadcrumb-item"><a href="#">Meow Shop</a></li>
-                        <li class="breadcrumb-item active" aria-current="page">Cat Food</li>
-                    </ol>
-                </td>
-            </tr>
-            <tr>
-                <td>Brand</td>
-                <td>
-                    <ol class="breadcrumb">Whiskas </ol>
-                </td>
-            </tr>
-            <tr>
-                <td>Place of Origin</td>
-                <td>
-                    <ol class="breadcrumb">America </ol>
-                </td>
-            </tr>
-            <tr>
-                <td>Food Form</td>
-                <td>
-                    <ol class="breadcrumb">Dry Food </ol>
-                </td>
-            </tr>
-            <tr>
-                <td>Weight</td>
-                <td>
-                    <ol class="breadcrumb">1.05kg </ol>
-                </td>
-            </tr>
-        </table>
-        <!-- title -->
+
         <div class="product-detail--title">
             <h4>Product Description</h5>
         </div>
         <!-- detail description p -->
         <div class="product-detail--desc">
-            <h5>Description</h5>
-            <p>True Acre Foods Farmhouse Blend Large Breed Food is crafted with wholesome
-                proteins, veggies and specialized nutrients to support the health of your large breed dog. Glucosamine
-                and chondroitin help support joint health, while balanced levels of calcium and phosphorus support
-                healthy bone development in large breed dogs. With natural fiber and prebiotics to support digestion and
-                all the nutrients your dog needs to thrive, it’s the nutrition you can be proud to serve. And you can be
-                sure they’ll keep coming back for more with delicious chicken as the first ingredient and tender, meaty
-                morsels for a meal they’ll crave.</p>
-            <h5>Key Benefit</h5>
-            <p>
-            <ul>
-                <li>
-                    Large breed recipe is specially formulated to support the unique needs of large breed dogs.</li>
-                <li>
-                    Supports joint health with glucosamine and chondroitin, plus balanced levels of calcium and
-                    phosphorus to support healthy bone development.</li>
-                <li>
-                    Natural fiber and prebiotics to help maintain digestive health, and taurine to support a healthy
-                    heart.
-                </li>
-                <li>Protein-rich, tender morsels bring the taste dogs crave, with real chicken as the first ingredient.
-                </li>
-                <li>Crafted in the USA with the world’s best ingredients.</li>
-            </ul>
-            </p>
+            {!!$product->description!!}
         </div>
-
 
     </div>
     <!--Trending Product-->
@@ -197,35 +139,7 @@
                 </div>
             </div>
             <hr>
-
-            <div class="trending-product__row row">
-                <img class="imageradius" src="https://picsum.photos/150" />
-                <div class="trending-product--content">
-                    <div>Name</div>
-                    <div><strong>$9.99</strong></div>
-                </div>
-            </div>
-            <hr>
-
-            <div class="trending-product__row row">
-                <img class="imageradius" src="https://picsum.photos/150" />
-                <div class="trending-product--content">
-                    <div>Name</div>
-                    <div><strong>$9.99</strong></div>
-                </div>
-            </div>
-            <hr>
-
-            <div class="trending-product__row row">
-                <img class="imageradius" src="https://picsum.photos/150" />
-                <div class="trending-product--content">
-                    <div>Name</div>
-                    <div><strong>$9.99</strong></div>
-                </div>
-            </div>
         </div>
-
-        <hr>
     </div>
 </div>
 <!-----------Related Products-------------->
