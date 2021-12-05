@@ -17,129 +17,135 @@
         </div>
     </div>
     <!-- body checkout -->
-    <div class="row checkout__page">
-        <!-- bill detail -->
-        <div class="col-md-7 bill__detail">            
-            <div class="title_bill">Bill Detail</div><br>
-            <!-- email input -->
-            <div class="contact__email">
-                <a class="contact__email__input">Contact Information</a>
-                <form>
-                    <input type="text" id="lname" name="lname"  placeholder="Your Email">
-                </form>
-            </div>
-            <div class="login_account">
-                <a>Already have an account?</a>
-                <a id="login">Log in</a>
-            </div>
-            <div class="title__shippingaddress">Shipping Address</div>
-            <!-- Name -->
-            <div class="row name__cus">
-                <div class="first__name col-sm">
-                    <a class="title__firstname">First Name*</a>
-                    <form>
-                        <input type="text" id="fname" name="fname" placeholder="First name">
-                    </form>
+    <!-- =========Form method here======= -->
+    <form action="" method="post">
+        <div class="row checkout__page">
+            <!-- =====Left-bill infor==== -->
+            <div class="col-md-7">
+                <div class="section__title">Bill Detail</div>
+                <!-- email input -->
+                <div class="input__field">
+                    <div class="input__field__title">Your email*</div>
+
+                    <input type="text" id="lname" name="lname" placeholder="Your Email" required>
+                    <div class="login_account">
+                        <a>Already have an account?</a>
+                        <a id="login">Log in</a>
+                    </div>
                 </div>
-                <div class="last__name col-sm">
-                    <a class="title__lastname">Last Name*</a>
-                    <form>
-                        <input type="text" id="lname" name="lname"  placeholder="Last name">
-                    </form>
+
+
+
+
+                <!-- Name -->
+                <div class="input__field">
+                    <div class="input__field__title">Your name*</div>
+
+                    <input type="text" id="fname" name="fname" placeholder="Your name" required>
+
                 </div>
-            </div>
-            <!-- select country -->
-            <div class="country">
-                <a class="title__country">Province/City*</a>
-                <form>  
-                    <select class="country__select" id="country" name="country">
+
+                <!-- select country -->
+                <div class="input__field">
+                    <div class="input__field__title">Province/City*</div>
+
+                    <select class="input__field__selector" id="province" name="province">
                         <option value="Vietnam">Hà Nội</option>
                         <option value="Laos">Thành phố Hồ Chí Mính</option>
                         <option value="Cambodia">Đà Nẵng</option>
                         <option value="America">Huế</option>
                         <option value="China">Cần Thơ</option>
                     </select>
-                </form>               
+
+                </div>
+                <!-- street address -->
+                <div class="input__field">
+                    <div class="input__field__title">Street Address*</div>
+
+                    <input type="text" id="lname" name="ord_address" placeholder="Street Address">
+                </div>
+
+                <div class="input__field">
+                    <div class="input__field__title">Phone*</div>
+
+                    <input type="text" id="lname" name="lname" placeholder="Phone">
+                </div>
+
+                <div class="input__field">
+                    <div class="input__field__title">Order note (optional)</div>
+
+                    <textarea class="input__field__textarea" placeholder="Write something"></textarea>
+
+                </div>
             </div>
-            <!-- street address -->
-            <div class="street__address">
-                <a class="title__streetaddress">Street Address*</a>
-                <form>
-                    <input type="text" id="lname" name="lname"  placeholder="Street Address">
-                </form>
-            </div>
-            <div class="phone">
-                <a class="title__phone">Phone*</a>
-                <form>
-                    <input type="text" id="lname" name="lname"  placeholder="Phone">
-                </form>
-            </div>
-            <div class="order__note">
-                <a class="title__note">Order note (optional)</a>
-                <form>
-                    <textarea class="title__note--write" placeholder="Write something"></textarea>
-                </form>
+
+
+            <!-- Your order -->
+            <div class="col-md-5">
+                <div class="section__title">Your Order</div>
+                <div class="border__order">
+                    <!-- product and subtotal -->
+                    <div class=" body__order__row ">
+                        <!-- dong product va subtotal -->
+                        <b>Product</b>
+                        <b>Subtotal</b>
+                    </div>
+                    <hr class="line">
+
+                    <div class="body__order__row">
+                        <!-- name product -->
+                        <div class="body__order__product__name">Product names asd asd asda sd asd</div>
+                        <b>x1</b>
+                        <!--  subtotal product -->
+                        <div>$9.99</div>
+                    </div>
+                    <hr class="line">
+
+                    <div class="body__order__row">
+                        <!-- name product -->
+                        <div class="body__order__product__name">Product names asd asd asda sd asd</div>
+                        <b>x1</b>
+                        <!--  subtotal product -->
+                        <div>$9.99</div>
+                    </div>
+                    <hr class="line">
+
+
+                    <div class="body__order__row">
+                        <b>Sub-Total</b>
+                        <div>$31.99</div>
+                    </div>
+                    <hr class="line">
+                    <!-- shipping -->
+                    <div class="body__order__row">
+                        <b>
+                            <b class="body__ordershipping">SHIPPING</b>
+                            <div class="body_ordershipping__type">COD - Cash On Delivery</div>
+                        </b>
+                        <div>$2</div>
+                    </div>
+                    <hr class="line">
+
+
+                    <!-- total -->
+                    <div class="body__order__row">
+                        <b>TOTAL</b>
+                        <b class="body__ordertotal__total ">$31.99</b>
+                    </div>
+                    <hr class="line">
+                    <p class="body__order__remind">
+                        Your personal data will be used to process your order, support your experience throughout this
+                        website, and for other purposes described in out privacy policy
+                    </p>
+
+                    <!-- button place order -->
+                    <div class="placeorder">
+                        <input type="button" value="Place Order" type="submit" class="btn placeorder--btn">
+                    </div>
+                </div>
             </div>
         </div>
-        <!-- Your order -->
-        <div class="col-md-5 your__order">
-            <h class="title_order">Your Order</h>
-            <div class="border__order">
-                <!-- product and subtotal -->
-                <div class="row body__ordertitle">
-                    <!-- dong product va subtotal -->
-                    <b class="body__ordertitle__product col-sm">Product</b>
-                    <b class="body__ordertitle__subtotal col-sm">Subtotal</b>                    
-                </div>
-                <hr class="line"> 
-                <div class="row body__orderproduct">
-                    <!-- name product -->
-                    <div class="body__orderproduct__name col-sm">Product name</div>
-                    <b>x1</b>
-                   <!--  subtotal product -->
-                    <div class="body__orderproduct__subtotal col-sm">$9.99</div>
-                </div>
-                <hr class="line"> 
-                <div class="row body__orderproduct">
-                     <!-- name product -->
-                    <div class="body__orderproduct__name col-sm">Product name</div>
-                    <b>x2</b>
-                    <!--  subtotal product -->
-                    <div class="body__orderproduct__subtotal col-sm">$9.99</div>
-                </div>
-                <hr class="line"> 
-                <div class="row body__orderproduct">
-                     <!-- name product -->
-                    <div class="body__orderproduct__name col-sm">Product name</div>
-                    <b>x3</b>
-                    <!--  subtotal product -->
-                    <div class="body__orderproduct__subtotal col-sm">$9.99</div>
-                </div>
-                <hr class="line"> 
-                <div class="row body__ordersubtotal">
-                    <b class="body__ordersubtotal_title col-sm">SUBTOTAl</b>
-                    <div class="body__ordersubtotal__subtotal col-sm">$31.99</div>
-                </div>
-                <!-- shipping -->
-                <hr class="line"> 
-                <b class="body__ordershipping">SHIPPING</b><br>
-                <b class="body_ordershipping__type">COD - Cash On Delivery</b>
-                <!-- total -->
-                <div class="row body__ordertotal">
-                    <b class="body__ordertotal__title col-sm">TOTAL</b>
-                    <b class="body__ordertotal__total col-sm">$31.99</b>
-                </div>
-                <hr class="line"> 
-                <p class="body__order__remind">
-                    Your personal data will be used to process your order, support your experience throughout this website, and for other purposes described in out privacy policy
-                </p>
-                <!-- button place order -->
-                <div class="placeorder">
-                    <button type="button" class="btn placeorder--btn">Place Order</button>
-                </div> 
-            </div>
-        </div>       
-    </div>
+    </form>
 </div>
 
 @endsection

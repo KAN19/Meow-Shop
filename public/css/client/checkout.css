@@ -1,240 +1,164 @@
-.row{
+.row {
     margin-left: 0;
     margin-right: 0;
 }
 .banner__name {
     width: 100%;
-    height: 200px;    
-    background-color: #EEEEEE; /* mau background banner */
+    height: 200px;
+    background-color: #eeeeee; /* mau background banner */
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
 .banner__name--size {
-    font-size: xx-large;
-    text-align: center;
-    padding-top: 80px;
-    font-weight: bold;
+    font-size: x-large;
+    font-weight: 600;
 }
 /* body checkout */
-.checkout__page{
+.checkout__page {
     margin-top: 3%;
     padding-left: 10%;
     padding-right: 10%;
 }
 
-/* title bill detail */
-.title_bill{
-    font-size: xx-large;
+.section__title {
+    font-size: x-large;
     font-weight: bold;
-}
-.bill__detail{
-    padding-left: 5%;
-    padding-right: 5%;
+    margin-bottom: 3%;
 }
 
 /* setting input text*/
-input[type=text] {
+input[type="text"] {
     width: 100%;
-    padding: 12px 20px;
-    border: 2px solid #aaa;  /* mau vien border */
+    padding: 10px 16px;
+    border: 1px solid #aaa; /* mau vien border */
     border-radius: 4px;
-    margin-top: 1%;
 }
-input[type=text]:focus {
+input[type="text"]:focus {
     outline: none;
-    border: 3px solid #F6AB49; /* mau vien border khi click vao */
+    border: 2px solid #f6ab49; /* mau vien border khi click vao */
 }
 
 /* input email */
-.contact__email{
-    margin: 0 1% 0 1%;
+.input__field {
+    margin-bottom: 16px;
 }
-.contact__email__input{
-    font-size: larger;
+
+.input__field__title {
+    margin-bottom: 1%;
+    font-size: large;
 }
 
 /* login */
-.login_account{
+.login_account {
     text-align: right;
     padding-top: 1%;
 }
-#login{
-    color:#F6AB49 ; /* mau chu */
+#login {
+    color: #f6ab49; /* mau chu */
     padding-right: 2%;
+    transition: 0.2s linear;
 }
-#login:hover{
+#login:hover {
     font-weight: bold;
     cursor: pointer;
-    transition: .2s;
 }
 
-/* title shipping address */
-.title__shippingaddress{
-    font-size: 20px;
-    padding-left: 2%;
-    padding-top: 2%;
-}
-
-/* name input*/
-.name__cus{
-    margin-top: 2%;
-}
-.title__firstname{
-    font-size: larger;
-}
-.title__lastname{
-    font-size: larger;
-}
-
-/* country input */
-.country{
-    margin: 2% 1% 0 1%;
-}
-.title__country{
-    font-size: larger;
-}
-.country__select {
+/* proince Selector */
+.input__field__selector {
     margin-top: 1%;
     width: 100%;
-    padding: 12px 20px;
-    border: none;
+    padding: 10px 16px;
+    border: 1px solid #aaa; /* mau vien border */
     border-radius: 4px;
     background-color: #f1f1f1; /* mau cua select province/city */
-    
 }
-.country__select:focus{
+.input__field__selector:focus {
     outline: none;
-    border: 3px solid #F6AB49; /* mau vien select khi click */
+    border: 2px solid #f6ab49; /* mau vien select khi click */
 }
-.country__select:hover{
-    transition: .2s;
+.input__field__selector:hover {
+    transition: 0.2s;
     cursor: pointer;
-}
-
-/* street address input */
-.street__address{
-    margin: 2% 1% 0 1%;
-}
-.title__streetaddress{
-    font-size: larger;
-}
-
-/* phone input */
-.phone{
-    margin: 2% 1% 0 1%;
-}
-.title__phone{
-    font-size: larger;
 }
 
 /* note input */
-.order__note{
-    margin: 2% 1% 0 1%;
-}
-.title__note{
-    font-size: larger;
-}
-.title__note--write{
-    margin-top: 1%;
-}
 textarea {
     width: 100%;
     height: 150px;
-    padding: 12px 20px;
+    padding: 10px 16px;
     box-sizing: border-box;
-    border: 2px solid #ccc; /* mau vien boder note input */
+    border: 1px solid #ccc; /* mau vien boder note input */
     border-radius: 4px;
     background-color: #f8f8f8;
     font-size: 16px;
     resize: none;
 }
-textarea:focus{
+textarea:focus {
     outline: none;
-    border: 3px solid #F6AB49; /* mau vien khi click vao */
-}
-
-/* your order - ben phai */
-.title_order{
-    font-size: xx-large;
-    font-weight: bold;    
+    border: 2px solid #f6ab49; /* mau vien khi click vao */
 }
 
 /* boder chung cua your order */
-.border__order{
+.border__order {
     border: 2px solid #ccc; /* mau vien border cua your order */
-    width: 90%;
-    padding: 12px 20px;
-    margin-top: 10%;
-    font-size: larger;
-    margin-bottom: 10%;
+    width: 100%;
+    padding: 20px 20px;
 }
 
 /* ke ngang giua cac div */
-.line{
+.line {
     margin-top: 4%;
     margin-bottom: 4%;
 }
 
-/* dong product va subtotal */
-.body__ordertitle{
-    margin-top: 5%;
-}
-.body__ordertitle__subtotal{
-    text-align: right;
+.body__order__row {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
 }
 
-/* dong subtotal cua moi loai sp */
-.body__orderproduct__subtotal{
-    text-align: right;
-}
-
-/* dong price total  */
-.body__ordersubtotal__subtotal{
-    text-align: right;
-}
-
-/* dong shipping */
-.body__ordershipping{
-    margin-left: 3%;
+.body__order__product__name {
+    width: 50%;
 }
 
 /* loai shipping */
-.body_ordershipping__type{
-    margin-left: 3%;
-    color: #aaa;  /*  mau chu cua loai shipping*/
+.body_ordershipping__type {
+    color: #aaa; /*  mau chu cua loai shipping*/
 }
 
 /* dong total */
-.body__ordertotal{
+.body__ordertotal {
     margin-top: 5%;
 }
 /* gia tong cong */
-.body__ordertotal__total{
-    text-align: right;
+.body__ordertotal__total {
     font-size: x-large;
 }
 
 /* dong Your personal data will.... */
-.body__order__remind{
+.body__order__remind {
     text-align: justify;
+    font-size: small;
+    margin-bottom: 5%;
 }
 
 /* button place order */
 .placeorder--btn {
     background-color: #aaa; /* mau backgound btn cua place order */
-    padding: 0.5rem 1.5rem 0.5rem 1.5rem;
-    color: #fff;  /* mau chu cua btn place order */
+    color: #fff; /* mau chu cua btn place order */
     border-radius: 10px;
     font-weight: bold;
     font-size: larger;
+    width: 100%;
 }
 .placeorder {
-    text-align: right;
     margin-bottom: 5%;
     margin-top: 2%;
 }
-.placeorder--btn:hover{
-    background-color: #F6AB49; /* mau backgound btn cua placeorder khi hover */
-    transition: .2s;
-    box-shadow: 0 0 20px 0 #F6AB49; /* mau bong btn khi hover */
+.placeorder--btn:hover {
+    background-color: #f6ab49; /* mau backgound btn cua placeorder khi hover */
+    transition: 0.2s;
+    box-shadow: 0 0 20px 0 #f6ab49; /* mau bong btn khi hover */
     opacity: 0.8;
 }
-
