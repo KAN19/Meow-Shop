@@ -35,6 +35,9 @@ Route::get('/contact', function () {
     return view('client.contact.index');
 })->name('contact-page');
 
+Route::get('/resultsearch', function () {
+    return view('client.resultsearch.index');
+});
 
 
 //========= Admin routes ============
