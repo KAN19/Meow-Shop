@@ -2,7 +2,7 @@
 
 @section('style')
 
-<link rel="stylesheet" href="/css/client/product-detail.css">
+<link rel="stylesheet" href="/css/client/contact.css">
 
 @endsection
 
@@ -10,12 +10,50 @@
 
 @section('content')
 <div>
-    Contact page ne
-</div>
+    <!-- Banner -->
+    <div class="banner">
+        <div class="banner__name">
+            <div class="banner__name--title">CONTACT</div>
+        </div>
+        <!-- form -->
+        <div class="container">
+            <form action="#">
+                <div class="row">
+                    <div class="col-25">
+                        <label for="name">Name</label>
+                    </div>
+                    <div class="col-75">
+                        <input type="text" id="name" name="name" placeholder="Your name..">
+                    </div>
 
-@endsection
+                </div>
+                <div class="row">
+                    <div class="col-25">
+                        <label for="lname">Email</label>
+                    </div>
+                    <div class="col-75">
+                        <input type="text" id="mail" name="mail" placeholder="Your email..">
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-25">
+                        <label for="subject">Message</label>
+                    </div>
+                    <div class="col-75">
+                        <textarea id="subject" name="subject" placeholder="Write something.."
+                            style="height:200px"></textarea>
+                    </div>
+                </div>
+                <div class="submit">
+                    <input type="submit" value="Submit" class="btn--submit"></button>
+                </div>
+            </form>
+        </div>
+    </div>
+
+    @endsection
 
 
-@section('javascript')
+    @section('javascript')
 
-@endsection
+    @endsection
