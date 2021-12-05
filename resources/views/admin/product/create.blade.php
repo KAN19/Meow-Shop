@@ -97,7 +97,7 @@
 
                     <div class="form-group">
                         <label>Price</label>
-                        <input type="number" min="0" step=".1" class="form-control @error('prd_price') border border-danger @enderror"
+                        <input type="number" min="0" step=".01" class="form-control @error('prd_price') border border-danger @enderror"
                             name="prd_price" placeholder="Please Enter Product Price" value="{{old('prd_price')}}" />
                         @error('prd_price')
                         <div class="text-danger">

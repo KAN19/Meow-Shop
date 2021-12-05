@@ -30,34 +30,41 @@
 
                 <i class="fas fa-search"></i>
             </a>
-            <a href="#" class="topnav__item__button topnav__item-icon">
-                <i class="fas fa-user"></i>
-            </a>
             <div id="topnav__item__cart">
                 <a href="#" class="topnav__item__button topnav__item-icon">
                     <i class="fas fa-shopping-cart"></i>
                 </a>
+
+                <?php 
+                    $myCart = $cart->items; 
+                ?>
+           
                 <div class="cart__dropdown">
-                    <a href="#" class="cart__dropdown__item">
-                        <img src="https://picsum.photos/200/500" class="cart__dropdown__image" alt="" srcset="">
-                        <div class="cart__dropdown__content">
-                            <div class="cart__dropdown__content-name">
-                                Ten san phams ne
+                    @forelse ($myCart as $item)
+                        <a href="#" class="cart__dropdown__item">
+                            <img src="https://picsum.photos/200/500" class="cart__dropdown__image" alt="" srcset="">
+                            <div class="cart__dropdown__content">
+                                <div class="cart__dropdown__content-name">
+                                    Ten san phams ne
+                                </div>
+                                <div class="cart__dropdown__content-price">
+                                    100.000VND
+                                </div>
                             </div>
-                            <div class="cart__dropdown__content-price">
-                                100.000VND
+                            <div href="#" class="cart__dropdown__delete">
+                                <i class="far fa-times-circle"></i>
                             </div>
-                        </div>
-                        <div href="#" class="cart__dropdown__delete">
-                            <i class="far fa-times-circle"></i>
-                        </div>
-                    </a>
-                    <hr>
+                        </a>
+                        <hr>
+                    @empty
+                        <div>Your cart is empty!</div>
+                    @endforelse
+                   
                     <div class="cart__dropdown__selection">
-                        <a class="cart__dropdown__button">View Cart</a>
+                        <a href={{route('show-cart')}} class="cart__dropdown__button">View Cart</a>
                         <a class="cart__dropdown__button">Checkout</a>
                     </div>
-                </div>
+            </div>
             </div>
 
         </div>

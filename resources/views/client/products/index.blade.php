@@ -123,10 +123,11 @@
         <div class="nextpage">
             <div class="pagination">
                 <a href="#" class="active mr-3">1</a>
-                <a href="#">hello</a>
+                <a href="#">2</a>
                 <i class="arrow right"></i>
             </div>
         </div>
+        {!! $listProducts->appends(request()->all())->links() !!}
     </div>
 </div>
 <!-- trending product mobile -->

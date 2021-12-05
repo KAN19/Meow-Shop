@@ -73,7 +73,7 @@
             </div>
             <br>
             <!-- 2 Buttons -->
-            <a href="/" class="btn btn--addCart">Add to cart</a>
+            <a href={{route('add-cart', $product->id)}} class="btn btn--addCart">Add to cart</a>
             <a href="/" class="btn btn--buyNow">Buy Now</a>
             <!-- Categories & Tags-->
             <div class="product-desc--category">

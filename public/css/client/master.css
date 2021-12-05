@@ -2,6 +2,16 @@ body {
     font-family: "Montserrat", sans-serif !important;
 }
 
+a {
+    color: inherit !important;
+    text-decoration: none !important;
+}
+
+a:hover {
+    color: inherit !important;
+    text-decoration: none !important;
+}
+
 /* Top nav bar */
 .navbar__container {
     width: 100%;
@@ -167,6 +177,7 @@ body {
     display: flex;
     text-decoration: none;
     color: inherit;
+    font-size: small;
 }
 .cart__dropdown__item:hover {
     text-decoration: none;
@@ -174,9 +185,9 @@ body {
 }
 
 .cart__dropdown__image {
-    width: 90px;
-    height: 90px;
-    object-fit: cover;
+    width: 80px;
+    height: 80px;
+    object-fit: contain;
     border-radius: 10px;
     margin-right: 10px;
     min-width: 90px;
@@ -193,7 +204,6 @@ body {
 }
 
 .cart__dropdown__content-price {
-    font-size: 14px;
     color: rgb(104, 97, 97);
 }
 

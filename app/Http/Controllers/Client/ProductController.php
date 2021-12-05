@@ -11,9 +11,8 @@ class ProductController extends Controller
 {
     public function showProducts()
     {
-        $listProducts = Product::all(); 
+        $listProducts = Product::orderBy("created_at", 'DESC')->paginate(6); 
         $listCategories = category::all(); 
-        // dd($listProducts); 
 
         return view('client.products.index', compact('listProducts', 'listCategories'));
     }
