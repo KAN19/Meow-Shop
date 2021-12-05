@@ -50,6 +50,9 @@ Route::get('/test-admin', function () {
     return view('admin.master');
 });
 
+Route::get('/checkout', function () {
+    return view('client.checkout.index');
+});
 
 
 
