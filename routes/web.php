@@ -5,6 +5,7 @@ use App\Http\Controllers\Admin\CategoryController;
 use App\Http\Controllers\Admin\MediaController;
 use App\Http\Controllers\Admin\OrderController;
 use App\Http\Controllers\Admin\ProductController;
+use App\Http\Controllers\Client\ProductController as ClientProductController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -26,6 +27,10 @@ Route::get('/', function () {
 Route::get('/products', function () {
     return view('client.products.index');
 })->name('product-page');
+
+Route::get('/products',[ClientProductController::class, "showProducts"])->name('product-page');
+
+
 
 Route::get('/product/{slug}', function () {
     return view('client.products.product-detail');
