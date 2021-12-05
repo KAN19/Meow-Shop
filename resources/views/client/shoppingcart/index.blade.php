@@ -86,9 +86,12 @@
                 </div>
     
                 <!-- icon bin -->
-                <div class="product__property btn__bin col-md-1">
+                {{-- <div class="product__property btn__bin col-md-1">
                     <i class="bin--icon fa fa-trash" aria-hidden="true"></i>
-                </div>
+                </div> --}}
+                <a href={{route('remove-cart', $item['id'])}} class="product__property btn__bin col-md-1">
+                    <i class="bin--icon fa fa-trash" aria-hidden="true"></i>
+                </a>
     
             </div>
             @endforeach
@@ -154,6 +157,7 @@ const DecreaseQuantity = () => {
     if (Number(quantity) - 1 > 0) {
         quantity = Number(quantity) - 1;
         $('.input-qty').attr('value', quantity);
+
     }
 }
 

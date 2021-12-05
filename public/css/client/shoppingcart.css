@@ -1,12 +1,3 @@
-a {
-    text-decoration: none;
-    color: inherit;
-}
-a:hover {
-    text-decoration: none;
-    color: inherit;
-}
-
 .row {
     margin-left: 0;
     margin-right: 0;
@@ -101,11 +92,6 @@ a:hover {
     text-decoration: none;
 }
 
-.product__property a {
-    color: black;
-    text-decoration: none;
-}
-
 .product__name:hover {
     text-decoration: underline;
 }
@@ -187,12 +173,12 @@ a:hover {
 
 /* icon bin */
 .btn__bin {
-    color: #aaa; /* mau btn bin */
+    color: #aaa !important; /* mau btn bin */
     text-align: center;
 }
 .btn__bin:hover {
     font-size: large;
-    color: red; /* mau btn bin khi hover */
+    color: red !important; /* mau btn bin khi hover */
     transition: 0.2s;
     cursor: pointer;
 }

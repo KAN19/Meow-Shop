@@ -3,12 +3,12 @@ body {
 }
 
 a {
-    color: inherit !important;
+    color: unset !important;
     text-decoration: none !important;
 }
 
 a:hover {
-    color: inherit !important;
+    color: unset !important;
     text-decoration: none !important;
 }
 
