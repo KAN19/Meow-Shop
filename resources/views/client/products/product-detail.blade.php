@@ -79,14 +79,14 @@
             <div class="product-desc--category">
                 <p class="product-desc__h7 h7">
                     <strong>Category:</strong>
-                    <span class="product-desc__h7--name"> Cat food</span>
+                    <span class="product-desc__h7--name">{{$product->category->name}}</span>
                 </p>
-                <p class="product-desc__h7 h7">
+                {{-- <p class="product-desc__h7 h7">
                     <strong>Tags:</strong>
                     <span class="product-desc__h7--name"> Cat food,</span>
                     <span class="product-desc__h7--name"> Diet food,</span>
                     <span class="product-desc__h7--name"> Oganic food</span>
-                </p>
+                </p> --}}
             </div>
         </div>
     </div>

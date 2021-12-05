@@ -116,8 +116,6 @@
                     @endif
                 </div>
             </a>
-
-
             @endforeach
             
         </div>
@@ -125,7 +123,7 @@
         <div class="nextpage">
             <div class="pagination">
                 <a href="#" class="active mr-3">1</a>
-                <a href="#">2</a>
+                <a href="#">hello</a>
                 <i class="arrow right"></i>
             </div>
         </div>
