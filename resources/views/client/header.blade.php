@@ -1,7 +1,7 @@
 <nav class="navbar__container">
     <div class="navbar__topnav navbar__topnav-main">
         <div class="topnav__item ">
-            This is lgo
+            <img class="imageradius" src=" {{url('/Image/logo.png')}}" style="max-width: 120px;" alt="product1">
         </div>
 
         <div class="topnav__item topnav__item-fullscreen">
@@ -13,9 +13,9 @@
                     PRODUCT
                 </a>
                 <div class="product__dropdown__content">
-                    <a href="#">Link 1</a>
-                    <a href="#">Link 2</a>
-                    <a href="#">Link 3</a>
+                    <a href="#">Cat Food</a>
+                    <a href="#">Dog Food</a>
+                    <a href="#">Toys</a>
                 </div>
             </div>
             <a href="{{route('contact-page')}}" class="topnav__item__button">
@@ -42,7 +42,7 @@
                         <img src="https://picsum.photos/200/500" class="cart__dropdown__image" alt="" srcset="">
                         <div class="cart__dropdown__content">
                             <div class="cart__dropdown__content-name">
-                                Ten san phams ne
+                                Tên Sản Phẩm
                             </div>
                             <div class="cart__dropdown__content-price">
                                 100.000VND

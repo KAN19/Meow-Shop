@@ -27,151 +27,207 @@
             <div class="numbertext">3 / 3</div>
             <img src="/image/slide3.png" style="width:100%">
         </div>
-
+        <!-- The dots/circles -->
+        <div style="text-align:center" class="dot-slide">
+            <span class="dot" onclick="currentSlide(1)"></span>
+            <span class="dot" onclick="currentSlide(2)"></span>
+            <span class="dot" onclick="currentSlide(3)"></span>
+        </div>
         <!-- Next and previous buttons -->
         <a class="prev" onclick="plusSlides(-1)">&#10094;</a>
         <a class="next" onclick="plusSlides(1)">&#10095;</a>
     </div>
 
     <br>
+</div>
+<!-- category-banner -->
+<div class="category--container">
 
-    <!-- The dots/circles -->
-    <div style="text-align:center">
-        <span class="dot" onclick="currentSlide(1)"></span>
-        <span class="dot" onclick="currentSlide(2)"></span>
-        <span class="dot" onclick="currentSlide(3)"></span>
+    <a href="#">
+        <div class="category--item">
+            <img class="imageradius" src=" {{url('/Image/banner-cat.png')}}" alt="category1">
+        </div>
+    </a>
+    <a href="#">
+        <div class="category--item">
+            <img class="imageradius" src=" {{url('/Image/banner-toys.png')}}" alt="category2">
+        </div>
+    </a>
+
+    <a href="#">
+        <div class="category--item">
+            <img class="imageradius" src=" {{url('/Image/banner-dog.png')}}" alt="category3">
+        </div>
+    </a>
+</div>
+
+<!-- suppliers information-->
+<div class="supplier--container">
+
+    <div class="supplier--photo">
+        <img class="imageradius" style="max-width: 800px;" src=" {{url('/Image/slide2.png')}}" alt="supplier-photo">
     </div>
 
-    <!-- 3 mini photos -->
-    <!-- <div class="align-items-start float-md-start"> -->
-    <div class="row ml-0 mr-0">
-        <div class=" col-sm-4">
-            <img src="/image/slide1.png" alt="Slide1" style="width:100%">
-        </div>
-        <div class=" col-sm-4">
-            <img src="/image/slide3.png" alt="Slide2" style="width:100%">
-        </div>
-        <div class=" col-sm-4 ">
-            <img src="/image/slide2.png" alt="Slide3" style="width:100%">
-        </div>
-        <!-- </div> -->
-    </div>
-
-    <br>
-    <!--Trending Products-->
-    <div id="trendingProducts">
-        <p class="h3 text-center">Trending Products</p>
-    </div>
-    <div class="row ml-0 mr-0 justify-content-center" id="categories">
-        <div class="box-e col col-lg-2">
-            <a href="#" class="custom-underline">Cat Foods</a>
-        </div>
-        <div class="box-e col col-lg-2">
-            <a href="#" class="custom-underline">Dog Foods</a>
-        </div>
-        <div class="box-e col col-lg-2">
-            <a href="#" class="custom-underline">Pet Toys</a>
-        </div>
-    </div>
-
-    <!--Product Photos-->
-    <div class="row justify-content-center" id="products">
-        <div class="row">
-            <div class="col product-content" style="text-align: center;">
-                <img class="imageradius" src="https://picsum.photos/1000/1000" alt="product1">
-                <p class="h6 text-center product-name">Product's Name</p>
-                <p class="h6 text-center product-price"><strong>9.99$</strong></p>
-            </div>
-            <div class="col product-content" style="text-align: center;">
-                <img src="https://picsum.photos/1000/1000" class="imageradius" alt="product2">
-                <p class="h6 text-center product-name">Product's Name</p>
-                <p class="h6 text-center product-price"><del>9.99$</del> <strong>8.99$</strong></p>
-            </div>
-            <div class="col product-content" style="text-align: center;">
-                <img src="https://picsum.photos/1000/1000" class="imageradius" alt="product3">
-                <p class="h6 text-center product-name">Product's Name</p>
-                <p class="h6 text-center product-price"><del>8.99$</del> <strong>8.99$</strong></p>
-            </div>
-            <div class="col product-content" style="text-align: center;">
-                <img class="imageradius" src="https://picsum.photos/1000/1000" alt="product4">
-                <p class="h6 text-center product-name">Product's Name</p>
-                <p class="h6 text-center product-price"><del>9.99$</del> <strong>8.99$</strong></p>
-            </div>
-        </div>
-    </div>
-
-    <!--'Show All' Button-->
-    <div class="row justify-content-center" id="show-button">
-        <button class="show-button" role="button">Show all</button>
-    </div>
-
-    <br>
-    <!--OUR PARTNERS-->
-    <div id="partners">
-        <p class="h3 text-center">Our Partners</p>
-        <p class="h7 text-center">Vision, commitment, partnership</p>
-    </div>
-
-    <div class="row partner-photos">
-        <div class="col partner-logo">
-            <img src="/image/logo1.png" alt="logo1">
-            <p class="h6">Pet Food</p>
-        </div>
-        <div class="col partner-logo">
-            <img src="/image/logo2.png" alt="logo2">
-            <p class=" h6">Dog & Cat</p>
-        </div>
-        <div class="col partner-logo">
-            <img src="/image/logo3.png" alt="logo3">
-            <p class="h6">Royal Cannin</p>
-        </div>
-        <div class="col partner-logo">
-            <img src="/image/logo4.png" alt="logo4">
-            <p class="h6">Bil Jac</p>
-        </div>
-    </div>
-    <br>
-    <div class="row partner-photos">
-        <div class="col partner-logo">
-            <img src="/image/logo5.png" alt="logo5">
-            <p class="h6">Whiskas</p>
-        </div>
-        <div class="col partner-logo">
-            <img src="/image/logo6.png" alt="logo6">
-            <p class="h6">Promina</p>
-        </div>
-        <div class="col partner-logo">
-            <img src="/image/logo7.png" alt="logo7">
-            <p class="h6">Joy Dog Food</p>
-        </div>
-        <div class="col partner-logo">
-            <img src="/image/logo8.png" alt="logo8">
-            <p class="h6">Company Pet Food</p>
-        </div>
-    </div>
-
-
-    <!--follow us-->
-    <br>
-    <div class="follow-us">
-        <p class="h4 text-center">FOLLOW US ON FACEBOOK</p>
-        <div class="follow-photos">
-
-            <div class="follow-content ">
-                <img src="https://picsum.photos/1000/1000" alt="Slide1">
-            </div>
-            <div class="follow-content ">
-                <img src="https://picsum.photos/1000/1000" alt="Slide2">
-            </div>
-            <div class="follow-content ">
-                <img src="https://picsum.photos/1000/1000" alt="Slide3">
-            </div>
-            <div class="follow-content">
-                <img src="https://picsum.photos/1000/1000" alt="Slide4">
-            </div>
-        </div>
+    <div class="supplier--info">
+        <h3>BEST SUPPLIER</h3>
+        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Suscipit quibusdam aut fugit asperiores consectetur error ab! Culpa laborum dolorem, qui eaque, recusandae assumenda voluptatibus debitis cupiditate, facilis voluptatem totam reprehenderit?
+        </p>
+        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Pariatur sunt corrupti maiores quaerat deleniti placeat eligendi deserunt aut quas autem nihil libero nemo labore sapiente, nam dignissimos soluta facere? Dolores.</p>
     </div>
 </div>
+
+<!--Trending Products-->
+<div id="trendingProducts">
+    <p class="h2 text-center">Trending Products</p>
+</div>
+
+<div class="row ml-0 mr-0 justify-content-center" id="categories">
+
+    <div class="box-e col col-lg-2">
+        <a href="#" class="custom-underline">Cat Foods</a>
+    </div>
+
+    <div class="box-e col col-lg-2">
+        <a href="#" class="custom-underline">Dog Foods</a>
+    </div>
+
+    <div class="box-e col col-lg-2">
+        <a href="#" class="custom-underline">Pet Toys</a>
+    </div>
+
+</div>
+
+<!--Product Photos-->
+<div class="products__grid--container">
+
+    <div class="products__grid--item">
+        <img class="imageradius" src=" {{url('/Image/dog-food-1.jpg')}}" alt="product1">
+        <p class="h6 text-center product-name">Product's Name</p>
+        <p class="h6 text-center product-price"><strong>9.99$</strong></p>
+    </div>
+
+    <div class="products__grid--item">
+        <img class="imageradius" src=" {{url('/Image/dog-food-2.jpg')}}" alt="product2">
+        <p class="h6 text-center product-name">Product's Name</p>
+        <p class="h6 text-center product-price"><strong>9.99$</strong></p>
+    </div>
+
+    <div class="products__grid--item">
+        <img class="imageradius" src=" {{url('/Image/dog-food-3.jpg')}}" alt="product3">
+        <p class="h6 text-center product-name">Product's Name</p>
+        <p class="h6 text-center product-price"><del>9.99$</del> <strong>8.99$</strong></p>
+    </div>
+
+    <div class="products__grid--item">
+        <img class="imageradius" src=" {{url('/Image/dog-food-4.jpg')}}" alt="product4">
+        <p class="h6 text-center product-name">Product's Name</p>
+        <p class="h6 text-center product-price"><strong>9.99$</strong></p>
+    </div>
+
+    <div class="products__grid--item">
+        <img class="imageradius" src=" {{url('/Image/cat-food-1.jpg')}}" alt="product5">
+        <p class="h6 text-center product-name">Product's Name</p>
+        <p class="h6 text-center product-price"><strong>9.99$</strong></p>
+    </div>
+
+    <div class="products__grid--item">
+        <img class="imageradius" src=" {{url('/Image/cat-food-2.jpg')}}" alt="product6">
+        <p class="h6 text-center product-name">Product's Name</p>
+        <p class="h6 text-center product-price"><del>9.99$</del> <strong>8.99$</strong></p>
+    </div>
+
+    <div class="products__grid--item">
+        <img class="imageradius" src=" {{url('/Image/cat-food-3.jpg')}}" alt="product7">
+        <p class="h6 text-center product-name">Product's Name</p>
+        <p class="h6 text-center product-price"><strong>9.99$</strong></p>
+    </div>
+
+    <div class="products__grid--item">
+        <img class="imageradius" src=" {{url('/Image/cat-food-4.jpg')}}" alt="product8">
+        <p class="h6 text-center product-name">Product's Name</p>
+        <p class="h6 text-center product-price"><strong>9.99$</strong></p>
+    </div>
+
+</div>
+
+<!--'Show All' Button-->
+<div class="row justify-content-center" id="show-button">
+    <button class="show-button" role="button">Show all</button>
+</div>
+
+<!-- sale off banner -->
+<div class="saleoff--container">
+    <div class="saleoff--item">
+        <img class="imageradius" src=" {{url('/Image/sale-off-1.jpg')}}" alt="saleoff1">
+    </div>
+    <div class="saleoff--item">
+        <img class="imageradius" src=" {{url('/Image/sale-off-2.png')}}" alt="saleoff2">
+    </div>
+</div>
+
+<!--OUR PARTNERS-->
+<div id="partners">
+    <p class="h2 text-center">Our Partners</p>
+    <p class="h7 text-center">Vision, commitment, partnership</p>
+</div>
+
+<div class="row partner-photos">
+    <div class="col partner-logo">
+        <img src="/image/logo1.png" alt="logo1">
+    </div>
+    <div class="col partner-logo">
+        <img src="/image/logo2.png" alt="logo2">
+    </div>
+    <div class="col partner-logo">
+        <img src="/image/logo3.png" alt="logo3">
+    </div>
+    <div class="col partner-logo">
+        <img src="/image/logo4.png" alt="logo4">
+    </div>
+</div>
+<br>
+<div class="row partner-photos">
+    <div class="col partner-logo">
+        <img src="/image/logo5.png" alt="logo5">
+    </div>
+    <div class="col partner-logo">
+        <img src="/image/logo6.png" alt="logo6">
+    </div>
+    <div class="col partner-logo">
+        <img src="/image/logo7.png" alt="logo7">
+    </div>
+    <div class="col partner-logo">
+        <img src="/image/logo8.png" alt="logo8">
+    </div>
+</div>
+
+
+<!--follow us-->
+<br>
+<div class="follow-us">
+    <p class="h4 text-center">FOLLOW US ON FACEBOOK</p>
+
+    <div class="follow-photos">
+
+        <div class="follow-content ">
+            <img src=" {{url('/Image/follow2.jpg')}}" alt="Slide1">
+        </div>
+
+        <div class="follow-content ">
+            <img src=" {{url('/Image/follow1.jpg')}}" alt="Slide2">
+        </div>
+
+        <div class="follow-content ">
+            <img src=" {{url('/Image/follow4.jpg')}}" alt="Slide3">
+        </div>
+
+        <div class="follow-content">
+            <img src=" {{url('/Image/follow3.jpg')}}" alt="Slide4">
+        </div>
+
+    </div>
+</div>
+
 
 @endsection
 
