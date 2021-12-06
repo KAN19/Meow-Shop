@@ -62,6 +62,8 @@
     border-radius: 3%;
     -moz-border-radius: 3%;
     -webkit-border-radius: 3%;
+    max-width: 100%;
+    max-height: 100%;
 }
 
 /* can chinh vi tri ten, gia, btn add to cart */
