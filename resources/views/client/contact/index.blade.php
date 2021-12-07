@@ -13,7 +13,7 @@
     <!-- Banner -->
     <div class="banner">
         <div class="banner__name">
-            <div class="banner__name--title">CONTACT</div>
+            <img src="{{url('/Image/contact-banner.png')}}" alt="contact-banner">
         </div>
         <!-- form -->
         <div class="container">
@@ -40,8 +40,7 @@
                         <label for="subject">Message</label>
                     </div>
                     <div class="col-75">
-                        <textarea id="subject" name="subject" placeholder="Write something.."
-                            style="height:200px"></textarea>
+                        <textarea id="subject" name="subject" placeholder="Write something.." style="height:200px"></textarea>
                     </div>
                 </div>
                 <div class="submit">
