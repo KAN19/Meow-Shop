@@ -45,6 +45,10 @@ Route::prefix('cart')->group(function() {
     Route::get('update/{id}', [CartController::class, 'update'])->name('update-cart'); 
     Route::get('clear', [CartController::class, 'clear'])->name('clear-cart'); 
 });
+Route::get('/resultsearch', function () {
+    return view('client.resultsearch.index');
+});
+
 
 //========= Admin routes ============
 Route::get('/shoppingcart', function () {
