@@ -1,7 +1,9 @@
 <nav class="navbar__container">
     <div class="navbar__topnav navbar__topnav-main">
-        <div class="topnav__item ">
-            <img class="imageradius" src=" {{url('/Image/logo.png')}}" style="max-width: 120px;" alt="product1">
+        <div class="topnav__item topnav__item__logo">
+            <a href="{{route('home-page')}}">
+                <img class="imageradius" src=" {{url('/Image/logo.png')}}" style="max-width: 130px; padding-top: 10px" alt="product1">
+            </a>
         </div>
 
         <div class="topnav__item topnav__item-fullscreen">
