@@ -73,7 +73,7 @@
 .product__set--image {
     width: 160px;
     height: 130px;
-    object-fit: cover;
+    object-fit: contain;
     border-radius: 3%;
     -moz-border-radius: 3%;
     -webkit-border-radius: 3%;
