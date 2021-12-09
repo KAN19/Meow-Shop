@@ -21,8 +21,8 @@ a:hover {
 
 .navbar__topnav {
     height: 70px;
-    background-color: burlywood;
-    padding: 0 20px;
+    background-color: #fac176;
+    padding: 0 30px;
 }
 
 .navbar__topnav-sticky {
@@ -38,6 +38,7 @@ a:hover {
         height: 30px;
         opacity: 0;
     }
+
     to {
         height: 70px;
         opacity: 1;
@@ -52,6 +53,10 @@ a:hover {
 .topnav__item {
     display: flex;
     align-items: center;
+}
+
+.topnav__item img {
+    /* padding-left: 20px; */
 }
 
 .topnav__item-fullscreen {
@@ -73,12 +78,12 @@ a:hover {
 }
 
 .topnav__item-icon {
-    font-size: 22px;
+    font-size: 23px;
 }
 
 .topnav__item-burger {
     cursor: pointer;
-    font-size: 22px;
+    font-size: 23px;
 }
 
 @media (min-width: 576px) {
@@ -137,6 +142,7 @@ a:hover {
     display: block;
     text-align: left;
 }
+
 .product__dropdown__content a:hover {
     background-color: #f1f1f1;
     text-decoration: none;
@@ -147,10 +153,12 @@ a:hover {
     display: block;
     animation: dropdown-in 0.8s linear;
 }
+
 @keyframes dropdown-in {
     from {
         opacity: 0;
     }
+
     to {
         opacity: 1;
     }
@@ -179,6 +187,7 @@ a:hover {
     color: inherit;
     font-size: small;
 }
+
 .cart__dropdown__item:hover {
     text-decoration: none;
     color: inherit;
@@ -217,9 +226,11 @@ a:hover {
     transition: 0.3s linear;
     color: gray;
 }
+
 .cart__dropdown__delete:hover {
     color: sandybrown;
 }
+
 /* end cart item */
 
 .cart__dropdown__selection {
@@ -276,6 +287,7 @@ a:hover {
     from {
         opacity: 0;
     }
+
     to {
         opacity: 1;
     }
@@ -294,6 +306,7 @@ a:hover {
     background-color: whitesmoke;
     color: black;
 }
+
 .panel__item:nth-child(even) {
     border-top: 1px solid rgb(110, 104, 104);
     border-bottom: 1px solid rgb(110, 104, 104);
@@ -302,6 +315,7 @@ a:hover {
 .panel__item__icon {
     margin-right: 5px;
 }
+
 /* End sidenav content */
 /* End sidenav */
 
@@ -330,6 +344,7 @@ a:hover {
 .modal-overlay-active {
     display: block;
 }
+
 .modal-overlay-inactive {
     display: none;
 }

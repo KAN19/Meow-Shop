@@ -29,6 +29,7 @@
     from {
         opacity: 0;
     }
+
     to {
         opacity: 1;
     }
@@ -76,7 +77,7 @@
     top: 0;
 }
 
-/* The dots/bullets/indicators */
+/* ICON 3 CHẤM */
 
 .dot {
     cursor: pointer;
@@ -87,6 +88,14 @@
     border-radius: 50%;
     display: inline-block;
     transition: background-color 0.6s ease;
+}
+
+
+.dot-slide {
+    position: absolute;
+    left: 860px;
+    bottom: 15px;
+
 }
 
 .active,
@@ -100,7 +109,11 @@
     }
 }
 
-/*3 mini photos*/
+@media only screen and (max-width: 1220px) {
+    .dot-slide {
+        display: none;
+    }
+}
 
 .column {
     float: left;
@@ -108,33 +121,110 @@
     padding: 5px;
 }
 
-/* Clear floats after image containers */
-
-.row::after {
-    content: "";
-    clear: both;
-    display: table;
-}
-
-.row {
+/*===============category banner=================*/
+.category--container {
     display: flex;
+    align-items: center;
+    -webkit-justify-content: center;
+    /* Safari */
+    justify-content: center;
 }
 
-.column {
-    flex: 33.33%;
-    padding: 5px;
+.category--item {
+    padding: 10px;
 }
 
-@media screen and (max-width: 500px) {
-    .column {
-        width: 100%;
+.category--item img {
+    max-width: 80%;
+    height: auto;
+    display: block;
+    margin: auto;
+}
+
+.category--item img:hover {
+    cursor: pointer;
+    transform: scale(1.01);
+}
+
+/* ===============Supplier Div=========== */
+.supplier--container {
+    display: flex;
+    align-items: center;
+    margin: 20px;
+    -webkit-justify-content: center;
+    justify-content: center;
+}
+
+.supplier--photo {
+    padding: 10px;
+}
+
+.supplier--photo img {
+    max-width: 100%;
+    height: auto;
+    display: block;
+}
+
+.supplier--photo img:hover {
+    cursor: pointer;
+    transform: scale(1.01);
+}
+
+.supplier--info {
+    padding: 10px 10px 10px 20px;
+    max-width: 750px;
+}
+
+.supplier--info h3 {
+    color: #e75115;
+    text-decoration: double;
+}
+
+@media only screen and (max-width: 1230px) {
+    .supplier--container {
+        flex-wrap: wrap;
     }
 }
 
-/* ===============trending product=========== */
+/* ===============8 trending product photos=========== */
+.products__grid--container {
+    display: grid;
+    gap: 15px 70px;
+    justify-content: center;
+    grid-template-columns: repeat(4, auto);
+    grid-template-rows: auto auto auto auto;
+}
 
-#trendingProducts {
-    margin-bottom: 1rem;
+.products__grid--item {
+    text-align: center;
+}
+
+.products__grid--item:hover {
+    cursor: pointer;
+    text-decoration: underline;
+}
+
+.products__grid--container img {
+    max-width: 75%;
+    max-height: 75%;
+    object-fit: cover;
+}
+
+.products__grid--item img:hover {
+    filter: grayscale(0);
+    transform: scale(1.01);
+    cursor: pointer;
+}
+
+.product-name {
+    padding: 15px 0 5px;
+}
+
+@media only screen and (max-width: 759px) {
+    .products__grid--container {
+        display: flex;
+        flex-wrap: wrap;
+    }
 }
 
 /*style underline categories*/
@@ -188,37 +278,6 @@
     transition: 0.3s ease all;
 }
 
-/* ===============4 trending product photos=========== */
-
-/*style product img*/
-
-#products p {
-    padding-top: 0.75rem;
-}
-
-#products img {
-    transition: transform 0.5s, filter 1.5s ease-in-out;
-    margin-bottom: -6px;
-    cursor: pointer;
-    max-width: 250px;
-    max-height: 250px;
-    object-fit: cover;
-}
-
-#products img:hover {
-    filter: grayscale(0);
-    transform: scale(1.01);
-    cursor: pointer;
-}
-
-.product-name:hover {
-    cursor: pointer;
-    text-decoration: underline;
-}
-
-.product-content:hover {
-    text-decoration: underline;
-}
 
 /*bo tròn ảnh*/
 
@@ -266,55 +325,62 @@
     color: #fff;
 }
 
-/* @media (min-width: 768px) {
-    .show-button {
-        font-size: 1rem;
-        padding: 1rem 2rem;
-    }
-} */
-
-/* ===============our partnership=========== */
-
-/*Style Partnership*/
-
-.partner-photos img {
-    /* margin: 10px 0 0 50px; */
-    /* padding-left: 45px; */
-    border-radius: 5px;
-    -webkit-filter: grayscale(100%);
-    filter: grayscale(100%);
-}
-
-.partner-photos p {
-    margin-top: 5px;
+/*===============sale off banner=================*/
+.saleoff--container {
+    display: flex;
     align-items: center;
+    -webkit-justify-content: center;
+    /* Safari */
+    justify-content: center;
+    margin: 20px
 }
 
-.partner-photos img:hover {
+.saleoff--item {
+    padding: 25px;
+}
+
+.saleoff--item img {
+    max-width: 100%;
+    height: auto;
+    display: block;
+    margin: auto;
+}
+
+.saleoff--item img:hover {
     cursor: pointer;
     transform: scale(1.01);
 }
 
+@media only screen and (max-width: 1230px) {
+    .saleoff--container {
+        flex-wrap: wrap;
+    }
+}
+
+/* ===============our partnership=========== */
+
+/*Style Partnership*/
 .partner-logo {
+    border-radius: 5px;
     text-align: center;
 }
 
 .partner-logo img {
-    max-width: 200px;
-    max-height: 200px;
+    width: 185px;
+    max-width: 100%;
     object-fit: cover;
 }
 
-/*chỉnh lỗi xuống hàng*/
+.partner-logo img:hover {
+    cursor: pointer;
+    transform: scale(1.01);
+}
 
 @media only screen and (max-width: 909px) {
     .partner-logo img {
         max-width: 100px;
         max-height: 100px;
         object-fit: cover;
-    }
-    .partner-logo p {
-        font-size: smaller;
     }
 }
 
@@ -324,8 +390,9 @@
         max-height: 75px;
         object-fit: cover;
     }
-    .partner-logo p {
-        font-size: smaller;
+
+    .dot-slide {
+        display: none;
     }
 }
 
@@ -335,12 +402,16 @@
         max-height: 200px;
         object-fit: cover;
     }
+
+    .dot-slide {
+        display: none;
+    }
 }
 
 /* ===============Follow Us=========== */
 
 .follow-us {
-    background-color: #d1d5db;
+    background-color: #fac176;
 }
 
 .follow-us p {
