@@ -33,7 +33,7 @@
                 <i class="fas fa-search"></i>
             </a>
             <div id="topnav__item__cart">
-                <a href="#" class="topnav__item__button topnav__item-icon">
+                <a class="topnav__item__button topnav__item-icon">
                     <i class="fas fa-shopping-cart"></i>
                 </a>
 
@@ -90,12 +90,7 @@
             <span class="panel__item__icon"><i class="fas fa-phone-square-alt"></i></span>
             <span>Contact</span>
         </a>
-        <a href="#" class="panel__item">
-            <span class="panel__item__icon">
-                <i class="fas fa-user"></i>
-            </span>
-            <span>Profile</span>
-        </a>
+       
         <a href="#" class="panel__item">
             <span class="panel__item__icon"><i class="fas fa-shopping-cart"></i></span>
             <span>Cart</span>

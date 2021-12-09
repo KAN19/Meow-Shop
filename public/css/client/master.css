@@ -79,6 +79,7 @@ a:hover {
 
 .topnav__item-icon {
     font-size: 23px;
+    cursor: pointer;
 }
 
 .topnav__item-burger {
