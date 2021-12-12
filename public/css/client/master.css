@@ -2,6 +2,16 @@ body {
     font-family: "Montserrat", sans-serif !important;
 }
 
+a {
+    color: unset !important;
+    text-decoration: none !important;
+}
+
+a:hover {
+    color: unset !important;
+    text-decoration: none !important;
+}
+
 /* Top nav bar */
 .navbar__container {
     width: 100%;
@@ -11,8 +21,8 @@ body {
 
 .navbar__topnav {
     height: 70px;
-    background-color: burlywood;
-    padding: 0 20px;
+    background-color: #fac176;
+    padding: 0 30px;
 }
 
 .navbar__topnav-sticky {
@@ -28,6 +38,7 @@ body {
         height: 30px;
         opacity: 0;
     }
+
     to {
         height: 70px;
         opacity: 1;
@@ -42,6 +53,10 @@ body {
 .topnav__item {
     display: flex;
     align-items: center;
+}
+
+.topnav__item img {
+    /* padding-left: 20px; */
 }
 
 .topnav__item-fullscreen {
@@ -63,12 +78,13 @@ body {
 }
 
 .topnav__item-icon {
-    font-size: 22px;
+    font-size: 23px;
+    cursor: pointer;
 }
 
 .topnav__item-burger {
     cursor: pointer;
-    font-size: 22px;
+    font-size: 23px;
 }
 
 @media (min-width: 576px) {
@@ -127,6 +143,7 @@ body {
     display: block;
     text-align: left;
 }
+
 .product__dropdown__content a:hover {
     background-color: #f1f1f1;
     text-decoration: none;
@@ -137,10 +154,12 @@ body {
     display: block;
     animation: dropdown-in 0.8s linear;
 }
+
 @keyframes dropdown-in {
     from {
         opacity: 0;
     }
+
     to {
         opacity: 1;
     }
@@ -167,16 +186,18 @@ body {
     display: flex;
     text-decoration: none;
     color: inherit;
+    font-size: small;
 }
+
 .cart__dropdown__item:hover {
     text-decoration: none;
     color: inherit;
 }
 
 .cart__dropdown__image {
-    width: 90px;
-    height: 90px;
-    object-fit: cover;
+    width: 80px;
+    height: 80px;
+    object-fit: contain;
     border-radius: 10px;
     margin-right: 10px;
     min-width: 90px;
@@ -193,7 +214,6 @@ body {
 }
 
 .cart__dropdown__content-price {
-    font-size: 14px;
     color: rgb(104, 97, 97);
 }
 
@@ -207,9 +227,11 @@ body {
     transition: 0.3s linear;
     color: gray;
 }
+
 .cart__dropdown__delete:hover {
     color: sandybrown;
 }
+
 /* end cart item */
 
 .cart__dropdown__selection {
@@ -266,6 +288,7 @@ body {
     from {
         opacity: 0;
     }
+
     to {
         opacity: 1;
     }
@@ -284,6 +307,7 @@ body {
     background-color: whitesmoke;
     color: black;
 }
+
 .panel__item:nth-child(even) {
     border-top: 1px solid rgb(110, 104, 104);
     border-bottom: 1px solid rgb(110, 104, 104);
@@ -292,6 +316,7 @@ body {
 .panel__item__icon {
     margin-right: 5px;
 }
+
 /* End sidenav content */
 /* End sidenav */
 
@@ -320,6 +345,7 @@ body {
 .modal-overlay-active {
     display: block;
 }
+
 .modal-overlay-inactive {
     display: none;
 }

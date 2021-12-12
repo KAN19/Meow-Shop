@@ -5,6 +5,8 @@ use App\Http\Controllers\Admin\CategoryController;
 use App\Http\Controllers\Admin\MediaController;
 use App\Http\Controllers\Admin\OrderController;
 use App\Http\Controllers\Admin\ProductController;
+use App\Http\Controllers\Client\CartController;
+use App\Http\Controllers\Client\ProductController as ClientProductController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -27,14 +29,25 @@ Route::get('/products', function () {
     return view('client.products.index');
 })->name('product-page');
 
-Route::get('/product/{slug}', function () {
-    return view('client.products.product-detail');
-});
+Route::get('/products',[ClientProductController::class, "showProducts"])->name('product-page');
+Route::get('/product/{slug}',[ClientProductController::class, "showProductDetail"])->name('product-detail-page');
+
+
 
 Route::get('/contact', function () {
     return view('client.contact.index');
 })->name('contact-page');
 
+Route::prefix('cart')->group(function() {
+    Route::get('/', [CartController::class, 'index'])->name('show-cart'); 
+    Route::get('add/{id}', [CartController::class, 'add'])->name('add-cart'); 
+    Route::get('remove/{id}', [CartController::class, 'remove'])->name('remove-cart'); 
+    Route::get('update/{id}', [CartController::class, 'update'])->name('update-cart'); 
+    Route::get('clear', [CartController::class, 'clear'])->name('clear-cart'); 
+});
+Route::get('/resultsearch', function () {
+    return view('client.resultsearch.index');
+});
 
 
 //========= Admin routes ============

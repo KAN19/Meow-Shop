@@ -1,7 +1,9 @@
 <nav class="navbar__container">
     <div class="navbar__topnav navbar__topnav-main">
-        <div class="topnav__item ">
-            This is lgo
+        <div class="topnav__item topnav__item__logo">
+            <a href="{{route('home-page')}}">
+                <img class="imageradius" src=" {{url('/Image/logo.png')}}" style="max-width: 130px; padding-top: 10px" alt="product1">
+            </a>
         </div>
 
         <div class="topnav__item topnav__item-fullscreen">
@@ -13,9 +15,9 @@
                     PRODUCT
                 </a>
                 <div class="product__dropdown__content">
-                    <a href="#">Link 1</a>
-                    <a href="#">Link 2</a>
-                    <a href="#">Link 3</a>
+                    <a href="#">Cat Food</a>
+                    <a href="#">Dog Food</a>
+                    <a href="#">Toys</a>
                 </div>
             </div>
             <a href="{{route('contact-page')}}" class="topnav__item__button">
@@ -30,34 +32,41 @@
 
                 <i class="fas fa-search"></i>
             </a>
-            <a href="#" class="topnav__item__button topnav__item-icon">
-                <i class="fas fa-user"></i>
-            </a>
             <div id="topnav__item__cart">
-                <a href="#" class="topnav__item__button topnav__item-icon">
+                <a class="topnav__item__button topnav__item-icon">
                     <i class="fas fa-shopping-cart"></i>
                 </a>
+
+                <?php 
+                    $myCart = $cart->items; 
+                ?>
+           
                 <div class="cart__dropdown">
-                    <a href="#" class="cart__dropdown__item">
-                        <img src="https://picsum.photos/200/500" class="cart__dropdown__image" alt="" srcset="">
-                        <div class="cart__dropdown__content">
-                            <div class="cart__dropdown__content-name">
-                                Ten san phams ne
+                    @forelse ($myCart as $item)
+                        <a href="#" class="cart__dropdown__item">
+                            <img src="https://picsum.photos/200/500" class="cart__dropdown__image" alt="" srcset="">
+                            <div class="cart__dropdown__content">
+                                <div class="cart__dropdown__content-name">
+                                    Ten san phams ne
+                                </div>
+                                <div class="cart__dropdown__content-price">
+                                    100.000VND
+                                </div>
                             </div>
-                            <div class="cart__dropdown__content-price">
-                                100.000VND
+                            <div href="#" class="cart__dropdown__delete">
+                                <i class="far fa-times-circle"></i>
                             </div>
-                        </div>
-                        <div href="#" class="cart__dropdown__delete">
-                            <i class="far fa-times-circle"></i>
-                        </div>
-                    </a>
-                    <hr>
+                        </a>
+                        <hr>
+                    @empty
+                        <div>Your cart is empty!</div>
+                    @endforelse
+                   
                     <div class="cart__dropdown__selection">
-                        <a class="cart__dropdown__button">View Cart</a>
+                        <a href={{route('show-cart')}} class="cart__dropdown__button">View Cart</a>
                         <a class="cart__dropdown__button">Checkout</a>
                     </div>
-                </div>
+            </div>
             </div>
 
         </div>
@@ -81,12 +90,7 @@
             <span class="panel__item__icon"><i class="fas fa-phone-square-alt"></i></span>
             <span>Contact</span>
         </a>
-        <a href="#" class="panel__item">
-            <span class="panel__item__icon">
-                <i class="fas fa-user"></i>
-            </span>
-            <span>Profile</span>
-        </a>
+       
         <a href="#" class="panel__item">
             <span class="panel__item__icon"><i class="fas fa-shopping-cart"></i></span>
             <span>Cart</span>

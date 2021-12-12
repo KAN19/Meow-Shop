@@ -1,12 +1,3 @@
-a {
-    text-decoration: none;
-    color: inherit;
-}
-a:hover {
-    text-decoration: none;
-    color: inherit;
-}
-
 .row {
     margin-left: 0;
     margin-right: 0;
@@ -82,7 +73,7 @@ a:hover {
 .product__set--image {
     width: 160px;
     height: 130px;
-    object-fit: cover;
+    object-fit: contain;
     border-radius: 3%;
     -moz-border-radius: 3%;
     -webkit-border-radius: 3%;
@@ -98,11 +89,6 @@ a:hover {
     justify-content: center;
     align-items: center;
     font-size: large;
-    text-decoration: none;
-}
-
-.product__property a {
-    color: black;
     text-decoration: none;
 }
 
@@ -187,12 +173,12 @@ a:hover {
 
 /* icon bin */
 .btn__bin {
-    color: #aaa; /* mau btn bin */
+    color: #aaa !important; /* mau btn bin */
     text-align: center;
 }
 .btn__bin:hover {
     font-size: large;
-    color: red; /* mau btn bin khi hover */
+    color: red !important; /* mau btn bin khi hover */
     transition: 0.2s;
     cursor: pointer;
 }

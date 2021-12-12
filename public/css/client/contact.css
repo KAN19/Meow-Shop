@@ -39,6 +39,7 @@ textarea {
     box-sizing: border-box;
     resize: vertical;
 }
+
 textarea:focus {
     outline: none;
     border: 1.5px solid #f6ab49;
@@ -103,9 +104,11 @@ label {
     /*màu bóng btn*/
     box-shadow: 0 0 10px 0 #f6ab49;
     opacity: 0.8;
+    cursor: pointer;
 }
 
 @media screen and (max-width: 600px) {
+
     .col-25,
     .col-75,
     input[type="submit"] {
