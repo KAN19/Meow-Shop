@@ -71,36 +71,63 @@
 
     </form>
     <div class="row bg-primary py-1">
-        <div class="col-1">Order</div>
-        <div class="col-3">Customer Name</div>
-        <div class="col-3">Price</div>
-        <div class="col-3">Order time</div>
-        <div class="col-2">Status</div>
+        <div class="col-1 text-center" style="text-align: center">Order</div>
+        <div class="col-4 text-center">Customer Name</div>
+        <div class="col-2 text-center">Price</div>
+        <div class="col-3 text-center">Order time</div>
+        <div class="col-2 text-center">Status</div>
     </div>
 
-    <div class="row py-3 border align-items-center">
-        <div class="col-1">Order</div>
-        <div class="col-3">Customer Name</div>
-        <div class="col-3">Price</div>
-        <div class="col-3">Order time</div>
-        <div class="col-2">
-            <span class="badge badge-dark p-2">Pending</span>
+    @forelse($list_orders as $order)
+        <a style="cursor: pointer" data-toggle="modal" data-target="#testing{{$order->id}}">
+            <div class="row py-3 border align-items-center">
+                <div class="col-1 text-center">#{{$order->id}}</div>
+                <div class="col-4 text-center">{{$order->customer_name}}</div>
+                <div class="col-2 text-center">{{$order->last_total}}</div>
+                <div class="col-3 text-center">{{$order->created_at}}</div>
+                <div class="col-2 text-center">
+                    @if ($order->order_status == "pending")
+                        <span class="badge badge-dark p-2">Pending</span>
+        
+                    @elseif ($order->order_status == "shipping")
+                        <span class="badge badge-warning p-2">Shipping</span>
+        
+                    @elseif ($order->order_status == "completed")
+                        <span class="badge badge-success p-2">Completed</span>
+        
+                    @else 
+                        <span class="badge badge-danger p-2">Cancel</span> 
+                    @endif
+                </div>
+            </div>
+        </a>
+    @empty
+        <p>Empty! </p>
+    @endforelse
+<!-- Large modal -->
+
+    @foreach ($list_orders as $order)
+        <div class="modal fade bd-example-modal-lg" id="testing{{$order->id}}" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel" aria-hidden="true">
+            <div class="modal-dialog modal-lg">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="modal-title" id="exampleModalLabel">Modal title</h5>
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                            <span aria-hidden="true">&times;</span>
+                        </button>
+                    </div>
+                    <div class="modal-body">
+                        {{$order->orderDetail[0]->product}}
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                        <!-- <button type="button" class="btn btn-primary">Save changes</button> -->
+                    </div>
+                </div>
+            </div>
         </div>
-    </div>
-    <div class="row py-3 border align-items-center">
-        <div class="col-1">Order</div>
-        <div class="col-3">Customer Name</div>
-        <div class="col-3">Price</div>
-        <div class="col-3">Order time</div>
-        <div class="col-2">
-            <span class="badge badge-dark p-2">Pending</span>
-        </div>
-    </div>
-
-    <!-- <span class="badge badge-warning p-2">Shipping</span>
-    <span class="badge badge-success p-2">Completed</span>
-    <span class="badge badge-danger p-2">Cancel</span> -->
-
+    @endforeach
+   
 
 </div>
 @stop

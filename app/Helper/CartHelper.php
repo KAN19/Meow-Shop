@@ -6,11 +6,14 @@ class CartHelper
     public $items = [];
     public $total_quantity = 0; 
     public $total_price = 0; 
+    public $total_price_without_discount =0; 
+    public $shipping_price = 5; 
 
     public function __construct() {
         $this->items = session('cart') ? session('cart') : [];
         $this->total_price = $this->get_total_price();
         $this->total_quantity = $this->get_total_quantity();
+        $this->total_price_without_discount = $this->get_total_price_without_discount();
     }
 
     public function add($product, $quantity = 1)
@@ -29,7 +32,7 @@ class CartHelper
             'discount' => $product->discount, 
             'finalPrice' => $finalPrice, 
             'image' => $product->image,
-        'quantity' => $quantity,
+            'quantity' => $quantity,
         ];
 
         if (isset($this->items[$product->id])) { 
@@ -65,12 +68,26 @@ class CartHelper
         
     }
 
+    public function totalAndShipping() {
+        return $this->total_price + $this->shipping_price;
+    }
+
 
     private function get_total_price() {
         $result = 0; 
 
         foreach ($this->items as $item) {
             $result += $item['finalPrice'] * $item['quantity']; 
+        }
+        
+        return $result;
+    }
+
+    private function get_total_price_without_discount() {
+        $result = 0; 
+
+        foreach ($this->items as $item) {
+            $result += $item['price'] * $item['quantity']; 
         }
         
         return $result;

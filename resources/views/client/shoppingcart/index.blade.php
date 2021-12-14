@@ -96,7 +96,7 @@
             </div>
             @endforeach
         @else
-            
+            <div>Your cart is empty!</div>
         @endif
         
         <hr class="line my-3 ">

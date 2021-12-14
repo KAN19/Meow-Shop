@@ -62,6 +62,7 @@ Route::get('/resultsearch', function () {
 // ========== Checkout Route ========
 Route::prefix('/checkout')->group(function() {
     Route::get('', [CheckoutController::class, 'index'])->name('show-checkout');
+    Route::post('', [CheckoutController::class, 'store'])->name('store-checkout');
 
     // Route::get('create', [CategoryController::class, 'showCreateCategory'])->name('create-category');
     // Route::post('create', [CategoryController::class, 'storeCategory']);

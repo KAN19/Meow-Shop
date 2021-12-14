@@ -18,16 +18,17 @@
     </div>
     <!-- body checkout -->
     <!-- =========Form method here======= -->
-    <form action="" method="post">
+    <form action="{{route('store-checkout')}}" method="post">
+        @csrf
         <div class="row checkout__page">
             <!-- =====Left-bill infor==== -->
-            <div class="col-md-7">
+            <div class="col-md-6">
                 <div class="section__title">Bill Detail</div>
                 <!-- email input -->
                 <div class="input__field">
                     <div class="input__field__title">Your email*</div>
 
-                    <input type="text" id="lname" name="lname" placeholder="Your Email" required>
+                    <input type="text" name="ord_email" placeholder="Your Email" required>
                     <div class="login_account">
                         <a>Already have an account?</a>
                         <a id="login">Log in</a>
@@ -41,7 +42,7 @@
                 <div class="input__field">
                     <div class="input__field__title">Your name*</div>
 
-                    <input type="text" id="fname" name="fname" placeholder="Your name" required>
+                    <input type="text"name="ord_customer" placeholder="Your name" required>
 
                 </div>
 
@@ -49,9 +50,9 @@
                 <div class="input__field">
                     <div class="input__field__title">Province/City*</div>
 
-                    <select class="input__field__selector" id="province" name="province">
-                        <option value="Vietnam">Hà Nội</option>
-                        <option value="Laos">Thành phố Hồ Chí Mính</option>
+                    <select class="input__field__selector"  name="ord_province">
+                        <option value="Ha Noi">Hà Nội</option>
+                        <option value="TP. Ho Chi Minh">Thành phố Hồ Chí Mính</option>
                         <option value="Cambodia">Đà Nẵng</option>
                         <option value="America">Huế</option>
                         <option value="China">Cần Thơ</option>
@@ -62,26 +63,27 @@
                 <div class="input__field">
                     <div class="input__field__title">Street Address*</div>
 
-                    <input type="text" id="lname" name="ord_address" placeholder="Street Address">
+                    <input type="text" name="ord_address" placeholder="Street Address">
                 </div>
 
                 <div class="input__field">
                     <div class="input__field__title">Phone*</div>
 
-                    <input type="text" id="lname" name="lname" placeholder="Phone">
+                    <input type="text" name="ord_phone" placeholder="Phone">
                 </div>
 
                 <div class="input__field">
                     <div class="input__field__title">Order note (optional)</div>
 
-                    <textarea class="input__field__textarea" placeholder="Write something"></textarea>
+                    <textarea class="input__field__textarea" 
+                    name="ord_note" placeholder="Write something"></textarea>
 
                 </div>
             </div>
 
 
             <!-- Your order -->
-            <div class="col-md-5">
+            <div class="col-md-6 mb-5">
                 <div class="section__title">Your Order</div>
                 <div class="border__order">
                     <!-- product and subtotal -->
@@ -92,28 +94,29 @@
                     </div>
                     <hr class="line">
 
-                    <div class="body__order__row">
-                        <!-- name product -->
-                        <div class="body__order__product__name">Product names asd asd asda sd asd</div>
-                        <b>x1</b>
-                        <!--  subtotal product -->
-                        <div>$9.99</div>
-                    </div>
-                    <hr class="line">
+                <?php 
+                    $myCart = $cart->items; 
+                ?>
+               
+                @if (count($myCart) > 0)
+                    @foreach ($myCart as $item)
 
                     <div class="body__order__row">
                         <!-- name product -->
-                        <div class="body__order__product__name">Product names asd asd asda sd asd</div>
-                        <b>x1</b>
+                        <div class="body__order__product__name">{{$item['name']}}</div>
+                        <b>x{{$item['quantity']}}</b>
                         <!--  subtotal product -->
-                        <div>$9.99</div>
+                        <div>${{$item['finalPrice'] * $item['quantity']}}</div>
                     </div>
                     <hr class="line">
+
+                    @endforeach
+                @endif
 
 
                     <div class="body__order__row">
                         <b>Sub-Total</b>
-                        <div>$31.99</div>
+                        <div>${{$cart->total_price}}</div>
                     </div>
                     <hr class="line">
                     <!-- shipping -->
@@ -122,7 +125,7 @@
                             <b class="body__ordershipping">SHIPPING</b>
                             <div class="body_ordershipping__type">COD - Cash On Delivery</div>
                         </b>
-                        <div>$2</div>
+                        <div>${{$cart->shipping_price}}</div>
                     </div>
                     <hr class="line">
 
@@ -130,7 +133,7 @@
                     <!-- total -->
                     <div class="body__order__row">
                         <b>TOTAL</b>
-                        <b class="body__ordertotal__total ">$31.99</b>
+                        <b class="body__ordertotal__total ">${{$cart->totalAndShipping()}}</b>
                     </div>
                     <hr class="line">
                     <p class="body__order__remind">
@@ -140,7 +143,7 @@
 
                     <!-- button place order -->
                     <div class="placeorder">
-                        <input type="button" value="Place Order" type="submit" class="btn placeorder--btn">
+                        <input type="submit" value="Place Order" type="submit" class="btn placeorder--btn">
                     </div>
                 </div>
             </div>

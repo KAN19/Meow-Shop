@@ -32,4 +32,10 @@ class Product extends Model
         
     }
 
+    public function orderDetail()
+    {
+        return $this->hasMany(order_detail::class);
+        
+    }
+
 }
