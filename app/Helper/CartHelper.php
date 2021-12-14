@@ -23,12 +23,13 @@ class CartHelper
 
         $item = [
             'id' => $product->id,
+            'slug' => $product->slug,
             'name' => $product->name,
             'price' => $product->price, 
             'discount' => $product->discount, 
             'finalPrice' => $finalPrice, 
             'image' => $product->image,
-            'quantity' => $quantity,
+        'quantity' => $quantity,
         ];
 
         if (isset($this->items[$product->id])) { 

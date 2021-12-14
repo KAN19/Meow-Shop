@@ -139,7 +139,7 @@
             <!-- btn checkout -->
             <div class="btn__cart">
                 <div class="overlay__btn">
-                    <button type="button" class="btn__main checkout--btn">Procceed to Checkout</button>
+                    <a href="{{route('show-checkout')}}" class="btn__main">Procceed to Checkout</a>
                 </div>
             </div>
         </div>

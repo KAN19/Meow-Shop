@@ -6,6 +6,7 @@ use App\Http\Controllers\Admin\MediaController;
 use App\Http\Controllers\Admin\OrderController;
 use App\Http\Controllers\Admin\ProductController;
 use App\Http\Controllers\Client\CartController;
+use App\Http\Controllers\Client\CheckoutController;
 use App\Http\Controllers\Client\ProductController as ClientProductController;
 use Illuminate\Support\Facades\Route;
 
@@ -20,11 +21,13 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
+// ========== Home Route ========
 Route::get('/', function () {
     return view('client.home.index');
 })->name('home-page');
 
 
+// ========== Product and product detail Route ========
 Route::get('/products', function () {
     return view('client.products.index');
 })->name('product-page');
@@ -34,10 +37,13 @@ Route::get('/product/{slug}',[ClientProductController::class, "showProductDetail
 
 
 
+// ========== Contact route ========
 Route::get('/contact', function () {
     return view('client.contact.index');
 })->name('contact-page');
 
+
+// ========== Cart Route ========
 Route::prefix('cart')->group(function() {
     Route::get('/', [CartController::class, 'index'])->name('show-cart'); 
     Route::get('add/{id}', [CartController::class, 'add'])->name('add-cart'); 
@@ -45,31 +51,31 @@ Route::prefix('cart')->group(function() {
     Route::get('update/{id}', [CartController::class, 'update'])->name('update-cart'); 
     Route::get('clear', [CartController::class, 'clear'])->name('clear-cart'); 
 });
+
+
+// ========== Search Route ========
 Route::get('/resultsearch', function () {
     return view('client.resultsearch.index');
 });
 
 
+// ========== Checkout Route ========
+Route::prefix('/checkout')->group(function() {
+    Route::get('', [CheckoutController::class, 'index'])->name('show-checkout');
+
+    // Route::get('create', [CategoryController::class, 'showCreateCategory'])->name('create-category');
+    // Route::post('create', [CategoryController::class, 'storeCategory']);
+
+    // Route::get('/{slug}', [CategoryController::class, 'showEditCategory'])->name('edit-category');
+    // Route::put('/{slug}', [CategoryController::class, 'updateCategory']); 
+
+    // Route::get('delete/{slug}', [CategoryController::class, 'deleteCategory'])->name('delete-category');
+
+});
+
+
+
 //========= Admin routes ============
-Route::get('/shoppingcart', function () {
-    return view('client.shoppingcart.index');
-});
-
-Route::get('/test', function () {
-    return view('admin.test');
-});
-
-Route::get('/test-admin', function () {
-    return view('admin.master');
-});
-
-Route::get('/checkout', function () {
-    return view('client.checkout.index');
-});
-
-
-
-
 Route::middleware(['guest:admin'])->group(function() { 
 
     Route::get('/admin-register', [AuthController::class, 'showRegister'])->name('admin-register');

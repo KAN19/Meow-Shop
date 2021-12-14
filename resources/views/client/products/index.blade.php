@@ -69,28 +69,6 @@
                     </div>
                 </div>
                 <hr class="my-3">
-                <!--trending product 2-->
-                <div class="trendingname row">
-                    <div>
-                        <div><img class="imageradius" src="https://picsum.photos/150" /></div>
-                    </div>
-                    <div class="contentTrending">
-                        <div>Name</div>
-                        <div>$99.00</div>
-                    </div>
-                </div>
-                <hr class="my-3 ">
-                <!--trending product 3-->
-                <div class="trendingname row">
-                    <div>
-                        <div><img class="imageradius" src="https://picsum.photos/150" /></div>
-                    </div>
-                    <div class="contentTrending">
-                        <div>Name</div>
-                        <div>$99.00</div>
-                    </div>
-                </div>
-                <hr class="my-3 ">
 
             </div>
         </div>
@@ -139,7 +117,7 @@
     <div class="trendingproduct name">
         <div class="row trendingname">
             <div class="col-sm">
-                <div><img class="imageTrending-mobile" src="https://picsum.photos/350/250" /></div>
+                <div><img class="imageTrending-mobile" src="" alt="anh ne" /></div>
             </div>
             <div class="trendingmobile col-sm mt-4">
                 <div class="mb-1">Name</div>

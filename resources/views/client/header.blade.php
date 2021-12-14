@@ -44,7 +44,7 @@
                 <div class="cart__dropdown">
                     @forelse ($myCart as $item)
                         <a href="#" class="cart__dropdown__item">
-                            <img src="https://picsum.photos/200/500" class="cart__dropdown__image" alt="" srcset="">
+                            <img src="" class="cart__dropdown__image" alt="" srcset="">
                             <div class="cart__dropdown__content">
                                 <div class="cart__dropdown__content-name">
                                     Ten san phams ne
