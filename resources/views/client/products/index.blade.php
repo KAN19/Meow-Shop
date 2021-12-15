@@ -120,14 +120,8 @@
             
         </div>
         <!--Next page-->
-        <div class="nextpage">
-            <div class="pagination">
-                <a href="#" class="active mr-3">1</a>
-                <a href="#">2</a>
-                <i class="arrow right"></i>
-            </div>
-        </div>
-        {!! $listProducts->appends(request()->all())->links() !!}
+        {!! $listProducts->appends(request()->all())->links('client.products.pagination') !!}       
+
     </div>
 </div>
 <!-- trending product mobile -->
