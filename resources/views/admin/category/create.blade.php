@@ -29,8 +29,8 @@
                         </div>
                         @enderror
                     </div>
-                    <button type="submit" class="btn btn-primary">Category Add</button>
                     <a class="btn btn-danger" href="{{route('show-category')}}">Back</a>
+                    <button type="submit" class="btn btn-primary">Category Add</button>
                     <form>
                         @if (session('success'))
                         {{session('success')}}

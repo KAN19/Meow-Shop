@@ -26,8 +26,8 @@
                         <input class="form-control" value="{{$category->name}}" name="cateName"
                             placeholder="Please Enter Category Name" />
                     </div>
-                    <button type="submit" class="btn btn-primary">Apply change</button>
                     <a class="btn btn-danger" href="{{route('show-category')}}">Back</a>
+                    <button type="submit" class="btn btn-primary">Apply change</button>
                     <form>
             </div>
         </div>

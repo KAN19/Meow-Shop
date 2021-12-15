@@ -131,6 +131,10 @@ Route::middleware(['auth:admin'])->group(function() {
        
     
         Route::get('/orders', [OrderController::class, 'index'])->name('show-orders');
+        Route::get('/order/{id}', [OrderController::class, 'showOrderDetail'])->name('show-order-detail');
+        Route::post('/order/confirm/{id}', [OrderController::class, 'confirmOrderDetail'])->name('confirm-order-detail');
+        Route::post('/order/cancel/{id}', [OrderController::class, 'cancelOrderDetail'])->name('cancel-order-detail');
+        Route::post('/order/complete/{id}', [OrderController::class, 'completeOrderDetail'])->name('complete-order-detail');
     });
     
 });

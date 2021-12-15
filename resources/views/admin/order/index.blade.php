@@ -79,11 +79,11 @@
     </div>
 
     @forelse($list_orders as $order)
-        <a style="cursor: pointer" data-toggle="modal" data-target="#testing{{$order->id}}">
-            <div class="row py-3 border align-items-center">
+        <a href="{{route('show-order-detail', $order->id)}}" style="color: black;" >
+            <div class="row py-3 border align-items-center order__row">
                 <div class="col-1 text-center">#{{$order->id}}</div>
                 <div class="col-4 text-center">{{$order->customer_name}}</div>
-                <div class="col-2 text-center">{{$order->last_total}}</div>
+                <div class="col-2 text-center">${{$order->last_total}}</div>
                 <div class="col-3 text-center">{{$order->created_at}}</div>
                 <div class="col-2 text-center">
                     @if ($order->order_status == "pending")
@@ -105,29 +105,6 @@
         <p>Empty! </p>
     @endforelse
 <!-- Large modal -->
-
-    @foreach ($list_orders as $order)
-        <div class="modal fade bd-example-modal-lg" id="testing{{$order->id}}" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel" aria-hidden="true">
-            <div class="modal-dialog modal-lg">
-                <div class="modal-content">
-                    <div class="modal-header">
-                        <h5 class="modal-title" id="exampleModalLabel">Modal title</h5>
-                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                            <span aria-hidden="true">&times;</span>
-                        </button>
-                    </div>
-                    <div class="modal-body">
-                        {{$order->orderDetail[0]->product}}
-                    </div>
-                    <div class="modal-footer">
-                        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-                        <!-- <button type="button" class="btn btn-primary">Save changes</button> -->
-                    </div>
-                </div>
-            </div>
-        </div>
-    @endforeach
-   
 
 </div>
 @stop

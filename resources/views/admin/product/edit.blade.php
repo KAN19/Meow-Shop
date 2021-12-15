@@ -12,7 +12,7 @@
 
 @section('breadcrumb')
 <li class="breadcrumb-item"><a href="{{route('show-product')}}">Products</a></li>
-<li class="breadcrumb-item active">{{$product->name}}</li>
+<li class="breadcrumb-item active text-break">{{$product->name}}</li>
 @stop
 
 
@@ -168,8 +168,8 @@
 
 
                     <div class="form-group d-flex justify-content-end">
-                        <a class="btn btn-outline-danger mr-2" href="{{route('show-product')}}"> Back</a>
-                        <button type="submit" class="btn btn-outline-primary"> Save data</button>
+                        <a class="btn btn-danger mr-2" href="{{route('show-product')}}"> Back</a>
+                        <button type="submit" class="btn btn-primary"> Save data</button>
                     </div>
                 </div>
             </div>
