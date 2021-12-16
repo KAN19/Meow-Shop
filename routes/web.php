@@ -28,11 +28,8 @@ Route::get('/', function () {
 
 
 // ========== Product and product detail Route ========
-Route::get('/products', function () {
-    return view('client.products.index');
-})->name('product-page');
-
 Route::get('/products',[ClientProductController::class, "showProducts"])->name('product-page');
+Route::get('/products/{slug}',[ClientProductController::class, "showProductsByCategory"])->name('product-page-byCategory');
 Route::get('/product/{slug}',[ClientProductController::class, "showProductDetail"])->name('product-detail-page');
 
 

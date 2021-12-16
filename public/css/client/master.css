@@ -3,13 +3,13 @@ body {
 }
 
 a {
-    color: inherit !important;
-    text-decoration: none !important;
+    color: inherit;
+    text-decoration: none;
 }
 
 a:hover {
-    color: inherit !important;
-    text-decoration: inherit !important;
+    color: inherit;
+    text-decoration: inherit;
 }
 
 /* Top nav bar */

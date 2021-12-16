@@ -11,9 +11,20 @@ class ProductController extends Controller
 {
     public function showProducts()
     {
-        $listProducts = Product::orderBy("created_at", 'DESC')->paginate(6); 
+        $listProducts = Product::orderBy("created_at", 'DESC')->paginate(9); 
         $listCategories = category::all(); 
         /* dd($listProducts); */
+        return view('client.products.index', compact('listProducts', 'listCategories'));
+    }
+
+    public function showProductsByCategory($slug)
+    {
+        $listCategories = category::all(); 
+        if (category::where('slug', $slug)->exists()) {
+            $selectedCategory = category::where('slug', $slug)->first(); 
+            $listProducts = Product::where('category_id', $selectedCategory->id)->orderBy("created_at", 'DESC')->paginate(9); 
+        }
+        
         return view('client.products.index', compact('listProducts', 'listCategories'));
     }
 

@@ -176,9 +176,11 @@
             type: 'GET', 
         }).done(function (response) {
             $('#changing-cart').empty(); 
-            var text = $('#changing-cart', $($.parseHTML(response)));
-            $('#changing-cart').append(text); 
-            console.log(text)
+            $('.cart__dropdown__list').empty(); 
+            var newCartItems = $('#changing-cart', $($.parseHTML(response)));
+            var newDropDownItems = $('.cart__dropdown__list', $($.parseHTML(response)));
+            $('#changing-cart').append(newCartItems); 
+            $('.cart__dropdown__list').append(newDropDownItems); 
         })
     }
     
