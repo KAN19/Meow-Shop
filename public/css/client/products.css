@@ -280,14 +280,14 @@ input[type="text"]:focus {
 }
 
 /* next page */
-.nextpage {
+.nextpage1 {
     text-align: center;
     margin: 2rem 0 4rem 0;
 }
-.pagination {
+.pagination1 {
     display: inline-block;
 }
-.pagination a {
+.pagination1 a {
     color: black;
     float: left;
     padding: 8px 16px;
@@ -296,7 +296,7 @@ input[type="text"]:focus {
     border: 1px solid #ddd;
     margin: 0 4px;
 }
-.pagination a.active {
+.pagination1 a.active {
     background-color: #4caf50;
     color: white;
     border-radius: 50%;
@@ -312,6 +312,6 @@ input[type="text"]:focus {
     margin: 1rem 0 0 1rem;
     cursor: pointer;
 }
-.pagination a:hover:not(.active) {
+.pagination1 a:hover:not(.active) {
     background-color: #ddd;
 }

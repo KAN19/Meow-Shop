@@ -98,3 +98,8 @@
     </div>
 </nav>
 <div class="modal-overlay " id="modal-overlay"></div>
+<style>
+    .hidden {
+        display: none;
+    }
+</style>
