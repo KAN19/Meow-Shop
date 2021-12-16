@@ -2,6 +2,7 @@
     margin-left: 0;
     margin-right: 0;
 }
+
 .banner {
     width: 100%;
     height: 200px;
@@ -22,6 +23,7 @@
     display: flex;
     align-items: center;
 }
+
 /*color chu + icon truoc khi tro chuot*/
 .breadcrumb a {
     color: #4caf50;
@@ -45,7 +47,7 @@
 }
 
 /*dau > */
-.breadcrumb-item + .breadcrumb-item::before {
+.breadcrumb-item+.breadcrumb-item::before {
     content: ">";
 }
 
@@ -53,11 +55,12 @@
     margin-left: 10%;
     margin-right: 10%;
 }
+
 /* tieu de */
 .cart {
     font-size: medium;
     font-weight: bold;
-    background-color: #e8e8e8;
+    background-color: #FAC176;
 }
 
 .cart__title {
@@ -70,6 +73,7 @@
     margin-top: 0.8rem;
     margin-bottom: 0.8rem;
 }
+
 .product__set--image {
     width: 160px;
     height: 130px;
@@ -78,6 +82,7 @@
     -moz-border-radius: 3%;
     -webkit-border-radius: 3%;
 }
+
 .product__set--image:hover {
     cursor: pointer;
     transform: scale(1.01);
@@ -117,12 +122,15 @@
 .is-form {
     overflow: hidden;
     position: relative;
-    background-color: #f9f9f9; /* background cua button */
+    background-color: #f9f9f9;
+    /* background cua button */
     height: 2.2rem;
     width: 1.9rem;
     padding: 0;
-    border: 1px solid #ddd; /* mau vien btn */
+    border: 1px solid #ddd;
+    /* mau vien btn */
 }
+
 .is-form:focus,
 .input-text:focus {
     outline: none;
@@ -132,10 +140,13 @@
 .is-form.minus {
     border-radius: 4px 0 0 4px;
 }
+
 .is-form.minus:hover {
     cursor: pointer;
-    background-color: #ff3f55; /* mau vien btn - khi hover */
-    box-shadow: 0 0 5px 0 #ff3f55; /*  bong btn - khi hover */
+    background-color: #ff3f55;
+    /* mau vien btn - khi hover */
+    box-shadow: 0 0 5px 0 #ff3f55;
+    /*  bong btn - khi hover */
     transition: 0.2s;
 }
 
@@ -143,28 +154,35 @@
 .is-form.plus {
     border-radius: 0 4px 4px 0;
 }
+
 .is-form.plus:hover {
     cursor: pointer;
-    background-color: #93d84a; /* mau vien btn + khi hover */
-    box-shadow: 0 0 5px 0 #93d84a; /*  bong btn + khi hover */
+    background-color: #93d84a;
+    /* mau vien btn + khi hover */
+    box-shadow: 0 0 5px 0 #93d84a;
+    /*  bong btn + khi hover */
     transition: 0.2s;
 }
 
 /* quanlity  */
 .input-qty {
-    background-color: #fff; /* background btn so  */
+    background-color: #fff;
+    /* background btn so  */
     height: 2.2rem;
     text-align: center;
     font-size: 1rem;
     display: inline-block;
     vertical-align: top;
     margin: 0;
-    border-top: 1px solid #ddd; /* vien tren */
-    border-bottom: 1px solid #ddd; /* vien duoi */
+    border-top: 1px solid #ddd;
+    /* vien tren */
+    border-bottom: 1px solid #ddd;
+    /* vien duoi */
     border-left: 0;
     border-right: 0;
     outline: none;
 }
+
 .input-qty::-webkit-outer-spin-button,
 .input-qty::-webkit-inner-spin-button {
     -webkit-appearance: none;
@@ -173,12 +191,15 @@
 
 /* icon bin */
 .btn__bin {
-    color: #aaa !important; /* mau btn bin */
+    color: #aaa !important;
+    /* mau btn bin */
     text-align: center;
 }
+
 .btn__bin:hover {
     font-size: large;
-    color: red !important; /* mau btn bin khi hover */
+    color: red !important;
+    /* mau btn bin khi hover */
     transition: 0.2s;
     cursor: pointer;
 }
@@ -203,11 +224,13 @@
 }
 
 .btn__main:hover {
-    background-color: #f6ab49; /* mau background btn clear khi hover */
+    background-color: #f6ab49;
+    /* mau background btn clear khi hover */
     transition: 0.2s;
     color: #fff !important;
     outline: none;
-    box-shadow: 0 0 20px 0 #f6ab49; /* mau bong btn clear khi hover */
+    box-shadow: 0 0 20px 0 #f6ab49;
+    /* mau bong btn clear khi hover */
 }
 
 /* table cart total */
@@ -231,35 +254,44 @@ td {
     .cart__delete {
         display: none;
     }
+
     .cart__product {
         text-align: center;
     }
+
     .cart__name {
         display: none;
     }
+
     .cart {
         display: none;
     }
+
     .checkbox__delete {
         text-align: center;
     }
+
     .product__set {
         text-align: center;
     }
+
     .product__property {
         margin-bottom: 1rem;
     }
+
     /* btn continue */
     .overlay__btn {
         margin-bottom: 5%;
         /* margin-left: 12%; */
     }
+
     .btn__cart {
         margin-bottom: 1%;
         display: flex;
         align-items: center;
         flex-flow: column;
     }
+
     .continue--btn {
         margin-right: 0rem;
     }
