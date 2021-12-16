@@ -28,11 +28,12 @@
                 <div class="input__field">
                     <div class="input__field__title">Your email*</div>
 
-                    <input type="text" name="ord_email" placeholder="Your Email" required>
-                    <div class="login_account">
-                        <a>Already have an account?</a>
-                        <a id="login">Log in</a>
-                    </div>
+                    <input type="text" name="ord_email" placeholder="Your Email" value="{{old('ord_email')}}" required>
+                    @error('ord_email')
+                        <div class="text-danger">
+                            {{ $message }}
+                        </div>
+                    @enderror
                 </div>
 
 
@@ -42,8 +43,13 @@
                 <div class="input__field">
                     <div class="input__field__title">Your name*</div>
 
-                    <input type="text"name="ord_customer" placeholder="Your name" required>
+                    <input type="text"name="ord_customer" placeholder="Your name" value="{{old('ord_customer')}}" required>
 
+                    @error('ord_customer')
+                        <div class="text-danger">
+                            {{ $message }}
+                        </div>
+                    @enderror
                 </div>
 
                 <!-- select country -->
@@ -63,20 +69,32 @@
                 <div class="input__field">
                     <div class="input__field__title">Street Address*</div>
 
-                    <input type="text" name="ord_address" placeholder="Street Address">
+                    <input type="text" name="ord_address" placeholder="Street Address" value="{{old('ord_address')}}">
+
+                    @error('ord_address')
+                        <div class="text-danger">
+                            {{ $message }}
+                        </div>
+                    @enderror
                 </div>
 
                 <div class="input__field">
                     <div class="input__field__title">Phone*</div>
 
-                    <input type="text" name="ord_phone" placeholder="Phone">
+                    <input type="text" name="ord_phone" placeholder="Phone" value="{{old('ord_phone')}}">
+
+                    @error('ord_phone')
+                        <div class="text-danger">
+                            {{ $message }}
+                        </div>
+                    @enderror
                 </div>
 
                 <div class="input__field">
                     <div class="input__field__title">Order note (optional)</div>
 
                     <textarea class="input__field__textarea" 
-                    name="ord_note" placeholder="Write something"></textarea>
+                    name="ord_note" placeholder="Write something">{{old('ord_note')}}</textarea>
 
                 </div>
             </div>

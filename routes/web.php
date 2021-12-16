@@ -63,17 +63,10 @@ Route::get('/resultsearch', function () {
 Route::prefix('/checkout')->group(function() {
     Route::get('', [CheckoutController::class, 'index'])->name('show-checkout');
     Route::post('', [CheckoutController::class, 'store'])->name('store-checkout');
-
-    // Route::get('create', [CategoryController::class, 'showCreateCategory'])->name('create-category');
-    // Route::post('create', [CategoryController::class, 'storeCategory']);
-
-    // Route::get('/{slug}', [CategoryController::class, 'showEditCategory'])->name('edit-category');
-    // Route::put('/{slug}', [CategoryController::class, 'updateCategory']); 
-
-    // Route::get('delete/{slug}', [CategoryController::class, 'deleteCategory'])->name('delete-category');
+    
 
 });
-
+Route::get('test-mail', [CheckoutController::class, 'testMail'])->name('test-mail');
 
 
 //========= Admin routes ============
