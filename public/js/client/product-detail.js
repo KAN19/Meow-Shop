@@ -1,4 +1,5 @@
 $(document).ready(function () {
+    // danh cho cai anh nho
     $(".thumbnail").click(function () {
         $(".active").removeClass("active");
         $(this).addClass("active");
@@ -24,4 +25,5 @@ $(document).ready(function () {
         const slider = $(".mini-photos__row");
         console.log(slider.scrollTop(slider.scrollTop() + 100));
     });
+    // ====================================
 });

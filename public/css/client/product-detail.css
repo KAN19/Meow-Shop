@@ -293,6 +293,88 @@
     margin-bottom: 20px;
 }
 
+/* quantity button */
+.buttons_added {
+    opacity: 1;
+    display: inline-block;
+    display: -ms-inline-flexbox;
+    display: inline-flex;
+    white-space: nowrap;
+    vertical-align: top;
+    cursor: pointer;
+    /* margin-right: 3%; */
+}
+
+.is-form {
+    overflow: hidden;
+    position: relative;
+    background-color: #f9f9f9;
+    /* background cua button */
+    height: 2.2rem;
+    width: 1.9rem;
+    padding: 0;
+    border: 1px solid #ddd;
+    /* mau vien btn */
+}
+
+.is-form:focus,
+.input-text:focus {
+    outline: none;
+}
+
+/* nut - */
+.is-form.minus {
+    border-radius: 4px 0 0 4px;
+}
+
+.is-form.minus:hover {
+    cursor: pointer;
+    background-color: #ff3f55;
+    /* mau vien btn - khi hover */
+    box-shadow: 0 0 5px 0 #ff3f55;
+    /*  bong btn - khi hover */
+    transition: 0.2s;
+}
+
+/* nut + */
+.is-form.plus {
+    border-radius: 0 4px 4px 0;
+}
+
+.is-form.plus:hover {
+    cursor: pointer;
+    background-color: #93d84a;
+    /* mau vien btn + khi hover */
+    box-shadow: 0 0 5px 0 #93d84a;
+    /*  bong btn + khi hover */
+    transition: 0.2s;
+}
+
+/* quanlity  */
+.input-qty {
+    background-color: #fff;
+    /* background btn so  */
+    height: 2.2rem;
+    text-align: center;
+    font-size: 1rem;
+    display: inline-block;
+    vertical-align: top;
+    margin: 0;
+    border-top: 1px solid #ddd;
+    /* vien tren */
+    border-bottom: 1px solid #ddd;
+    /* vien duoi */
+    border-left: 0;
+    border-right: 0;
+    outline: none;
+}
+
+.input-qty::-webkit-outer-spin-button,
+.input-qty::-webkit-inner-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
+}
+
 /*======================Trending Products Column======================*/
 .trending-product--content {
     align-items: center;

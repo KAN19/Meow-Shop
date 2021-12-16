@@ -57,9 +57,9 @@
                                     ${{$item['finalPrice'] * $item['quantity']}}
                                 </div>
                             </div>
-                            <div href="#" class="cart__dropdown__delete">
+                            <a href="javascript:" onclick="RemoveDropDownItem({{$item['id']}})" class="cart__dropdown__delete">
                                 <i class="far fa-times-circle"></i>
-                            </div>
+                            </a>
                         </div>
                         <hr>
                     @empty

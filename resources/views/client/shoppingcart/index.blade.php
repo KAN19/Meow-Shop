@@ -56,12 +56,12 @@
             {{-- @dd($item) --}}
             <div class="row" >
                 <div class="product__set col-md-2">
-                    <a href="#"> <img class="product__set--image" id="image" src={{$item['image']}} />
+                    <a href={{route('product-detail-page', $item['slug'])}}> <img class="product__set--image" id="image" src={{$item['image']}} />
                     </a>
                 </div>
     
                 <div class="product__property product__name col-md-3">
-                    <a href="#">{{$item['name']}}</a>
+                    <a href={{route('product-detail-page', $item['slug'])}} class="product__name">{{$item['name']}}</a>
                 </div>
                 @if ($item['discount'] > 0)
                 <div class="product__property col-md-2">
@@ -77,9 +77,11 @@
                 <!-- quanlity -->
                 <div class="product__property col-md-2">
                     <div class="buttons_added">
-                        <input class="minus is-form" type="button" value="-" onclick="DecreaseQuantity()">
-                        <input aria-label="quantity" class="input-qty" max="10" min="1" name="" type="number" value={{$item['quantity']}}>
-                        <input class="plus is-form" type="button" value="+" onclick="IncreaseQuantity()">
+                        <input class="minus is-form" type="button" value="-" onclick="DecreaseQuantity({{$item['id']}})">
+
+                        <input aria-label="quantity" class="input-qty input-qty-value{{$item['id']}}" max="10" min="1" name="" type="number" value={{$item['quantity']}}>
+                        
+                        <input class="plus is-form" type="button" value="+" onclick="IncreaseQuantity({{$item['id']}})">
                     </div>
                 </div>
     
@@ -104,15 +106,11 @@
 
         <hr class="line my-3 ">
         <div class="row btn__cart ">
-            <div class="overlay__btn">
-                <button type="button" class="btn__main continue--btn">
-                    <a href="#">Continue Shopping</a>
-                </button>
+            <div class="overlay__btn mr-3" >
+                <a href="#" class="btn__main">Continue Shopping</a>
             </div>
             <div class="overlay__btn">
-                <button type="button" class="btn__main clear--btn">
-                    <a href="#">Update Cart</a>
-                </button>
+                <a href="#" class="btn__main">Update Cart</a>
             </div>
         </div>
         <!--  table cart total -->
@@ -154,19 +152,21 @@
 
 @section('javascript')
 <script>
-    let quantity = $('.input-qty').attr('value')
 
-    const DecreaseQuantity = () => {
+    const DecreaseQuantity = (id) => {
+        let quantity = $('.input-qty-value' + id).attr('value')
+        console.log(id);
         if (Number(quantity) - 1 > 0) {
             quantity = Number(quantity) - 1;
-            $('.input-qty').attr('value', quantity);
+            $('.input-qty-value' + id).attr('value', quantity);
 
         }
     }
 
-    const IncreaseQuantity = () => {
+    const IncreaseQuantity = (id) => {
+        let quantity = $('.input-qty-value' + id).attr('value')
         quantity = Number(quantity) + 1;
-        $('.input-qty').attr('value', quantity);
+        $('.input-qty-value' + id).attr('value', quantity);
     }
 
 
@@ -175,12 +175,7 @@
             url: 'cart/remove/'+id, 
             type: 'GET', 
         }).done(function (response) {
-            $('#changing-cart').empty(); 
-            $('.cart__dropdown__list').empty(); 
-            var newCartItems = $('#changing-cart', $($.parseHTML(response)));
-            var newDropDownItems = $('.cart__dropdown__list', $($.parseHTML(response)));
-            $('#changing-cart').append(newCartItems); 
-            $('.cart__dropdown__list').append(newDropDownItems); 
+            RemoveItemInCart(response)
         })
     }
     

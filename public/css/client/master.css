@@ -3,13 +3,13 @@ body {
 }
 
 a {
-    color: inherit;
+    color: black;
     text-decoration: none;
 }
 
 a:hover {
-    color: inherit;
-    text-decoration: inherit;
+    color: black;
+    text-decoration: none;
 }
 
 /* Top nav bar */
@@ -210,6 +210,8 @@ a:hover {
 
 .cart__dropdown__content-name {
     /* margin-bottom: 6px; */
+    text-decoration: none;
+    color: inherit;
     transition: 0.3s linear;
 }
 
@@ -219,6 +221,7 @@ a:hover {
 
 .cart__dropdown__content-name:hover {
     color: sandybrown !important;
+    text-decoration: none;
 }
 
 .cart__dropdown__delete {
@@ -243,15 +246,18 @@ a:hover {
 }
 
 .cart__dropdown__button {
+    text-decoration: none;
     width: 70%;
     border: 1px solid gray;
     border-radius: 20px;
     padding: 5px;
     margin-bottom: 10px;
     transition: 0.3s linear;
+    color: inherit;
 }
 
 .cart__dropdown__button:hover {
+    text-decoration: none;
     background-color: sandybrown;
     color: white !important;
     transition: 0.3s linear;

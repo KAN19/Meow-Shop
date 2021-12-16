@@ -71,7 +71,15 @@
             <div class="product-desc--detail">
                 <p class="h7">{{$product->short_description}}</p>
             </div>
-            <br>
+          
+            <div >
+                <div class="buttons_added">
+                    <input class="minus is-form" type="button" value="-" onclick="DecreaseQuantity()">
+                    <input aria-label="quantity" class="input-qty" max="10" min="1" name="" value="1" type="number">
+                    <input class="plus is-form" type="button" value="+" onclick="IncreaseQuantity()">
+                </div>
+            </div>
+              <br>
             <!-- 2 Buttons -->
             <a href={{route('add-cart', $product->id)}} class="btn btn--addCart">Add to cart</a>
             <a href="/" class="btn btn--buyNow">Buy Now</a>
@@ -173,4 +181,20 @@
 
 @section('javascript')
 <script src="/js/client/product-detail.js"> </script>
+<script>
+     // Danh cho quantity input
+    let quantity = $(".input-qty").attr("value");
+
+    const DecreaseQuantity = () => {
+        if (Number(quantity) - 1 > 0) {
+            quantity = Number(quantity) - 1;
+            $(".input-qty").attr("value", quantity);
+        }
+    };
+
+    const IncreaseQuantity = () => {
+        quantity = Number(quantity) + 1;
+        $(".input-qty").attr("value", quantity);
+    };
+</script>
 @endsection
