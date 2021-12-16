@@ -9,7 +9,7 @@ a {
 
 a:hover {
     color: inherit !important;
-    text-decoration: none !important;
+    text-decoration: inherit !important;
 }
 
 /* Top nav bar */
@@ -173,7 +173,7 @@ a:hover {
     background-color: #f9f9f9;
     box-shadow: 8px 8px 16px 0px rgba(0, 0, 0, 0.2);
     z-index: 1;
-    width: 25%;
+    width: 30%;
     float: right;
     right: 2%;
     padding: 20px;
@@ -209,7 +209,7 @@ a:hover {
 }
 
 .cart__dropdown__content-name {
-    margin-bottom: 6px;
+    /* margin-bottom: 6px; */
     transition: 0.3s linear;
 }
 
@@ -218,7 +218,7 @@ a:hover {
 }
 
 .cart__dropdown__content-name:hover {
-    color: sandybrown;
+    color: sandybrown !important;
 }
 
 .cart__dropdown__delete {

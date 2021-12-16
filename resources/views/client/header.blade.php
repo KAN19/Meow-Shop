@@ -43,20 +43,23 @@
            
                 <div class="cart__dropdown">
                     @forelse ($myCart as $item)
-                        <a href="#" class="cart__dropdown__item">
-                            <img src="" class="cart__dropdown__image" alt="" srcset="">
+                        <div class="cart__dropdown__item">
+                            <img src="{{url('/') . $item['image']}}" class="cart__dropdown__image" alt="" srcset="">
                             <div class="cart__dropdown__content">
-                                <div class="cart__dropdown__content-name">
-                                    Ten san phams ne
+                                <a href={{route('product-detail-page', $item['slug'])}} class="cart__dropdown__content-name">
+                                    {{$item['name']}}
+                                </a>
+                                <div class="cart__dropdown__content-price">
+                                    x {{$item['quantity']}}
                                 </div>
                                 <div class="cart__dropdown__content-price">
-                                    100.000VND
+                                    ${{$item['finalPrice'] * $item['quantity']}}
                                 </div>
                             </div>
                             <div href="#" class="cart__dropdown__delete">
                                 <i class="far fa-times-circle"></i>
                             </div>
-                        </a>
+                        </div>
                         <hr>
                     @empty
                         <div>Your cart is empty!</div>

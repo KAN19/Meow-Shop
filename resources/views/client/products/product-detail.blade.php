@@ -63,10 +63,10 @@
         <div class="product-desc__col col-md-4">
             <p class="product-desc--name h5"> <strong> {{$product->name}} </strong> </p>
             @if ($product->discount > 0)
-            <del lass="h7">${{$product->price - $product->price * $product->discount}}</del>
-            <strong class="product-desc--price h7">${{$product->price}}</strong>
+            <del class="h7">${{$product->price - $product->price * $product->discount}}</del>
+            <strong class="product-desc--price  ">${{$product->price}}</strong>
             @else
-            <span class="product-desc--price h7">${{$product->price}}</span>
+            <span class="product-desc--price ">${{$product->price}}</span>
             @endif
             <div class="product-desc--detail">
                 <p class="h7">{{$product->short_description}}</p>

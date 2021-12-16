@@ -44,61 +44,63 @@
             </div>
             <div class="cart__title col-md-1">Delete</div>
         </div>
-        <?php
-        $myCart = $cart->items;
-        ?>
-
-        @if (count($myCart) > 0)
-
-        @foreach ($myCart as $item)
-        {{-- @dd($item) --}}
-        <div class="row ">
-            <div class="product__set col-md-2">
-                <a href="#"> <img class="product__set--image" id="image" src={{$item['image']}} />
-                </a>
-            </div>
-
-            <div class="product__property product__name col-md-3">
-                <a href="#">{{$item['name']}}</a>
-            </div>
-            @if ($item['discount'] > 0)
-            <div class="product__property col-md-2">
-                <del class="mr-2">${{$item['price']}}</del> <strong>${{$item['finalPrice']}}</strong>
-            </div>
-            @else
-            <div class="product__property col-md-2">
-                <div>$${{$item['price']}}</div>
-            </div>
-            @endif
-
-
-            <!-- quanlity -->
-            <div class="product__property col-md-2">
-                <div class="buttons_added">
-                    <input class="minus is-form" type="button" value="-" onclick="DecreaseQuantity()">
-                    <input aria-label="quantity" class="input-qty" max="10" min="1" name="" type="number" value={{$item['quantity']}}>
-                    <input class="plus is-form" type="button" value="+" onclick="IncreaseQuantity()">
+        
+        <div id="changing-cart">
+            <?php
+            $myCart = $cart->items;
+            ?>
+    
+            @if (count($myCart) > 0)
+    
+            @foreach ($myCart as $item)
+            {{-- @dd($item) --}}
+            <div class="row" >
+                <div class="product__set col-md-2">
+                    <a href="#"> <img class="product__set--image" id="image" src={{$item['image']}} />
+                    </a>
                 </div>
-            </div>
-
-            <div class="product__property col-md-2">
-                ${{$item['finalPrice'] * $item['quantity']}}
-            </div>
-
-            <!-- icon bin -->
-            {{-- <div class="product__property btn__bin col-md-1">
+    
+                <div class="product__property product__name col-md-3">
+                    <a href="#">{{$item['name']}}</a>
+                </div>
+                @if ($item['discount'] > 0)
+                <div class="product__property col-md-2">
+                    <del class="mr-2">${{$item['price']}}</del> <strong>${{$item['finalPrice']}}</strong>
+                </div>
+                @else
+                <div class="product__property col-md-2">
+                    <div>$${{$item['price']}}</div>
+                </div>
+                @endif
+    
+    
+                <!-- quanlity -->
+                <div class="product__property col-md-2">
+                    <div class="buttons_added">
+                        <input class="minus is-form" type="button" value="-" onclick="DecreaseQuantity()">
+                        <input aria-label="quantity" class="input-qty" max="10" min="1" name="" type="number" value={{$item['quantity']}}>
+                        <input class="plus is-form" type="button" value="+" onclick="IncreaseQuantity()">
+                    </div>
+                </div>
+    
+                <div class="product__property col-md-2">
+                    ${{$item['finalPrice'] * $item['quantity']}}
+                </div>
+    
+                {{-- <a href={{route('remove-cart', $item['id'])}} class="product__property btn__bin col-md-1">
                     <i class="bin--icon fa fa-trash" aria-hidden="true"></i>
-                </div> --}}
-            <a href={{route('remove-cart', $item['id'])}} class="product__property btn__bin col-md-1">
-                <i class="bin--icon fa fa-trash" aria-hidden="true"></i>
-            </a>
-
+                </a> --}}
+                <a onclick="RemoveItem('{{$item['id']}}')" href="javascript:" class="product__property btn__bin col-md-1">
+                    <i class="bin--icon fa fa-trash" aria-hidden="true"></i>
+                </a>
+    
+            </div>
+            @endforeach
+            @else
+                <div>Your cart is empty!</div>
+    
+            @endif
         </div>
-        @endforeach
-        @else
-            <div>Your cart is empty!</div>
-
-        @endif
 
         <hr class="line my-3 ">
         <div class="row btn__cart ">
@@ -166,5 +168,19 @@
         quantity = Number(quantity) + 1;
         $('.input-qty').attr('value', quantity);
     }
+
+
+    function RemoveItem(id) {
+        $.ajax({
+            url: 'cart/remove/'+id, 
+            type: 'GET', 
+        }).done(function (response) {
+            $('#changing-cart').empty(); 
+            var text = $('#changing-cart', $($.parseHTML(response)));
+            $('#changing-cart').append(text); 
+            console.log(text)
+        })
+    }
+    
 </script>
 @endsection

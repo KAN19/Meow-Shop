@@ -274,6 +274,10 @@
 
 /*=====================Detail product's description======================*/
 
+.product-desc--price {
+    font-size: 20px;
+}
+
 .product-detail__row {
     display: flex;
     justify-content: center;
