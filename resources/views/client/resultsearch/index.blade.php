@@ -11,9 +11,8 @@
 @section('content')
 <div class=".container-fluid">
     <img id="banner_resultsearch" src="/image/banner_resultsearch.png">
-    <div class="inputWithIcon_search">
-        <form >                          
-            <input name="keywords_submit" type="text" placeholder="Search...." class="searchbtn_search py-1 border" id="searchbtn_search"> 
+    <div class="inputWithIcon_search">                          
+            <input name="query" type="text" placeholder="Search...." class="searchbtn_search py-1 border" id="searchbtn_search"> 
             <i class="fa fa-search" aria-hidden="true"></i>                            
         </form>
     </div> 
