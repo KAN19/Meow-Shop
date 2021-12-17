@@ -128,6 +128,12 @@ Route::middleware(['auth:admin'])->group(function() {
         Route::post('/order/confirm/{id}', [OrderController::class, 'confirmOrderDetail'])->name('confirm-order-detail');
         Route::post('/order/cancel/{id}', [OrderController::class, 'cancelOrderDetail'])->name('cancel-order-detail');
         Route::post('/order/complete/{id}', [OrderController::class, 'completeOrderDetail'])->name('complete-order-detail');
+   
+        Route::get('/contacts', function () {
+            return view('admin.contact.index');
+        })->name('contact');
+   
+   
     });
     
 });

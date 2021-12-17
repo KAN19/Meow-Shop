@@ -173,6 +173,15 @@
                                 </p>
                             </a>
                         </li>
+                        <li class="nav-header">CUSTOMER</li>
+                        <li class="nav-item">
+                            <a href="{{route('contact')}}" class="nav-link" id="master-contact">
+                                <i class="nav-icon fas fa-address-book"></i>
+                                <p>
+                                    Contact
+                                </p>
+                            </a>
+                        </li>
 
                     </ul>
                 </nav>
