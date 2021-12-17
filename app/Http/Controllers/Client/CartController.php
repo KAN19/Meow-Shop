@@ -21,9 +21,14 @@ class CartController extends Controller
 
         $cart->add($product, $quantity); 
 
-        return redirect()->back(); 
-    }
+        if ($request->submit == "add") {
+            return redirect()->back(); 
+        } else {
+            return redirect()->route('show-checkout');
+        }
 
+    }
+    
     public function remove(CartHelper $cart, $id)
     {
        
