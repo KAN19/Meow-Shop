@@ -37,10 +37,11 @@ class CartController extends Controller
         return redirect()->back(); 
     }
 
-    public function update(CartHelper $cart, $id, $quantity)
+    public function update(CartHelper $cart, Request $request)
     {
-        $cart->update($id, $quantity); 
+        $cart->update($request); 
 
+        // return redirect()->back(); 
         return redirect()->back(); 
     }
 
