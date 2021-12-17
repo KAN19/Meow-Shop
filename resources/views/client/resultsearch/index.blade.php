@@ -10,11 +10,15 @@
 
 @section('content')
 <div class=".container-fluid">
-    <div class="banner">
-        <div class="banner__title">YOUR RESULT SEARCH</div>
-    </div>
+    <img id="banner_resultsearch" src="/image/banner_resultsearch.png">
+    <div class="inputWithIcon_search">
+        <form >                          
+            <input name="keywords_submit" type="text" placeholder="Search...." class="searchbtn_search py-1 border" id="searchbtn_search"> 
+            <i class="fa fa-search" aria-hidden="true"></i>                            
+        </form>
+    </div> 
     <h1 class="title__search">SEARCH: QUANTITY RESULTS FOUND FOR "PRODUCT NAME"</h1>
-    <div class="row">
+    <div class="row">        
         <!-- product cot ben trai -->
         <div class="col-md body__productsearch">
             <div class="border__productsearch">
