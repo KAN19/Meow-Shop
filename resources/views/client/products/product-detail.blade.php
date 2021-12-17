@@ -83,8 +83,8 @@
                 </div>
                   <br>
                 <!-- 2 Buttons -->
-                <button type="submit" value="add" class="btn-product btn--addCart">Add to cart</button>
-                <button type="submit" value="checkout" class="btn-product btn--buyNow">Buy Now</button>
+                <button type="submit" name="add" value="add" class="btn-product btn--addCart">Add to cart</button>
+                <button type="submit" name="checkout" value="checkout" class="btn-product btn--buyNow">Buy Now</button>
             </form>
            
             <!-- Categories & Tags-->

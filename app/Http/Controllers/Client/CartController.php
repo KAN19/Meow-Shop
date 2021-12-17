@@ -20,8 +20,8 @@ class CartController extends Controller
         $product = Product::find($id);
 
         $cart->add($product, $quantity); 
-
-        if ($request->submit == "add") {
+        
+        if ($request['add']) {
             return redirect()->back(); 
         } else {
             return redirect()->route('show-checkout');
