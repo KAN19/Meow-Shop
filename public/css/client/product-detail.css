@@ -220,7 +220,7 @@ a:hover {
 /*-----------2 BUTTONS-------------*/
 
 /*---button ADD TO CART---*/
-.btn {
+.btn-product {
     background-color: white;
     display: inline-block;
     padding: 0.5em 1.7em;
@@ -236,7 +236,7 @@ a:hover {
     transition: all 0.2s;
 }
 
-.btn:hover {
+.btn-product:hover {
     color: rgb(255, 255, 255);
     background-color: rgb(0, 0, 0);
     text-decoration: none;
