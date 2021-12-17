@@ -72,17 +72,21 @@
                 <p class="h7">{{$product->short_description}}</p>
             </div>
           
-            <div >
-                <div class="buttons_added">
-                    <input class="minus is-form" type="button" value="-" onclick="DecreaseQuantity()">
-                    <input aria-label="quantity" class="input-qty" max="10" min="1" name="" value="1" type="number">
-                    <input class="plus is-form" type="button" value="+" onclick="IncreaseQuantity()">
+            <form action="{{route('add-cart', $product->id)}}" method="post">
+                @csrf
+                <div >
+                    <div class="buttons_added">
+                        <input class="minus is-form" type="button" value="-" onclick="DecreaseQuantity()">
+                        <input aria-label="quantity" name="quantity" class="input-qty" max="10" min="1" name="" value="1" type="number">
+                        <input class="plus is-form" type="button" value="+" onclick="IncreaseQuantity()">
+                    </div>
                 </div>
-            </div>
-              <br>
-            <!-- 2 Buttons -->
-            <a href={{route('add-cart', $product->id)}} class="btn btn--addCart">Add to cart</a>
-            <a href="/" class="btn btn--buyNow">Buy Now</a>
+                  <br>
+                <!-- 2 Buttons -->
+                <button type="submit" class="btn btn--addCart">Add to cart</button>
+                <a href="/" class="btn btn--buyNow">Buy Now</a>
+            </form>
+           
             <!-- Categories & Tags-->
             <div class="product-desc--category">
                 <p class="product-desc__h7 h7">
@@ -153,26 +157,17 @@
     <!-- Related product's content -->
     <div class="related-prod__row row justify-content-center">
         <div class="row">
-            <div class="related-prod__col col">
-                <img src="https://picsum.photos/1000/1000" alt="product1">
-                <p class="related-prod__h6--name h6 text-center">Product's Name</p>
-                <p class="related-prod__h6--price h6 text-center"><strong>9.99$</strong></p>
-            </div>
-            <div class="related-prod__col col">
-                <img src="https://picsum.photos/1000/1000" alt="product2">
-                <p class="related-prod__h6--name h6 text-center">Product's Name</p>
-                <p class="related-prod__h6--price h6 text-center"><del>9.99$</del> <strong>8.99$</strong></p>
-            </div>
-            <div class="related-prod__col col">
-                <img src="https://picsum.photos/1000/1000" alt="product3">
-                <p class="related-prod__h6--name h6 text-center">Product's Name</p>
-                <p class="related-prod__h6--price h6 text-center"><del>8.99$</del> <strong>8.99$</strong></p>
-            </div>
-            <div class="related-prod__col col">
-                <img src="https://picsum.photos/1000/1000" alt="product4">
-                <p class="related-prod__h6--name h6 text-center">Product's Name</p>
-                <p class="related-prod__h6--price h6 text-center"> <strong>8.99$</strong></p>
-            </div>
+            @foreach ($relatedProducts as $product)
+                <a href={{route('product-detail-page', $product->slug)}} class="related-prod__col col">
+                    <img src="{{url('/').$product->image}}" alt="product2">
+                    <p class="related-prod__h6--name h6 text-center">{{$product->name}}</p>
+                    @if ($product->discount > 0)
+                        <p class="related-prod__h6--price h6 text-center"><del>${{$product->price}}</del> <strong>${{$product->price - $product->price * $product->discount}}</strong></p>
+                    @else
+                        <p class="related-prod__h6--price h6 text-center"><strong>${{$product->price}}</strong></p>
+                    @endif
+                </a>
+            @endforeach
         </div>
     </div>
 </div>

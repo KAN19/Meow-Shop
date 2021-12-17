@@ -43,7 +43,7 @@ Route::get('/contact', function () {
 // ========== Cart Route ========
 Route::prefix('cart')->group(function() {
     Route::get('/', [CartController::class, 'index'])->name('show-cart'); 
-    Route::get('add/{id}', [CartController::class, 'add'])->name('add-cart'); 
+    Route::post('add/{id}', [CartController::class, 'add'])->name('add-cart'); 
     Route::get('remove/{id}', [CartController::class, 'remove'])->name('remove-cart'); 
     Route::get('update/{id}', [CartController::class, 'update'])->name('update-cart'); 
     Route::get('clear', [CartController::class, 'clear'])->name('clear-cart'); 

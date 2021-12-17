@@ -210,6 +210,7 @@
 
 /*---button ADD TO CART---*/
 .btn--addCart {
+    background-color: white;
     display: inline-block;
     padding: 0.5em 1.7em;
     margin: 0 0.1em 0.1em 0;

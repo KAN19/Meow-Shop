@@ -31,9 +31,8 @@ class ProductController extends Controller
     public function showProductDetail($slug)
     {
         $product = Product::where('slug',$slug)->first(); 
-        
-        return view('client.products.product-detail', compact('product'));
+        $relatedProducts = Product::where('category_id', '=' ,$product->category_id)->where('id', '<>', $product->id)->orderBy("created_at", 'DESC')->take(4)->get(); 
 
-        // $product = Produ
+        return view('client.products.product-detail', compact('product', 'relatedProducts'));
     }
 }

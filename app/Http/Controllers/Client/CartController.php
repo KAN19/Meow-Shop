@@ -14,11 +14,12 @@ class CartController extends Controller
         return view('client.shoppingcart.index');
     }
 
-    public function add(CartHelper $cart, $id)
+    public function add(CartHelper $cart, $id, Request $request)
     {
+        $quantity = $request->quantity;
         $product = Product::find($id);
 
-        $cart->add($product); 
+        $cart->add($product, $quantity); 
 
         return redirect()->back(); 
     }
