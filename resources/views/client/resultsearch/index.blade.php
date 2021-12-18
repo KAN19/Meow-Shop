@@ -177,7 +177,8 @@
                         <!-- product image -->
                         <div class="product__search--image col-sm-4"> 
                             {{-- <img class="search__image--radius" src={{url('/') . $value->image}} />     --}}   
-                            <img class="search__image--radius"src={{url('/') . $value->image}} />                   
+                            {{-- <img class="search__image--radius"src={{url('/') . $value->image}} />   --}} 
+                            <div>{{ $value['image']}}</div>                
                         </div>
                         <div class="product__search--detail col-sm">
                             <!-- product name -->
