@@ -53,13 +53,17 @@ class CartHelper
         session(['cart' => $this->items]); 
     }
 
-    public function update($id, $quantity = 1)
+    public function update($request)
     {
-        if (isset($this->items[$id])) { 
-            $this->items[$id]['quantity'] = $quantity; 
+        $newCart = []; 
+        foreach ($this->items as $item) {
+            // input-qty-value La name cua quantity input tren quantity control
+            $quantityTarget = 'input-qty-value'.$item['id'];
+            // dd($request[$quantityTarget]);
+            $item['quantity'] = $request[$quantityTarget]; 
+            $newCart[$item['id']] = $item;
         }
-
-        session(['cart' => $this->items]); 
+        session(['cart' => $newCart]); 
     }
 
     public function clear()

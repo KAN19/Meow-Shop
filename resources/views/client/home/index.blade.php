@@ -42,19 +42,19 @@
 </div>
 <!-- category-banner -->
 <div class="category--container">
-
-    <a href="#">
+    
+    <a  href="{{route('product-page-byCategory', 'cat-food')}}">
         <div class="category--item">
             <img class="imageradius" src=" {{url('/Image/banner-cat.png')}}" alt="category1">
         </div>
     </a>
-    <a href="#">
+    <a href="{{route('product-page-byCategory', 'toys')}}">
         <div class="category--item">
             <img class="imageradius" src=" {{url('/Image/banner-toys.png')}}" alt="category2">
         </div>
     </a>
 
-    <a href="#">
+    <a href="{{route('product-page-byCategory', 'dog-food')}}">
         <div class="category--item">
             <img class="imageradius" src=" {{url('/Image/banner-dog.png')}}" alt="category3">
         </div>

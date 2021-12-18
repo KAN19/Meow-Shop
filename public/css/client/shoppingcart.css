@@ -47,7 +47,7 @@
 }
 
 /*dau > */
-.breadcrumb-item+.breadcrumb-item::before {
+.breadcrumb-item + .breadcrumb-item::before {
     content: ">";
 }
 
@@ -60,7 +60,7 @@
 .cart {
     font-size: medium;
     font-weight: bold;
-    background-color: #FAC176;
+    background-color: #fac176;
 }
 
 .cart__title {
@@ -97,8 +97,14 @@
     text-decoration: none;
 }
 
+.product__name {
+    text-decoration: none;
+    color: black;
+}
+
 .product__name:hover {
     text-decoration: underline;
+    color: #fac176;
 }
 
 /* so luong product */
@@ -209,7 +215,8 @@
     background-color: #aaa;
     padding: 0.5rem 1rem 0.5rem 1rem;
     text-align: center;
-    color: #fff !important;
+    color: white !important;
+    text-decoration: none;
     border-radius: 10px;
     font-weight: bold;
     outline: none;
@@ -224,6 +231,7 @@
 }
 
 .btn__main:hover {
+    text-decoration: none !important;
     background-color: #f6ab49;
     /* mau background btn clear khi hover */
     transition: 0.2s;

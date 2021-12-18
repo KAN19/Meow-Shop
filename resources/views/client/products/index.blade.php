@@ -39,8 +39,13 @@
         <div class="categorties ml-2">
             <div class="titleCategorties mb-3 font-weight-bold">Categories</div>
             <div class="contentCategorties">
+                <div>
+                    <a href="{{route('product-page')}}" class="content mb-2">All products</a>
+                </div>
                 @foreach ($listCategories as $cate)
-                <div class="content mb-2">{{$cate->name}}</div>
+                <div>
+                    <a href="{{route('product-page-byCategory', $cate->slug)}}" class="content mb-2">{{$cate->name}}</a>
+                </div>
                 @endforeach
             </div>
         </div>

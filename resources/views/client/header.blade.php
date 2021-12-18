@@ -15,9 +15,9 @@
                     PRODUCT
                 </a>
                 <div class="product__dropdown__content">
-                    <a href="#">Cat Food</a>
-                    <a href="#">Dog Food</a>
-                    <a href="#">Toys</a>
+                    <a href="{{route('product-page-byCategory', 'cat-food')}}">Cat Food</a>
+                    <a href="{{route('product-page-byCategory', 'dog-food')}}">Dog Food</a>
+                    <a href="{{route('product-page-byCategory', 'toys')}}">Toys</a>
                 </div>
             </div>
             <a href="{{route('contact-page')}}" class="topnav__item__button">
@@ -42,25 +42,31 @@
                 ?>
            
                 <div class="cart__dropdown">
-                    @forelse ($myCart as $item)
-                        <a href="#" class="cart__dropdown__item">
-                            <img src="" class="cart__dropdown__image" alt="" srcset="">
+                    <div class="cart__dropdown__list">
+                        @forelse ($myCart as $item)
+                        <div class="cart__dropdown__item">
+                            <img src="{{url('/') . $item['image']}}" class="cart__dropdown__image" alt="" srcset="">
                             <div class="cart__dropdown__content">
-                                <div class="cart__dropdown__content-name">
-                                    Ten san phams ne
+                                <a href={{route('product-detail-page', $item['slug'])}} class="cart__dropdown__content-name">
+                                    {{$item['name']}}
+                                </a>
+                                <div class="cart__dropdown__content-price">
+                                    x {{$item['quantity']}}
                                 </div>
                                 <div class="cart__dropdown__content-price">
-                                    100.000VND
+                                    ${{$item['finalPrice'] * $item['quantity']}}
                                 </div>
                             </div>
-                            <div href="#" class="cart__dropdown__delete">
+                            <a href="javascript:" onclick="RemoveDropDownItem({{$item['id']}})" class="cart__dropdown__delete">
                                 <i class="far fa-times-circle"></i>
-                            </div>
-                        </a>
+                            </a>
+                        </div>
                         <hr>
                     @empty
                         <div>Your cart is empty!</div>
                     @endforelse
+                    </div>
+                    
                    
                     <div class="cart__dropdown__selection">
                         <a href={{route('show-cart')}} class="cart__dropdown__button">View Cart</a>

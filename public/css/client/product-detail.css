@@ -8,6 +8,16 @@
     display: flex;
 }
 
+a {
+    color: black;
+    text-decoration: none;
+}
+
+a:hover {
+    color: black;
+    text-decoration: none;
+}
+
 /*==================breadcrumb=================*/
 
 .breadcrumb {
@@ -167,7 +177,13 @@
 
 /*Big-Photo*/
 
+.prod-content__col--big {
+    display: flex;
+    justify-content: center;
+}
+
 .prod-content__col--big img {
+    object-fit: contain;
     max-width: 560px;
     height: 470px;
 }
@@ -193,11 +209,6 @@
     .trending-product {
         display: none;
     }
-
-    .prod-content__col--big {
-        display: flex;
-        justify-content: center;
-    }
 }
 
 /*======================Short Product Description======================*/
@@ -209,49 +220,31 @@
 /*-----------2 BUTTONS-------------*/
 
 /*---button ADD TO CART---*/
+.btn-product {
+    background-color: white;
+    display: inline-block;
+    padding: 0.5em 1.7em;
+    border: 0.1em solid rgb(0, 0, 0);
+    border-radius: 2em;
+    box-sizing: border-box;
+    text-decoration: none;
+    font-family: "Roboto", sans-serif;
+    font-weight: 300;
+    color: #000000;
+    text-shadow: 0 0.04em 0.04em rgba(255, 255, 255, 0.253);
+    text-align: center;
+    transition: all 0.2s;
+    cursor: pointer;
+}
+
+.btn-product:hover {
+    color: rgb(255, 255, 255);
+    background-color: rgb(0, 0, 0);
+    text-decoration: none;
+}
+
 .btn--addCart {
-    display: inline-block;
-    padding: 0.5em 1.7em;
-    margin: 0 0.1em 0.1em 0;
-    border: 0.1em solid rgb(0, 0, 0);
-    border-radius: 2em;
-    box-sizing: border-box;
-    text-decoration: none;
-    font-family: "Roboto", sans-serif;
-    font-weight: 300;
-    color: #000000;
-    text-shadow: 0 0.04em 0.04em rgba(255, 255, 255, 0.253);
-    text-align: center;
-    transition: all 0.2s;
-}
-
-.btn--addCart:hover {
-    color: rgb(255, 255, 255);
-    background-color: rgb(0, 0, 0);
-    text-decoration: none;
-}
-
-/*---button BUY NOW---*/
-.btn--buyNow {
-    display: inline-block;
-    padding: 0.5em 1.7em;
-    margin: 0 0.1em 0.1em 0;
-    border: 0.1em solid rgb(0, 0, 0);
-    border-radius: 2em;
-    box-sizing: border-box;
-    text-decoration: none;
-    font-family: "Roboto", sans-serif;
-    font-weight: 300;
-    color: #000000;
-    text-shadow: 0 0.04em 0.04em rgba(255, 255, 255, 0.253);
-    text-align: center;
-    transition: all 0.2s;
-}
-
-.btn--buyNow:hover {
-    color: rgb(255, 255, 255);
-    background-color: rgb(0, 0, 0);
-    text-decoration: none;
+    margin-right: 0.4rem;
 }
 
 /*-------CATEGORIES && TAGS---------*/
@@ -274,6 +267,10 @@
 
 /*=====================Detail product's description======================*/
 
+.product-desc--price {
+    font-size: 20px;
+}
+
 .product-detail__row {
     display: flex;
     justify-content: center;
@@ -287,6 +284,88 @@
 /*----Description Table----*/
 .desc-table tr {
     margin-bottom: 20px;
+}
+
+/* quantity button */
+.buttons_added {
+    opacity: 1;
+    display: inline-block;
+    display: -ms-inline-flexbox;
+    display: inline-flex;
+    white-space: nowrap;
+    vertical-align: top;
+    cursor: pointer;
+    /* margin-right: 3%; */
+}
+
+.is-form {
+    overflow: hidden;
+    position: relative;
+    background-color: #f9f9f9;
+    /* background cua button */
+    height: 2.2rem;
+    width: 1.9rem;
+    padding: 0;
+    border: 1px solid #ddd;
+    /* mau vien btn */
+}
+
+.is-form:focus,
+.input-text:focus {
+    outline: none;
+}
+
+/* nut - */
+.is-form.minus {
+    border-radius: 4px 0 0 4px;
+}
+
+.is-form.minus:hover {
+    cursor: pointer;
+    background-color: #ff3f55;
+    /* mau vien btn - khi hover */
+    box-shadow: 0 0 5px 0 #ff3f55;
+    /*  bong btn - khi hover */
+    transition: 0.2s;
+}
+
+/* nut + */
+.is-form.plus {
+    border-radius: 0 4px 4px 0;
+}
+
+.is-form.plus:hover {
+    cursor: pointer;
+    background-color: #93d84a;
+    /* mau vien btn + khi hover */
+    box-shadow: 0 0 5px 0 #93d84a;
+    /*  bong btn + khi hover */
+    transition: 0.2s;
+}
+
+/* quanlity  */
+.input-qty {
+    background-color: #fff;
+    /* background btn so  */
+    height: 2.2rem;
+    text-align: center;
+    font-size: 1rem;
+    display: inline-block;
+    vertical-align: top;
+    margin: 0;
+    border-top: 1px solid #ddd;
+    /* vien tren */
+    border-bottom: 1px solid #ddd;
+    /* vien duoi */
+    border-left: 0;
+    border-right: 0;
+    outline: none;
+}
+
+.input-qty::-webkit-outer-spin-button,
+.input-qty::-webkit-inner-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
 }
 
 /*======================Trending Products Column======================*/

@@ -14,15 +14,21 @@ class CartController extends Controller
         return view('client.shoppingcart.index');
     }
 
-    public function add(CartHelper $cart, $id)
+    public function add(CartHelper $cart, $id, Request $request)
     {
+        $quantity = $request->quantity;
         $product = Product::find($id);
 
-        $cart->add($product); 
+        $cart->add($product, $quantity); 
+        
+        if ($request['add']) {
+            return redirect()->back(); 
+        } else {
+            return redirect()->route('show-checkout');
+        }
 
-        return redirect()->back(); 
     }
-
+    
     public function remove(CartHelper $cart, $id)
     {
        
@@ -31,10 +37,11 @@ class CartController extends Controller
         return redirect()->back(); 
     }
 
-    public function update(CartHelper $cart, $id, $quantity)
+    public function update(CartHelper $cart, Request $request)
     {
-        $cart->update($id, $quantity); 
+        $cart->update($request); 
 
+        // return redirect()->back(); 
         return redirect()->back(); 
     }
 
