@@ -1,0 +1,49 @@
+/* .category_admin{
+    margin-top: 2rem;
+} */
+.btn_addcategory_admin{
+    margin-bottom: 1rem;
+    margin-left: 3rem;
+    margin-top: 1rem;
+}
+.text_edit{
+    color:white;
+}
+.text_edit:hover{
+    color:white;
+}
+.text_del{
+    color:white;
+}
+.text_del:hover{
+    color:white;
+}
+.table_category{
+    margin-left: 3rem;
+    margin-right: 3rem;
+}
+.title_category_admin{
+    background-color: white;
+    height: 10%;
+}
+.category_admin{
+    background-color: white;
+}
+/* .card-header {
+    padding: 0.5rem 1rem;
+    margin-bottom: 0;
+    background-color: rgba(0, 0, 0, 0.03);
+    border-bottom: 1px solid rgba(0, 0, 0, 0.125);
+  } */
+/* .icon_edit_category{
+    font-size: 15px;
+} */
+/* #btn_edit_category{  
+    padding: 5px 9px;    
+    margin-top: 6px;
+} */
+/* #btn_del_category{
+    padding: 5px 9px;    
+    margin-top: 6px;
+}
+ */
