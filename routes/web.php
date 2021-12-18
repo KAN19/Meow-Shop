@@ -6,7 +6,7 @@ use App\Http\Controllers\Admin\MediaController;
 use App\Http\Controllers\Admin\OrderController;
 use App\Http\Controllers\Admin\ProductController;
 use Illuminate\Support\Facades\Route;
-
+use Illuminate\Http\Request;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -36,9 +36,13 @@ Route::get('/contact', function () {
 })->name('contact-page');
 
 Route::get('/resultsearch', function () {
-    return view('client.resultsearch.index');
+    return view('client.resultsearch.index', ['data' =>null, 'search_name' => null]);
 });
+// Route::post('/resultsearch', function (Request $res) {
+//    dd($res);
+// });
 
+Route::post('/resultsearch', [ProductController::class, 'resultsearch']);
 
 //========= Admin routes ============
 Route::get('/shoppingcart', function () {
@@ -99,6 +103,7 @@ Route::middleware(['auth:admin'])->group(function() {
     
             Route::get('/{slug}', [ProductController::class, 'showEditProduct'])->name('edit-product');
             Route::put('/{slug}', [ProductController::class, 'updateProduct']); 
+            
     
             // Route::get('delete/{id}', [CategoryController::class, 'deleteCategory'])->name('delete-category');
     
