@@ -110,7 +110,7 @@
             <div class="row btn__cart ">
                 <div class="overlay__btn mr-3" >
                     <button class="btn__main" >
-                        <a href="#" class="btn__main">Continue Shopping</a>
+                        <a href="{{route('product-page')}}" class="btn__main">Continue Shopping</a>
                     </button>
                 </div>
                 <div class="overlay__btn">
