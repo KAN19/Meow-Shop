@@ -30,7 +30,6 @@ class Product extends Model
     {
         return $this->belongsTo(category::class, 'category_id', 'id');
         
-<<<<<<< HEAD
     }
 
     public function orderDetail()
@@ -39,7 +38,4 @@ class Product extends Model
         
     }
 
-=======
-    }   
->>>>>>> feature/resultsearch
 }
