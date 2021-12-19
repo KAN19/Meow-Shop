@@ -46,7 +46,7 @@ Route::get('/resultsearch', function () {
 //    dd($res);
 // });
 
-Route::post('/resultsearch', [ProductController::class, 'resultsearch']);
+Route::get('/resultsearch', [ProductController::class, 'resultsearch']);
 
 // ========== Cart Route ========
 Route::prefix('cart')->group(function() {

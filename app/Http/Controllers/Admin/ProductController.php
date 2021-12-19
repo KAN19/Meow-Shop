@@ -106,18 +106,12 @@ class ProductController extends Controller
         // return redirect()->route('show-category'); 
     }
 
-    public function resultsearch(Request $request)
+    public function resultsearch()
     {
-        $gt_search = $request['searchbtn_search'];
-        $kq_tim = Product::all();
-        $array_can_tim=array();
-        foreach ($kq_tim as $key => $value) {
-            if(strpos($value['name'], $gt_search)){
-                $array_can_tim[$key]=$value;
-            } 
-         
-         
-        }   
+        $array_can_tim = array(); 
+        if ($gt_search = request()->search) { 
+          $array_can_tim = Product::orderBy('created_at', 'DESC')->where('name', 'like', '%'.$gt_search.'%')->paginate(6);
+        }
   
         return view('client.resultsearch.index',[
             'data'=>$array_can_tim,
