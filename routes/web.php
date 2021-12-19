@@ -39,14 +39,7 @@ Route::get('/contact', function () {
     return view('client.contact.index');
 })->name('contact-page');
 
-Route::get('/resultsearch', function () {
-    return view('client.resultsearch.index', ['data' =>null, 'search_name' => null]);
-});
-// Route::post('/resultsearch', function (Request $res) {
-//    dd($res);
-// });
 
-Route::get('/resultsearch', [ProductController::class, 'resultsearch']);
 
 // ========== Cart Route ========
 Route::prefix('cart')->group(function() {
@@ -60,9 +53,9 @@ Route::prefix('cart')->group(function() {
 
 // ========== Search Route ========
 Route::get('/resultsearch', function () {
-    return view('client.resultsearch.index');
+    return view('client.resultsearch.index', ['data' =>null, 'search_name' => null]);
 });
-
+Route::get('/resultsearch', [ClientProductController::class, 'resultsearch']);
 
 // ========== Checkout Route ========
 Route::prefix('/checkout')->group(function() {

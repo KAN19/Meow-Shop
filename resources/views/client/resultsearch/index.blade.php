@@ -32,45 +32,43 @@
 
     @forelse ($data as $key => $value )
     <div class="row">
-        <div class="col-md body__productsearch">
-            <div class="border__productsearch">
-                <div class="row product_search">
-                    <!-- product image -->
-                    <div class="product__search--image col-sm-4">
-                        <img class="search__image--radius" src={{url('/') . $value->image}} />
-                    </div>
-                    <div class="product__search--detail col-sm">
-                        <!-- product name -->
-                        <b class="search__detail--name">{{$value->name}}</b>
-                        <div>
-                            @if ($value->discount > 0)
-                            <del class="margimobile">{{$value->price}}</del>
-                            <strong>{{$value->price - $value->price * $value->discount}}</strong>
-                            @else
-                            <strong>{{$value->price}}</strong>
-                            @endif
-                        </div> <br>
-                        <!-- btn add to cart -->
-                        <div class="search__detail--btn">
-                            <button type="button" class="detail__btn--cart">Add to Cart</button>
+        <a style="color: black;" href={{route('product-detail-page', $value->slug)}}>
+            <div class=" body__productsearch">
+                <div class="border__productsearch">
+                    <div class="product_search">
+                        <!-- product image -->
+                        <div class="product__search--image">
+                            <img class="search__image--radius" src={{url('/') . $value->image}} />
+                        </div>
+                        <div class="product__search--detail">
+                            <!-- product name -->
+                            <b class="search__detail--name">{{$value->name}}</b>
+                            <div>
+                                @if ($value->discount > 0)
+                                <del class="margimobile">{{$value->price}}</del>
+                                <strong>{{$value->price - $value->price * $value->discount}}</strong>
+                                @else
+                                <strong>{{$value->price}}</strong>
+                                @endif
+                            </div> <br>
+                            <!-- btn add to cart -->
+                            <div class="search__detail--btn">
+
+                                <button type="button" class="detail__btn--cart"> <a class="detail__btn--cart">Add to
+                                        Cart</a></button>
+                            </div>
                         </div>
                     </div>
                 </div>
             </div>
-        </div>
+        </a>
     </div>
     @empty
     <p class="text-center h5">No products found! </p>
     @endforelse
 
+    {!! $data->appends(request()->all())->links('client.products.pagination') !!}
 
-    <div class="seach__nextpage">
-        <div class="search__pagination">
-            <a href="#" class="active mr-3">1</a>
-            <a href="#">2</a>
-            <i class="arrow right" id="arrowtest"></i>
-        </div>
-    </div>
     @endif
 
 </div>
