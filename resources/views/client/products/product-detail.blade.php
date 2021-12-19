@@ -112,40 +112,10 @@
 
     </div>
     <!--Trending Product-->
-    <div class="product-detail__col--trending col col-md-3">
-
-        <div class="trending-product--title">
-            <h5>Trending Products</h5>
-        </div>
-
-        <div class="trending-product">
-            <div class="trending-product__row row">
-                <img class="imageradius" src="https://picsum.photos/150" />
-                <div class="trending-product--content">
-                    <div>Name</div>
-                    <div><strong>$9.99</strong></div>
-                </div>
-            </div>
-            <hr>
-
-            <div class="trending-product__row row">
-                <img class="imageradius" src="https://picsum.photos/150" />
-                <div class="trending-product--content">
-                    <div>Name</div>
-                    <div><strong>$9.99</strong></div>
-                </div>
-            </div>
-            <hr>
-
-            <div class="trending-product__row row">
-                <img class="imageradius" src="https://picsum.photos/150" />
-                <div class="trending-product--content">
-                    <div>Name</div>
-                    <div><strong>$9.99</strong></div>
-                </div>
-            </div>
-            <hr>
-        </div>
+    <div class=" advertise bouncing col col-md-3">
+      
+        <img src="/Image/advertise.jpg" alt="">
+       
     </div>
 </div>
 <!-----------Related Products-------------->

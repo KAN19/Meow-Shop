@@ -101,7 +101,7 @@
 <!--Product Photos-->
 <div class="products__grid--container">
     @foreach ($trendingProducts as $product)
-    <div class="products__grid--item">
+    <a style="color: rgb(22, 22, 22)" href={{route('product-detail-page', $product->slug)}} class="products__grid--item">
         <img class="imageradius" src=" {{url('/').$product->image}}" alt="product1">
         <p class="h6 text-center product-name">{{$product->name}}</p>
         <p class="h6 text-center product-price">
@@ -113,7 +113,7 @@
             @endif
            
         </p>
-    </div>
+    </a>
 
     @endforeach
    
