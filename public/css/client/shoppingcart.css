@@ -230,6 +230,13 @@
     justify-content: end;
 }
 
+.btn__cart a {
+    color: inherit;
+}
+.btn__cart a:hover {
+    text-decoration: none;
+}
+
 .btn__main:hover {
     text-decoration: none !important;
     background-color: #f6ab49;

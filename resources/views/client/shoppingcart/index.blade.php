@@ -110,7 +110,7 @@
             <div class="row btn__cart ">
                 <div class="overlay__btn mr-3" >
                     <button class="btn__main" >
-                        <a href="{{route('product-page')}}" class="btn__main">Continue Shopping</a>
+                        <a href="{{route('product-page')}}">Continue Shopping</a>
                     </button>
                 </div>
                 <div class="overlay__btn">
@@ -146,7 +146,9 @@
             <!-- btn checkout -->
             <div class="btn__cart">
                 <div class="overlay__btn">
-                    <a href="{{route('show-checkout')}}" class="btn__main">Procceed to Checkout</a>
+                    <button class="btn__main" >
+                        <a href="{{route('show-checkout')}}" class="btn__main">Procceed to Checkout</a>
+                    </button>
                 </div>
             </div>
         </div>
