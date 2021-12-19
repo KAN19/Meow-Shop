@@ -6,6 +6,10 @@
 <h1>All products</h1>
 @stop
 
+@section('css')
+<link rel="stylesheet" href="/css/admin/products.css">
+@stop
+
 @section('breadcrumb')
 <li class="breadcrumb-item active">Products</li>
 @stop
@@ -19,13 +23,14 @@
                 <thead>
                     <tr align="center">
                         <th>ID</th>
+                        <th>Image</th>
                         <th>Name</th>
                         <th>Category</th>
                         <th>Price</th>
                         <th>Discount</th>
                         <th>Status</th>
-                        <th>Delete</th>
                         <th>Edit</th>
+                        <th>Delete</th>
                     </tr>
                 </thead>
                 <tbody>
@@ -33,14 +38,18 @@
                     @foreach ($listProducts as $product)
                     <tr class="odd gradeX" align="center">
                         <td>{{$counter++}}</td>
+                        <td><img src="{{ asset($product->image) }}" /></td>
                         <td>{{$product->name}}</td>
                         <td>{{$product->category->name}}</td>
                         <td>{{$product->price}}</td>
                         <td>{{$product->discount * 100}} % </td>
                         <td>{{$product->status ? 'Hiện' : 'Ẩn'}}</td>
-                        <td class="center"><i class="fas fa-trash"></i><a href="#"> Delete</a></td>
-                        <td class="center"><i class="fas fa-pencil-alt"></i> <a
-                                href="{{route('edit-product', $product->slug)}}">Edit</a></td>
+                        <td class="center">
+                            <a href="{{route('edit-product', $product->slug)}}" class="btn btn-warning btn-sm" role="button"><i class="fas fa-pencil-alt"></i> Edit</a>
+                        </td>
+                        <td class="center">
+                            <a href="#" class="btn btn-danger btn-sm" role="button"><i class="fa fa-trash"></i> Delete</a>
+                        </td>
                     </tr>
                     @endforeach
                 </tbody>
@@ -54,10 +63,10 @@
 
 @section('js')
 <script>
-$(document).ready(function() {
-    $("#product-menu").addClass("menu-open");
-    $("#master-product").addClass("active");
-    $("#all-products").addClass("active");
-});
+    $(document).ready(function() {
+        $("#product-menu").addClass("menu-open");
+        $("#master-product").addClass("active");
+        $("#all-products").addClass("active");
+    });
 </script>
 @stop
