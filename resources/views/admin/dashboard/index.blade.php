@@ -50,9 +50,9 @@
             </div>
           </div>    
           <hr style="width:60%; margin-left:30%;margin-top:5%"/> 
-          <div class="text__barChart">
+          <div class="body__barChart">
             <canvas id="barChart"></canvas>     
-            <div style="margin-left:20%; font-size:23px; text-align:center;font-style:italic"> Biểu đồ quản lý sản phẩm, đơn hàng và tình trạng đơn hàng</div> 
+            <div class="text__barChart" > Biểu đồ quản lý sản phẩm, đơn hàng và tình trạng đơn hàng</div> 
           </div>  
         </div>
         
@@ -68,7 +68,7 @@
     var myBarChart = new Chart(ctxB, {
       type: 'bar',
       data: {
-        labels: ["Tổng sản phẩm", "Tổng đơn hàng", "Đang chờ", "Đang ship", "Hoàn thành", "Hủy"],
+        labels: ["Tổng sản phẩm", "Tổng đơn hàng", "Đang chờ", "Đang vận chuyển", "Hoàn thành", "Hủy"],
         datasets: [{
           label: 'Số lượng',
           data: [90, 60, 18, 20, 40, 10],
