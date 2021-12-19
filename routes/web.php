@@ -2,12 +2,14 @@
 
 use App\Http\Controllers\Admin\AuthController;
 use App\Http\Controllers\Admin\CategoryController;
+use App\Http\Controllers\Admin\ContactController;
 use App\Http\Controllers\Admin\MediaController;
 use App\Http\Controllers\Admin\OrderController;
 use App\Http\Controllers\Admin\ProductController;
 use App\Http\Controllers\Client\CartController;
 use App\Http\Controllers\Client\CheckoutController;
 use App\Http\Controllers\Client\ProductController as ClientProductController;
+use App\Models\Contact;
 use Illuminate\Support\Facades\Route;
 use Illuminate\Http\Request;
 /*
@@ -38,9 +40,8 @@ Route::get('/successfulorder', function () {
 })->name('successful-order-page');
 
 // ========== Contact route ========
-Route::get('/contact', function () {
-    return view('client.contact.index');
-})->name('contact-page');
+Route::get('/contact', [ContactController::class, 'index'])->name('contact-page');
+Route::post('/contact', [ContactController::class, 'createContact'])->name('create-contact');
 
 
 
@@ -124,9 +125,7 @@ Route::middleware(['auth:admin'])->group(function () {
         Route::post('/order/cancel/{id}', [OrderController::class, 'cancelOrderDetail'])->name('cancel-order-detail');
         Route::post('/order/complete/{id}', [OrderController::class, 'completeOrderDetail'])->name('complete-order-detail');
    
-        Route::get('/contacts', function () {
-            return view('admin.contact.index');
-        })->name('contact');
+        Route::get('/contacts', [ContactController::class, 'displayListContacts'])->name('contact');
    
    
     });

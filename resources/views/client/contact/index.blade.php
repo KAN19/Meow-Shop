@@ -18,7 +18,8 @@
     </div>
     <!-- form -->
     <div class="container">
-        <form class="" action="#" method="">
+        <form class="{{route('create-contact')}}" action="#" method="POST">
+            @csrf
             <div class="row">
                 <div class="col-25">
                     <label for="name">Name</label>
@@ -33,7 +34,7 @@
                     <label for="lname">Telephone</label>
                 </div>
                 <div class="col-75">
-                    <input type="text" id="pnumber" name="pnumber" placeholder="Your phone number..">
+                    <input type="number" id="pnumber" name="pnumber" placeholder="Your phone number..">
                 </div>
             </div>
             <div class="row">

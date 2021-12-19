@@ -23,33 +23,23 @@
         <div>
             <p>Customer Contacts's Information</p>
         </div>
+       
         <div class="container--info">
+            @forelse ($contacts as $item)
             <div class="info d-flex flex-row ">
-                <div class="p-3">Nguyễn Anh Kiệt</div>
-                <div class="p-3">anhkiet@gmail.com</div>
-                <div class="p-3">0907438265</div>
+                <div class="p-3">{{$item->name}}</div>
+                <div class="p-3">{{$item->email}}</div>
+                <div class="p-3">{{$item->phone}}</div>
             </div>
             <div class="d-flex flex-row ">
-                <div class="p-3">Sản phẩm tuyệt vời. Tôi muốn đăng ký làm đại lý con của bạn</div>
+                <div class="p-3">{{$item->message}}</div>
             </div>
             <hr>
-            <div class="info d-flex flex-row ">
-                <div class="p-3">Lê Ngọc Minh Thư</div>
-                <div class="p-3">minhthu@gmail.com</div>
-                <div class="p-3">0384153201</div>
-            </div>
+            @empty
             <div class="d-flex flex-row ">
-                <div class="p-3">Thêm sản phẩm về y tế cho mèo</div>
+                <div class="p-3">Empty</div>
             </div>
-            <hr>
-            <div class="info d-flex flex-row ">
-                <div class="p-3">Nguyễn Thành Đạt</div>
-                <div class="p-3">thanhdat@gmail.com</div>
-                <div class="p-3">0388456231</div>
-            </div>
-            <div class="d-flex flex-row ">
-                <div class="p-3">Thêm sản phẩm về y tế cho mèo</div>
-            </div>
+            @endforelse
         </div>
         <!-- /.container--info -->
     </div>
