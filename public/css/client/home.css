@@ -191,6 +191,7 @@
     justify-content: center;
     grid-template-columns: repeat(4, auto);
     grid-template-rows: auto auto auto auto;
+    padding: 0 50px;
 }
 
 .products__grid--item {
@@ -203,8 +204,8 @@
 }
 
 .products__grid--container img {
-    width: 75%;
-    height: 75%;
+    width: 180px;
+    height: 180px;
     object-fit: contain;
 }
 

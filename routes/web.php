@@ -22,9 +22,7 @@ use Illuminate\Http\Request;
 */
 
 // ========== Home Route ========
-Route::get('/', function () {
-    return view('client.home.index');
-})->name('home-page');
+Route::get('/', [ClientProductController::class, 'productTrendingHomePage'])->name('home-page');
 
 
 // ========== Product and product detail Route ========

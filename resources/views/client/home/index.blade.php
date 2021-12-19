@@ -84,7 +84,7 @@
 
 <div class="row ml-0 mr-0 justify-content-center" id="categories">
 
-    <div class="box-e col col-lg-2">
+    {{-- <div class="box-e col col-lg-2">
         <a href="#" class="custom-underline">Cat Foods</a>
     </div>
 
@@ -94,60 +94,29 @@
 
     <div class="box-e col col-lg-2">
         <a href="#" class="custom-underline">Pet Toys</a>
-    </div>
+    </div> --}}
 
 </div>
 
 <!--Product Photos-->
 <div class="products__grid--container">
-
+    @foreach ($trendingProducts as $product)
     <div class="products__grid--item">
-        <img class="imageradius" src=" {{url('/Image/dog-food-1.jpg')}}" alt="product1">
-        <p class="h6 text-center product-name">Product's Name</p>
-        <p class="h6 text-center product-price"><strong>9.99$</strong></p>
+        <img class="imageradius" src=" {{url('/').$product->image}}" alt="product1">
+        <p class="h6 text-center product-name">{{$product->name}}</p>
+        <p class="h6 text-center product-price">
+            @if ($product->discount>0)
+            <del style="margin-right: 4px">${{$product->price}}</del>
+            <strong>${{$product->price - $product->price * $product->discount}}</strong>
+            @else
+            <strong>${{$product->price}}</strong>
+            @endif
+           
+        </p>
     </div>
 
-    <div class="products__grid--item">
-        <img class="imageradius" src=" {{url('/Image/dog-food-2.jpg')}}" alt="product2">
-        <p class="h6 text-center product-name">Product's Name</p>
-        <p class="h6 text-center product-price"><strong>9.99$</strong></p>
-    </div>
-
-    <div class="products__grid--item">
-        <img class="imageradius" src=" {{url('/Image/dog-food-3.jpg')}}" alt="product3">
-        <p class="h6 text-center product-name">Product's Name</p>
-        <p class="h6 text-center product-price"><del>9.99$</del> <strong>8.99$</strong></p>
-    </div>
-
-    <div class="products__grid--item">
-        <img class="imageradius" src=" {{url('/Image/dog-food-4.jpg')}}" alt="product4">
-        <p class="h6 text-center product-name">Product's Name</p>
-        <p class="h6 text-center product-price"><strong>9.99$</strong></p>
-    </div>
-
-    <div class="products__grid--item">
-        <img class="imageradius" src=" {{url('/Image/cat-food-1.jpg')}}" alt="product5">
-        <p class="h6 text-center product-name">Product's Name</p>
-        <p class="h6 text-center product-price"><strong>9.99$</strong></p>
-    </div>
-
-    <div class="products__grid--item">
-        <img class="imageradius" src=" {{url('/Image/cat-food-2.jpg')}}" alt="product6">
-        <p class="h6 text-center product-name">Product's Name</p>
-        <p class="h6 text-center product-price"><del>9.99$</del> <strong>8.99$</strong></p>
-    </div>
-
-    <div class="products__grid--item">
-        <img class="imageradius" src=" {{url('/Image/cat-food-3.jpg')}}" alt="product7">
-        <p class="h6 text-center product-name">Product's Name</p>
-        <p class="h6 text-center product-price"><strong>9.99$</strong></p>
-    </div>
-
-    <div class="products__grid--item">
-        <img class="imageradius" src=" {{url('/Image/cat-food-4.jpg')}}" alt="product8">
-        <p class="h6 text-center product-name">Product's Name</p>
-        <p class="h6 text-center product-price"><strong>9.99$</strong></p>
-    </div>
+    @endforeach
+   
 
 </div>
 

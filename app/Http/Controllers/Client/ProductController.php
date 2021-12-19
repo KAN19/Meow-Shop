@@ -32,6 +32,20 @@ class ProductController extends Controller
         return $trendingProducts;
     }
 
+    public function getTrendingProductsByCategory($numberItem = 5, $category)
+    {
+        $trendingProducts = DB::table('products')
+        ->where('category_id', '=', $category)
+        ->select('order_details.product_id', 'products.*', DB::raw("COUNT('products.id') AS product_count"))
+        ->join('order_details', 'order_details.product_id', '=', 'products.id')
+        ->orderBy('product_count', 'desc')
+        ->groupBy('order_details.product_id')
+        ->take($numberItem)
+        ->get();
+
+        return $trendingProducts;
+    }
+
     public function showProductsByCategory($slug)
     {
         $listCategories = category::all(); 
@@ -62,5 +76,12 @@ class ProductController extends Controller
             'data'=>$array_can_tim,
             'search_name' =>$gt_search
         ]);
+    }
+
+    public function productTrendingHomePage()
+    {
+        $trendingProducts = $this->getTrendingProducts(8); 
+       
+        return view('client.home.index', compact('trendingProducts'));
     }
 }
