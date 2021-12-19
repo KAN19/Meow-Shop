@@ -16,17 +16,18 @@ class CartController extends Controller
 
     public function add(CartHelper $cart, $id, Request $request)
     {
-        $quantity = $request->quantity;
+        $quantity = 1; 
+        if ($request->quantity) {
+            $quantity = $request->quantity; 
+        };
         $product = Product::find($id);
 
         $cart->add($product, $quantity); 
-        
-        if ($request['add']) {
-            return redirect()->back(); 
-        } else {
+      
+        if ($request['checkout']) {
             return redirect()->route('show-checkout');
         }
-
+        return redirect()->back(); 
     }
     
     public function remove(CartHelper $cart, $id)

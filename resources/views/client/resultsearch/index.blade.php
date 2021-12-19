@@ -32,7 +32,7 @@
 
     @forelse ($data as $key => $value )
     <div class="row">
-        <a style="color: black;" href={{route('product-detail-page', $value->slug)}}>
+        <a style="color: black; width: 100%;" href={{route('product-detail-page', $value->slug)}}>
             <div class=" body__productsearch">
                 <div class="border__productsearch">
                     <div class="product_search">
@@ -53,9 +53,12 @@
                             </div> <br>
                             <!-- btn add to cart -->
                             <div class="search__detail--btn">
+                                <form action="{{route('add-cart', $value->id)}}" method="post">
+                                    @csrf
+                                    <button type="submit" class="detail__btn--cart"> Add to
+                                        Cart</button>
 
-                                <button type="button" class="detail__btn--cart"> <a class="detail__btn--cart">Add to
-                                        Cart</a></button>
+                                </form>
                             </div>
                         </div>
                     </div>

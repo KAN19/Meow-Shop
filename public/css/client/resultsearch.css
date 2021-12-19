@@ -80,10 +80,13 @@ input[type="text"]:focus {
 
 /* border chua hinh sp, ten, gia va btn add to cart */
 .border__productsearch {
+    height: 200px;
     width: 80%;
-    height: 189px;
+    padding: 10px 40px;
     background-color: #f7f7f7; /*  mau background */
     border-radius: 4px;
+    display: flex;
+    align-items: center;
 }
 .border__productsearch:hover {
     cursor: pointer;
@@ -105,8 +108,6 @@ input[type="text"]:focus {
     display: flex;
     align-items: center;
     justify-content: center;
-    height: 200px;
-    padding: 0 40px;
 }
 
 /* bo tron product image */
@@ -114,7 +115,9 @@ input[type="text"]:focus {
     border-radius: 3%;
     -moz-border-radius: 3%;
     -webkit-border-radius: 3%;
-    width: 189px;
+    width: 180px;
+    max-height: 180px;
+    margin-right: 20px;
     object-fit: contain;
 }
 
