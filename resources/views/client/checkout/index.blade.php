@@ -12,9 +12,7 @@
 <div class=".container-fluid">
     <!-- banner -->
     <div class="banner">
-        <div class="banner__name">
-            <div class="banner__name--size">CHECKOUT</div>
-        </div>
+        <img src="{{url('/Image/banner-checkout.png')}}" alt="checkout-banner">
     </div>
     <!-- body checkout -->
     <!-- =========Form method here======= -->
@@ -24,44 +22,83 @@
             <!-- =====Left-bill infor==== -->
             <div class="col-md-6">
                 <div class="section__title">Bill Detail</div>
+                <!-- Name -->
+                <div class="input__field">
+                    <div class="input__field__title">Your name*</div>
+
+                    <input type="text" name="ord_customer" placeholder="Your name" value="{{old('ord_customer')}}" required>
+
+                    @error('ord_customer')
+                    <div class="text-danger">
+                        {{ $message }}
+                    </div>
+                    @enderror
+                </div>
                 <!-- email input -->
                 <div class="input__field">
                     <div class="input__field__title">Your email*</div>
 
                     <input type="text" name="ord_email" placeholder="Your Email" value="{{old('ord_email')}}" required>
                     @error('ord_email')
-                        <div class="text-danger">
-                            {{ $message }}
-                        </div>
+                    <div class="text-danger">
+                        {{ $message }}
+                    </div>
                     @enderror
                 </div>
 
-
-
-
-                <!-- Name -->
-                <div class="input__field">
-                    <div class="input__field__title">Your name*</div>
-
-                    <input type="text"name="ord_customer" placeholder="Your name" value="{{old('ord_customer')}}" required>
-
-                    @error('ord_customer')
-                        <div class="text-danger">
-                            {{ $message }}
-                        </div>
-                    @enderror
-                </div>
 
                 <!-- select country -->
                 <div class="input__field">
                     <div class="input__field__title">Province/City*</div>
 
-                    <select class="input__field__selector"  name="ord_province">
-                        <option value="Ha Noi">Hà Nội</option>
-                        <option value="TP. Ho Chi Minh">Thành phố Hồ Chí Mính</option>
-                        <option value="Cambodia">Đà Nẵng</option>
-                        <option value="America">Huế</option>
-                        <option value="China">Cần Thơ</option>
+                    <select class="input__field__selector" name="ord_province">
+                        <option selected>Choose Province</option>
+                        <option value="An Giang">An Giang</option>
+                        <option value="Bà Rịa Vũng Tàu">Bà Rịa Vũng Tàu</option>
+                        <option value="Bạc Liêu">Bạc Liêu</option>
+                        <option value="Bắc Giang">Bắc Giang</option>
+                        <option value="Bắc Kạn">Bắc Kạn</option>
+                        <option value="Bắc Ninh">Bắc Ninh</option>
+                        <option value="Bình Dương">Bình Dương</option>
+                        <option value="Bình Định">Bình Định</option>
+                        <option value="Bình Phước">Bình Phước</option>
+                        <option value="Bình Thuận">Bình Thuận</option>
+                        <option value="Cà Mau">Cà Mau</option>
+                        <option value="Cao Bằng">Cao Bằng</option>
+                        <option value="Cần Thơ">Cần Thơ</option>
+                        <option value="Đà Nẵng">Đà Nẵng</option>
+                        <option value="Đắk Lắk">Đắk Lắk</option>
+                        <option value="Đắk Nông">Đắk Nông</option>
+                        <option value="Điện Biên">Điện Biên</option>
+                        <option value="Đồng Nai">Đồng Nai</option>
+                        <option value="Đồng Tháp">Đồng Tháp</option>
+                        <option value="Gia Lai">Gia Lai</option>
+                        <option value="Hà Giang">Hà Giang</option>
+                        <option value="Hà Nam">Hà Nam</option>
+                        <option value="Hà Nội">Hà Nội</option>
+                        <option value="Hà Tĩnh">Hà Tĩnh</option>
+                        <option value="Hải Dương">Hải Dương</option>
+                        <option value="Hải Phòng">Hải Phòng</option>
+                        <option value="Hậu Giang">Hậu Giang</option>
+                        <option value="Hòa Bình">Hòa Bình</option>
+                        <option value="TP. Hồ Chí Minh">Thành phố Hồ Chí Mính</option>
+                        <option value="Huế">Huế</option>
+                        <option value="Hưng Yên">Hưng Yên</option>
+                        <option value="Kiên Giang">Kiên Giang</option>
+                        <option value="Khánh Hòa">Khánh Hòa</option>
+                        <option value="Hưng Yên">Hưng Yên</option>
+                        <option value="Nha Trang">Nha Trang</option>
+                        <option value="Huế">Huế</option>
+                        <option value="Sóc Trăng">Sóc Trăng</option>
+                        <option value="Sơn La">Sơn La</option>
+                        <option value="Thái Nguyên">Thái Nguyên</option>
+                        <option value="Thanh Hóa">Thanh Hóa</option>
+                        <option value="Trà Vinh">Trà Vinh</option>
+                        <option value="Tuyên Quang">Tuyên Quang</option>
+                        <option value="Trà Giang">Trà Giang</option>
+                        <option value="Vĩnh Long">Vĩnh Long</option>
+                        <option value="Vĩnh Phúc">Vĩnh Phúc</option>
+                        <option value="Yên Bái">Yên Bái</option>
                     </select>
 
                 </div>
@@ -72,9 +109,9 @@
                     <input type="text" name="ord_address" placeholder="Street Address" value="{{old('ord_address')}}">
 
                     @error('ord_address')
-                        <div class="text-danger">
-                            {{ $message }}
-                        </div>
+                    <div class="text-danger">
+                        {{ $message }}
+                    </div>
                     @enderror
                 </div>
 
@@ -84,17 +121,16 @@
                     <input type="text" name="ord_phone" placeholder="Phone" value="{{old('ord_phone')}}">
 
                     @error('ord_phone')
-                        <div class="text-danger">
-                            {{ $message }}
-                        </div>
+                    <div class="text-danger">
+                        {{ $message }}
+                    </div>
                     @enderror
                 </div>
 
                 <div class="input__field">
                     <div class="input__field__title">Order note (optional)</div>
 
-                    <textarea class="input__field__textarea" 
-                    name="ord_note" placeholder="Write something">{{old('ord_note')}}</textarea>
+                    <textarea class="input__field__textarea" name="ord_note" placeholder="Write something">{{old('ord_note')}}</textarea>
 
                 </div>
             </div>
@@ -112,11 +148,11 @@
                     </div>
                     <hr class="line">
 
-                <?php 
-                    $myCart = $cart->items; 
-                ?>
-               
-                @if (count($myCart) > 0)
+                    <?php
+                    $myCart = $cart->items;
+                    ?>
+
+                    @if (count($myCart) > 0)
                     @foreach ($myCart as $item)
 
                     <div class="body__order__row">
@@ -129,7 +165,7 @@
                     <hr class="line">
 
                     @endforeach
-                @endif
+                    @endif
 
 
                     <div class="body__order__row">
