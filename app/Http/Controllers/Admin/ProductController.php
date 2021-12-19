@@ -108,15 +108,15 @@ class ProductController extends Controller
 
     public function resultsearch(Request $request)
     {
-        $gt_search = $request['searchbtn_search'];
+        $gt_search = strtolower($request['searchbtn_search']);
         $kq_tim = Product::all();
-        $array_can_tim=array();
+        $array_can_tim = array();
         foreach ($kq_tim as $key => $value) {
-            if(strpos($value['name'], $gt_search)){
+            $productName = strtolower($value['name']);
+            if(strpos($productName, $gt_search)){
                 $array_can_tim[$key]=$value;
+
             } 
-         
-         
         }   
   
         return view('client.resultsearch.index',[

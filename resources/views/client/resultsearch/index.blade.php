@@ -12,7 +12,7 @@
 
 <div class=".container-fluid">
     <img id="banner_resultsearch" src="/image/banner_resultsearch.png">
-     @if($data==null)
+     @if($search_name==null)
         <h1 class="title__search_first">HELLO! THIS IS SEARCH PAGE</h1>
         <div class="title__search_second">You can search everything in here</div>
         <div class="inputWithIcon_search_datanull inputWithIcon_both">
@@ -33,7 +33,6 @@
             <h1 class="title__search">SEARCH: QUANTITY RESULTS FOUND FOR "{{$search_name}}"</h1>
     
         @foreach ($data as $key => $value )
-        
             <div class="row">                        
                 <div class="col-md body__productsearch">
                     <div class="border__productsearch">
