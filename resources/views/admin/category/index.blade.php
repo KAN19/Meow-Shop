@@ -43,7 +43,7 @@
                         <td class="center"><div class="btn btn-danger" id="btn__del__category"><i class="fas fa-trash"></i><a class="text__del"
                                 href="{{route('delete-category', $item->slug)}}"> Delete</a></div>
                         </td>
-                        <td class="center"><div class="btn btn-info"id="btn__edit__category"><i class="fas fa-pencil-alt icon__edit__category"></i> <a class="text__edit"
+                        <td class="center"><div class="btn btn-warning"id="btn__edit__category"><i class="fas fa-pencil-alt icon__edit__category"></i> <a class="text__edit"
                                 href="{{route('edit-category', $item->slug)}}">Edit</a></div>
                         </td>
                     </tr>

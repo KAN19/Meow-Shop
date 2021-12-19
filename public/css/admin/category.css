@@ -1,6 +1,4 @@
-/* .category_admin{
-    margin-top: 2rem;
-} */
+/* all category */
 .content__header__category{
     color: #007BFF;
 }
@@ -11,10 +9,10 @@
 }
 
 .text__edit{
-    color:white;
+    color:black;
 }
 .text__edit:hover{
-    color:white;
+    color:black;
 }
 .text__del{
     color:white;
@@ -34,7 +32,7 @@
     background-color: white;
 }
 
-
+/* create and edit category */
 .categoryadmin__crud{   
     padding: 0 8% 0 15% ; 
 }

@@ -1,0 +1,94 @@
+.content__header__dashboard{
+    color: #007BFF;
+}
+.chart_admin_first{
+    background-color: white;
+    height: 50%;
+    padding-top: 1rem;
+    padding-bottom: 2.5rem;
+}
+#chart_admin{    
+    display: grid;
+    grid-template-columns: 25% 25% 25%;
+    grid-template-rows: 230px 230px;
+    grid-row-gap: 5%;
+    grid-column-gap: 40px;
+    margin-top: 1rem;
+    padding-right: 0;
+    margin-left: 28%;
+}
+.body__chart__admin{
+    background-color: 	#FFFFF0;
+    text-align: center;
+    /* display: flex;
+    flex-direction: column;
+    align-items: flex-end; */    
+}
+.body__chart__admin:hover{
+    cursor: pointer;
+}
+
+.item1{
+    color: #6495ED;
+    font-size: 60px;
+    /* text-align: center; */
+    padding-top: 18%;
+    background-color: #ddf8f8;
+
+}
+    .item__title{
+        color: black;        
+        font-size: 18px;
+        padding-top: 23%;
+    }
+
+.item2{
+    color: #986DB2;
+    font-size: 60px;
+    /* text-align: center; */
+    padding-top: 18%;
+    background-color: #efeffd;
+}
+
+.item3{
+    color: 	#0B346E;
+    font-size: 60px;
+    /* text-align: center; */
+    padding-top: 18%;
+    background-color: #dae8e9;
+}
+
+
+.item4{
+    color: 	#e9c703;
+    font-size: 60px;
+    /* text-align: center; */
+    padding-top: 18%;
+    background-color: #fdfbe7;
+}
+
+.item5{
+    color: 	#23bf23;
+    font-size: 60px;
+    /* text-align: center; */
+    padding-top: 18%;
+    background-color: #ddfddd;
+}
+
+.item6{
+    color: 	#DC143C;
+    font-size: 60px;
+    /* text-align: center; */
+    padding-top: 18%;
+    background-color: #fae4e8;
+}
+
+#barChart{
+    padding:0 8% 0 25%;
+}
+#barChart:hover{
+    cursor: pointer;
+}
+.text__barChart{
+    text-align:center;
+}

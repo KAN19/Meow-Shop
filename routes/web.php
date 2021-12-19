@@ -36,7 +36,6 @@ Route::get('/products',[ClientProductController::class, "showProducts"])->name('
 Route::get('/product/{slug}',[ClientProductController::class, "showProductDetail"])->name('product-detail-page');
 
 
-
 // ========== Contact route ========
 Route::get('/contact', function () {
     return view('client.contact.index');
@@ -88,7 +87,7 @@ Route::middleware(['auth:admin'])->group(function() {
     Route::prefix('admin')->group(function() {
 
         Route::get('/', function () {
-            return view('admin.dashboard.index');
+            return view('admin.dashboard.index');            
         })->name('admin-home');
     
         Route::prefix('category')->group(function() {
@@ -120,9 +119,11 @@ Route::middleware(['auth:admin'])->group(function() {
         Route::prefix('media')->group(function() {
             Route::get('', [MediaController::class, 'index'])->name('show-media');
             
-        });
-       
-    
+        });       
+        
+        Route::get('/chart', function () {
+            return view('admin.chart.index');});  
+
         Route::get('/orders', [OrderController::class, 'index'])->name('show-orders');
         Route::get('/order/{id}', [OrderController::class, 'showOrderDetail'])->name('show-order-detail');
         Route::post('/order/confirm/{id}', [OrderController::class, 'confirmOrderDetail'])->name('confirm-order-detail');
