@@ -1,39 +1,55 @@
-@extends('adminlte::page')
+@extends('admin.master')
 
 @section('title', 'Category Manager')
 
 @section('content_header')
-    <h1>Create category</h1>
+<h1>Create category</h1>
 @stop
 
+@section('breadcrumb')
+<li class="breadcrumb-item active">Category</li>
+@stop
+
+
+
 @section('content')
-    <div id="page-wrapper">
-        <div class="container-fluid bg-white">
-            <div class="row">
-                <!-- /.col-lg-12 -->
-                <div class="col-lg-7" style="padding-bottom:120px">
-                    <form action="{{route('create-category')}}" method="POST">
-                        @csrf
-                        <div class="form-group">
-                            <label>Category Name</label>
-                            <input class="form-control" name="cateName" placeholder="Please Enter Category Name" />
-                            @error('cateName')
-                                <div class="text-danger">
-                                    {{ $message }}
-                                </div>
-                            @enderror
+<div id="page-wrapper">
+    <div class="container-fluid bg-white">
+        <div class="row">
+            <!-- /.col-lg-12 -->
+            <div class="col-lg-7" style="padding-bottom:120px">
+                <form action="{{route('create-category')}}" method="POST">
+                    @csrf
+                    <div class="form-group">
+                        <label>Category Name</label>
+                        <input class="form-control" name="cateName" placeholder="Please Enter Category Name" />
+                        @error('cateName')
+                        <div class="text-danger">
+                            {{ $message }}
                         </div>
-                        <button type="submit" class="btn btn-primary">Category Add</button>
-                       <a  class="btn btn-danger" href="{{route('show-category')}}">Back</a>
+                        @enderror
+                    </div>
+                    <a class="btn btn-danger" href="{{route('show-category')}}">Back</a>
+                    <button type="submit" class="btn btn-primary">Category Add</button>
                     <form>
-                    @if (session('success'))
+                        @if (session('success'))
                         {{session('success')}}
-                    @endif
-                  
-                </div>
+                        @endif
+
             </div>
-            <!-- /.row -->
         </div>
-        <!-- /.container-fluid -->
+        <!-- /.row -->
     </div>
+    <!-- /.container-fluid -->
+</div>
+@stop
+
+@section('js')
+<script>
+$(document).ready(function() {
+    $("#category-menu").addClass("menu-open");
+    $("#master-category").addClass("active");
+    $("#create-category").addClass("active");
+});
+</script>
 @stop
