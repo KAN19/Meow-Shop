@@ -62,11 +62,12 @@
             <div class="titleTrending mb-3 font-weight-bold">
                 Trending product
             </div>
-            <!--trending product 1-->
+            @foreach ($trendingProducts as $product)
+                <!--trending product 1-->
             <div class="trendingproduct name">
                 <div class="trendingname row">
                     <div>
-                        <div><img class="imageradius" src="https://picsum.photos/150" /></div>
+                        <div><img class="imageradius" src="{{$product->image}}" /></div>
                     </div>
                     <div class="contentTrending">
                         <div>Name</div>
@@ -76,6 +77,8 @@
                 <hr class="my-3">
 
             </div>
+            @endforeach
+            
         </div>
     </div>
 
@@ -84,26 +87,26 @@
         <br><br>
         <div class="grid-container">
             @foreach ($listProducts as $product)
-           
-            <a href={{route('product-detail-page', $product->slug)}}  class="product-content">
-                <div class="imageproduct text-center"><img class="radius-product"
-                        src={{url('/') . $product->image}} />
+
+            <a href={{route('product-detail-page', $product->slug)}} class="product-content">
+                <div class="imageproduct text-center"><img class="radius-product" src={{url('/') . $product->image}} />
                     <div class="productname text-center mt-2">{{$product->name}}</div>
                 </div>
                 <div>
                     @if ($product->discount > 0)
-                    <del class="margimobile">{{$product->price}}</del> <strong>{{$product->price - $product->price * $product->discount}}</strong>
-                        
+                    <del class="margimobile">{{$product->price}}</del>
+                    <strong>{{$product->price - $product->price * $product->discount}}</strong>
+
                     @else
                     <strong>{{$product->price}}</strong>
                     @endif
                 </div>
             </a>
             @endforeach
-            
+
         </div>
         <!--Next page-->
-        {!! $listProducts->appends(request()->all())->links('client.products.pagination') !!}       
+        {!! $listProducts->appends(request()->all())->links('client.products.pagination') !!}
 
     </div>
 </div>

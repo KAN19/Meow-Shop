@@ -2,7 +2,8 @@
     <div class="navbar__topnav navbar__topnav-main">
         <div class="topnav__item topnav__item__logo">
             <a href="{{route('home-page')}}">
-                <img class="imageradius" src=" {{url('/Image/logo.png')}}" style="max-width: 130px; padding-top: 10px" alt="product1">
+                <img class="imageradius" src=" {{url('/Image/logo.png')}}" style="max-width: 130px; padding-top: 10px"
+                    alt="product1">
             </a>
         </div>
 
@@ -28,7 +29,7 @@
 
         <div class="topnav__item topnav__item-fullscreen">
             <input type="text" id="topnav__search__input" />
-            <a href="#" id="topnav__search__icon" class="topnav__item__button topnav__item-icon">
+            <a href="{{route('search-page')}}" id="topnav__search__icon" class="topnav__item__button topnav__item-icon">
 
                 <i class="fas fa-search"></i>
             </a>
@@ -40,14 +41,15 @@
                 <?php 
                     $myCart = $cart->items; 
                 ?>
-           
+
                 <div class="cart__dropdown">
                     <div class="cart__dropdown__list">
                         @forelse ($myCart as $item)
                         <div class="cart__dropdown__item">
                             <img src="{{url('/') . $item['image']}}" class="cart__dropdown__image" alt="" srcset="">
                             <div class="cart__dropdown__content">
-                                <a href={{route('product-detail-page', $item['slug'])}} class="cart__dropdown__content-name">
+                                <a href={{route('product-detail-page', $item['slug'])}}
+                                    class="cart__dropdown__content-name">
                                     {{$item['name']}}
                                 </a>
                                 <div class="cart__dropdown__content-price">
@@ -57,22 +59,23 @@
                                     ${{$item['finalPrice'] * $item['quantity']}}
                                 </div>
                             </div>
-                            <a href="javascript:" onclick="RemoveDropDownItem({{$item['id']}})" class="cart__dropdown__delete">
+                            <a href="javascript:" onclick="RemoveDropDownItem({{$item['id']}})"
+                                class="cart__dropdown__delete">
                                 <i class="far fa-times-circle"></i>
                             </a>
                         </div>
                         <hr>
-                    @empty
+                        @empty
                         <div>Your cart is empty!</div>
-                    @endforelse
+                        @endforelse
                     </div>
-                    
-                   
+
+
                     <div class="cart__dropdown__selection">
                         <a href={{route('show-cart')}} class="cart__dropdown__button">View Cart</a>
                         <a class="cart__dropdown__button">Checkout</a>
                     </div>
-            </div>
+                </div>
             </div>
 
         </div>
@@ -96,7 +99,7 @@
             <span class="panel__item__icon"><i class="fas fa-phone-square-alt"></i></span>
             <span>Contact</span>
         </a>
-       
+
         <a href="#" class="panel__item">
             <span class="panel__item__icon"><i class="fas fa-shopping-cart"></i></span>
             <span>Cart</span>
@@ -105,7 +108,7 @@
 </nav>
 <div class="modal-overlay " id="modal-overlay"></div>
 <style>
-    .hidden {
-        display: none;
-    }
+.hidden {
+    display: none;
+}
 </style>

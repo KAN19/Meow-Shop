@@ -163,6 +163,13 @@ input[type="text"]:focus {
 .titleTrending {
     font-size: x-large;
 }
+
+.trendingproduct img {
+    width: 150px;
+    height: 150px;
+    object-fit: contain;
+}
+
 .trendingname:hover {
     transform: scale(1.01);
     text-decoration: underline;

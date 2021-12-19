@@ -90,12 +90,10 @@
     transition: background-color 0.6s ease;
 }
 
-
 .dot-slide {
     position: absolute;
     left: 860px;
     bottom: 15px;
-
 }
 
 .active,
@@ -205,9 +203,9 @@
 }
 
 .products__grid--container img {
-    max-width: 75%;
-    max-height: 75%;
-    object-fit: cover;
+    width: 75%;
+    height: 75%;
+    object-fit: contain;
 }
 
 .products__grid--item img:hover {
@@ -278,7 +276,6 @@
     transition: 0.3s ease all;
 }
 
-
 /*bo tròn ảnh*/
 
 .imageradius {
@@ -296,23 +293,20 @@
 /*'Show All' Button*/
 
 .show-button {
-    background-color: rgb(241, 239, 239);
+    background-color: rgb(187, 186, 186);
     border: 0 solid #e2e8f0;
     border-radius: 3rem;
     box-sizing: border-box;
     color: #0d172a;
     cursor: pointer;
     display: inline-block;
-    font-family: "Basier circle", -apple-system, system-ui, "Segoe UI", Roboto,
-        "Helvetica Neue", Arial, "Noto Sans", sans-serif, "Apple Color Emoji",
-        "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
-    font-size: 1rem;
+
+    font-size: 1.1rem;
     font-weight: 600;
     line-height: 1;
     padding: 20px 60px;
     text-align: center;
     text-decoration: none #0d172a solid;
-    text-decoration-thickness: auto;
     transition: all 0.1s cubic-bezier(0.4, 0, 0.2, 1);
     box-shadow: 0px 1px 2px rgba(166, 175, 195, 0.25);
     user-select: none;
@@ -325,6 +319,11 @@
     color: #fff;
 }
 
+.show-button a {
+    color: inherit;
+    text-decoration: none;
+}
+
 /*===============sale off banner=================*/
 .saleoff--container {
     display: flex;
@@ -332,7 +331,7 @@
     -webkit-justify-content: center;
     /* Safari */
     justify-content: center;
-    margin: 20px
+    margin: 20px;
 }
 
 .saleoff--item {

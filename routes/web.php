@@ -31,6 +31,7 @@ Route::get('/', function () {
 Route::get('/products',[ClientProductController::class, "showProducts"])->name('product-page');
 Route::get('/products/{slug}',[ClientProductController::class, "showProductsByCategory"])->name('product-page-byCategory');
 Route::get('/product/{slug}',[ClientProductController::class, "showProductDetail"])->name('product-detail-page');
+Route::get('/trending',[ClientProductController::class, "getTrendingProducts"]);
 
 
 // ========== Successful Order Notification route ========
@@ -56,10 +57,7 @@ Route::prefix('cart')->group(function() {
 
 
 // ========== Search Route ========
-Route::get('/resultsearch', function () {
-    return view('client.resultsearch.index', ['data' =>null, 'search_name' => null]);
-});
-Route::get('/resultsearch', [ClientProductController::class, 'resultsearch']);
+Route::get('/resultsearch', [ClientProductController::class, 'resultsearch'])->name('search-page');
 
 // ========== Checkout Route ========
 Route::prefix('/checkout')->group(function () {

@@ -42,8 +42,8 @@
 </div>
 <!-- category-banner -->
 <div class="category--container">
-    
-    <a  href="{{route('product-page-byCategory', 'cat-food')}}">
+
+    <a href="{{route('product-page-byCategory', 'cat-food')}}">
         <div class="category--item">
             <img class="imageradius" src=" {{url('/Image/banner-cat.png')}}" alt="category1">
         </div>
@@ -70,9 +70,10 @@
 
     <div class="supplier--info">
         <h3>BEST SUPPLIER</h3>
-        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Suscipit quibusdam aut fugit asperiores consectetur error ab! Culpa laborum dolorem, qui eaque, recusandae assumenda voluptatibus debitis cupiditate, facilis voluptatem totam reprehenderit?
+        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Suscipit quibusdam aut fugit asperiores consectetur
+            error ab! Culpa laborum dolorem, qui eaque, recusandae assumenda voluptatibus debitis cupiditate, facilis
+            voluptatem totam reprehenderit?
         </p>
-        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Pariatur sunt corrupti maiores quaerat deleniti placeat eligendi deserunt aut quas autem nihil libero nemo labore sapiente, nam dignissimos soluta facere? Dolores.</p>
     </div>
 </div>
 
@@ -152,7 +153,9 @@
 
 <!--'Show All' Button-->
 <div class="row justify-content-center" id="show-button">
-    <button class="show-button" role="button">Show all</button>
+    <button class="show-button" role="button">
+        <a href="{{route('product-page')}}">Show all</a>
+    </button>
 </div>
 
 <!-- sale off banner -->
