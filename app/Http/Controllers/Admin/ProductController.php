@@ -13,7 +13,7 @@ class ProductController extends Controller
 {
     public function showProduct()
     {
-        $listProducts = Product::orderBy("created_at", 'DESC')->paginate(15); 
+        $listProducts = Product::orderBy("created_at", 'DESC')->paginate(10); 
         // dd($listProducts); 
         $counter = 1; 
 
