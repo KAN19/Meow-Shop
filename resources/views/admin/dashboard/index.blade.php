@@ -73,19 +73,19 @@
           <hr style="width:60%; margin-left:20%;margin-top:3%"/> 
           <div class="control__table">CONTROL TABLE</div>
           <div class="btn__control">
-            <a class="btn " href="">
+            <a class="btn " href={{route('show-product')}}>
               <i class="nav-icon fas fa-shopping-cart" id="btn__control__table"></i><br>
               Go to Product Page
             </a>
-            <a class="btn " href="">
+            <a class="btn " href={{route('show-category')}}>
               <i class="nav-icon fas fa-stream" id="btn__control__table"></i><br>
               Go to Category Page
             </a>
-            <a class="btn" href="">
+            <a class="btn" href={{route('show-media')}}>
               <i class="nav-icon far fa-image" id="btn__control__table"></i><br>
               Go to Gallery Page
             </a>
-            <a class="btn" href="">
+            <a class="btn" href={{route('show-orders')}}>
               <i class="nav-icon fas fa-file-alt" id="btn__control__table"></i><br>
               Go to Order Page
             </a>
