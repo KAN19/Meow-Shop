@@ -26,7 +26,7 @@
       <div class="Thefirst__dashboard">Hi! Today, We have...</div>
       <div id="chart_admin">
         <div class="item1 body__chart__admin">
-          <b class="item1">90</b><br>
+          <b class="item1">{{count($totalProducts)}}</b><br>
           <div class="item__title">Total Products</div>
         </div>   
         <div class="item2 body__chart__admin">
