@@ -48,7 +48,7 @@
                             <a href="{{route('edit-product', $product->slug)}}" class="btn btn-warning btn-sm" role="button"><i class="fas fa-pencil-alt"></i> Edit</a>
                         </td>
                         <td class="center">
-                            <a href="#" class="btn btn-danger btn-sm" role="button"><i class="fa fa-trash"></i> Delete</a>
+                            <a href="{{route('delete-product', $product->slug)}}" class="btn btn-danger btn-sm" role="button"><i class="fa fa-trash"></i> Delete</a>
                         </td>
                     </tr>
                     @endforeach

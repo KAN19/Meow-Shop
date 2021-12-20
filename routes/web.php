@@ -111,7 +111,7 @@ Route::middleware(['auth:admin'])->group(function () {
             Route::put('/{slug}', [ProductController::class, 'updateProduct']); 
             
     
-            // Route::get('delete/{id}', [CategoryController::class, 'deleteCategory'])->name('delete-category');
+            Route::get('delete/{slug}', [ProductController::class, 'deleteProduct'])->name('delete-product');
 
         });
 

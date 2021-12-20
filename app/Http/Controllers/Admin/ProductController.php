@@ -4,6 +4,7 @@ namespace App\Http\Controllers\Admin;
 
 use App\Http\Controllers\Controller;
 use App\Models\category;
+use App\Models\order_detail;
 use App\Models\Product;
 use Illuminate\Support\Str;
 use Illuminate\Http\Request;
@@ -100,10 +101,15 @@ class ProductController extends Controller
 
     public function deleteProduct($slug)
     {
-        // $category = category::where('slug',$slug)->first(); 
-        // $category->delete(); 
+        $product = Product::where('slug',$slug)->first(); 
+        $isOrderd = order_detail::where('product_id', '=', $product->id)->first(); 
+        if(!$isOrderd) {
+            $product->delete(); 
+        } else {
+            alert()->error('Error','This product has existed in an orderd');
+        }
 
-        // return redirect()->route('show-category'); 
+        return redirect()->route('show-product'); 
     }
     
 }

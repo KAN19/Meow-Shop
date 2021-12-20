@@ -17,10 +17,15 @@
     <!-- Summernote -->
     <link rel="stylesheet" href="{{url('adminlte/plugins/summernote/summernote-bs4.min.css')}}">
 
+    {{-- sweet alert --}}
+    <script src="https://unpkg.com/sweetalert2@7.18.0/dist/sweetalert2.all.js"></script>
+
     @yield('css')
 </head>
 
 <body class="hold-transition sidebar-mini">
+    @include('sweetalert::alert')
+
     <!-- Site wrapper -->
     <div class="wrapper">
         <!-- Navbar -->
