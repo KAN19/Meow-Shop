@@ -169,7 +169,6 @@
                                 <i class="nav-icon fas fa-file-alt"></i>
                                 <p>
                                     Orders
-                                    <span class="badge badge-info right">6</span>
                                 </p>
                             </a>
                         </li>

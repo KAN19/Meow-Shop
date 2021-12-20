@@ -5,7 +5,7 @@
 @section('content_header')
 <div class="d-flex align-items-center">
     <h1 class="mr-2">All Orders</h1>
-    <span class="badge badge-pill badge-primary">6</span>
+    <span class="badge badge-pill badge-primary">{{count($list_orders)}}</span>
 </div>
 @stop
 
@@ -22,18 +22,18 @@
 
 @section('content')
 <div class="order__containter p-4">
-    <form class="" action="" method="post">
+    <form class="" action="{{route('show-orders')}}" method="">
         <div class="d-flex w-100 ">
-            <div class="flex-grow-1 d-flex align-items-center mr-4">
+            <div class="flex-grow-1 d-flex align-items-center justify-content-around mr-4">
                 <div class="input__label">
                     Status
                 </div>
-                <select style="width: 150px;" id="my-select" class="form-control " name="">
-                    <option selected>------All-----</option>
-                    <option>Pending</option>
-                    <option>Shipping</option>
-                    <option>Completed</option>
-                    <option>Cancel</option>
+                <select style="width: 90%;" id="my-select" class="form-control " name="status">
+                    <option selected value="">------All-----</option>
+                    <option value="pending">Pending</option>
+                    <option value="shipping">Shipping</option>
+                    <option value="completed">Completed</option>
+                    <option value="canceled">Cancel</option>
                 </select>
             </div>
 
@@ -41,29 +41,22 @@
                 <div class="input__label">
                     Order time:
                 </div>
-                <div class="input-group" style="width: auto !important;">
+                <div class="input-group" style="width: 80% !important;">
                     <div class="input-group-prepend">
                         <span class="input-group-text">
                             <i class="far fa-calendar-alt"></i>
                         </span>
                     </div>
-                    <input type="text" class="form-control float-right" id="reservation">
+                    <input type="text" class="form-control float-right" name="" id="reservation">
+                    <input type="text" name="from" id="from" style="display: none">
+                    <input type="text" name="to" id="to" style="display: none">
                 </div>
                 <!-- /.input group -->
 
             </div>
 
-            <div class="flex-grow-1 d-flex mr-4 align-items-center">
-                <div class="input__label">
-                    Search:
-                </div>
-                <input style="width: 150px;" id="my-input" class="form-control" placeholder="Searching" type="text"
-                    name="">
-            </div>
-            <div class="align-items-center flex-grow-1">
+            <div class="align-items-center">
                 <button class="btn btn-primary" type="submit">Find</button>
-            </div>
-            <div class="align-items-center flex-grow-1">
                 <button class="btn btn-danger" type="submit">Clear</button>
             </div>
         </div>
@@ -116,17 +109,15 @@
 <script>
 $(function() {
     $('#reservation').daterangepicker({
-
-            startDate: moment().startOf('month'),
-            endDate: moment().endOf('month'),
             opens: 'left',
             locale: {
                 format: 'DD/M/YYYY '
             }
         },
         function(start, end, label) {
-            console.log("A new date selection was made: " + start.format('YYYY-MM-DD') + ' to ' + end
-                .format('YYYY-MM-DD'));
+            $('#from').val(start.format('YYYY-MM-DD'));
+            $('#to').val(end.format('YYYY-MM-DD'));
+            console.log("A new date selection was made: " + start.format('YYYY-MM-DD') + ' to ' + end.format('YYYY-MM-DD'));
         });
 });
 
