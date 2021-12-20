@@ -15,7 +15,7 @@ class ProductController extends Controller
     {
         $listProducts = Product::orderBy("created_at", 'DESC')->paginate(10); 
         // dd($listProducts); 
-        $counter = 1; 
+        $counter = 1;
 
         return view('admin.product.index', compact('listProducts', 'counter'));
     }
@@ -24,10 +24,10 @@ class ProductController extends Controller
     {
         $cates = category::orderby('name', 'ASC')->get();
         return view('admin.product.create', compact('cates'));
-        
     }
 
-    protected function validateProduct (Request $request) {
+    protected function validateProduct(Request $request)
+    {
         $result = $request->validate([
             'prd_name' => 'required',
             'prd_category' => 'required',
@@ -43,73 +43,72 @@ class ProductController extends Controller
             "prd_short_descrip.required" => 'This field is required',
             "prd_description.required" => 'This field is required',
             "prd_ava.required" => 'This field is required',
-        ]); 
+        ]);
     }
-    
+
     public function storeProduct(Request $request)
     {
         // dd($request->all());
         $this->validateProduct($request);
-     
-        $product = new Product(); 
-        $product->name = $request->prd_name; 
-        $product->slug = Str::slug($request->prd_name); 
-        $product->category_id = $request->prd_category; 
-        $product->price = $request->prd_price; 
-        $product->discount = $request->prd_discount / 100; 
-        $product->is_stock = $request->prd_is_stock; 
-        $product->short_description = $request->prd_short_descrip; 
-        $product->description = $request->prd_description; 
-        $product->image = $request->prd_ava; 
-        $product->list_image = $request->prd_list_images; 
 
-        $product->save(); 
+        $product = new Product();
+        $product->name = $request->prd_name;
+        $product->slug = Str::slug($request->prd_name);
+        $product->category_id = $request->prd_category;
+        $product->price = $request->prd_price;
+        $product->discount = $request->prd_discount / 100;
+        $product->is_stock = $request->prd_is_stock;
+        $product->short_description = $request->prd_short_descrip;
+        $product->description = $request->prd_description;
+        $product->image = $request->prd_ava;
+        $product->list_image = $request->prd_list_images;
 
-        return redirect()->route('show-product'); 
+        $product->save();
+        alert()->success('Product Created!', 'Successfully');
+        return redirect()->route('show-product');
     }
 
     public function showEditProduct($slug)
     {
-        $product = Product::where('slug',$slug)->first(); 
-        $product->discount *= 100; 
+        $product = Product::where('slug', $slug)->first();
+        $product->discount *= 100;
         $cates = category::orderby('name', 'ASC')->get();
         return view('admin.product.edit', compact('product', 'cates'));
     }
 
     public function updateProduct(Request $request, $slug)
     {
-        $product = Product::where('slug',$slug)->first(); 
+        $product = Product::where('slug', $slug)->first();
         // dd($request); 
         $this->validateProduct($request);
-        
-        $product->name = $request->prd_name; 
-        $product->slug = Str::slug($request->prd_name); 
-        $product->category_id = $request->prd_category; 
-        $product->price = $request->prd_price; 
-        $product->discount = $request->prd_discount / 100; 
-        $product->is_stock = $request->prd_is_stock; 
-        $product->short_description = $request->prd_short_descrip; 
-        $product->description = $request->prd_description; 
-        $product->image = $request->prd_ava; 
-        $product->list_image = $request->prd_list_images; 
 
-        $product->save(); 
+        $product->name = $request->prd_name;
+        $product->slug = Str::slug($request->prd_name);
+        $product->category_id = $request->prd_category;
+        $product->price = $request->prd_price;
+        $product->discount = $request->prd_discount / 100;
+        $product->is_stock = $request->prd_is_stock;
+        $product->short_description = $request->prd_short_descrip;
+        $product->description = $request->prd_description;
+        $product->image = $request->prd_ava;
+        $product->list_image = $request->prd_list_images;
 
-        return redirect()->route('show-product'); 
-
+        $product->save();
+        alert()->success('Product Edited!', 'Successfully');
+        return redirect()->route('show-product');
     }
 
     public function deleteProduct($slug)
     {
-        $product = Product::where('slug',$slug)->first(); 
-        $isOrderd = order_detail::where('product_id', '=', $product->id)->first(); 
-        if(!$isOrderd) {
-            $product->delete(); 
+        $product = Product::where('slug', $slug)->first();
+        $isOrderd = order_detail::where('product_id', '=', $product->id)->first();
+        if (!$isOrderd) {
+            $product->delete();
+            alert()->success('Product Deleted!', 'Successfully');
         } else {
-            alert()->error('Error','This product has existed in an orderd');
+            alert()->error('Error', 'This product has existed in an orderd');
         }
 
-        return redirect()->route('show-product'); 
+        return redirect()->route('show-product');
     }
-    
 }

@@ -11,9 +11,9 @@
 <!-------------breadcrumb------------->
 <nav aria-label="breadcrumb breadcrumb--container">
     <ol class="breadcrumb">
-        <li class="breadcrumb-item ml-5"><a href="#"><i class="fa fa-home" aria-hidden="true"></i></a></li>
-        <li class="breadcrumb-item"><a href="#">Product</a></li>
-        <li class="breadcrumb-item active" aria-current="page">Example Product</li>
+        <li class="breadcrumb-item ml-5"><a href="{{route('home-page')}}"><i class="fa fa-home" aria-hidden="true"></i></a></li>
+        <li class="breadcrumb-item"><a href="{{route('product-page')}}">Products</a></li>
+        <li class="breadcrumb-item active" aria-current="page">{{$product->name}}</li>
     </ol>
 </nav>
 <!----------Product Content---------->
@@ -25,10 +25,10 @@
             <img id="slideLeft" class="arrow" src="{{url('/utility/arrow-left.png')}}">
             <img id="slideTop" class="arrow" src="{{url('/utility/arrow-top.png')}}">
 
-            <?php 
+            <?php
             // listimage ban dau la Json -> array
             $imagesArr = json_decode($product->list_image);
-            
+
             ?>
             <div class="mini-photos__row  ">
                 <div class="mini-photo__col ">
@@ -71,22 +71,22 @@
             <div class="product-desc--detail">
                 <p class="h7">{{$product->short_description}}</p>
             </div>
-          
+
             <form action="{{route('add-cart', $product->id)}}" method="post">
                 @csrf
-                <div >
+                <div>
                     <div class="buttons_added">
                         <input class="minus is-form" type="button" value="-" onclick="DecreaseQuantity()">
                         <input aria-label="quantity" name="quantity" class="input-qty" max="10" min="1" name="" value="1" type="number">
                         <input class="plus is-form" type="button" value="+" onclick="IncreaseQuantity()">
                     </div>
                 </div>
-                  <br>
+                <br>
                 <!-- 2 Buttons -->
-                <button type="submit" name="add" value="add" class="btn-product btn--addCart" >Add to cart</button>
+                <button type="submit" name="add" value="add" class="btn-product btn--addCart">Add to cart</button>
                 <button type="submit" name="checkout" value="checkout" class="btn-product btn--buyNow">Buy Now</button>
             </form>
-           
+
             <!-- Categories & Tags-->
             <div class="product-desc--category">
                 <p class="product-desc__h7 h7">
@@ -113,9 +113,9 @@
     </div>
     <!--Trending Product-->
     <div class=" advertise bouncing col col-md-3">
-      
+
         <img src="/Image/advertise.jpg" alt="">
-       
+
     </div>
 </div>
 <!-----------Related Products-------------->
@@ -128,15 +128,15 @@
     <div class="related-prod__row row justify-content-center">
         <div class="row">
             @foreach ($relatedProducts as $product)
-                <a href={{route('product-detail-page', $product->slug)}} class="related-prod__col col">
-                    <img src="{{url('/').$product->image}}" alt="product2">
-                    <p class="related-prod__h6--name h6 text-center">{{$product->name}}</p>
-                    @if ($product->discount > 0)
-                        <p class="related-prod__h6--price h6 text-center"><del>${{$product->price}}</del> <strong>${{$product->price - $product->price * $product->discount}}</strong></p>
-                    @else
-                        <p class="related-prod__h6--price h6 text-center"><strong>${{$product->price}}</strong></p>
-                    @endif
-                </a>
+            <a href={{route('product-detail-page', $product->slug)}} class="related-prod__col col">
+                <img src="{{url('/').$product->image}}" alt="product2">
+                <p class="related-prod__h6--name h6 text-center">{{$product->name}}</p>
+                @if ($product->discount > 0)
+                <p class="related-prod__h6--price h6 text-center"><del>${{$product->price}}</del> <strong>${{$product->price - $product->price * $product->discount}}</strong></p>
+                @else
+                <p class="related-prod__h6--price h6 text-center"><strong>${{$product->price}}</strong></p>
+                @endif
+            </a>
             @endforeach
         </div>
     </div>
@@ -147,7 +147,7 @@
 @section('javascript')
 <script src="/js/client/product-detail.js"> </script>
 <script>
-     // Danh cho quantity input
+    // Danh cho quantity input
     let quantity = $(".input-qty").attr("value");
 
     const DecreaseQuantity = () => {
@@ -161,6 +161,5 @@
         quantity = Number(quantity) + 1;
         $(".input-qty").attr("value", quantity);
     };
-
 </script>
 @endsection

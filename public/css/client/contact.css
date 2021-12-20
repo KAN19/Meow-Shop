@@ -3,6 +3,43 @@
     margin-right: 0;
 }
 
+/*Thanh dieu huong*/
+.breadcrumb {
+    font-size: large;
+    background-color: white;
+    cursor: pointer;
+    margin-bottom: 3%;
+    display: flex;
+    align-items: center;
+}
+
+/*color chu + icon truoc khi tro chuot*/
+.breadcrumb a {
+    color: #4caf50;
+}
+
+/*khi tro chuot*/
+.breadcrumb a:hover {
+    font-weight: bold;
+}
+
+/*icon home*/
+.breadcrumb i {
+    font-size: large;
+    transition: 0.3s ease-in-out;
+}
+
+/*khi tro chuot vao bieu tuong home*/
+.breadcrumb i:hover {
+    font-size: x-large;
+    transition: 0.3s ease-in-out;
+}
+
+/*dau > */
+.breadcrumb-item+.breadcrumb-item::before {
+    content: ">";
+}
+
 /*------------------BANNER------------------*/
 .banner__name {
     width: 100%;
@@ -110,6 +147,7 @@ label {
 }
 
 @media screen and (max-width: 600px) {
+
     .col-25,
     .col-75,
     input[type="submit"] {

@@ -16,9 +16,8 @@
         <!-- thanh dieu huong -->
         <nav aria-label="breadcrumb">
             <ol class="breadcrumb">
-                <li class="breadcrumb-item ml-5"><a href="#"><i class="fa fa-home" aria-hidden="true"></i></a></li>
-                <li class="breadcrumb-item"><a href="#">Cart</a></li>
-                <li class="breadcrumb-item active" aria-current="page">Shop</li>
+                <li class="breadcrumb-item ml-5"><a href="{{route('home-page')}}"><i class="fa fa-home" aria-hidden="true"></i></a></li>
+                <li class="breadcrumb-item active" aria-current="page">Products</li>
             </ol>
         </nav>
     </div>
@@ -63,7 +62,7 @@
                 Trending product
             </div>
             @foreach ($trendingProducts as $product)
-                <!--trending product 1-->
+            <!--trending product 1-->
             <div class="trendingproduct name">
                 <div class="trendingname">
                     <div>
@@ -73,20 +72,20 @@
                         <div>{{$product->name}}</div>
 
                         @if ($product->discount > 0)
-                            <del class="margimobile">{{$product->price}}</del>
-                            <strong>{{$product->price - $product->price * $product->discount}}</strong>
-    
+                        <del class="margimobile">${{$product->price}}</del>
+                        <strong>${{$product->price - $product->price * $product->discount}}</strong>
+
                         @else
-                            <strong>{{$product->price}}</strong>
+                        <strong>${{$product->price}}</strong>
                         @endif
-                        
+
                     </div>
                 </div>
                 <hr class="my-3">
 
             </div>
             @endforeach
-            
+
         </div>
     </div>
 
@@ -102,11 +101,11 @@
                 </div>
                 <div>
                     @if ($product->discount > 0)
-                    <del class="margimobile">{{$product->price}}</del>
-                    <strong>{{$product->price - $product->price * $product->discount}}</strong>
+                    <del class="margimobile">${{$product->price}}</del>
+                    <strong>${{$product->price - $product->price * $product->discount}}</strong>
 
                     @else
-                    <strong>{{$product->price}}</strong>
+                    <strong>${{$product->price}}</strong>
                     @endif
                 </div>
             </a>

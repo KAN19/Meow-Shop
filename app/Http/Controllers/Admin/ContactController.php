@@ -20,15 +20,15 @@ class ContactController extends Controller
             'pnumber' => 'numeric|min:4',
             'mail' => 'email|min:4',
             'subject' => 'required|min:4',
-        ]); 
-        $category = new Contact(); 
-        $category->name = $request->name; 
-        $category->phone = $request->pnumber; 
-        $category->email = $request->mail; 
-        $category->message = $request->subject; 
+        ]);
+        $category = new Contact();
+        $category->name = $request->name;
+        $category->phone = $request->pnumber;
+        $category->email = $request->mail;
+        $category->message = $request->subject;
         $category->save();
-
-        return redirect()->back(); 
+        alert()->success('Message has been sent!', 'Successfully');
+        return redirect()->back();
     }
 
     public function displayListContacts()
