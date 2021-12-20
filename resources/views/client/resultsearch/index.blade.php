@@ -45,10 +45,10 @@
                             <b class="search__detail--name">{{$value->name}}</b>
                             <div>
                                 @if ($value->discount > 0)
-                                <del class="margimobile">{{$value->price}}</del>
-                                <strong>{{$value->price - $value->price * $value->discount}}</strong>
+                                <del class="margimobile">${{$value->price}}</del>
+                                <strong>${{$value->price - $value->price * $value->discount}}</strong>
                                 @else
-                                <strong>{{$value->price}}</strong>
+                                <strong>${{$value->price}}</strong>
                                 @endif
                             </div> <br>
                             <!-- btn add to cart -->
