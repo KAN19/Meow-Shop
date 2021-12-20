@@ -29,6 +29,9 @@
     <link rel="stylesheet" href="{{url('adminlte/plugins/fontawesome-free/css/all.min.css')}}">
     <script src="{{url('adminlte/plugins/jquery/jquery.min.js')}}"></script>
 
+    {{-- ======== Sweet alert ======= --}}
+    <script src="https://unpkg.com/sweetalert2@7.18.0/dist/sweetalert2.all.js"></script>
+   
     <title>
         @yield('title')
     </title>
@@ -41,6 +44,8 @@
 </head>
 
 <body>
+    @include('sweetalert::alert')
+
     @include('client.header')
 
     <div class="main-content">

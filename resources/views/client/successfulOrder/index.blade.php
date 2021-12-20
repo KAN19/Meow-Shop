@@ -25,5 +25,9 @@
 
 @section('javascript')
 <script src="/js/client/home.js"></script>
-
+<script>
+    setTimeout(() => {
+        window.location.href = '/';
+    }, 5000);
+</script>
 @endsection

@@ -83,7 +83,7 @@
                 </div>
                   <br>
                 <!-- 2 Buttons -->
-                <button type="submit" name="add" value="add" class="btn-product btn--addCart">Add to cart</button>
+                <button type="submit" name="add" value="add" class="btn-product btn--addCart" >Add to cart</button>
                 <button type="submit" name="checkout" value="checkout" class="btn-product btn--buyNow">Buy Now</button>
             </form>
            
@@ -161,5 +161,6 @@
         quantity = Number(quantity) + 1;
         $(".input-qty").attr("value", quantity);
     };
+
 </script>
 @endsection

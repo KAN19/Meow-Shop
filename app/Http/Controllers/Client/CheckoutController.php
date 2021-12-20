@@ -66,10 +66,10 @@ class CheckoutController extends Controller
             
             session(['cart' => '']); 
 
-            return redirect()->route('home-page')->with('success', 'Dat hang thanh cong'); 
+            return redirect()->route('successful-order'); 
         
         } else {
-            return redirect()->route('home-page')->with('Failed', 'Dat hang khong thanh cong'); 
+            return redirect()->route('home-page'); 
 
         }
 

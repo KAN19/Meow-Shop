@@ -6,7 +6,8 @@ use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 use App\Helper\CartHelper;
 use App\Models\Product;
-
+use RealRashid\SweetAlert\Facades\Aler;
+Use Alert;
 class CartController extends Controller
 {
     public function index()
@@ -16,6 +17,8 @@ class CartController extends Controller
 
     public function add(CartHelper $cart, $id, Request $request)
     {
+        
+       
         $quantity = 1; 
         if ($request->quantity) {
             $quantity = $request->quantity; 
@@ -27,6 +30,7 @@ class CartController extends Controller
         if ($request['checkout']) {
             return redirect()->route('show-checkout');
         }
+        toast('Product added!','success');
         return redirect()->back(); 
     }
     
@@ -34,7 +38,6 @@ class CartController extends Controller
     {
        
         $cart->remove($id); 
-
         return redirect()->back(); 
     }
 
@@ -43,6 +46,8 @@ class CartController extends Controller
         $cart->update($request); 
 
         // return redirect()->back(); 
+        toast('Shopping cart updated!','success');
+
         return redirect()->back(); 
     }
 

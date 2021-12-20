@@ -185,6 +185,7 @@
             // De o master.blade.php
             RemoveItemInCart(response)
         })
+        alertify.notify('Remove product successfully', 'success', 3, function(){  console.log('dismissed'); });
     }
     
 </script>
