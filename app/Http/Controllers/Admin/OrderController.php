@@ -12,17 +12,17 @@ class OrderController extends Controller
     {
         $list_orders = array(); 
         if ($request->from && $request->status) {
-            $list_orders = Order::where('order_status', '=', $request->status)->whereBetween('created_at', [$request->from, $request->to])->orderBy("created_at", 'DESC')->get(); 
+            $list_orders = Order::where('order_status', '=', $request->status)->whereBetween('created_at', [$request->from, $request->to])->orderBy("created_at", 'DESC')->paginate(10); 
         } elseif ($request->from) {
-            $list_orders = Order::whereBetween('created_at', [$request->from, $request->to])->orderBy("created_at", 'DESC')->get(); 
+            $list_orders = Order::whereBetween('created_at', [$request->from, $request->to])->orderBy("created_at", 'DESC')->paginate(10); 
         } elseif ($request->status) {
-            $list_orders = Order::where('order_status', '=', $request->status)->orderBy("created_at", 'DESC')->get(); 
+            $list_orders = Order::where('order_status', '=', $request->status)->orderBy("created_at", 'DESC')->paginate(10); 
         } else {
-            $list_orders = Order::orderBy("created_at", 'DESC')->get();
+            $list_orders = Order::orderBy("created_at", 'DESC')->paginate(10);
         }
         
         // dd($list_orders);
-        $list_orders = Order::orderBy("created_at", 'DESC')->paginate(15);
+        // $list_orders = Order::orderBy("created_at", 'DESC')->paginate(15);
 
         return view('admin.order.index', compact('list_orders')); 
     }
