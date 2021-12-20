@@ -4,6 +4,7 @@ namespace App\Http\Controllers\Admin;
 
 use App\Http\Controllers\Controller;
 use App\Models\category;
+use App\Models\Product;
 use Illuminate\Http\Request;
 use Illuminate\Support\Str;
 
@@ -61,8 +62,12 @@ class CategoryController extends Controller
     public function deleteCategory($slug)
     {
         $category = category::where('slug',$slug)->first(); 
-        $category->delete(); 
-
+        $hasProduct = Product::where('category_id', '=', $category->id)->first(); 
+        if(!$hasProduct) {
+            $category->delete(); 
+        } else {
+            alert()->error('Error','This product has existed in an orderd');
+        }
         return redirect()->route('show-category'); 
     }
    
