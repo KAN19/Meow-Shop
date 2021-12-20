@@ -38,7 +38,7 @@
             <div class="section__title">
                 Customer information
             </div>
-            @dd($order)
+            {{-- @dd($order) --}}
             <div>
                 <span>Name: </span> 
                 {{$order->customer_name}} 
