@@ -3,7 +3,11 @@
 @section('title', 'Category Manager')
 
 @section('content_header')
-<h1>Create category</h1>
+<h1 class="content__header__category">Create category</h1>
+@stop
+
+@section('css')
+<link rel="stylesheet" href="/css/admin/category.css">
 @stop
 
 @section('breadcrumb')
@@ -13,16 +17,17 @@
 
 
 @section('content')
-<div id="page-wrapper">
+<div id="page-wrapper" class="categoryadmin__crud">
     <div class="container-fluid bg-white">
         <div class="row">
             <!-- /.col-lg-12 -->
-            <div class="col-lg-7" style="padding-bottom:120px">
+            <div class="col-lg-7" id="input__admincategory__crud">
                 <form action="{{route('create-category')}}" method="POST">
                     @csrf
                     <div class="form-group">
-                        <label>Category Name</label>
-                        <input class="form-control" name="cateName" placeholder="Please Enter Category Name" />
+                        <i class="fas fa-paw icon__admincategory__crud"></i>
+                        <label class="title__admincategory__crud"> Category Name</label>
+                        <input class="form-control" name="cateName" placeholder="Please Enter Category Name"/>
                         @error('cateName')
                         <div class="text-danger">
                             {{ $message }}
