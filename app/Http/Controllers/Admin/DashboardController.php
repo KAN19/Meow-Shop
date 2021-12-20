@@ -15,7 +15,7 @@ class DashboardController extends Controller
         $totalProducts = Product::all(); 
         $totalOrders = Order::all(); 
         $pendingOrders = Order::where('order_status', '=', 'pending')->get(); 
-        $confirmedOrders = Order::where('order_status', '=', 'confirmed')->get(); 
+        $confirmedOrders = Order::where('order_status', '=', 'shipping')->get(); 
         $completedOrders = Order::where('order_status', '=', 'completed')->get(); 
         $canceledOrders = Order::where('order_status', '=', 'canceled')->get(); 
 

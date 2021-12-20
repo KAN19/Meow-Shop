@@ -18,7 +18,6 @@
 @stop
 
 @section('content')
-  <p class="text-primary" style="font-size:20px;font-style:italic">Welcome to this beautiful admin panel!</p>
   <div {{--  id="page-wrapper"  --}} class="chart_admin_first">
     <div class="container-fluid">    
 
@@ -30,23 +29,23 @@
           <div class="item__title">Total Products</div>
         </div>   
         <div class="item2 body__chart__admin">
-          <b class="item2">60</b><br>
+          <b class="item2">{{count($totalOrders)}}</b><br>
           <div class="item__title">Total Orders</div>
         </div>     
         <div class="item3 body__chart__admin">
-          <b class="item3">18</b><br>
+          <b class="item3">{{count($pendingOrders)}}</b><br>
           <div class="item__title">Pending Orders</div>
         </div>           
         <div class="item4 body__chart__admin">
-          <b class="item4">20</b><br>
+          <b class="item4">{{count($confirmedOrders)}}</b><br>
           <div class="item__title">Shipping</div>
         </div>  
         <div class="item5 body__chart__admin">
-          <b class="item5">40</b><br>
+          <b class="item5">{{count($completedOrders)}}</b><br>
           <div class="item__title">Completed Orders</div>    
         </div>        
         <div class="item6 body__chart__admin">
-          <b class="item6">10</b><br>
+          <b class="item6">{{count($canceledOrders)}}</b><br>
           <div class="item__title">Canceled Orders</div>
         </div>
       </div>    
