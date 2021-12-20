@@ -7,7 +7,7 @@
 @stop
 
 @section('css')
-<link rel="stylesheet" href="/css/admin/products.css">
+<link rel="stylesheet" href="/css/admin/product.css">
 @stop
 
 @section('breadcrumb')

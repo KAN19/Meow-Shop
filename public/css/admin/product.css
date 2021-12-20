@@ -24,3 +24,22 @@
         max-width: 100% !important;
     }
 }
+
+h1 {
+    color: #007bff;
+}
+
+th {
+    background-color: #007bff;
+    border: none;
+}
+
+td img {
+    max-width: 80px;
+    max-height: 80px;
+}
+
+td {
+    text-align: center;
+    vertical-align: middle;
+}

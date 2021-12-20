@@ -164,9 +164,14 @@ input[type="text"]:focus {
     font-size: x-large;
 }
 
+.trendingproduct {
+    font-size: 14px;
+    flex-wrap: nowrap;
+}
+
 .trendingproduct img {
-    width: 150px;
-    height: 150px;
+    width: 110px;
+    height: 110px;
     object-fit: contain;
 }
 
@@ -175,11 +180,13 @@ input[type="text"]:focus {
     text-decoration: underline;
 }
 .contentTrending {
-    margin-top: 13%;
-    margin-left: 5%;
+    margin-left: 3%;
+    word-wrap: break-word;
 }
 .trendingname {
-    margin-left: 5%;
+    padding: 0 10px;
+    display: flex;
+    align-items: center;
 }
 
 /* trending product mobile */

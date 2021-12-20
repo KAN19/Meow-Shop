@@ -65,13 +65,21 @@
             @foreach ($trendingProducts as $product)
                 <!--trending product 1-->
             <div class="trendingproduct name">
-                <div class="trendingname row">
+                <div class="trendingname">
                     <div>
                         <div><img class="imageradius" src="{{$product->image}}" /></div>
                     </div>
                     <div class="contentTrending">
-                        <div>Name</div>
-                        <div>$99.00</div>
+                        <div>{{$product->name}}</div>
+
+                        @if ($product->discount > 0)
+                            <del class="margimobile">{{$product->price}}</del>
+                            <strong>{{$product->price - $product->price * $product->discount}}</strong>
+    
+                        @else
+                            <strong>{{$product->price}}</strong>
+                        @endif
+                        
                     </div>
                 </div>
                 <hr class="my-3">
