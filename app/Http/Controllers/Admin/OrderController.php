@@ -22,6 +22,8 @@ class OrderController extends Controller
         }
         
         // dd($list_orders);
+        $list_orders = Order::orderBy("created_at", 'DESC')->paginate(15);
+
         return view('admin.order.index', compact('list_orders')); 
     }
 
