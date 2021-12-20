@@ -9,6 +9,7 @@ use App\Http\Controllers\Admin\ProductController;
 use App\Http\Controllers\Client\CartController;
 use App\Http\Controllers\Client\CheckoutController;
 use App\Http\Controllers\Client\ProductController as ClientProductController;
+use App\Http\Middleware\Checkout;
 use App\Models\Contact;
 use Illuminate\Support\Facades\Route;
 use Illuminate\Http\Request;
@@ -59,7 +60,7 @@ Route::prefix('cart')->group(function() {
 Route::get('/resultsearch', [ClientProductController::class, 'resultsearch'])->name('search-page');
 
 // ========== Checkout Route ========
-Route::prefix('/checkout')->group(function () {
+Route::prefix('/checkout')->middleware('checkout')->group(function () {
     Route::get('', [CheckoutController::class, 'index'])->name('show-checkout');
     Route::post('', [CheckoutController::class, 'store'])->name('store-checkout');
 });

@@ -221,6 +221,7 @@
     font-weight: bold;
     outline: none;
     border: 0;
+    cursor: pointer;
 }
 
 /* Container cho button card */
@@ -297,6 +298,7 @@ td {
     /* btn continue */
     .overlay__btn {
         margin-bottom: 5%;
+        cursor: pointer;
         /* margin-left: 12%; */
     }
 

@@ -17,8 +17,6 @@ class CartController extends Controller
 
     public function add(CartHelper $cart, $id, Request $request)
     {
-        
-       
         $quantity = 1; 
         if ($request->quantity) {
             $quantity = $request->quantity; 

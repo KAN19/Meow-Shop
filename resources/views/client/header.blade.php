@@ -73,7 +73,7 @@
 
                     <div class="cart__dropdown__selection">
                         <a href={{route('show-cart')}} class="cart__dropdown__button">View Cart</a>
-                        <a class="cart__dropdown__button">Checkout</a>
+                        <a href={{route('show-checkout')}} class="cart__dropdown__button">Checkout</a>
                     </div>
                 </div>
             </div>
