@@ -105,7 +105,9 @@
         <p>Empty! </p>
     @endforelse
 <!-- Large modal -->
-
+    <div class="pagination justify-content-center mt-4">
+        {{$list_orders->appends(request()->all())->links()}}
+    </div>
 </div>
 @stop
 

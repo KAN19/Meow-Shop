@@ -48,7 +48,7 @@
         </div>
         <!-- /.row -->
     </div>
-    <div class="pagination justify-content-center mt-5">
+    <div class="pagination justify-content-center mt-3">
         {{$listProducts->appends(request()->all())->links()}}
     </div>
     <!-- /.container-fluid -->
