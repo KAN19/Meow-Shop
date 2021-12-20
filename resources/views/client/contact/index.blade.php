@@ -10,12 +10,19 @@
 
 @section('content')
 <div>
+
     <!-- Banner -->
     <div class="banner">
         <div class="banner__name">
             <img src="{{url('/Image/contact-banner.png')}}" alt="contact-banner">
         </div>
     </div>
+    <nav aria-label="breadcrumb">
+        <ol class="breadcrumb">
+            <li class="breadcrumb-item ml-5"><a href="{{route('home-page')}}"><i class="fa fa-home" aria-hidden="true"></i></a></li>
+            <li class="breadcrumb-item active" aria-current="page">Contact</li>
+        </ol>
+    </nav>
     <!-- form -->
     <div class="container">
         <form class="{{route('create-contact')}}" action="#" method="POST">
