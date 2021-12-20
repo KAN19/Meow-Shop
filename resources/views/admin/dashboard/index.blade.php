@@ -22,48 +22,38 @@
     <div class="container-fluid">    
 
       <!--Bang thong ke trong ngay -->      
-      <div class="Thefirst__dashboard">Hi! Today, We have...</div>
+      <div class="Thefirst__dashboard">Hi! This month {{$thisMonth}}, We have...</div>
       <div id="chart_admin">
-        <div class="item1 body__chart__admin">
-          <b class="item1">{{count($totalProducts)}}</b><br>
-          <div class="item__title">Total Products</div>
-        </div>   
+       
         <div class="item2 body__chart__admin">
-          <b class="item2">{{count($totalOrders)}}</b><br>
+          <b class="item2">{{$thisMonthData['totalOrders']}}</b><br>
           <div class="item__title">Total Orders</div>
         </div>     
         <div class="item3 body__chart__admin">
-          <b class="item3">{{count($pendingOrders)}}</b><br>
+          <b class="item3">{{$thisMonthData['pendingOrders']}}</b><br>
           <div class="item__title">Pending Orders</div>
         </div>           
         <div class="item4 body__chart__admin">
-          <b class="item4">{{count($confirmedOrders)}}</b><br>
+          <b class="item4">{{$thisMonthData['shippingOrders']}}</b><br>
           <div class="item__title">Shipping</div>
         </div>  
         <div class="item5 body__chart__admin">
-          <b class="item5">{{count($completedOrders)}}</b><br>
+          <b class="item5">{{$thisMonthData['completedOrders']}}</b><br>
           <div class="item__title">Completed Orders</div>    
         </div>        
         <div class="item6 body__chart__admin">
-          <b class="item6">{{count($canceledOrders)}}</b><br>
+          <b class="item6">{{$thisMonthData['canceledOrders']}}</b><br>
           <div class="item__title">Canceled Orders</div>
         </div>
+        <div class="item1 body__chart__admin">
+            <b class="item1">{{$thisMonth_totalProducts}}</b><br>
+            <div class="item__title">Total Products <div>(Until today) </div> </div>
+          </div>   
       </div>    
       <hr style="width:60%; margin-left:25%;margin-top:5%"/> 
 
       <!--Input chon thoi gian-->
-      <div class="flex-grow-1 d-flex align-items-center mr-4 ">
-        <div class="input__label__dashboard">
-            Time: 
-        </div>
-        <div class="input-group" style="width: auto !important;">
-          <div class="input-group-prepend">
-            <span class="input-group-text">
-              <i class="far fa-calendar-alt"></i>
-            </span>
-          </div>
-          <input type="text" class="form-control float-right" id="reservation">
-        </div>
+      <div class="Thefirst__dashboard">Statistic</div>
             <!-- /.input group -->
         </div>
 
@@ -71,11 +61,11 @@
           <div class="row">                       
             <div class="body__barChart col-sm-6">
               <canvas id="chart-line" width="299" height="200" class="chartjs-render-monitor" style="display: block; width: 299px; height: 200px;"></canvas>    
-              <div class="text__Chart">The chart shows products, orders and status orders management in a month</div> 
+              <div class="text__Chart">The chart shows products, orders and status orders management last 3 months</div> 
             </div>
             <div class="body__barChart col-sm-6">
               <canvas id="barChart"></canvas>     
-              <div class="text__Chart"> The chart shows Sale Revenue in a month</div> 
+              <div class="text__Chart"> The chart shows Sale Revenue last 3 months</div> 
             </div>  
           </div> 
 
@@ -112,10 +102,10 @@
     var myBarChart = new Chart(ctxB, {
       type: 'bar',
       data: {
-        labels: ["Week 1", "Week 2" , "Week 3", "Week 4"],
+        labels: ["Three months ago", "Two months ago" , "Last month", "This month"],
         datasets: [{
           label: 'Sale',
-          data: [300, 250, 150 , 800],
+          data: [{{$threeMonthAgoData['saleResult']}}, {{$twoMonthAgoData['saleResult']}}, {{$lastMonthData['saleResult']}}, {{$thisMonthData['saleResult']}}],
           backgroundColor: [
             '#ddf8f8',
             '#ddf8f8',
@@ -148,34 +138,34 @@
         var myLineChart = new Chart(ctx, {
             type: 'line',
             data: {
-                labels: ["Week 1", "Week 2" , "Week 3", "Week 4"],
+                labels: ["Three months ago", "Two months ago" , "Last month", "This month"],
                 datasets: [{
-                    data: [86, 114, 106, 106],
+                    data: [{{$threeMonthAgoData['totalOrders']}}, {{$twoMonthAgoData['totalOrders']}}, {{$lastMonthData['totalOrders']}}, {{$thisMonthData['totalOrders']}}],
                     label: "Total products",
                     borderColor: "#6495ED",
                     fill: false
                 }, {
-                    data: [282, 350, 411, 502],
+                    data: [{{$threeMonthAgoData['totalOrders']}}, {{$twoMonthAgoData['totalOrders']}}, {{$lastMonthData['totalOrders']}}, {{$thisMonthData['totalOrders']}}],
                     label: "Total Orders",
                     borderColor: "#986DB2",
                     fill: false
                 }, {
-                    data: [168, 170, 178, 190],
+                    data: [{{$threeMonthAgoData['pendingOrders']}}, {{$twoMonthAgoData['pendingOrders']}}, {{$lastMonthData['pendingOrders']}}, {{$thisMonthData['pendingOrders']}}],
                     label: "Pending",
                     borderColor: "#0B346E",
                     fill: false
                 },{
-                    data: [106, 136, 207, 301],
+                    data: [{{$threeMonthAgoData['shippingOrders']}}, {{$twoMonthAgoData['shippingOrders']}}, {{$lastMonthData['shippingOrders']}}, {{$thisMonthData['shippingOrders']}}],
                     label: "Shipping",
                     borderColor: "#e9c703",
                     fill: false
                 }, {
-                    data: [350, 411, 335, 209],
+                    data: [{{$threeMonthAgoData['completedOrders']}}, {{$twoMonthAgoData['completedOrders']}}, {{$lastMonthData['completedOrders']}}, {{$thisMonthData['completedOrders']}}],
                     label: "Completed",
                     borderColor: "#23bf23",
                     fill: false
                 }, {
-                    data: [178, 190, 203, 276],
+                    data: [{{$threeMonthAgoData['canceledOrders']}}, {{$twoMonthAgoData['canceledOrders']}}, {{$lastMonthData['canceledOrders']}}, {{$thisMonthData['canceledOrders']}}],
                     label: "Canceled",
                     borderColor: "#DC143C",
                     fill: false
