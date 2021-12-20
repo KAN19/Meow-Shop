@@ -57,7 +57,9 @@
 
             <div class="align-items-center">
                 <button class="btn btn-primary" type="submit">Find</button>
-                <button class="btn btn-danger" type="submit">Clear</button>
+                <button class="btn btn-danger" type="submit">
+                    <a href="{{route('show-orders')}}" style="color: inherit">Clear</a>
+                </button>
             </div>
         </div>
         <hr>
