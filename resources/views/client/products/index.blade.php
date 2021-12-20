@@ -124,37 +124,24 @@
     </div>
     <!--trending product 1-->
     <div class="trendingproduct name">
-        <div class="row trendingname">
-            <div class="col-sm">
-                <div><img class="imageTrending-mobile" src="" alt="anh ne" /></div>
+        @foreach ($trendingProducts as $product)
+            <div class="row trendingname">
+                <div class="col-sm">
+                    <div><img class="imageTrending-mobile" src="{{$product->image}}"  alt="anh ne" /></div>
+                </div>
+                <div class="trendingmobile col-sm mt-4">
+                    <div class="mb-1">Name</div>
+                    @if ($product->discount > 0)
+                        <del class="margimobile">${{$product->price}}</del>
+                        <strong>${{$product->price - $product->price * $product->discount}}</strong>
+
+                    @else
+                        <strong>${{$product->price}}</strong>
+                    @endif
+                </div>
             </div>
-            <div class="trendingmobile col-sm mt-4">
-                <div class="mb-1">Name</div>
-                <div>$99.00</div>
-            </div>
-        </div>
-        <hr class="my-3 ">
-        <!--trending product 2-->
-        <div class="row trendingname">
-            <div class="col-sm">
-                <div><img class="imageTrending-mobile" src="https://picsum.photos/350/250" /></div>
-            </div>
-            <div class="trendingmobile col-sm mt-4">
-                <div class="mb-1">Name</div>
-                <div>$99.00</div>
-            </div>
-        </div>
-        <hr class="my-3 ">
-        <!--trending product 3-->
-        <div class="row trendingname">
-            <div class=" col-sm">
-                <div><img class="imageTrending-mobile" src="https://picsum.photos/350/250" /></div>
-            </div>
-            <div class="trendingmobile col-sm mt-4">
-                <div class="mb-1">Name</div>
-                <div>$99.00</div>
-            </div>
-        </div>
+            <hr class="my-3 ">
+        @endforeach
     </div>
 </div>
 </div>

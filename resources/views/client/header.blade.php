@@ -87,20 +87,20 @@
         </div>
     </div>
     <div class="panel d-sm-none">
-        <a href="#" class="panel__item">
+        <a href="{{route('product-page')}}" class="panel__item">
             <span class="panel__item__icon"><i class="fas fa-home"></i></span>
             <span>Home</span>
         </a>
-        <a href="#" class="panel__item">
+        <a href="{{route('product-page')}}" class="panel__item">
             <span class="panel__item__icon"><i class="fas fa-paw"></i></span>
             <span>Products</span>
         </a>
-        <a href="#" class="panel__item">
+        <a href="{{route('contact-page')}}" class="panel__item">
             <span class="panel__item__icon"><i class="fas fa-phone-square-alt"></i></span>
             <span>Contact</span>
         </a>
 
-        <a href="#" class="panel__item">
+        <a href={{route('show-cart')}} class="panel__item">
             <span class="panel__item__icon"><i class="fas fa-shopping-cart"></i></span>
             <span>Cart</span>
         </a>
