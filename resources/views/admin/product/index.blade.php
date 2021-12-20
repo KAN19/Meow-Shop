@@ -32,7 +32,7 @@
                     {{-- @dd($listProducts) --}}
                     @foreach ($listProducts as $product)
                     <tr class="odd gradeX" align="center">
-                        <td>{{$counter++}}</td>
+                        <td>#{{$product->id}}</td>
                         <td>{{$product->name}}</td>
                         <td>{{$product->category->name}}</td>
                         <td>{{$product->price}}</td>
@@ -47,6 +47,9 @@
             </table>
         </div>
         <!-- /.row -->
+    </div>
+    <div class="pagination justify-content-center mt-5">
+        {{$listProducts->appends(request()->all())->links()}}
     </div>
     <!-- /.container-fluid -->
 </div>

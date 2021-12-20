@@ -4,6 +4,7 @@ namespace App\Providers;
 
 use App\Helper\CartHelper;
 use Illuminate\Support\ServiceProvider;
+use Illuminate\Pagination\Paginator;
 
 class AppServiceProvider extends ServiceProvider
 {
@@ -29,5 +30,6 @@ class AppServiceProvider extends ServiceProvider
                 'cart' => new CartHelper() 
             ]);
         });
+        Paginator::useBootstrap();
     }
 }
