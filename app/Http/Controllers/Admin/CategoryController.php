@@ -66,7 +66,7 @@ class CategoryController extends Controller
         if(!$hasProduct) {
             $category->delete(); 
         } else {
-            alert()->error('Error','This product has existed in an orderd');
+            alert()->error('Error','This category has included a product');
         }
         return redirect()->route('show-category'); 
     }
