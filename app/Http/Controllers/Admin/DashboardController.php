@@ -68,7 +68,7 @@ class DashboardController extends Controller
     }
     public function getPendingOrders($month)
     {
-        return Order::where('order_status', '=', 'canceled')->whereMonth(
+        return Order::where('order_status', '=', 'pending')->whereMonth(
             'created_at',
             $month
         )->count(); 

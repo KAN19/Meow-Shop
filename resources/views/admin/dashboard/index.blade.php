@@ -35,7 +35,7 @@
         </div>           
         <div class="item4 body__chart__admin">
           <b class="item4">{{$thisMonthData['shippingOrders']}}</b><br>
-          <div class="item__title">Shipping</div>
+          <div class="item__title">Shipping Orders</div>
         </div>  
         <div class="item5 body__chart__admin">
           <b class="item5">{{$thisMonthData['completedOrders']}}</b><br>
@@ -47,7 +47,7 @@
         </div>
         <div class="item1 body__chart__admin">
             <b class="item1">{{$thisMonth_totalProducts}}</b><br>
-            <div class="item__title">Total Products <div>(Until today) </div> </div>
+            <div class="item__title">Total Products Created<div>(Until today) </div> </div>
           </div>   
       </div>    
       <hr style="width:60%; margin-left:25%;margin-top:5%"/> 
